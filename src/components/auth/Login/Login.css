@@ -1,176 +1,184 @@
-.LoginHolder{
-    width: 100%;
-    /* max-width: 100%; */
-    height: max-content;
-    height: 100vh;
-    background: teal;
-    /* background: url("../../../assets/trakFundzBackground.svg"); */
-    background: url("../../../assets/realTrakfundzBackground.svg");
-    /* background-repeat: no-repeat; */
-    background-size: 100%;
-    /* background-position: center; */
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    flex-direction: column;
+.LoginHolder {
+  width: 100%;
+  /* max-width: 100%; */
+  height: max-content;
+  height: 100vh;
+  background: teal;
+  /* background: url("../../../assets/trakFundzBackground.svg"); */
+  background: url("../../../assets/realTrakfundzBackground.svg");
+  /* background-repeat: no-repeat; */
+  background-size: 100%;
+  /* background-position: center; */
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-direction: column;
 }
 
-.HoldImage{
-    width: 85%;
-    height: 20vh;
-    /* background: url("../../../assets/trakFundzBackground.svg"); */
-    /* background: #000; */
-    display: flex;
-    align-items: flex-end;
-    /* margin-left: 20px; */
+.HoldImage {
+  width: 85%;
+  height: 20vh;
+  /* background: url("../../../assets/trakFundzBackground.svg"); */
+  /* background: #000; */
+  display: flex;
+  align-items: flex-end;
+  /* margin-left: 20px; */
 }
 
-.logo{
-    width: 248px;
-    height: 180px;
+.logo {
+  width: 248px;
+  height: 180px;
 }
 
-.formHold{
-    width: 29%;
-    height: 60%;
-    background: white;
-    /* background: #000; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    gap: 20px;
-    border-radius: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+.formHold {
+  width: 29%;
+  height: 60%;
+  background: var(--colours);
+  /* background: #000; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  gap: 20px;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.inForm{
-    width: 90%;
-    height: 85%;
-    /* background: tomato; */
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
+.inForm {
+  width: 90%;
+  height: 85%;
+  /* background: tomato; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
-.loginTextHold{
-    width: 100%;
-    height: 20%;
-    /* background: lime; */
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
+.loginTextHold {
+  width: 100%;
+  height: 20%;
+  /* background: lime; */
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
 
-.welcome{
-    font-size: 20px;
-    font-weight: 700;
+.welcome {
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.please{
-    font-size: 14px;
-    font-weight: 400;
+.please {
+  font-size: 14px;
+  font-weight: 400;
 }
 
-.lowerForm{
-    width: 100%;
-    height: 50%;
-    /* background: green; */
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+.lowerForm {
+  width: 100%;
+  height: 50%;
+  /* background: green; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
-.emailOwnDiv{
-    width: 100%;
-    height: 37%;
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
+.emailOwnDiv {
+  width: 100%;
+  height: 37%;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  font-size: 16px;
+  /* background: #000; */
 }
 
-.emailInput{
-    width: 100%;
-    height: 70px;
-    background: white;
-    border: 1px solid black;
-    outline: none;
-    padding-left: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--microcopyTextColour);
-    /* border: 5px solid orchid; */
+.emailInput {
+  width: 100%;
+  height: 30%;
+  background: var(--colours);
+  /* background: #000; */
+  border: 1px solid black;
+  outline: none;
+  padding-left: 10px;
+  border-radius: 5px;
+  /* border: 1px solid var(--microcopyTextColour); */
+  /* border: 5px solid orchid; */
 }
 
-.passwordOwnDiv{
-    width: 100%;
-    height: 37%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    /* background: darkorange; */
+.email {
+    font-size: 16px;
+    /* font-weight: 700; */
 }
 
-.passWordInputHolder{
-    width: 100%;
-    height: 50px;
-    background: white;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: 5px;
-    border: 1px solid var(--microcopyTextColour);
-    outline: none;
+.passwordOwnDiv {
+  width: 100%;
+  height: 37%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /* background: darkorange; */
 }
 
-.passwordInput{
-    width: 90%;
-    height: 100%;
-    border: none;
-    outline: none;
-    background: white;
-    /* padding-left: ; */
+.passWordInputHolder {
+  width: 100%;
+  height: 50px;
+  background: var(--colours);
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--microcopyTextColour);
+  outline: none;
 }
 
-.holdForget{
-    width: 100%;
-    height: 15%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    color: var(--brandColour);
+.passwordInput {
+  width: 90%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: var(--colours);
+  /* padding-left: ; */
 }
 
-.forgot{
-    cursor: pointer;
-    font-size: 12px;
+.holdForget {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--brandColour);
 }
 
-.btnLow{
-    width: 100%;
-    height: 25%;
-    /* background: #bd1010; */
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
+.forgot {
+  cursor: pointer;
+  font-size: 12px;
 }
 
-.loginBtn{
-    width: 100%;
-    /* height:44px; */
-    height: 50%;
-    background: var(--brandColour);
-    border-radius: 5px;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+.btnLow {
+  width: 100%;
+  height: 25%;
+  /* background: #bd1010; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 
-.haveAccount{
-    font-size: 12px;
+.loginBtn {
+  width: 100%;
+  /* height:44px; */
+  height: 50%;
+  background: var(--brandColour);
+  border-radius: 5px;
+  border: none;
+  color: var(--colours);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.haveAccount {
+  font-size: 12px;
 }

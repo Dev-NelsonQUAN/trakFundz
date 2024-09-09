@@ -2,8 +2,11 @@ import React from "react";
 import "./VerifyEmail.css";
 import Logo from "../../../assets/trakFundzLogo.svg";
 import emailVerify from "../../../assets/emailVerifySvg.svg";
+import { useNavigate } from "react-router-dom";
 
 const VerifyEmail = () => {
+  const Nav = useNavigate();
+
   return (
     <div className="verifyPassword">
       <div className="holdImageVerify">
@@ -37,8 +40,15 @@ const VerifyEmail = () => {
           </div>
 
           <div className="infromVerifyBottom">
-            <button className="verBtn"> Verify email  </button>
-            <p className="didntReceive"> Did not receive any mail? Check your spam inbox or <span className="span"> Click here to resend. </span> 00:59 </p>
+            <button className="verBtn" onClick={() => Nav("/featureOnboard")}>
+              {" "}
+              Verify email{" "}
+            </button>
+            <p className="didntReceive">
+              {" "}
+              Did not receive any mail? Check your spam inbox or{" "}
+              <span className="span"> Click here to resend. </span> 00:59{" "}
+            </p>
           </div>
         </div>
       </form>
