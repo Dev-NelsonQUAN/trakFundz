@@ -1,0 +1,198 @@
+.dashboardHolder {
+  width: 100%;
+  min-height: 87vh;
+  height: auto;
+  /* background: green; */
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dashboardInner {
+  width: 95%;
+  height: 100%;
+  /* background: orange; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboardLeft {
+  width: 65%;
+  height: 90%;
+  /* background: orange; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.dashboardLeftTop {
+  width: 100%;
+  height: 27%;
+  /* background: teal;   */
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+}
+
+.dashboardLeftMiddle {
+  width: 100%;
+  height: 32%;
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 0.85);
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.dBoardLeftMiddleTop{
+    width: 95%;
+    height: 15%;
+    /* background: green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.moneyFlow{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.incomeExpenseHolder{
+    width: 55%;
+    height: 85%;
+    /* background: orangered; */
+    display: flex;
+    justify-content: space-between; 
+    /* align-items: center; */
+}
+
+.incomeExpense{
+    width: 40%;
+    height: 100%;
+    /* background: #773939; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.purpleRound{
+    width: 8px;
+    height: 8px;
+    background: var(--brandColour);
+    border-radius: 50%;
+}
+
+.lightPurleRound{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #CBACF2;
+}
+
+.incomeText{
+    font-size: 12px;
+}
+
+.expenseText{
+ font-size: 12px;
+}
+
+.incomeSelect{
+    width: 58%;
+    height: 100%;
+    /* background: gold; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expenseSelect{
+    width: 47%;
+    height: 100%;
+    border: 1px solid var(--brandColour);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 12px;
+}
+
+.weekSelect{
+    width: 47%;
+    height: 100%;
+    border: 1px solid var(--brandColour);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 12px;
+    align-items: center;
+
+}
+
+.dBoardLeftBottom{
+    width: 100%;
+    height: 80%;
+    /* background: maroon; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dBoardLeftBotInnerTop{
+    width: 95%;
+    height: 85%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    /* background: darkblue; */
+}
+
+.dBoardLeftBotInnerBottom{
+    width: 95%;
+    height: 12%;
+    /* background: powderblue; */
+}
+
+.dashboardLeftBottom {
+  width: 100%;
+  height: 32%;
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 0.85);
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.dBoardLeftBottomTop{
+    width: 95%;
+    height: 10%;
+    background: #000;
+}
+
+.dashboardRight {
+  width: 30%;
+  height: 90%;
+  border-radius: 5px;
+  background: #F4F4FF;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboardRightInner{
+    width: 85%;
+    height: 93%;
+    /* background: hotpink; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}

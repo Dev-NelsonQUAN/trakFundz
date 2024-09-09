@@ -1,0 +1,360 @@
+.signUpHolder {
+  width: 100%;
+  /* height: 90vh; */
+  height: max-content;
+  /* min-height: 100vh; */
+  /* background: rgba(1, 31, 1, 0.979); */
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  /* justify-content: space-between; */
+  /* gap: 20px; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+}
+
+.sideImageHolder{
+    width: 30%;
+    height: 100vh;
+    background: url("../../../assets/realTrakfundzBackground.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.holdImageAndFont{
+    width: 100%;
+    height: 50%;
+    /* background: #000; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.holdImg{
+    width: 65%;
+    height: 25%;
+    /* background: crimson; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.holdBG{
+    width: 93%;
+    height: 88%;
+    /* width: 100%;
+    height: 100%;
+    object-fit: cover; */
+    /* background-position-x: 100%; */
+    /* height: 100vh; */
+    /* min-height: 100vh; */
+}
+
+.holdFont{
+    width: 332px;
+    height: 89px;
+    /* background: red; */
+    color: var(--colours);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.signUpFont{
+    font-size: 30px;
+}
+
+.createAccount{
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* .enjoyTxt{
+    font-family: Arial, Helvetica, sans-serif;
+} */
+
+.holdFormAll{
+    width: 70%;
+    height: 100vh;
+    background: var(--colours);
+    /* background: limegreen; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.InsideFornHolder{
+    width: 55%;
+    height: 88%;
+    /* background: rebeccapurple; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.onTopForm{
+    width: 100%;
+    height: 18%;
+    /* background: rgb(28, 192, 13); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alreadyHolder{
+    width: 100%;
+    height: 30%;
+    /* background: pink; */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.already{
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--inactiveText);
+  /* line-height: 16.7px; */
+}
+
+.loginSpan{
+    color: var(--brandColour);
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.loginSpan:hover{
+    text-decoration: underline;
+}
+
+.personalInfoHolder{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+    /* background: #000; */
+}
+
+.personalH4{
+    font-size: 24px;
+    color: var(--textColour);
+}
+
+.infoP{
+    font-size: 15px;
+    color: var(--microcopyTextColour);
+}
+
+.formHolder{
+    width: 100%;
+    height: 80%;
+    /* background: tomato; */
+    display: flex;
+
+}
+
+.InputHolder {
+  width: 100%;
+  /* height: auto; */
+  min-height: 100%;
+  /* height: 70%; */
+  /* background: var(--colours); */
+
+  display: flex;
+  align-items: center;
+  /* justify-content: ; */
+  gap: 6px;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+}
+
+.firstAndLastNameInput{
+    width: 80%;
+    height: 30%;
+    /* background: turquoise; */
+    display: flex;
+    justify-content: space-between;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.firstNameDiv{
+    width: 48%;
+    height: 100%;
+    /* background: rebeccapurple; */
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 6px;   
+    flex-direction: column;
+}
+
+.firstName, .lastName{
+    font-size: 12px;
+    font-weight: 400;
+    /* color: red; */
+}
+
+.secondNameDiv{
+    width: 48%;
+    height: 100%;
+    /* background: red; */
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 6px;
+    flex-direction: column;
+}
+
+.nameInput{
+    width: 100%;
+    /* width: 222px; */
+    height: 60%;
+    /* height: 50px; */
+    padding-left: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--inactiveText);
+}
+
+.emailInputDiv{
+    width: 80%;
+    height: 30%;
+    /* background: #000; */
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    flex-direction: column;
+}
+
+.email{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.regInput {
+  width: 100%;
+  height: 63%;
+  border: 1px solid var(--inactiveText);
+  border-radius: 5px;
+  outline: none;
+  padding-left: 10px;
+  
+}
+
+.phoneNumDiv{
+    width: 80%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    /* background: #000; */
+}
+
+.enterPasswordDiv{
+    width: 80%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 6px;
+    /* background: #000; */
+}
+
+.enterPassword{
+    width: 100%;
+    height: 25%;
+    /* background: red; */
+}
+
+.TwoInputHolder {
+  width: 100%;
+  height: 80%;
+  background: var(--colours);
+  border: 1px solid var(--inactiveText);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.inputOne {
+  width: 90%;
+  height: 60%;
+  /* background: #000; */
+  border: none;
+  outline: none;
+}
+
+.errorP{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.BtnDiv{
+    width: 80%;
+    height: 185px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Btn {
+  width: 100%;
+  height: 60%;
+  background: var(--brandColour);
+  border: none;
+  color: var(--colours);
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.byCreate{
+    width: 56%;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 15px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.span{
+    color: var(--brandColour);
+    /* font-size: 12px; */
+    /* font-weight: 400; */
+}
+
+.span:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.yearP{
+    color: var(--colours);
+}
+
+.ProfilePic {
+  width: 60px;
+  height: 60px;
+  /* background: #000; */
+  border: 1px solid black;
+  border-radius: 50%;
+  /* display: flex;
+    justify-self: center; */
+}
+

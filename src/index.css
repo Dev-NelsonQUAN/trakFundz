@@ -1,11 +1,30 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+/* Add this to your index.css or a global CSS file */
+/* @import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css"; */
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  /* background: #000; */
 }
 
-body{
+/* #root{
     width: 100%;
     height: 100vh;
-    background: teal;
+    background: #000;
+} */
+
+:root {
+  --textColour: #222222;
+  --inactiveText: #726e6e;
+  --brandColour: #6404e0;
+  --colours: #ffffff;
+  --successfulColour: #0eb766;
+  --errorColour: #ed3d3d;
+  --landpageHover: #a96df7;
+  --microcopyTextColour: #524d4d;
 }

@@ -1,0 +1,227 @@
+.HeroBottomHolder {
+  width: 100%;
+  height: 160vh;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background: green; */
+}
+
+.HeroBottonmInner {
+  width: 100%;
+  height: 100%;
+  /* background: crimson; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.HeroBottomTop {
+  width: 50%;
+  height: 16%;
+  /* background: rgb(5, 119, 119); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.heroH2 {
+  width: 40%;
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  line-height: 60px;
+}
+
+.expense {
+  color: var(--brandColour);
+}
+
+.managing {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.heroBottomDown {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.heroBottomLeft {
+  width: 60%;
+  height: 85%;
+  /* background: hotpink; */
+  /* background: rgb(18, 1, 51); */
+  position: relative;
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  /* background: ivory; */
+}
+
+.circleOne {
+  width: 379px;
+  height: 379px;
+  border-radius: 50%;
+  background: rgba(226, 189, 255, 0.5);
+  filter: blur(75px);
+  position: absolute;
+  top: 7%;
+  left: 7%;
+}
+
+.circleTwo {
+  width: 456px;
+  height: 456px;
+  border-radius: 50%;
+  background: #300cb9;
+  filter: blur(75px);
+  position: absolute;
+  right: 14%;
+  top: 10%;
+}
+
+.downSmallPolygon {
+  width: 23%;
+  height: 23%;
+  position: absolute;
+  right: 27%;
+  /* top: 2%; */
+}
+
+.holdBox {
+  width: 63%;
+  height: 70%;
+  /* background: crimson; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 20%;
+  left: 13%;
+  z-index: 1;
+}
+
+.topBox {
+  width: 100%;
+  height: 67%;
+  border-radius: 10px;
+  background: linear-gradient(
+    117deg,
+    rgba(245, 245, 245, 0.26) 3.62%,
+    rgba(153, 153, 153, 0.3) 93.92%
+  );
+  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topBoxInner {
+  width: 87%;
+  height: 90%;
+  /* background: moccasin; */
+}
+
+.holdCalcultorImg {
+  width: 40%;
+  height: 60%;
+  /* background: rebeccapurple; */
+}
+
+.moneyCaculator {
+  width: 95%;
+  height: 93%;
+}
+
+.trakFundzTracking {
+  width: 85%;
+  font-size: 24px;
+  color: var(--colours);
+  /* display: flex;
+    align-self: center; */
+}
+
+.txtAndBtn {
+  width: 75%;
+  height: 23%;
+  /* background: tomato; */
+  /* padding: 2%; */
+  display: flex;
+  justify-content: flex-end;
+  /* padding-left: 5%; */
+}
+
+.txtAndBtnInner{
+    width: 93%;
+    height: 100%;
+    /* background: #000; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.signUpTrack{
+    width: 74%;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--colours);
+}
+
+.signUpNowBtn{
+    width: 35%;
+    height: 32%;
+    border-radius: 5px;
+    background: var(--brandColour);
+    border: none;
+    color: var(--colours);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.signUpNowBtn:hover{
+    background: var(--landpageHover);
+}
+
+.homePageIncome {
+    width: 27%;
+    height: 25%;
+    position: absolute;
+    top: 13%;
+    right: 12%;
+    z-index: 2;
+}
+
+.analysisSvg {
+    width: 29%;
+    height: 25%;
+    position: absolute;
+    right: 5%;
+    bottom: 23%;
+    z-index: 3;
+}
+
+.heroBottomRight {
+  width: 30%;
+  height: 100%;
+  /* background: rgb(70, 3, 87); */
+  /* display: flex;
+  align-items: flex-end; */
+  position: relative;
+}
+
+.bigPolygon{
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    bottom: 2px;
+    right: 0px;
+    /* background: #000; */
+}

@@ -1,57 +1,184 @@
-.LoginHolder{
-    width: 100%;
-    height: 100vh;
-    background: rgb(8, 23, 163);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.LoginHolder {
+  width: 100%;
+  /* max-width: 100%; */
+  height: max-content;
+  height: 100vh;
+  background: teal;
+  /* background: url("../../../assets/trakFundzBackground.svg"); */
+  background: url("../../../assets/realTrakfundzBackground.svg");
+  /* background-repeat: no-repeat; */
+  background-size: 100%;
+  /* background-position: center; */
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-direction: column;
 }
 
-form{
-    width: 25%;
-    height: 60%;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    gap: 20px;
+.HoldImage {
+  width: 85%;
+  height: 20vh;
+  /* background: url("../../../assets/trakFundzBackground.svg"); */
+  /* background: #000; */
+  display: flex;
+  align-items: flex-end;
+  /* margin-left: 20px; */
 }
 
-.emailInput{
-    width: 100%;
-    height: 50px;
-    background: white;
-    border: 1px solid black;
-    outline: none;
-    padding-left: 10px;
-    /* border: 5px solid orchid; */
+.logo {
+  width: 248px;
+  height: 180px;
 }
 
-.passWordInputHolder{
-    width: 100%;
-    height: 50px;
-    background: white;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.formHold {
+  width: 29%;
+  height: 60%;
+  background: var(--colours);
+  /* background: #000; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  gap: 20px;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.passwordInput{
-    width: 80%;
-    height: 100%;
-    border: none;
-    outline: none;
-    background: white;
+.inForm {
+  width: 90%;
+  height: 85%;
+  /* background: tomato; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
-.loginBtn{
-    width: 100%;
-    height: 50px;
-    background: rgb(8, 23, 163);
-    border-radius: 5px;
-    border: none;
-    color: white;
-    font-size: 20px;
-        
+.loginTextHold {
+  width: 100%;
+  height: 20%;
+  /* background: lime; */
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.please {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.lowerForm {
+  width: 100%;
+  height: 50%;
+  /* background: green; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.emailOwnDiv {
+  width: 100%;
+  height: 37%;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  font-size: 16px;
+  /* background: #000; */
+}
+
+.emailInput {
+  width: 100%;
+  height: 30%;
+  background: var(--colours);
+  /* background: #000; */
+  border: 1px solid black;
+  outline: none;
+  padding-left: 10px;
+  border-radius: 5px;
+  /* border: 1px solid var(--microcopyTextColour); */
+  /* border: 5px solid orchid; */
+}
+
+.email {
+    font-size: 16px;
+    /* font-weight: 700; */
+}
+
+.passwordOwnDiv {
+  width: 100%;
+  height: 37%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /* background: darkorange; */
+}
+
+.passWordInputHolder {
+  width: 100%;
+  height: 50px;
+  background: var(--colours);
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--microcopyTextColour);
+  outline: none;
+}
+
+.passwordInput {
+  width: 90%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: var(--colours);
+  /* padding-left: ; */
+}
+
+.holdForget {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--brandColour);
+}
+
+.forgot {
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btnLow {
+  width: 100%;
+  height: 25%;
+  /* background: #bd1010; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginBtn {
+  width: 100%;
+  /* height:44px; */
+  height: 50%;
+  background: var(--brandColour);
+  border-radius: 5px;
+  border: none;
+  color: var(--colours);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.haveAccount {
+  font-size: 12px;
 }

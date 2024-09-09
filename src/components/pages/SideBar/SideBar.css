@@ -1,0 +1,69 @@
+.sideBarHolder {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background: linear-gradient(180deg, #3b0a7b 0%, #6404e0 100%);
+  display: flex;
+    justify-content: space-between;
+  /* gap: 40px; */
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  position: sticky;
+  z-index: 99999999999999999999;
+  top: 0px;
+  bottom: 0px;
+}
+
+.sideBarImg {
+    width: 100%;
+    height: 10vh;
+    /* background: cadetblue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sideLogo{
+    width: 75%;
+    height: 80%;
+    /* background: red; */
+}
+
+.holdDashboardFonts{
+    width: 100%;
+    height: 82vh;
+    /* background: coral; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    gap: 25px;
+}
+
+.upFonts{
+    width: 100%;
+    height: 58%;
+    /* background: crimson; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* gap: 40px; */
+}
+
+.sideBarH5{
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    color: var(--colours);
+}
+
+.downFonts{
+    width: 100%;
+    height: 20%;
+    /* background: cadetblue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px
+}
