@@ -1,0 +1,70 @@
+.userDashMapHolder {
+    width: 28%;
+    height: 100%;
+    border-radius: 5px;
+    background: #dbbfff;
+    box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .userDashMapIt{
+      width: 90%;
+      height: 55%;
+      /* background: forestgreen; */
+      display: flex;
+      justify-content: space-evenly;
+      /* align-items: center; */
+      flex-direction: column;
+  }
+  
+  .avail{
+      font-size: 16px;
+      color: var(--inactiveText);
+  }
+  
+  .digits{
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--inactiveText);
+  }
+  
+  .dBoardTopDown{
+      width: 100%;
+      height: 45%;
+      /* background: khaki; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .dBoardTopArrow{
+      width: 90%;
+      height: 50%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      /* background: fuchsia; */
+  }
+  
+  .greenRadius{
+      width: 23px;
+      height: 15px;
+      background: #B6EDD3;    
+      border-radius: 5px;
+  }
+  
+  .redRadius{
+      width: 23px;
+      height: 15px;
+      background: #E59E9E;    
+      border-radius: 5px;
+  }
+  
+  .nameOfIntended{
+      width: 90%;
+      height: 50%;
+      /* background: salmon; */
+      color: var(--inactiveText);
+  }

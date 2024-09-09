@@ -1,39 +1,66 @@
 import React, { useState, useEffect } from "react";
 import "./HeroPage.css";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import caroOne from "../../../assets/ECommerces.jpg"
-import caroTwo from "../../../assets/flowersForECommerce.jpg"
-import caroThree from "../../../assets/Jewelry2.jpg"
+// import caroOne from "../../../assets/ECommerces.jpg"
+// import caroTwo from "../../../assets/flowersForECommerce.jpg"
+// import caroThree from "../../../assets/Jewelry2.jpg"
 
 import polygonBig from "../../../assets/trakFundzBackPolygonBig.svg"
 import polygonSmall from "../../../assets/trakfundzBackPolygon.svg"
 import dashboard from "../../../assets/heropageDashboard.svg"
+import Slider from "react-slick";
 
 const HeroPage = () => {
+
+  // const carouselItems = [
+  //   {
+  //     text: "growth",
+  //     gradient: "background: linear-gradient(96deg, #9C58F5 9.63%, #605CFD 43.04%, #6404E0 66.65%);"
+  //   },
+  //   {
+  //     text: "health",
+  //     gradient: "background: linear-gradient(91deg, #7F1581 16.11%, #DC14E0 39.43%, #4E054F 57.88%);"
+  //   },
+  //   {
+  //     text: "freedom",
+  //     gradient: "background: linear-gradient(91deg, #B4B723 16.53%, #F1F463 52.97%, #989B07 81.76%);"
+  //   }
+  // ];
+
+  // const settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 500,
+  //   // slideToShow: 1,
+  //   // slideToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 3000,
+  // } 
+
   
-  const images = [
-        caroOne,
-        caroTwo,
-        caroThree
-    ]
+  // const images = [
+  //       caroOne,
+  //       caroTwo,
+  //       caroThree
+  //   ]
 
-    const [backgroundImage, setBackgroundImage] = useState(images[0])
+  //   const [backgroundImage, setBackgroundImage] = useState(images[0])
 
-    setInterval(() => {
-      // let currentIndex = 0
+  //   setInterval(() => {
+  //     // let currentIndex = 0
  
-      // const changeBackgroundImage = () => {
-        // currentIndex = (currentIndex ++) % images.length;
-        // setBackgroundImage(images[currentIndex])
-        // };
-        if (backgroundImage == images[0]) {
-          setBackgroundImage(images[1])
-        } else if (backgroundImage == images[1]) {
-          setBackgroundImage(images[2])
-        } else if (backgroundImage == images[2]) {
-          setBackgroundImage(images[0])
-        } 
-    }, 5000);
+  //     // const changeBackgroundImage = () => {
+  //       // currentIndex = (currentIndex ++) % images.length;
+  //       // setBackgroundImage(images[currentIndex])
+  //       // };
+  //       if (backgroundImage == images[0]) {
+  //         setBackgroundImage(images[1])
+  //       } else if (backgroundImage == images[1]) {
+  //         setBackgroundImage(images[2])
+  //       } else if (backgroundImage == images[2]) {
+  //         setBackgroundImage(images[0])
+  //       } 
+  //   }, 5000);
     // useEffect(() => {
     //   let currentIndex = 0;
  
@@ -65,7 +92,17 @@ const HeroPage = () => {
           <div className="heroPageLeftHold">
             <h1 className="prioritize">
               {" "}
-              Prioritizing your financial <span className="autoType"> {text} </span> 
+              Prioritizing your financial 
+              {/* <Slider {...settings}> 
+                {
+                  carouselItems.map((e, index) => (
+                    <div style={{backgroundColor: e.gradient}}> 
+                      <h2 style={{color: e.gradient}}> {e.text}</h2>
+                    </div>
+                  ))
+                }
+              </Slider> */}
+              <span className="autoType"> {text} </span> 
               {/* <span className="cursor"> <Cursor cursorStyle="|"/> </span> */}
             </h1>
             <p className="aboutTrakFundz">

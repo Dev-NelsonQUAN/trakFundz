@@ -3,7 +3,7 @@
   /* height: 90vh; */
   height: max-content;
   /* min-height: 100vh; */
-  background: rgba(1, 31, 1, 0.979);
+  /* background: rgba(1, 31, 1, 0.979); */
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
   /* justify-content: space-between; */
@@ -103,7 +103,7 @@
 
 .onTopForm{
     width: 100%;
-    height: 15%;
+    height: 18%;
     /* background: rgb(28, 192, 13); */
     display: flex;
     flex-direction: column;
@@ -114,7 +114,7 @@
 .alreadyHolder{
     width: 100%;
     height: 30%;
-    /* background: purple; */
+    /* background: pink; */
     display: flex;
     justify-content: flex-end;
 }
@@ -145,6 +145,7 @@
     align-items: center;
     flex-direction: column;
     gap: 2px;
+    /* background: #000; */
 }
 
 .personalH4{
@@ -170,11 +171,12 @@
   /* height: auto; */
   min-height: 100%;
   /* height: 70%; */
-  background: white;
+  /* background: var(--colours); */
+
   display: flex;
   align-items: center;
   /* justify-content: ; */
-  gap: 10px;
+  gap: 6px;
   flex-direction: column;
   padding: 10px;
   position: relative;
@@ -195,12 +197,12 @@
     /* background: rebeccapurple; */
     display: flex;
     /* justify-content: space-between; */
-    gap: 10px;   
+    gap: 6px;   
     flex-direction: column;
 }
 
 .firstName, .lastName{
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     /* color: red; */
 }
@@ -211,7 +213,7 @@
     /* background: red; */
     display: flex;
     /* justify-content: space-between; */
-    gap: 10px;
+    gap: 6px;
     flex-direction: column;
 }
 
@@ -232,11 +234,12 @@
     /* background: #000; */
     display: flex;
     justify-content: space-between;
+    gap: 6px;
     flex-direction: column;
 }
 
 .email{
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
 }
 
@@ -261,10 +264,11 @@
 
 .enterPasswordDiv{
     width: 80%;
-    height: 35%;
+    height: 40%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    gap: 6px;
     /* background: #000; */
 }
 
@@ -276,8 +280,8 @@
 
 .TwoInputHolder {
   width: 100%;
-  height: 56%;
-  background: white;
+  height: 80%;
+  background: var(--colours);
   border: 1px solid var(--inactiveText);
   display: flex;
   justify-content: space-evenly;
@@ -295,7 +299,7 @@
 
 .errorP{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .BtnDiv{
@@ -313,7 +317,7 @@
   height: 60%;
   background: var(--brandColour);
   border: none;
-  color: white;
+  color: var(--colours);
   font-size: 16px;
   font-weight: 700;
   border-radius: 5px;
@@ -322,9 +326,10 @@
 
 .byCreate{
     width: 56%;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
     font-weight: 400;
+    line-height: 15px;
     /* font-family: Arial, Helvetica, sans-serif; */
 }
 
@@ -340,7 +345,7 @@
 }
 
 .yearP{
-  color: whitesmoke;
+    color: var(--colours);
 }
 
 .ProfilePic {

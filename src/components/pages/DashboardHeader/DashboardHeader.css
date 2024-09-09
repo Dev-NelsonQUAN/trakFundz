@@ -1,0 +1,137 @@
+.DashboardHeaderHolder {
+  width: 100%;
+  height: 13vh;
+  background: #fff;
+  box-shadow: 0px 2px 4.001px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  position: sticky;
+  z-index: 99999999999;
+  top: 0px;
+  bottom: 0px;
+}
+
+.dashboardHeaderInner {
+  width: 95%;
+  height: 100%;
+  /* background: darkblue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboardHeaderLeft{
+    width: 30%;
+    height: 65%;
+    /* background: orange; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.welcomeName{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.afterWelcomeName{
+    font-size: 15px;
+}
+
+
+.dashboardHeaderRight{
+    width: 42%;
+    height: 80%;
+    /* background: hotpink; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashHeaderRightLeft{
+    width: 53%;
+    height: 60%;
+    /* background: darkmagenta; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.searchInput{
+    width: 82%;
+    height: 85%;
+    border: 1px solid var(--brandColour);
+    outline: none;
+    border-radius: 5px;
+    padding-left: 40px;
+    color: var(--brandColour);
+}
+
+.searchIcon{
+    position: absolute;
+    left: 10px;
+    color: var(--brandColour);
+    font-size: 20px;
+}
+
+.holdNotificationIcon{
+    width: 15%;
+    height: 85%;
+    /* background: cyan; */
+    border:1px solid var(--brandColour);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notificationIcon{
+    color: var(--brandColour);
+    font-size: 30px;
+
+}
+
+.dashHeaderRightRight{
+    width: 43%;
+    height: 72%;
+    background: var(--brandColour);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.roundImgIcon{
+    width: 45px;
+    height: 45px;
+    /* background: salmon; */
+    border-radius: 50%;
+    border: none;
+
+}
+
+.imgProfile{
+    width: 100%;
+    height: 100%;
+}
+
+.holdProfileInfo{
+    width: 70%;
+    height: 58%;
+    /* background: red; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.headerName{
+    font-size: 13px;
+    color: var(--colours);
+}
+
+.headerEmail{
+    font-size: 11px;
+    color: var(--colours);
+}
