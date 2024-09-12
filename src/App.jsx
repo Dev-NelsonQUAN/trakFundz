@@ -13,16 +13,12 @@ import UserDashboard from "./components/pages/UserDashboard/UserDashboard";
 import FeatureOnboard from "./components/pages/FeatureOnboard/FeatureOnboard";
 import UserBoard from "./components/pages/UserDashboard/UserDashboard";
 import Layout from "./components/layout/Layout";
-<<<<<<< HEAD
-import DebtManager from "./components/DebtManager/DebtManager"
-=======
 import ExpenseTrackerDashboard from "./components/pages/ExpenseTrackerDashBoard/ExpenseTrackerDashboard";
 import BudgetPlannerDashboard from "./components/pages/BudgetPlannerDashboard/BudgetPlannerDashboard";
 import DebtManager from "./components/pages/DebtManager/DebtManager";
 import ReportInsights from "./components/pages/ReportInsights/ReportInsights";
 import Settings from "./components/pages/Settings/Settings";
 import Help from "./components/pages/Help/Help"
->>>>>>> be7132accad0b46e0fc2d2daa29f2fae79a9ef93
 
 const router = createHashRouter([
   {
@@ -71,11 +67,6 @@ const router = createHashRouter([
         element: <UserBoard/>
       },
       {
-<<<<<<< HEAD
-        path: "debt",
-        element: <DebtManager/>
-      }
-=======
         path: "expense-track",
         element: <ExpenseTrackerDashboard/>
       },
@@ -103,7 +94,6 @@ const router = createHashRouter([
       //   path: "logout",
       //   element: <Logout/>
       // }
->>>>>>> be7132accad0b46e0fc2d2daa29f2fae79a9ef93
     ]
   },
 ]);
