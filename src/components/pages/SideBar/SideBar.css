@@ -1,69 +1,92 @@
 .sideBarHolder {
+  /* width: 15%; */
   width: 100%;
   min-height: 100vh;
-  height: auto;
+  /* height: auto; */
   background: linear-gradient(180deg, #3b0a7b 0%, #6404e0 100%);
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
   /* gap: 40px; */
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
-  position: sticky;
+  /* position: fixed; */
   z-index: 99999999999999999999;
   top: 0px;
   bottom: 0px;
 }
 
 .sideBarImg {
-    width: 100%;
-    height: 10vh;
-    /* background: cadetblue; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 10vh;
+  /* background: cadetblue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.sideLogo{
-    width: 75%;
-    height: 80%;
-    /* background: red; */
+.sideLogo {
+  width: 75%;
+  height: 80%;
+  /* background: red; */
 }
 
-.holdDashboardFonts{
-    width: 100%;
-    height: 82vh;
-    /* background: coral; */
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    gap: 25px;
+.holdDashboardFonts {
+  width: 100%;
+  height: 82vh;
+  /* background: coral; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  gap: 25px;
 }
 
-.upFonts{
-    width: 100%;
-    height: 58%;
-    /* background: crimson; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    /* gap: 40px; */
+.upFonts {
+  width: 100%;
+  height: 58%;
+  /* background: crimson; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* gap: 40px; */
 }
 
-.sideBarH5{
-    font-size: 16px;
-    font-weight: 400;
-    cursor: pointer;
-    color: var(--colours);
+.HeaderActive {
+  background: white;
+  width: 85%;
+  height: 12%;
+  margin-left: 36px;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px 0px 0px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.downFonts{
-    width: 100%;
-    height: 20%;
-    /* background: cadetblue; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 30px
+.HeaderNotActive {
+  background: transparent;
+  text-decoration: none;
+
 }
+
+.sideBarH5 {
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  /* color: var(--colours); */
+  /* color: black; */
+}
+
+.downFonts {
+  width: 100%;
+  height: 20%;
+  /* background: cadetblue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+}
+
+
