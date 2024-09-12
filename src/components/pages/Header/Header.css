@@ -51,6 +51,16 @@
     /* background: teal; */
 }
 
+.HeaderIsActive{
+    text-decoration: none;
+    color: var(--brandColour);
+}
+
+.HeaderNotActive {
+    text-decoration: none;
+    color: var(--colours);
+}
+
 ul{
     width: 100%;
     height: 100%;

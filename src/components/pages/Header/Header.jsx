@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import Logo from "../../../assets/trakFundzLogo.svg";
 import { FaArrowDown } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Header = () => {
@@ -17,12 +17,23 @@ const Header = () => {
 
           <div className="headerLeftTwo">
             <ul>
+              <NavLink 
+              className={({isActive}) => 
+                isActive ? "HeaderIsActive" : "HeaderNotActive"
+              }>
               <li>
                 {" "}
                 Features <IoIosArrowDown />
               </li>
+              </NavLink>
+       
+              <NavLink>
               <li> Why TrakFundz </li>
+              </NavLink>
+
+              <NavLink>
               <li> Pricing </li>
+              </NavLink>
             </ul>
           </div>
         </div>

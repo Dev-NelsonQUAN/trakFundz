@@ -1,0 +1,378 @@
+.reportInsights {
+  width: 100%;
+  /* min-height: 100vh; */
+  height: auto;
+  /* background: rebeccapurple; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 20px;
+  padding: 30px;
+  /* padding-top: 50px; */
+  overflow-y: auto;
+}
+
+.reportInsightsInner {
+  width: 100%;
+  height: auto;
+  /* background: #000; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  /* gap: 20px; */
+}
+
+.reportInsightsLeft {
+  width: 65%;
+  min-height: 90vh;
+  height: auto;
+  /* background: yellow; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reportInsightsLeftTop {
+  width: 100%;
+  height: 17vh;
+  /* background: #000; */
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 20px;
+  color: var(--inactiveText);
+  /* padding: 10px; */
+}
+
+.repoInsightTopOne {
+  width: 35%;
+  height: 100%;
+  border-radius: 5px;
+  background: #e2bdff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 20px;
+}
+
+.repoDebt {
+  font-size: 13px;
+}
+
+.repoPrice {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.repoTopTwo {
+  width: 35%;
+  height: 100%;
+  border-radius: 5px;
+  background: #e2bdff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+}
+
+.repoTopTwoUp {
+  width: 100%;
+  height: 50%;
+  /* background-color: whitesmoke; */
+}
+
+.repoAmountReached {
+  font-size: 12px;
+}
+
+.repoAmountPrice {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.repoTopTwoDown {
+  width: 100%;
+  height: 50%;
+  /* background: teal; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repoTopTwoDownTop {
+  width: 80%;
+  height: 50%;
+  /* background: olive; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repoTopTwoDownLeft {
+  width: 40%;
+  height: 60%;
+  /* background: orangered; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.greenRPTargetReached {
+  width: 20px;
+  height: 13px;
+  border-radius: 7.559px;
+  background: #b6edd3;
+}
+
+.rPPaid {
+  font-size: 10px;
+}
+
+.rPTopTwoDownRight {
+  width: 45%;
+  height: 60%;
+  /* background: tomato; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.redRPTargetReached {
+  width: 20px;
+  height: 13px;
+  border-radius: 7.559px;
+  background: #e59e9e;
+}
+
+.rPBalance {
+  font-size: 10px;
+}
+
+.rPTopTwoDownBottom {
+  width: 100%;
+  height: 45%;
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rPNoRec {
+  font-size: 10px;
+}
+
+.repoTopThree {
+  width: 25%;
+  height: 100%;
+  border-radius: 5px;
+  background: #e2bdff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.repoTopThreeInner {
+  width: 70%;
+  height: 50%;
+  /* background: green; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.repoIncomeCirclePlus {
+  font-size: 25px;
+}
+
+.repoAddIncome {
+  font-size: 18px;
+  font-family: 700;
+}
+
+.repoMiddle {
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 0.85);
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+}
+
+.repoMiddleTop {
+  width: 100%;
+  height: 15%;
+  /* background: green; */
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+  gap: 10px;
+}
+
+.repoMoneyFlow {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.assignLoan {
+  width: 22%;
+  height: 30%;
+  /* background: cyan; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.repoPurpleRound {
+  width: 8px;
+  height: 8px;
+  background: var(--brandColour);
+  border-radius: 50%;
+}
+
+.repoIncomeText {
+  font-size: 12px;
+}
+
+.lightPurleRound {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbacf2;
+}
+
+.repoExpenseText {
+  font-size: 12px;
+}
+
+.repoCenterDown {
+  width: 100%;
+  /* min-height: 30vh; */
+  height: auto;
+  /* background: crimson; */
+}
+
+.repoCenterDownInner {
+  width: 100%;
+  height: auto;
+  min-height: 55vh;
+  background-color: gray;
+}
+
+.repoBottom {
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 0.85);
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+}
+
+.repoBottomTop {
+  width: 100%;
+  height: 15%;
+  /* background: green; */
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+  gap: 10px;
+}
+
+.repoExpense {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.assignLoanBottom {
+  width: 22%;
+  height: 30%;
+  /* background: cyan; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.repoBottomPurpleRound {
+  width: 8px;
+  height: 8px;
+  background: var(--brandColour);
+  border-radius: 50%;
+}
+
+.repoBottomIncomeText {
+  font-size: 12px;
+}
+
+.repoBottomLightPurleRound {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbacf2;
+}
+
+.repoBottomExpenseText {
+  font-size: 12px;
+}
+
+.repoBottomCenterDown {
+  width: 100%;
+  /* min-height: 30vh; */
+  height: auto;
+  /* background: crimson; */
+}
+
+.repoBottomCenterDownInner {
+  width: 100%;
+  height: auto;
+  min-height: 55vh;
+  background-color: gray;
+}
+
+.repoRight {
+  width: 32%;
+  /* min-height: 148vh; */
+  height: auto;
+  border-radius: 5px;
+  background: #f4f4ff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+}
+
+.repoTransaction {
+  width: 100%;
+  min-height: 45%;
+  height: auto;
+  border-radius: 5px;
+  background: #e7d0ff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  padding: 20px;
+}
+
+.repoTransactionHistory {
+  width: 60%;
+  height: 8vh;
+  font-size: 20px;
+}
+
+.repoTransactionNoAct {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
