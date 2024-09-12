@@ -13,11 +13,12 @@ import UserDashboard from "./components/pages/UserDashboard/UserDashboard";
 import FeatureOnboard from "./components/pages/FeatureOnboard/FeatureOnboard";
 import UserBoard from "./components/pages/UserDashboard/UserDashboard";
 import Layout from "./components/layout/Layout";
+import DebtManager from "./components/DebtManager/DebtManager"
 
 const router = createHashRouter([
   {
     path: "/",
-    element: <LandingPage />,
+    element: <LandingPage />, 
   },
   {
     path: "/signup",
@@ -59,6 +60,10 @@ const router = createHashRouter([
       {
         path: "home",
         element: <UserBoard/>
+      },
+      {
+        path: "debt",
+        element: <DebtManager/>
       }
     ]
   },
