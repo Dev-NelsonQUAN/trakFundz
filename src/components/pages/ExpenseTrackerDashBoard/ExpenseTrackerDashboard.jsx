@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseTrackerDashboard.css";
 import { FaCirclePlus } from "react-icons/fa6";
+import AddIncome from "../AddIncome/AddIncome";
 
 const initialState = [
   {
@@ -12,7 +13,12 @@ const initialState = [
 
 const ExpenseTrackerDashboard = () => {
   const [expenses, setExpenses] = useState([]);
-  const [history, setHistory] = useState([])
+  const [history, setHistory] = useState([]);
+  const [addIncome, setAddIncome] = useState(false);
+
+  const allowIncome = () => {
+    setAddIncome(true);
+  };
 
   const addFields = () => {
     if (expenses.length === 10) return;
@@ -35,10 +41,10 @@ const ExpenseTrackerDashboard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setHistory(expenses)
+    setHistory(expenses);
   };
 
-  console.log('history', history)
+  console.log("history", history);
 
   return (
     <div className="exTrackDashboard">
@@ -76,8 +82,12 @@ const ExpenseTrackerDashboard = () => {
 
             <div className="exTopThree">
               <div className="exTopThreeInner">
-                <FaCirclePlus className="exIncomeCirclePlus" />
-                <h5 className="exAddIncome"> Add Income </h5>
+                <FaCirclePlus
+                  className="exIncomeCirclePlus"
+                  onClick={allowIncome}
+                />
+                <h5 className="exAddIncome">Add Income </h5>
+                {addIncome ? <AddIncome  setAddIncome={setAddIncome}/> : null}
               </div>
             </div>
           </div>
@@ -111,7 +121,7 @@ const ExpenseTrackerDashboard = () => {
                           required
                           name="expence"
                           value={expense.expence}
-                           onChange={(e) => handleChange(index, e)}
+                          onChange={(e) => handleChange(index, e)}
                         />
                       </div>
 
@@ -122,7 +132,7 @@ const ExpenseTrackerDashboard = () => {
                           required
                           name="desc"
                           value={expense.desc}
-                           onChange={(e) => handleChange(index, e)}
+                          onChange={(e) => handleChange(index, e)}
                         />
                         <input
                           className="exAmountnput"
@@ -130,7 +140,7 @@ const ExpenseTrackerDashboard = () => {
                           required
                           name="amount"
                           value={expense.amount}
-                           onChange={(e) => handleChange(index, e)}
+                          onChange={(e) => handleChange(index, e)}
                         />
                       </div>
                     </div>
@@ -178,16 +188,14 @@ const ExpenseTrackerDashboard = () => {
                 <li className="noActivity"> No activity </li>
               )} */}
 
-              {
-                history.map((data, index) => (
-                  <li key={index}>
-                    <p>{new Date().toDateString()}</p>
-                    <p>{data.amount}</p>
-                    <p>{data.desc}</p>
-                    <p>{data.expence}</p>
-                  </li>
-                ))
-              }
+              {history.map((data, index) => (
+                <li key={index}>
+                  <p>{new Date().toDateString()}</p>
+                  <p>{data.amount}</p>
+                  <p>{data.desc}</p>
+                  <p>{data.expence}</p>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
