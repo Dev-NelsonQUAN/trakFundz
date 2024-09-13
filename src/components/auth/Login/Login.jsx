@@ -134,7 +134,7 @@ const Login = () => {
 
             <div className="btnLow">
               <button className="loginBtn" 
-              type="submit" onClick={() => Nav("/dashboard")}
+              type="submit" onClick={() => Nav("/dashboard/home")}
               >
               {loading ? "Loading..." : "Log In"}
               </button>
