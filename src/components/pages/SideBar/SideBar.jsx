@@ -12,7 +12,9 @@ import { TbHelpTriangle } from "react-icons/tb";
 import { AiOutlinePoweroff } from "react-icons/ai";
 
 const SideBar = () => {
+  
   const Nav = useNavigate();
+  
   return (
     <div className="sideBarHolder">
       <div className="sideBarImg">
