@@ -90,7 +90,7 @@ const SideBar = () => {
             to={"/dashboard/report"}
           >
             <h5 className="sideBarH5">
-              <FcBullish className="iconRepo" style={{ fontSize: "23px", color: "red" }} />
+              <FcBullish className="iconRepo" style={{ fontSize: "23px" }} />
               Report Insights{" "}
             </h5>
           </NavLink>

@@ -1,19 +1,397 @@
-.dashboardHolder {
+.userdashboard {
+    width: 100%;
+    /* min-height: 100vh; */
+    height: auto;
+    /* background: rebeccapurple; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 20px;
+    padding: 30px;
+    /* padding-top: 50px; */
+    overflow-y: auto;
+  }
+  
+  .userDashboardInner {
+    width: 100%;
+    height: auto;
+    /* background: #000; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    /* gap: 20px; */
+  }
+  
+  .userDashboardLeft {
+    width: 65%;
+    min-height: 90vh;
+    height: auto;
+    /* background: yellow; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .userDashboardLeftTop {
+    width: 100%;
+    height: 17vh;
+    /* background: #000; */
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 20px;
+    color: var(--inactiveText);
+    /* padding: 10px; */
+  }
+  
+  .userDashboardTopOne {
+    width: 35%;
+    height: 100%;
+    border-radius: 5px;
+    background: #e2bdff;
+    box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px;
+  }
+  
+  .userDashAmount {
+    font-size: 13px;
+  }
+  
+  .userPrice {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  
+  .userDashboardLeftTwo {
+    width: 35%;
+    height: 100%;
+    border-radius: 5px;
+    background: #e2bdff;
+    box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+  }
+  
+  .uDTopTwoUp {
+    width: 100%;
+    height: 50%;
+    /* background-color: whitesmoke; */
+  }
+  
+  .userDashAmountReached {
+    font-size: 12px;
+  }
+  
+  .userDashAmountPrice {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .uDTwoDown {
+    width: 100%;
+    height: 50%;
+    /* background: teal; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .uDTwoDownTop {
+    width: 80%;
+    height: 50%;
+    /* background: olive; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .uDTopTwoDownLeft {
+    width: 40%;
+    height: 60%;
+    /* background: orangered; */
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .greenUDTargetReached {
+    width: 20px;
+    height: 13px;
+    border-radius: 7.559px;
+    background: #b6edd3;
+  }
+  
+  .uDPaid {
+    font-size: 10px;
+  }
+  
+  .uDTopTwoDownRight {
+    width: 45%;
+    height: 60%;
+    /* background: tomato; */
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .redUDTargetReached {
+    width: 20px;
+    height: 13px;
+    border-radius: 7.559px;
+    background: #e59e9e;
+  }
+  
+  .uDBalance {
+    font-size: 10px;
+  }
+  
+  .uDTopTwoDownBottom {
+    width: 100%;
+    height: 45%;
+    /* background: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .uDNoRec {
+    font-size: 10px;
+  }
+  
+  .uDTopThree {
+    width: 25%;
+    height: 100%;
+    border-radius: 5px;
+    background: #e2bdff;
+    box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .uDTopThreeInner {
+    width: 70%;
+    height: 50%;
+    /* background: green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .uDIncomeCirclePlus {
+    font-size: 25px;
+  }
+  
+  .uDAddIncome {
+    font-size: 18px;
+    font-family: 700;
+  }
+  
+  .uDMiddle {
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+    border-radius: 5px;
+    background: rgba(245, 245, 245, 0.85);
+    box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .uDMiddleTop {
+    width: 100%;
+    height: 15%;
+    /* background: green; */
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    gap: 10px;
+  }
+  
+  .uDMoneyFlow {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .uDassignLoan {
+    width: 22%;
+    height: 30%;
+    /* background: cyan; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .uDPurpleRound {
+    width: 8px;
+    height: 8px;
+    background: var(--brandColour);
+    border-radius: 50%;
+  }
+  
+  .uDIncomeText {
+    font-size: 12px;
+  }
+  
+  .uDExpenseTuDLightPurleRoundext {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbacf2;
+  }
+  
+  .uDExpenseText {
+    font-size: 12px;
+  }
+  
+  .uDCenterDown {
+    width: 100%;
+    /* min-height: 30vh; */
+    height: auto;
+    /* background: crimson; */
+  }
+  
+  .uDCenterDownInner {
+    width: 100%;
+    height: auto;
+    min-height: 55vh;
+    background-color: gray;
+  }
+  
+  .uDBottom {
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+    border-radius: 5px;
+    background: rgba(245, 245, 245, 0.85);
+    box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .uDBottomTop {
+    width: 100%;
+    height: 15%;
+    /* background: green; */
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    gap: 10px;
+  }
+  
+  .uDExpense {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .uDLoanBottom {
+    width: 22%;
+    height: 30%;
+    /* background: cyan; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .uDBottomPurpleRound {
+    width: 8px;
+    height: 8px;
+    background: var(--brandColour);
+    border-radius: 50%;
+  }
+  
+  .uDBottomIncomeText {
+    font-size: 12px;
+  }
+  
+  .uDBottomLightPurleRound {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbacf2;
+  }
+  
+  .uDBottomExpenseText {
+    font-size: 12px;
+  }
+  
+  .repoBottomCenterDown {
+    width: 100%;
+    /* min-height: 30vh; */
+    height: auto;
+    /* background: crimson; */
+  }
+  
+  .repoBottomCenterDownInner {
+    width: 100%;
+    height: auto;
+    min-height: 55vh;
+    background-color: gray;
+  }
+  
+  .repoRight {
+    width: 32%;
+    /* min-height: 148vh; */
+    height: auto;
+    border-radius: 5px;
+    background: #f4f4ff;
+    box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .repoTransaction {
+    width: 100%;
+    min-height: 45%;
+    height: auto;
+    border-radius: 5px;
+    background: #e7d0ff;
+    box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+    padding: 20px;
+  }
+  
+  .repoTransactionHistory {
+    width: 60%;
+    height: 8vh;
+    font-size: 20px;
+  }
+  
+  .repoTransactionNoAct {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+
+/* .dashboardHolder {
   width: 100%;
   min-height: 100vh;
   height: auto;
-  /* background: green; */
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  /* overflow-y: auto; */
 }
 
 .dashboardInner {
   width: 95%;
   min-height: 100vh;
   height: auto;
-  /* background: orange; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +400,6 @@
 .dashboardLeft {
   width: 65%;
   height: 90%;
-  /* background: orange; */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -31,10 +408,8 @@
 .dashboardLeftTop {
   width: 100%;
   height: 27%;
-  /* background: teal;   */
   display: flex;
   justify-content: space-between;
-  /* flex-direction: column; */
 }
 
 .dashboardLeftMiddle {
@@ -52,7 +427,6 @@
 .dBoardLeftMiddleTop{
     width: 95%;
     height: 15%;
-    /* background: green; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -68,16 +442,13 @@
 .incomeExpenseHolder{
     width: 55%;
     height: 85%;
-    /* background: orangered; */
     display: flex;
     justify-content: space-between; 
-    /* align-items: center; */
 }
 
 .incomeExpense{
     width: 40%;
     height: 100%;
-    /* background: #773939; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -108,7 +479,6 @@
 .incomeSelect{
     width: 58%;
     height: 100%;
-    /* background: gold; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -140,7 +510,6 @@
 .dBoardLeftBottom{
     width: 100%;
     height: 80%;
-    /* background: maroon; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -153,13 +522,11 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    /* background: darkblue; */
 }
 
 .dBoardLeftBotInnerBottom{
     width: 95%;
     height: 12%;
-    /* background: powderblue; */
 }
 
 .dashboardLeftBottom {
@@ -193,8 +560,7 @@
 .dashboardRightInner{
     width: 85%;
     height: 93%;
-    /* background: hotpink; */
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-}
+} */
