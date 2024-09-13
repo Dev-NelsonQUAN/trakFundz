@@ -4,118 +4,94 @@ import UserDashboardMap from "../UserDashboardMap/UserDashboardMap";
 import { IoArrowDown } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import DashboardRightMap from "../DashboardRightMap/DashboardRightMap";
+import { FaCirclePlus } from "react-icons/fa6";
 
 const UserBoard = () => {
-  const roll = [
-    {
-      balanceName: "Available Balance",
-      amount: "0.00",
-      trackerName: "Expense Tracker",
-      backgroundColor: "#DBBFFF",
-    },
-    {
-      balanceName: "Total Balance",
-      amount: "0.00",
-      trackerName: "Budget Planner",
-      backgroundColor: "#FBFDC7",
-    },
-    {
-      balanceName: "Total Balance",
-      amount: "0.00",
-      trackerName: "Debt Manager",
-      backgroundColor: "#E2BDFF",
-    },
-  ];
-
-  const dashRight = [
-    {
-      theName: "Expense",
-      activity: "No Activity",
-      background: "#E8D8FD"
-
-    },
-    {
-      theName: "Budget",
-      activity: "No Activty",
-      background: "#FEFFEF"
-    },
-    {
-      theName: "Loan Payment",
-      activity: "No Activity",
-      background: "#E8D0FF"
-    }
-  ]
-
   return (
-    <div className="dashboardHolder">
-      <div className="dashboardInner">
-        <div className="dashboardLeft">
-          <div className="dashboardLeftTop">
-            {roll.map((e, id) => {
-              return (
-                <UserDashboardMap
-                  e={e}
-                  key={id}
-                  id={id}
-                  backgroundColor={e.backgroundColor}
-                />
-              );
-            })}
-          </div>
-          <div className="dashboardLeftMiddle">
-            <div className="dBoardLeftMiddleTop">
-              <p className="moneyFlow"> Money Flow </p>
+    <div className="userdashboard">
+      <div className="userDashboardInner">
+        <div className="userDashboardLeft">
+          <div className="userDashboardLeftTop">
+            <div className="userDashboardTopOne">
+              <p className="userDashAmount"> Total debt amount </p>
+              <p className="userPrice"> ₦ 0.00 </p>
+            </div>
 
-              <div className="incomeExpenseHolder">
-                <div className="incomeExpense">
-                  <div className="purpleRound"> </div>
-                  <p className="incomeText"> Income </p>
-                  <div className="lightPurleRound"></div>
-                  <p className="expenseText"> Expense </p>
+            <div className="userDashboardLeftTwo">
+              <div className="uDTopTwoUp">
+                <p className="userDashAmountReached"> Total debt paid </p>
+                <p className="userDashAmountPrice"> ₦ 0.00 </p>
+              </div>
+
+              <div className="uDTwoDown">
+                <div className="uDTwoDownTop">
+                  <div className="uDTopTwoDownLeft">
+                    <nav className="greenUDTargetReached"> </nav>
+                    <p className="uDPaid">Loan Paid </p>
+                  </div>
+                  <div className="uDTopTwoDownRight">
+                    <nav className="redUDTargetReached"> </nav>
+                    <p className="uDBalance">Loan balance</p>
+                  </div>
                 </div>
 
-                <div className="incomeSelect">
-                  <div className="expenseSelect">
-                    <IoIosArrowDown />
-                    <p className="expense"> Expense Tracker </p>
-                  </div>
-
-                  <div className="weekSelect">
-                    <IoIosArrowDown />
-                    <p className="thisWeek"> This week </p>
-                  </div>
+                <div className="uDTopTwoDownBottom">
+                  <p className="uDNoRec"> No Record Yet </p>
                 </div>
               </div>
             </div>
 
-            <div className="dBoardLeftBottom">
-              <div className="dBoardLeftBotInnerTop">
-                <hr />
-                <hr />
-                <hr />
-                <hr />
+            <div className="uDTopThree">
+              <div className="uDTopThreeInner">
+                <FaCirclePlus className="uDIncomeCirclePlus" />
+                <h5 className="uDAddIncome"> Add Income </h5>
               </div>
-              <div className="dBoardLeftBotInnerBottom"></div>
             </div>
           </div>
 
-          <div className="dashboardLeftBottom">
-            <div className="dBoardLeftBottomTop"></div>
+          <div className="uDMiddle">
+            <div className="uDMiddleTop">
+              <h3 className="uDMoneyFlow"> Money Flow </h3>
+              <div className="uDassignLoan">
+                <div className="uDPurpleRound"> </div>
+                <p className="uDIncomeText"> Income </p>
+                <div className="uDLightPurleRound"></div>
+                <p className="uDExpenseText"> Expense </p>
+              </div>
+            </div>
+
+            <div className="uDCenterDown">
+              <div className="uDCenterDownInner"></div>
+            </div>
+          </div>
+
+          <div className="uDBottom">
+            <div className="uDBottomTop">
+              <h3 className="uDExpense"> Expense Analysis </h3>
+              <div className="uDLoanBottom">
+                <div className="uDBottomPurpleRound"> </div>
+                <p className="uDBottomIncomeText"> Income </p>
+                <div className="uDBottomLightPurleRound"></div>
+                <p className="uDBottomExpenseText"> Expense </p>
+              </div>
+            </div>
+
+            <div className="repoBottomCenterDown">
+              <div className="repoBottomCenterDownInner"></div>
+            </div>
           </div>
         </div>
 
-        <div className="dashboardRight">
-            <div className="dashboardRightInner">
-              {
-                dashRight.map((e, index) => (
-                  <DashboardRightMap e={e} key={index} backgroundColor={e.background} />
-                ))
-              }
+        <div className="repoRight">
+          <div className="repoTransaction">
+            <h6 className="repoTransactionHistory"> Transaction History </h6>
+            <div className="repoTransactionNoAct">
+              <p className="noActivity"> No activity </p>
             </div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
-
 export default UserBoard;

@@ -1,0 +1,123 @@
+.addIcomeHolder {
+  width: 100%;
+  height: 100vh;
+  background: #000000a9;
+  /* backdrop-filter: blur(75px); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 9999999999999999999999999999;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.closeIt {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  cursor: pointer;
+}
+
+.whiteInner {
+  width: 20%;
+  height: 43%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.whiteInnerIn {
+  width: 86%;
+  height: 82%;
+  /* background: green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.incomeModalTop {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: orangered; */
+}
+
+.incomeModalH6 {
+  font-size: 28px;
+  color: var(--brandColour);
+}
+
+.incomeModalBottom {
+  width: 100%;
+  height: 79%;
+  /* background: cornflowerblue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.incomeModalBottomInputs {
+  width: 100%;
+  height: 67%;
+  /* background: crimson; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.incomeInputOne {
+  width: 100%;
+  height: 45%;
+  /* background: orangered; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.incomeModalP {
+  font-size: 11px;
+  text-align: var(--inactiveText);
+}
+
+.incomeInputs {
+  width: 100%;
+  height: 72%;
+  border-radius: 5px;
+  background: #DBBFFF;
+  border: none;
+  outline: none;
+  /* background: ; */
+}
+
+.incomeInputTwo {
+  width: 100%;
+  height: 45%;
+  /* background: teal; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.incomeModalEnter {
+  width: 100%;
+  height: 23%;
+  background: var(--brandColour);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+}

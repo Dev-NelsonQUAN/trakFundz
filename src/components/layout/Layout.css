@@ -5,6 +5,8 @@
     height: 100vh;
     background: whitesmoke;
     display: flex;
+    position: relative;
+
     /* flex-direction: column; */
 
 }
