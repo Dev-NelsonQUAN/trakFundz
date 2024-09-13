@@ -13,11 +13,17 @@ import UserDashboard from "./components/pages/UserDashboard/UserDashboard";
 import FeatureOnboard from "./components/pages/FeatureOnboard/FeatureOnboard";
 import UserBoard from "./components/pages/UserDashboard/UserDashboard";
 import Layout from "./components/layout/Layout";
+import ExpenseTrackerDashboard from "./components/pages/ExpenseTrackerDashBoard/ExpenseTrackerDashboard";
+import BudgetPlannerDashboard from "./components/pages/BudgetPlannerDashboard/BudgetPlannerDashboard";
+import DebtManager from "./components/pages/DebtManager/DebtManager";
+import ReportInsights from "./components/pages/ReportInsights/ReportInsights";
+import Settings from "./components/pages/Settings/Settings";
+import Help from "./components/pages/Help/Help"
 
 const router = createHashRouter([
   {
     path: "/",
-    element: <LandingPage />,
+    element: <LandingPage />, 
   },
   {
     path: "/signup",
@@ -59,7 +65,35 @@ const router = createHashRouter([
       {
         path: "home",
         element: <UserBoard/>
-      }
+      },
+      {
+        path: "expense-track",
+        element: <ExpenseTrackerDashboard/>
+      },
+      {
+        path: 'budget-planner',
+        element: <BudgetPlannerDashboard/>
+      },
+      {
+        path: "debt-manager",
+        element: <DebtManager/>
+      },
+      {
+        path: "report",
+        element: <ReportInsights/>
+      },
+      {
+        path: "settings",
+        element: <Settings/>
+      },
+      {
+        path: "help",
+        element: <Help/>
+      },
+      // {
+      //   path: "logout",
+      //   element: <Logout/>
+      // }
     ]
   },
 ]);

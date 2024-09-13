@@ -1,16 +1,18 @@
 .dashboardHolder {
   width: 100%;
-  min-height: 87vh;
+  min-height: 100vh;
   height: auto;
   /* background: green; */
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
+  /* overflow-y: auto; */
 }
 
 .dashboardInner {
   width: 95%;
-  height: 100%;
+  min-height: 100vh;
+  height: auto;
   /* background: orange; */
   display: flex;
   justify-content: space-between;

@@ -1,0 +1,604 @@
+.budgetPlannerDashboard {
+  width: 100%;
+  /* min-height: 100vh; */
+  height: auto;
+  /* background: rebeccapurple; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 20px;
+  padding: 30px;
+  /* padding-top: 50px; */
+  overflow-y: auto;
+}
+
+.budgetPlannerDashInner {
+  width: 100%;
+  height: auto;
+  /* background: #000; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  /* gap: 20px; */
+
+}
+
+.budgetPlannerLeft {
+  width: 58%;
+  min-height: 90vh;
+  height: auto;
+  /* background: yellow; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.budgetPlannerLeftTop {
+  width: 100%;
+  height: 17vh;
+  /* background: #000; */
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 20px;
+  /* padding: 10px; */
+}
+
+.bPlannerTopOne {
+  width: 55%;
+  height: 100%;
+  border-radius: 5px;
+  background: #fbfdc7;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 20px;
+}
+
+.totalGoal {
+  font-size: 13px;
+}
+
+.totalGoalPrice {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.bPlannerTopTwo {
+  width: 45%;
+  height: 100%;
+  border-radius: 5px;
+  background: #fbfdc7;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 10px;
+}
+
+.bPlannerTopTwoUp {
+  width: 100%;
+  height: 50%;
+  /* background-color: whitesmoke; */
+}
+
+.bPlannerTopTwoDown {
+  width: 100%;
+  height: 50%;
+  /* background: teal; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.bPlanTopTwoDownTop {
+  width: 100%;
+  height: 50%;
+  /* background: olive; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.totalAmountReached {
+  font-size: 12px;
+}
+
+.totalAmountPrice {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.bPlanTopTwoDownLeft {
+  width: 40%;
+  height: 60%;
+  /* background: orangered; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.greenTargetReached {
+  width: 20px;
+  height: 13px;
+  border-radius: 7.559px;
+  background: #b6edd3;
+}
+
+.targetReached {
+  font-size: 10px;
+}
+
+.bPlanTopTwoDownRight {
+  width: 40%;
+  height: 60%;
+  /* background: tomato; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.targetBalance {
+  font-size: 10px;
+}
+
+.redTargetReached {
+  width: 20px;
+  height: 13px;
+  border-radius: 7.559px;
+  background: #e59e9e;
+}
+
+.bPlanTopTwoDownBottom {
+  width: 100%;
+  height: 45%;
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.budgetPlannerMiddle {
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 0.85);
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  gap: 20px;
+  padding: 15px;
+}
+
+.budgetPlannerMiddleTop {
+  width: 100%;
+  height: 15%;
+  /* background: green; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gadget {
+  font-size: 13px;
+  width: 37%;
+}
+
+.bPlannerMiddleBottomCenter {
+  width: 100%;
+  min-height: 30vh;
+  height: auto;
+  /* background: crimson; */
+}
+
+.bPlanMidBottomDownTop {
+  width: 100%;
+  height: 6vh;
+  /* background: teal; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.bPlanMidBottomDownTopLeft {
+  width: 65%;
+  height: 100%;
+  /* background: firebrick; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bPlanMidBottomDownTopRight {
+  width: 35%;
+  height: 100%;
+  /* background: gold; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bugetPlannerTxt,
+.budgetPlannerDuration {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bPlanMidshowInputs {
+  width: 100%;
+  min-height: 30vh;
+  height: auto;
+  background: rgb(183, 184, 184);
+  /* padding: 10px; */
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.bPlanMidshowInputInner {
+  width: 100%;
+  height: 6vh;
+  /* background: green; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.bPlanMidShowInputLeft {
+  width: 62%;
+  height: 100%;
+}
+
+.budgetBudgetInput {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 3px;
+}
+
+.bPlanMidShowInputRight {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.budgetTargetInput {
+  width: 47%;
+  height: 100%;
+  border-radius: 3px;
+  border: none;
+}
+
+.budgetDurationInput {
+  width: 47%;
+  height: 100%;
+  border-radius: 3px;
+  border: none;
+}
+
+.budgetCreateBudgetPlusBtnDiv {
+  width: 100%;
+  height: 16vh;
+  /* background: green; */
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.holdBudgetAddPlus {
+  width: 100%;
+  height: 30%;
+  /* background: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.budgetCirclePlus {
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+}
+
+.holdBudgetCreateBudgetBtn {
+  width: 100%;
+  height: 35%;
+  /* background: navy; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.createBudgetBtn {
+  width: 13%;
+  height: 80%;
+  border-radius: 5px;
+  border: 1px solid var(--Text-color);
+  background: #fbfdc7;
+  color: var(--Text-color);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.bPlannerMidBottomDownLeft {
+  width: 100%;
+  height: 20%;
+  /* background: #000; */
+}
+
+.budgetPlannerBottom {
+  width: 100%;
+  height: 30vh;
+  /* background: beige; */
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 0.85);
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  gap: 20px;
+  padding: 15px;
+}
+
+.budgetPlannerBottomTop {
+  width: 100%;
+  height: 8vh;
+  /* background: green; */
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+  gap: 10px;
+}
+
+.budgetPlannerBottomTopLeft {
+  width: 45%;
+  height: 100%;
+  /* background: teal; */
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.holdBudgetCreateBottomTopRight {
+  width: 45%;
+  height: 100%;
+  /* background: darkorange; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.budgetStatusBottomBtn {
+  width: 25%;
+  height: 60%;
+  border: 0.5px solid #000;
+  background: #fbfdc7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.budgetBottomPlan {
+  font-size: 18px;
+}
+
+.budgetBottomGadget {
+  font-size: 13px;
+}
+
+.bPlannerBottomCenter {
+  width: 100%;
+  min-height: 30vh;
+  height: auto;
+  /* background: crimson; */
+}
+
+.bPlanMidBottomCenterTop {
+  width: 100%;
+  height: 6vh;
+  /* background: teal; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.bPlanMidBottomCenterTopLeft {
+  width: 76%;
+  height: 100%;
+  /* background: firebrick; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bPlanMidBottomCenterTopRight {
+  width: 22%;
+  height: 100%;
+  /* background: pink; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.budgetPlannerBottomAmount {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: goldenrod; */
+}
+
+.bPlanBottomMidshowInputs {
+  width: 100%;
+  min-height: 30vh;
+  height: auto;
+  background: rgb(178, 179, 179);
+  /* padding: 10px; */
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.bPlanMidBottomshowInputInner {
+  width: 100%;
+  height: 6vh;
+  /* background: green; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.bPlanMidBottomShowInputLeft {
+  width: 76%;
+  height: 100%;
+  background: #000;
+}
+
+.budgetBudgetBottomInput {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 3px;
+}
+
+.bPlanMidShowBottomInputRight {
+  width: 22%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.budgetAmountBottomInput {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  border: none;
+}
+
+.budgetDurationBottomInput {
+  width: 47%;
+  height: 100%;
+  border-radius: 3px;
+  border: none;
+}
+
+.budgetCreateBudgetBottomPlusDiv {
+  width: 100%;
+  height: 8vh;
+  /* background: green; */
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.holdBudgetBottomAddPlus {
+  width: 100%;
+  height: 30%;
+  /* background: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.budgetBottomCirclePlus {
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+}
+
+.holdBudgetCreateBottomBudgetBtn {
+  width: 100%;
+  height: 50%;
+  /* background: navy; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bPlannerMidBottomDownLeft {
+  width: 100%;
+  height: 20%;
+  /* background: #000; */
+}
+
+.budgetPlannerRight {
+  width: 40%;
+  /* min-height: 148vh; */
+  height: auto;
+  border-radius: 5px;
+  background: #f4f4ff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  gap: 20px;
+  padding: 15px;
+}
+
+.budgetPlannerRightInner{
+  width: 100%;
+  height: 90%;
+  background: orangered;
+}
+
+.budgetPlannerBudget {
+  width: 100%;
+  min-height: 45%;
+  height: auto;
+  /* background: red; */
+  border-radius: 5px;
+  background: #feffef;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+}
+
+.budgetRigthName {
+  width: 25%;
+  height: 8vh;
+  /* background: hotpink; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.budgetPlanBudgetHold {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.budgetPlannerTransaction {
+  width: 100%;
+  min-height: 45%;
+  height: auto;
+  border-radius: 5px;
+  background: #feffef;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+}
+
+.budgetTransactionHistory{
+  width: 60%;
+  height: 8vh;
+  font-size: 20px;
+  /* background: red; */
+}
+
+.bugetTransactionNoAct{
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

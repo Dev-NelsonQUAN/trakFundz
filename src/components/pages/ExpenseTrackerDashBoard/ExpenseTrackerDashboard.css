@@ -1,0 +1,457 @@
+.exTrackDashboard {
+  width: 100%;
+  /* min-height: 100vh; */
+  height: auto;
+  /* background: rebeccapurple; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 20px;
+  padding: 30px;
+  /* padding-top: 50px; */
+  overflow-y: auto;
+}
+
+.exTrackDashInner {
+  width: 100%;
+  height: auto;
+  /* background: #000; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  /* gap: 20px; */
+}
+
+.exTrackLeft {
+  width: 58%;
+  min-height: 90vh;
+  height: auto;
+  /* background: yellow; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exTrackLeftTop {
+  width: 100%;
+  height: 17vh;
+  /* background: #000; */
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 20px;
+  color: var(--inactiveText);
+  /* padding: 10px; */
+}
+
+.exTrackTopOne {
+  width: 35%;
+  height: 100%;
+  border-radius: 5px;
+  background: #e2bdff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 20px;
+}
+
+.exTrackDebt {
+  font-size: 13px;
+}
+
+.exPrice {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.exTopTwo {
+  width: 35%;
+  height: 100%;
+  border-radius: 5px;
+  background: #e2bdff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+}
+
+.exTopTwoUp {
+  width: 100%;
+  height: 50%;
+  /* background-color: whitesmoke; */
+}
+
+.exAmountReached {
+  font-size: 12px;
+}
+
+.exAmountPrice {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.exTopTwoDown {
+  width: 100%;
+  height: 50%;
+  /* background: teal; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exTopTwoDownTop {
+  width: 80%;
+  height: 50%;
+  /* background: olive; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exTopTwoDownLeft {
+  width: 40%;
+  height: 60%;
+  /* background: orangered; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.GreenEXTargetReached {
+  width: 20px;
+  height: 13px;
+  border-radius: 7.559px;
+  background: #b6edd3;
+}
+
+.exPaid {
+  font-size: 10px;
+}
+
+.exTopTwoDownRight {
+  width: 45%;
+  height: 60%;
+  /* background: tomato; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.redEXTargetReached {
+  width: 20px;
+  height: 13px;
+  border-radius: 7.559px;
+  background: #e59e9e;
+}
+
+.exBalance {
+  font-size: 10px;
+}
+
+.exTopTwoDownBottom {
+  width: 100%;
+  height: 45%;
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exNoRec {
+  font-size: 10px;
+}
+
+.exTopThree {
+  width: 25%;
+  height: 100%;
+  border-radius: 5px;
+  background: #e2bdff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exTopThreeInner {
+  width: 70%;
+  height: 50%;
+  /* background: green; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.exIncomeCirclePlus {
+  font-size: 25px;
+}
+
+.exAddIncome {
+  font-size: 18px;
+  font-family: 700;
+}
+
+
+
+.exTrackMiddle {
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 0.85);
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  gap: 20px;
+  padding: 15px;
+}
+
+.exTrackMiddleTop {
+  width: 100%;
+  height: 13%;
+  /* background: green; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  gap: 5px;
+}
+
+.exInput {
+  font-size: 13px;
+  width: 37%;
+}
+
+.exMiddleBottomCenter {
+  width: 100%;
+  min-height: 30vh;
+  height: auto;
+  /* background: crimson; */
+}
+
+.exMidBottomDownTop {
+  width: 100%;
+  height: 6vh;
+  /* background: teal; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.exsMidBottomDownTopLeft {
+  width: 38%;
+  height: 100%;
+  /* background: firebrick; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exMidBottomDownTopRight {
+  width: 60%;
+  height: 100%;
+  /* background: gold; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exTxtDesc{
+  width: 67%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #000; */
+}
+
+.exAmount {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: teal; */
+}
+
+.exMidshowInputs {
+  width: 100%;
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.exMidshowInputInner {
+  width: 100%;
+  height: 6vh;
+  /* background: green; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.exMidShowInputLeft {
+  width: 38%;
+  height: 100%;
+}
+
+.exExpenseInput {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 3px;
+}
+
+.exMidShowInputRight {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.exDescInput {
+  width: 65%;
+  height: 100%;
+  border-radius: 3px;
+  border: none;
+}
+
+.exAmountnput {
+  width: 32%;
+  height: 100%;
+  border-radius: 3px;
+  border: none;
+}
+
+.exBudgetPlusBtnDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 20px;
+}
+
+
+.exCirclePlus {
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+}
+
+
+.exBottom {
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 0.85);
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+}
+
+.exBottomTop {
+  width: 100%;
+  height: 15%;
+  /* background: green; */
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+  gap: 10px;
+}
+
+.exExpense {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.assignExBottom {
+  width: 22%;
+  height: 30%;
+  /* background: cyan; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.exBottomPurpleRound {
+  width: 8px;
+  height: 8px;
+  background: var(--brandColour);
+  border-radius: 50%;
+}
+
+.exBottomIncomeText {
+  font-size: 12px;
+}
+
+.exBottomLightPurleRound {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbacf2;
+}
+
+.exBottomExpenseText {
+  font-size: 12px;
+}
+
+.exBottomCenterDown {
+  width: 100%;
+  /* min-height: 30vh; */
+  height: auto;
+  /* background: crimson; */
+}
+
+.exBottomCenterDownInner {
+  width: 100%;
+  height: auto;
+  min-height: 55vh;
+  background-color: gray;
+}
+
+
+.exTrackRight {
+  width: 40%;
+  /* min-height: 148vh; */
+  height: auto;
+  border-radius: 5px;
+  background: #f4f4ff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  gap: 20px;
+  padding: 15px;
+}
+
+.exTrackTransaction {
+  width: 100%;
+  min-height: 99%;
+  height: auto;
+  border-radius: 5px;
+  background: #feffef;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  padding: 20px;
+}
+
+.exTransactionHistory {
+  width: 60%;
+  height: 8vh;
+  font-size: 20px;
+  /* background: red; */
+}
+
+.exTransactionNoAct {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
