@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ExpenseTrackerDashboard.css";
 import { FaCirclePlus } from "react-icons/fa6";
 
+const initialState = [
+  {
+    expence: "",
+    desc: "",
+    amount: "",
+  },
+];
+
 const ExpenseTrackerDashboard = () => {
+  const [expenses, setExpenses] = useState([]);
+  const [history, setHistory] = useState([])
+
+  const addFields = () => {
+    if (expenses.length === 10) return;
+    setExpenses((prev) => [
+      ...prev,
+      {
+        expence: "",
+        amount: "",
+        desc: "",
+      },
+    ]);
+  };
+
+  const handleChange = (index, e) => {
+    const { name, value } = e.target;
+    const newInputs = [...expenses];
+    newInputs[index] = { ...newInputs[index], [name]: value };
+    setExpenses(newInputs);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setHistory(expenses)
+  };
+
+  console.log('history', history)
+
   return (
     <div className="exTrackDashboard">
       <div className="exTrackDashInner">
@@ -63,25 +100,55 @@ const ExpenseTrackerDashboard = () => {
                 </div>
               </div>
 
-              <div className="exMidshowInputs">
-                <div className="exMidshowInputInner">
-                  <div className="exMidShowInputLeft">
-                    <input className="exExpenseInput" type="text" />
-                  </div>
+              <form onSubmit={handleSubmit}>
+                {expenses?.map((expense, index) => (
+                  <div className="exMidshowInputs" key={expense.amount}>
+                    <div className="exMidshowInputInner">
+                      <div className="exMidShowInputLeft">
+                        <input
+                          className="exExpenseInput"
+                          type="text"
+                          required
+                          name="expence"
+                          value={expense.expence}
+                           onChange={(e) => handleChange(index, e)}
+                        />
+                      </div>
 
-                  <div className="exMidShowInputRight">
-                    <input className="exDescInput" type="text" />
-                    <input className="exAmountnput" type="text" />
+                      <div className="exMidShowInputRight">
+                        <input
+                          className="exDescInput"
+                          type="text"
+                          required
+                          name="desc"
+                          value={expense.desc}
+                           onChange={(e) => handleChange(index, e)}
+                        />
+                        <input
+                          className="exAmountnput"
+                          type="text"
+                          required
+                          name="amount"
+                          value={expense.amount}
+                           onChange={(e) => handleChange(index, e)}
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                ))}
 
-              <div className="exBudgetPlusBtnDiv">
+                <button
+                  type="button"
+                  onClick={addFields}
+                  className="exBudgetPlusBtnDiv"
+                >
                   <FaCirclePlus className="exCirclePlus" />
-              </div>
+                </button>
+
+                <button type="submit">Submit</button>
+              </form>
             </div>
           </div>
-
 
           <div className="exBottom">
             <div className="exBottomTop">
@@ -95,22 +162,33 @@ const ExpenseTrackerDashboard = () => {
             </div>
 
             <div className="exBottomCenterDown">
-                <div className="exBottomCenterDownInner">
-                    
-                </div>
+              <div className="exBottomCenterDownInner"></div>
             </div>
           </div>
-
         </div>
-
-
 
         <div className="exTrackRight">
           <div className="exTrackTransaction">
             <h6 className="exTransactionHistory"> Transaction History </h6>
-            <div className="exTransactionNoAct">
-              <p className="noActivity"> No activity </p>
-            </div>
+            <ul className="exTransactionNoAct">
+              {/* {history.length ? (
+                
+                ))
+              ) : (
+                <li className="noActivity"> No activity </li>
+              )} */}
+
+              {
+                history.map((data, index) => (
+                  <li key={index}>
+                    <p>{new Date().toDateString()}</p>
+                    <p>{data.amount}</p>
+                    <p>{data.desc}</p>
+                    <p>{data.expence}</p>
+                  </li>
+                ))
+              }
+            </ul>
           </div>
         </div>
       </div>

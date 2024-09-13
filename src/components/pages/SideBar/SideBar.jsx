@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const SideBar = () => {
     const Nav = useNavigate()
+    
   return (
     <div className="sideBarHolder">
       <div className="sideBarImg">

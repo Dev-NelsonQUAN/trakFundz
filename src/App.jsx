@@ -23,7 +23,7 @@ import Help from "./components/pages/Help/Help"
 const router = createHashRouter([
   {
     path: "/",
-    element: <LandingPage />,
+    element: <LandingPage />, 
   },
   {
     path: "/signup",
