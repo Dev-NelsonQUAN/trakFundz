@@ -12,9 +12,8 @@ import { TbHelpTriangle } from "react-icons/tb";
 import { AiOutlinePoweroff } from "react-icons/ai";
 
 const SideBar = () => {
-  
   const Nav = useNavigate();
-  
+
   return (
     <div className="sideBarHolder">
       <div className="sideBarImg">
@@ -29,13 +28,14 @@ const SideBar = () => {
             }
             to={"/dashboard/home"}
           >
-            <h5 className="sideBarH5">
+            <div className="sideBarH5">
+              
               <AiFillHome
                 className="iconHomeDash"
                 style={{ fontSize: "20px" }}
               />
-              Dashboard{" "}
-            </h5>
+              <h5>Dashboard </h5>
+            </div>
           </NavLink>
 
           <NavLink
@@ -44,13 +44,13 @@ const SideBar = () => {
             }
             to={"/dashboard/expense-track"}
           >
-            <h5 className="sideBarH5">
+            <div className="sideBarH5">
               <GiTakeMyMoney
                 className="iconExpense"
                 style={{ fontSize: "23px" }}
               />
-              Expense Tracker{" "}
-            </h5>
+              <h5>Expense Tracker </h5>
+            </div>
           </NavLink>
 
           <NavLink
@@ -59,13 +59,13 @@ const SideBar = () => {
             }
             to={"/dashboard/budget-planner"}
           >
-            <h5 className="sideBarH5">
+            <div className="sideBarH5">
               <GiPiggyBank
                 className="iconPiggyBudget"
                 style={{ fontSize: "23px" }}
               />
-              Budget Planner{" "}
-            </h5>
+              <h5>Budget Planner </h5>
+            </div>
           </NavLink>
 
           <NavLink
@@ -74,13 +74,13 @@ const SideBar = () => {
             }
             to={"/dashboard/debt-manager"}
           >
-            <h5 className="sideBarH5">
+            <div className="sideBarH5">
               <GiReceiveMoney
                 className="iconDebt"
-                style={{ fontSize: "23px", color: "red" }}
+                style={{ fontSize: "23px" }}
               />
               Debt Manager{" "}
-            </h5>
+            </div>
           </NavLink>
 
           <NavLink
@@ -89,10 +89,10 @@ const SideBar = () => {
             }
             to={"/dashboard/report"}
           >
-            <h5 className="sideBarH5">
+            <div className="sideBarH5">
               <FcBullish className="iconRepo" style={{ fontSize: "23px" }} />
-              Report Insights{" "}
-            </h5>
+              <h5>Report Insights </h5>
+            </div>
           </NavLink>
 
           <NavLink
@@ -101,13 +101,13 @@ const SideBar = () => {
             }
             to={"/dashboard/settings"}
           >
-            <h5 className="sideBarH5">
+            <div className="sideBarH5">
               <IoSettingsSharp
                 className="iconSettings"
                 style={{ fontSize: "23px" }}
               />
-              Settings{" "}
-            </h5>
+              <h5>Settings </h5>
+            </div>
           </NavLink>
         </div>
 
@@ -118,10 +118,10 @@ const SideBar = () => {
             }
             to={"/dashboard/help"}
           >
-            <h5 className="sideBarH5">
+            <div className="sideBarH5">
               <TbHelpTriangle className="icon" style={{ fontSize: "23px" }} />
-              Help{" "}
-            </h5>
+              <h5>Help </h5>
+            </div>
           </NavLink>
 
           <NavLink
@@ -130,10 +130,10 @@ const SideBar = () => {
             }
             to={"/"}
           >
-            <h5 className="sideBarH5">
-              <AiOutlinePoweroff  style={{fontSize: "23px"}}/>
-              Log Out
-            </h5>
+            <div className="sideBarH5">
+              <AiOutlinePoweroff style={{ fontSize: "23px" }} />
+              <h5>Log Out</h5>
+            </div>
           </NavLink>
         </div>
       </div>

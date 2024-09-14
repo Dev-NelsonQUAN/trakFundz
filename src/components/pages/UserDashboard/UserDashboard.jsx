@@ -13,38 +13,56 @@ const UserBoard = () => {
         <div className="userDashboardLeft">
           <div className="userDashboardLeftTop">
             <div className="userDashboardTopOne">
-              <p className="userDashAmount"> Total debt amount </p>
-              <p className="userPrice"> ₦ 0.00 </p>
-            </div>
-
-            <div className="userDashboardLeftTwo">
-              <div className="uDTopTwoUp">
-                <p className="userDashAmountReached"> Total debt paid </p>
-                <p className="userDashAmountPrice"> ₦ 0.00 </p>
-              </div>
-
-              <div className="uDTwoDown">
-                <div className="uDTwoDownTop">
-                  <div className="uDTopTwoDownLeft">
-                    <nav className="greenUDTargetReached"> </nav>
-                    <p className="uDPaid">Loan Paid </p>
-                  </div>
-                  <div className="uDTopTwoDownRight">
-                    <nav className="redUDTargetReached"> </nav>
-                    <p className="uDBalance">Loan balance</p>
-                  </div>
+              <div className="userDashboardTopOneInner">
+                <div className="userDashboardTopOneUp">
+                  <p className="userDashAmount"> Available Balance </p>
+                  <p className="userPrice"> ₦ 0.00 </p>
                 </div>
 
-                <div className="uDTopTwoDownBottom">
-                  <p className="uDNoRec"> No Record Yet </p>
+                <div className="userDashboardTopOneDown">
+                  <div className="uDashTopOneDownUp">
+                    <nav className="greenUDTargetReached"> </nav>
+                    <nav className="redUDTargetReached"> </nav>
+                  </div>
+
+                  <h2 className="uDashExpTrack"> Expense Tracker </h2>
+                </div>
+              </div>
+            </div>
+
+            <div className="userDashboardTopTwo">
+              <div className="userDashboardTopTwoInner">
+                <div className="userDashboardTopTwoUp">
+                  <p className="userDashAmount"> Total Budget Reached </p>
+                  <p className="userTwoPrice"> ₦ 0.00 </p>
+                </div>
+
+                <div className="userDashboardTopTwoDown">
+                  <div className="uDashTopTwoDownUp">
+                    <nav className="greenUDTargetReached"> </nav>
+                    <nav className="redUDTargetReached"> </nav>
+                  </div>
+
+                  <h2 className="uDashExpTrack"> Budget Planner </h2>
                 </div>
               </div>
             </div>
 
             <div className="uDTopThree">
-              <div className="uDTopThreeInner">
-                <FaCirclePlus className="uDIncomeCirclePlus" />
-                <h5 className="uDAddIncome"> Add Income </h5>
+              <div className="userDashboardTopThreeInner">
+                <div className="userDashboardTopThreeUp">
+                  <p className="userDashThreemount"> Total Debt Paid </p>
+                  <p className="userThreePrice"> ₦ 0.00 </p>
+                </div>
+
+                <div className="userDashboardTopThreeDown">
+                  <div className="uDashTopTwoThreeUDownUp">
+                    <nav className="greenUDTargetThreeReached"> </nav>
+                    <nav className="redUDTargetThreeReached"> </nav>
+                  </div>
+
+                  <h2 className="uDashThreeExpTrack"> Debt Manager </h2>
+                </div>
               </div>
             </div>
           </div>
@@ -76,16 +94,16 @@ const UserBoard = () => {
               </div>
             </div>
 
-            <div className="repoBottomCenterDown">
-              <div className="repoBottomCenterDownInner"></div>
+            <div className="uDBottomCenterDown">
+              <div className="uDBottomCenterDownInner"></div>
             </div>
           </div>
         </div>
 
-        <div className="repoRight">
-          <div className="repoTransaction">
-            <h6 className="repoTransactionHistory"> Transaction History </h6>
-            <div className="repoTransactionNoAct">
+        <div className="uDRight">
+          <div className="uDTransaction">
+            <h6 className="uDTransactionHistory"> Transaction History </h6>
+            <div className="uDTransactionNoAct">
               <p className="noActivity"> No activity </p>
             </div>
           </div>
