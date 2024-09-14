@@ -1,0 +1,104 @@
+.gradient1 {
+  background: linear-gradient(
+    95.65deg,
+    #9c58f5 9.63%,
+    #605cfd 43.04%,
+    #6404e0 66.65%
+  );
+}
+
+.gradient2 {
+  background: linear-gradient(
+    90.79deg,
+    #7f1581 16.11%,
+    #dc14e0 39.43%,
+    #4e054f 57.88%
+  );
+}
+
+.gradient3 {
+  background: linear-gradient(
+    90.99deg,
+    #b4b723 16.53%,
+    #f1f463 52.97%,
+    #989b07 81.76%
+  );
+}
+
+.heroPageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroPageInner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.heroPageLeft {
+  flex: 1;
+  padding: 20px;
+}
+
+.prioritize {
+  font-size: 3rem;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.autoType {
+  display: inline-block;
+  white-space: nowrap;
+  transition: background 1s ease, color 1s ease;
+  background-clip: text;
+  color: transparent;
+}
+
+.heroPageRight {
+  flex: 1;
+  position: relative;
+}
+
+.polygonTop,
+.polygonSmall,
+.dashboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.polygonTop {
+  width: 100%;
+}
+
+.roundWhite {
+  border-radius: 50%;
+  background: white;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tryNowBtn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.aboutTrakFundz{
+    color: white;
+}
