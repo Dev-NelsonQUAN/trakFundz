@@ -75,6 +75,7 @@
   font-weight: 400;
   cursor: pointer;
   display: flex;
+  justify-content: space-between;
   gap: 20px;
   /* color: var(--colours); */
   /* color: black; */
