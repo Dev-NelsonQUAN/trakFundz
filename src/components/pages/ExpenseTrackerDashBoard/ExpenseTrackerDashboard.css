@@ -187,7 +187,6 @@
 
 .exIncomeCirclePlus {
   font-size: 25px;
-  cursor: pointer;
 }
 
 .exAddIncome {
@@ -335,7 +334,6 @@
   border: 0;
   padding: 20px;
 }
-
 
 .exCirclePlus {
   font-size: 20px;

@@ -15,6 +15,7 @@ const SignUp = () => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
+
   // const [profilePicture, setProfilePicture] = useState();
   const [loading, setLoading] = useState(false);
   const [passwordInputs, setPasswordInputs] = useState(false);
@@ -49,128 +50,106 @@ const SignUp = () => {
     return /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(input);
   };
 
-  const validateEmail = (input) => {
-    // Regular expression for basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(input);
-  };
-
-  const handleEmailChange = (e) => {
-    const newEmail = e.target.value;
-    setEmail(newEmail);
-
-    // Validate the email
-    if (newEmail.trim() === "") {
-      toast.error("Email is required");
-      setEmailErrorShow(false);
-    } else if (!validateEmail(newEmail)) {
-      setEmailErrorShow(true);
-      setEmailError("Invalid email format");
-    } else {
-      setEmailError("");
-    }
-  };
-
-  const handlePassword = (e) => {
-    const newData = e.target.value;
-    setPassword(newData);
-    if (newData.trim() === "") {
-      toast.error("Password is required");
-      setPasswordCheck(false);
-    }
-    if (newData.length > 0) {
-      setPasswordCheck(true);
-    }
-    if (!containsLowercase(newData)) {
-      setPasswordErrorLow(true);
-    } else {
-      setPasswordErrorLow(false);
-    }
-    if (!containsUpperrcase(newData)) {
-      setPasswordErrorUpper(true);
-    } else {
-      setPasswordErrorUpper(false);
-    }
-    if (!containsNumber(newData)) {
-      setPasswordErrorNumber(true);
-    } else {
-      setPasswordErrorNumber(false);
-    }
-    if (!containsSymbol(newData)) {
-      setPasswordErrorSymbol(true);
-    } else {
-      setPasswordErrorSymbol(false);
-    }
-  };
-
-  // const register = async (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-  //   // const url = "https://final-project-ufej.onrender.com/api/v1/signup";
-  //   // https://trackfundz-wmhv.onrender.com
-  //   if (
-  //     !firstName ||
-  //     !lastName ||
-  //     !email ||
-  //     !password ||
-  //     !confirmPassword ||
-  //     !phoneNumber
-  //     // ||
-  //     // !profilePicture
-  //   ) {
-  //     toast.error("All fields are required and check for errors");
-  //     toast.error(res?.errorMessage);
-  //     setLoading(false);
+  // const handlePassword = (e) => {
+  //   const newData = e.target.value;
+  //   setPassword(newData);
+  //   if (newData.trim() === "") {
+  //     toast.error("Password is required");
+  //     setPasswordCheck(false);
+  //   }
+  //   if (newData.length > 0) {
+  //     setPasswordCheck(true);
+  //   }
+  //   if (!containsLowercase(newData)) {
+  //     setPasswordErrorLow(true);
   //   } else {
-  //     const apiData = {
-  //       firstName,
-  //       lastName,
-  //       email,
-  //       password,
-  //       confirmPassword,
-  //       phoneNumber,
-  //     };
-
-  //     const url = "https://trackfundz-wmhv.onrender.com/api/v1";
-
-  //     try {
-  //       const res = await axios.post(`${url}/signup`, apiData);
-  //       setLoading(false);
-  //       toast.success("Welcome user");
-  //       toast.success(res?.message);
-  //       Nav("/verify");
-  //       console.log(url, apiData);
-  //       console.log(res, "respond to this");
-  //     } catch (error) {
-  //       // toast.error(error?.message)
-  //       toast.error(error?.response?.data?.message);
-  //       console.log(error, "This is an error");
-  //       setLoading(false);
-  //     }
+  //     setPasswordErrorLow(false);
+  //   }
+  //   if (!containsUpperrcase(newData)) {
+  //     setPasswordErrorUpper(true);
+  //   } else {
+  //     setPasswordErrorUpper(false);
+  //   }
+  //   if (!containsNumber(newData)) {
+  //     setPasswordErrorNumber(true);
+  //   } else {
+  //     setPasswordErrorNumber(false);
+  //   }
+  //   if (!containsSymbol(newData)) {
+  //     setPasswordErrorSymbol(true);
+  //   } else {
+  //     setPasswordErrorSymbol(false);
   //   }
   // };
+
+  const register = async (e) => {
+    e.preventDefault();
+
+    // validate your beans here 
+    
+    setLoading(true);
+    // const url = "https://final-project-ufej.onrender.com/api/v1/signup";
+    // https://trackfundz-wmhv.onrender.com
+
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !password ||
+      !confirmPassword ||
+      !phoneNumber
+    ) {
+      toast.error("All fields are required.");
+      setLoading(false);
+    } else {
+      const apiData = {
+        firstName,
+        lastName,
+        email,
+        password,
+        confirmPassword,
+        phoneNumber,
+      };
+
+      const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+
+      try {
+        const res = await axios.post(`${url}/signup`, apiData);
+        setLoading(false);
+        toast.success(res?.message);
+        Nav(`/verify?email=${email}`);
+        console.log(url, apiData);
+        console.log(res, "respond to this");
+      } catch (error) {
+        // toast.error(error?.message)
+        toast.error(error?.response?.data?.message);
+        console.log(error, "This is an error");
+        setLoading(false);
+      }
+    }
+  };
 
   const now = new Date();
   const year = now.getFullYear();
   // console.log(now);
   // console.log(year);
 
-  const imgShow = (e) => {
-    const file = e.target.files[0];
-    const img = URL.createObjectURL(file);
-    // const img = URL.revokeObjectURL(file);
+  // const imgShow = (e) => {
+  //   const file = e.target.files[0];
+  //   const img = URL.createObjectURL(file);
+  //   // const img = URL.revokeObjectURL(file);
 
-    setProfilePicture(img);
-  };
+  //   setProfilePicture(img);
+  // };
 
   const viewPassword = () => {
     setPasswordInputs(true);
-    // setShowEye(true)
+    setShowEye(true)
   };
 
   const hidePassword = () => {
     setPasswordInputs(false);
-    // setShowEye(false)
+    setShowEye(false)
   };
 
   const viewSecPassword = () => {
@@ -205,7 +184,7 @@ const SignUp = () => {
         </div>
 
         <div className="holdFormAll">
-          <div className="InsideFornHolder">
+          <div className="InsideFormHolder">
             <div className="onTopForm">
               <div className="alreadyHolder">
                 <p className="already">
@@ -230,23 +209,15 @@ const SignUp = () => {
             <div className="formHolder">
               <form
                 className="InputHolder"
-                // onSubmit={register}
-                // (apiData)
+                onSubmit={register}
               >
-                {/* <img className="ProfilePic" src={profilePicture} alt="" /> */}
-                {/* <input type="file" id="1" hidden onChange={imgShow} />
-          <label htmlFor="1">
-            {" "}
-            <FaRegImage
-              style={{ position: "absolute", top: "62px", left: "230px" }}
-            />{" "}
-          </label> */}
                 <div className="firstAndLastNameInput">
                   <div className="firstNameDiv">
                     <p className="firstName"> First Name </p>
                     <input
                       className="nameInput"
                       type="text"
+                      required
                       placeholder="First Name"
                       onChange={(e) => setFirstName(e.target.value)}
                     />
@@ -257,6 +228,7 @@ const SignUp = () => {
                     <input
                       className="nameInput"
                       type="text"
+                      required
                       placeholder="Last Name"
                       onChange={(e) => setLastName(e.target.value)}
                     />
@@ -268,6 +240,7 @@ const SignUp = () => {
                   <input
                     className="regInput"
                     type="email"
+                    required
                     placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -279,6 +252,8 @@ const SignUp = () => {
                   <input
                     className="regInput"
                     type="number"
+                    required
+                    maxLength={11}
                     placeholder="Phone number"
                     onChange={(e) => setPhoneNumber(e.target.value)}
                   />
@@ -287,21 +262,14 @@ const SignUp = () => {
                 <div className="enterPasswordDiv">
                   <p className="enterPassword"> Enter Password </p>
                   <div className="TwoInputHolder">
-                    {!passwordInputs ? (
-                      <input
-                        className="inputOne"
-                        type="password"
-                        placeholder="Enter Your Password"
-                        onChange={handlePassword}
-                      />
-                    ) : (
-                      <input
-                        className="inputOne"
-                        type="text"
-                        placeholder="Enter Your Password"
-                        onChange={handlePassword}
-                      />
-                    )}
+                    <input
+                      className="inputOne"
+                      type={passwordInputs ? 'text' : 'password' }
+                      required
+                      placeholder="Enter Your Password"
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+
 
                     {!passwordInputs ? (
                       <FaRegEye
@@ -326,22 +294,14 @@ const SignUp = () => {
                 <div className="enterPasswordDiv">
                   <p className="enterPassword"> Confirm Password </p>
                   <div className="TwoInputHolder">
-                    {!confirmPasswordInput ? (
-                      <input
-                        className="inputOne"
-                        type="password"
-                        placeholder="Confirm Your Password"
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                      />
-                    ) : (
-                      <input
-                        className="inputOne"
-                        type="text"
-                        placeholder="Confirm Your Password"
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                      />
-                    )}
-
+                  <input
+                      className="inputOne"
+                      type={confirmPasswordInput ? 'text' : 'password' }
+                      required
+                      placeholder="Enter Your Password"
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                    />
+                  
                     {!confirmPasswordInput ? (
                       <FaRegEye
                         onClick={viewSecPassword}
@@ -359,9 +319,10 @@ const SignUp = () => {
 
                 <div className="BtnDiv">
                   <button className="Btn" 
-                  type="Submit" onClick={() => Nav("/verify")}>
+                  type="Submit">
                     {loading ? "Loading..." : "Create Account"}
                   </button>
+
                   <p className="byCreate">
                     {" "}
                     By creating an account, you agree to our{" "}

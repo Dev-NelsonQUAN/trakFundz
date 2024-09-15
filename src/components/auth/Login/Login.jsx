@@ -5,7 +5,7 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import Logo from "../../../assets/trakFundzLogo.svg";
 import { useNavigate } from "react-router-dom";
 import { toast, Toaster } from "react-hot-toast";
-// import BG from "../../../assets/trakFundzBackground.svg";
+
 
 const Login = () => {
   const Nav = useNavigate();
@@ -16,40 +16,31 @@ const Login = () => {
   const [passwordCheck, setpasswordCheck] = useState("none");
   const [loading, setLoading] = useState(false);
 
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   // setLoading(true);
-  //   if (!email || !password) {
-  //     toast.error("Data is required");
-  //     toast.error(res?.message);
-  //     setLoading(false);
-  //   } else {
-  //     const apiData = { email, password };
-  //     const url = "https://trackfundz-wmhv.onrender.com/api/v1";
-  //     try {
-  //       setLoading(true);
-  //       // const res = await axios.post(`${url}/login`, apiData);
-  //       toast.success("Welcome User");
-  //       // toast.success(res?.message);
-  //       Nav("/dashboard");
-  //       console.log(url, apiData);
-  //       // console.log(res, "This is working");
-  //     } catch (error) {
-  //       toast.error(error, "This is an error");
-  //       setLoading(false);
-  //     }
-  //   }
-  // };
-  // const realPassword = "John";
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    if (!email || !password) {
+      toast.error("Data is required");
+      toast.error(res?.message);
+      setLoading(false);
+    } else {
+      const apiData = { email, password };
+      const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+      
+      try {
+        setLoading(true);
+        const res = await axios.post(`${url}/login`, apiData);
+        if (res.data) {
+          localStorage.setItem("token", res.data.token);
+        }
 
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   if (password !== realPassword) {
-  //     setpasswordCheck("wrong");
-  //   } else {
-  //     setpasswordCheck("correct");
-  //   }
-  // };
+        toast.success("Welcome User");
+        Nav("/dashboard");
+      } catch (error) {
+        toast.error(error, "This is an error");
+        setLoading(false);
+      }
+    }
+  };
 
   const viewPassword = () => {
     setShowPassword(true);
@@ -60,9 +51,7 @@ const Login = () => {
         <div className="HoldImage">
           <img className="logo" src={Logo} alt="TrakFundz Logo" />
         </div>
-        <form className="formHold" 
-        // onSubmit={handleLogin}
-        >
+        <form className="formHold" onSubmit={handleLogin}>
           <div className="inForm">
             <div className="loginTextHold">
               <label className="welcome"> Welcome Back! </label>
@@ -96,19 +85,6 @@ const Login = () => {
                     placeholder="Password"
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  {/* { (
-                ) : (
-                  <input
-                    type=
-                    className="passwordInput"
-                    // value={password}
-                    style={
-                      passwordCheck == "wrong"
-                        ? { border: "1px solid red" }
-                        : null
-                    }
-                  />
-                )} */}
 
                   {!showPassword ? (
                     <FaRegEye
@@ -133,10 +109,8 @@ const Login = () => {
             </div>
 
             <div className="btnLow">
-              <button className="loginBtn" 
-              type="submit" onClick={() => Nav("/dashboard/home")}
-              >
-              {loading ? "Loading..." : "Log In"}
+              <button className="loginBtn" type="submit">
+                {loading ? "Loading..." : "Log In"}
               </button>
               <p className="haveAccount">
                 {" "}
