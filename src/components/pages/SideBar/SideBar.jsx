@@ -29,12 +29,15 @@ const SideBar = () => {
             to={"/dashboard/home"}
           >
             <div className="sideBarH5">
-              
-              <AiFillHome
-                className="iconHomeDash"
-                style={{ fontSize: "20px" }}
-              />
+              <div className="sideIcons">
+                <AiFillHome
+                  className="iconHomeDash"
+                  style={{ fontSize: "20px" }}
+                />
+              </div>
+              <div className="h5SideTxt">
               <h5>Dashboard </h5>
+              </div>
             </div>
           </NavLink>
 
@@ -140,5 +143,6 @@ const SideBar = () => {
     </div>
   );
 };
+
 
 export default SideBar;

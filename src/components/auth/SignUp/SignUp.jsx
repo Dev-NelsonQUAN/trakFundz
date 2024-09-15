@@ -184,7 +184,7 @@ const SignUp = () => {
         </div>
 
         <div className="holdFormAll">
-          <div className="InsideFornHolder">
+          <div className="InsideFormHolder">
             <div className="onTopForm">
               <div className="alreadyHolder">
                 <p className="already">
