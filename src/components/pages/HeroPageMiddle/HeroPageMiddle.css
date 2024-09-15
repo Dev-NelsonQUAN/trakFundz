@@ -6,3 +6,68 @@
     color: antiquewhite;
 }
 
+.polygon11{
+    width: 20%;
+    height: 100%;
+    background: teal;
+
+}
+
+.effortlessText{
+    width: 50%;
+    height: 100%;
+    background: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.effort{
+    width: 378px;
+    height: 190px;
+    background: thistle;
+    text-align: center;
+    
+}
+.budget{
+    color: rgba(249, 251, 125, 1);
+    
+
+}
+
+.trakfundText{
+    width: 522px;
+    height: 98px;
+    background: steelblue;
+}
+
+.signUpText{
+    width: 267px;
+    height: 89px;
+    background: rosybrown;
+}
+
+.iphone15{
+    width: 30%;
+    height: 100%;
+    background: navy;
+}
+
+.gradientBox{
+    width: 15%;
+    height: 80%;
+}
+
+.lilac{
+width: 362px;
+height: 45%;
+background: rgba(226, 189, 255, 0.5);
+border-radius: 90px;
+
+}
+.yellow{
+    width: 362px;
+    height: 50%;
+    background: rgba(249, 251, 166, 0.8);
+}
+
