@@ -5,7 +5,7 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import Logo from "../../../assets/trakFundzLogo.svg";
 import { useNavigate } from "react-router-dom";
 import { toast, Toaster } from "react-hot-toast";
-// import BG from "../../../assets/trakFundzBackground.svg";
+
 
 const Login = () => {
   const Nav = useNavigate();
@@ -18,7 +18,6 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    // setLoading(true);
     if (!email || !password) {
       toast.error("Data is required");
       toast.error(res?.message);
@@ -35,7 +34,6 @@ const Login = () => {
         }
 
         toast.success("Welcome User");
-        // toast.success(res?.message);
         Nav("/dashboard");
       } catch (error) {
         toast.error(error, "This is an error");
@@ -43,7 +41,6 @@ const Login = () => {
       }
     }
   };
-  // const realPassword = "John";
 
   const viewPassword = () => {
     setShowPassword(true);

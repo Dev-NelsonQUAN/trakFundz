@@ -3,7 +3,9 @@ import "./HeroPageMiddle.css"
 
 const HeroPageMiddle = () => {
   return (
-    <div className='heroPMid'>HeroPageMiddle</div>
+    <div className='heroPageMiddle'>
+      
+    </div>
   )
 }
 
