@@ -156,3 +156,24 @@
   filter: blur(51.63389587402344px);
   /* background: rgba(249, 251, 166, 0.8); */
 }
+
+.holdMidIOS {
+    width: 30%;
+}
+
+@media screen and (max-width: 768px) {
+    .effortTxt {
+        font-size: 1rem;
+    }
+    .heroMidRight {
+        width: 20%;
+        height: 20%;
+        display: none;
+    }
+
+    .holdMidIOS {
+        width: 20px;
+        height: 20px;
+        /* display: none; */
+    }
+}
