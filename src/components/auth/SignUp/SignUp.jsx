@@ -88,45 +88,43 @@ const SignUp = () => {
     // validate your beans here 
     
     setLoading(true);
-    // const url = "https://final-project-ufej.onrender.com/api/v1/signup";
-    // https://trackfundz-wmhv.onrender.com
+  
+    // if (
+    //   !firstName ||
+    //   !lastName ||
+    //   !email ||
+    //   !password ||
+    //   !confirmPassword ||
+    //   !phoneNumber
+    // ) {
+    //   toast.error("All fields are required.");
+    //   setLoading(false);
+    // } else {
+    //   const apiData = {
+    //     firstName,
+    //     lastName,
+    //     email,
+    //     password,
+    //     confirmPassword,
+    //     phoneNumber,
+    //   };
 
-    if (
-      !firstName ||
-      !lastName ||
-      !email ||
-      !password ||
-      !confirmPassword ||
-      !phoneNumber
-    ) {
-      toast.error("All fields are required.");
-      setLoading(false);
-    } else {
-      const apiData = {
-        firstName,
-        lastName,
-        email,
-        password,
-        confirmPassword,
-        phoneNumber,
-      };
+    //   const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
-      const url = "https://trackfundz-wmhv.onrender.com/api/v1";
-
-      try {
-        const res = await axios.post(`${url}/signup`, apiData);
-        setLoading(false);
-        toast.success(res?.message);
-        Nav(`/verify?email=${email}`);
-        console.log(url, apiData);
-        console.log(res, "respond to this");
-      } catch (error) {
-        // toast.error(error?.message)
-        toast.error(error?.response?.data?.message);
-        console.log(error, "This is an error");
-        setLoading(false);
-      }
-    }
+    //   try {
+    //     const res = await axios.post(`${url}/signup`, apiData);
+    //     setLoading(false);
+    //     toast.success(res?.message);
+    //     Nav(`/verify?email=${email}`);
+    //     console.log(url, apiData);
+    //     console.log(res, "respond to this");
+    //   } catch (error) {
+    //     // toast.error(error?.message)
+    //     toast.error(error?.response?.data?.message);
+    //     console.log(error, "This is an error");
+    //     setLoading(false);
+    //   }
+    // }
   };
 
   const now = new Date();
@@ -319,7 +317,7 @@ const SignUp = () => {
 
                 <div className="BtnDiv">
                   <button className="Btn" 
-                  type="Submit">
+                  type="Submit" onClick={() => Nav("/login")}>
                     {loading ? "Loading..." : "Create Account"}
                   </button>
 
