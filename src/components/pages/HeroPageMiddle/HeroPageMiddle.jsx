@@ -1,4 +1,4 @@
-import React from "react";
+// a~import React from "react";
 import "./HeroPageMiddle.css";
 import iPhone from "../../../assets/iPhone .svg";
 import PolygonRight from "../../../assets/PolygonRight.svg";
@@ -53,8 +53,8 @@ const HeroPageMiddle = () => {
             <div className="lilac"></div>
             <div className="yellow"></div>
           {/* </div> */}
-          <div>
-            <img src={iPhone} alt="phone" />
+          <div className="holdMidIOS">
+            {/* <img src={iPhone} alt="phone" /> */}
           </div>
         </div>
       </div>
