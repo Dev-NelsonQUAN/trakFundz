@@ -62,11 +62,11 @@ const HeroPage = () => {
                   {texts[currentTextIndex]}
                 </motion.span>
               </h1>
-            </div>
             <p className="aboutTrakFundz">
               Trakfundz is the personal financial navigator that empowers you to
               effortlessly track expenses, plan budgets, and manage debt.
             </p>
+            </div>
 
             <div className="leftHoldBottom">
               <p className="getTrial">
@@ -80,7 +80,7 @@ const HeroPage = () => {
         <div className="heroPageRight">
           <img className="macHold" src={macHold} alt="MacBook mockup" />
           <img className="polygonTop" src={polygonTopest} alt="Polygon" />
-          <div className="roundWhite"></div>
+          <div className="roundBlue"></div>
           <img className="innerMac" src={innerMac} alt="Inside Mac" />
           <img className="iPadHold" src={iPadHold} alt="iPad Mockup" />
           <img className="iPadInner" src={iPadInner} alt="iPad Inner Mockup" />
