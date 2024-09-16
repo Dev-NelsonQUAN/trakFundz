@@ -3,7 +3,7 @@ import "./Header.css";
 import Logo from "../../../assets/trakFundzLogo.svg";
 import { FaArrowDown } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosMenu } from "react-icons/io";
 
 const Header = () => {
   const Nav = useNavigate();
@@ -17,22 +17,31 @@ const Header = () => {
 
           <div className="headerLeftTwo">
             <ul>
-              <NavLink 
-              className={({isActive}) => 
-                isActive ? "HeaderIsActive" : "HeaderNotActive"
-              }>
-              <li>
-                {" "}
-                Features <IoIosArrowDown />
-              </li>
-              </NavLink>
-       
-              <NavLink>
-              <li> Why TrakFundz </li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "HeaderIsActive" : "HeaderNotActive"
+                }
+              >
+                <li>
+                  {" "}
+                  Features <IoIosArrowDown />
+                </li>
               </NavLink>
 
-              <NavLink>
-              <li> Pricing </li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "HeaderIsActive" : "HeaderNotActive"
+                }
+              >
+                <li> Why TrakFundz </li>
+              </NavLink>
+
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "HeaderIsActive" : "HeaderNotActive"
+                }
+              >
+                <li> Pricing </li>
               </NavLink>
             </ul>
           </div>
@@ -47,7 +56,11 @@ const Header = () => {
             {" "}
             Get Started{" "}
           </button>
+
         </div>
+          <div className="menu">
+              <IoIosMenu/>
+          </div>
       </div>
     </div>
   );

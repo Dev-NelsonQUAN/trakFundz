@@ -88,7 +88,7 @@ const HeroPage = () => {
           <img className="iPhoneInner" src={iPhoneInner} alt="iPhone Inner Mockup" />
           <img className="androidHold" src={androidHold} alt="Android Mockup" />
           <img className="androidInner" src={androidInner} alt="Android Inner" />
-          <img className="iOSShadow" src={iOSShadow} alt="iOS Mockup Shadow" />
+          {/* <img className="iOSShadow" src={iOSShadow} alt="iOS Mockup Shadow" /> */}
           <img className="polygonSmall" src={polySmall} alt="polygon" />
           {/* <img className="dashboard" src={dashboard} alt="trakFundzDashboard" /> */}
         </div>
