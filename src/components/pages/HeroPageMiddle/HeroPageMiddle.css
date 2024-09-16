@@ -1,73 +1,158 @@
-.heroPageMiddle{
-    width: 100%;
-    height: 120vh;
-    /* background: #000; */
-    display: flex;
-    color: antiquewhite;
+.heroPMid {
+  width: 100%;
+  height: 120vh;
+  /* background: #000; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: antiquewhite;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.polygon11{
-    width: 20%;
+.heroMPidInner {
+  width: 100%;
+  height: 90%;
+  /* background: red; */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .heroMidLeft {
+    width: 70%;
     height: 100%;
-    background: teal;
+    background: tomato;
+} */
 
+.polygon11 {
+  width: 20%;
+  height: 100%;
+  /* background: teal; */
 }
 
-.effortlessText{
-    width: 50%;
-    height: 100%;
-    background: gray;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.heroPMidCenter {
+  width: 45%;
+  height: 100%;
+  /* background: gray; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
-.effort{
-    width: 378px;
-    height: 190px;
-    background: thistle;
-    text-align: center;
-    
-}
-.budget{
-    color: rgba(249, 251, 125, 1);
-    
-
+.heroPMidTop {
+  width: 100%;
+  height: 35%;
+  /* background: thistle; */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-direction: column;
 }
 
-.trakfundText{
-    width: 522px;
-    height: 98px;
-    background: steelblue;
+.effortTxt {
+  line-height: 60px;
+  font-size: 2.5rem;
 }
 
-.signUpText{
-    width: 267px;
-    height: 89px;
-    background: rosybrown;
+.budget {
+  color: rgba(249, 251, 125, 1);
 }
 
-.iphone15{
-    width: 30%;
-    height: 100%;
-    background: navy;
+.createPTxt {
+  width: 83%;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
-.gradientBox{
-    width: 15%;
-    height: 80%;
+.heroPMidBottom {
+  width: 100%;
+  height: 35%;
+  /* background: steelblue; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
-.lilac{
-width: 362px;
-height: 45%;
-background: rgba(226, 189, 255, 0.5);
-border-radius: 90px;
-
-}
-.yellow{
-    width: 362px;
-    height: 50%;
-    background: rgba(249, 251, 166, 0.8);
+.trakFundzBudgeting {
+  width: 76%;
+  font-size: 1.5rem;
 }
 
+.signUpTxtDiv {
+  width: 100%;
+  height: 40%;
+  /* background: rosybrown; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.signUpTxtDivInner {
+  width: 60%;
+  height: 100%;
+  /* background: teal; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.signUpEffortlessly {
+  font-size: 1.2rem;
+}
+
+.getStartedCenterBtn {
+  height: 2.8rem;
+  width: 40%;
+  background: var(--brandColour);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.smallPolyCentre {
+  width: 100%;
+  height: 20%;
+  /* background: mediumvioletred; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.polyRightSmall {
+  width: 40%;
+  height: 40%;
+}
+
+.heroMidRight {
+  width: 30%;
+  height: 100%;
+  /* background: rgb(175, 175, 175); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gradientBox {
+  width: 15%;
+  height: 80%;
+  background: #000;
+}
+
+.lilac {
+  width: 362px;
+  height: 362px;
+  /* background: rgba(226, 189, 255, 0.5); */
+  border-radius: 90px;
+  fill: rgba(226, 189, 255, 0.5);
+  filter: blur(29.510862350463867px);
+}
+
+.yellow {
+  width: 362px;
+  height: 362px;
+  fill: rgba(249, 251, 166, 0.8);
+  filter: blur(51.63389587402344px);
+  /* background: rgba(249, 251, 166, 0.8); */
+}

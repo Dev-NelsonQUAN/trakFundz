@@ -4,7 +4,7 @@ import "./Login.css";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import Logo from "../../../assets/trakFundzLogo.svg";
 import { useNavigate } from "react-router-dom";
-import { toast, Toaster } from "react-hot-toast";
+// import { toast, Toaster } from "react-hot-toast";
 
 
 const Login = () => {
@@ -18,28 +18,29 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      toast.error("Data is required");
-      toast.error(res?.message);
-      setLoading(false);
-    } else {
-      const apiData = { email, password };
-      const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+    console.log("first")
+    // if (!email || !password) {
+      // toast.error("Data is required");
+      // toast.error(res?.message);
+      // setLoading(false);
+    // } else {
+      // const apiData = { email, password };
+      // const url = "https://trackfundz-wmhv.onrender.com/api/v1";
       
-      try {
-        setLoading(true);
-        const res = await axios.post(`${url}/login`, apiData);
-        if (res.data) {
-          localStorage.setItem("token", res.data.token);
-        }
+      // try {
+      //   setLoading(true);
+      //   const res = await axios.post(`${url}/login`, apiData);
+      //   if (res.data) {
+      //     localStorage.setItem("token", res.data.token);
+      //   }
 
-        toast.success("Welcome User");
-        Nav("/dashboard");
-      } catch (error) {
-        toast.error(error, "This is an error");
-        setLoading(false);
-      }
-    }
+      //   toast.success("Welcome User");
+      //   Nav("/dashboard/home");
+      // } catch (error) {
+      //   toast.error(error, "This is an error");
+      //   setLoading(false);
+      // }
+    // }
   };
 
   const viewPassword = () => {
@@ -109,7 +110,7 @@ const Login = () => {
             </div>
 
             <div className="btnLow">
-              <button className="loginBtn" type="submit">
+              <button className="loginBtn" type="submit" onClick={() => Nav("/dashboard/home")}>
                 {loading ? "Loading..." : "Log In"}
               </button>
               <p className="haveAccount">
@@ -123,7 +124,7 @@ const Login = () => {
           </div>
         </form>
       </div>
-      <Toaster />
+      {/* <Toaster />                                                                                                                                                                                                                                                                                                                  */}
     </>
   );
 };
