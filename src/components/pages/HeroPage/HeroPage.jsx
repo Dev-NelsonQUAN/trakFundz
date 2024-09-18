@@ -73,7 +73,7 @@ const HeroPage = () => {
               effortlessly track expenses, plan budgets, and manage debt.{" "}
             </p>
 
-            <p className="aboutTrakFundz">
+            <p className="getTrial">
               {" "}
               Get 30 days free trial when you Sign up.{" "}
             </p>

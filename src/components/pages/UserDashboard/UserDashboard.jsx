@@ -15,7 +15,7 @@ const UserBoard = () => {
             <div className="userDashboardTopOne">
               <div className="userDashboardTopOneInner">
                 <div className="userDashboardTopOneUp">
-                  <p className="userDashAmount"> Available Balance </p>
+                  <p className="userDashAmount"> Available balance </p>
                   <p className="userPrice"> ₦ 0.00 </p>
                 </div>
 
@@ -25,7 +25,7 @@ const UserBoard = () => {
                     <nav className="redUDTargetReached"> </nav>
                   </div>
 
-                  <h2 className="uDashExpTrack"> Expense Tracker </h2>
+                  <p className="uDashBTrack"> Expense Tracker </p>
                 </div>
               </div>
             </div>
@@ -33,7 +33,7 @@ const UserBoard = () => {
             <div className="userDashboardTopTwo">
               <div className="userDashboardTopTwoInner">
                 <div className="userDashboardTopTwoUp">
-                  <p className="userDashAmount"> Total Budget Reached </p>
+                  <p className="userDashAmounTwo"> Total budget reached </p>
                   <p className="userTwoPrice"> ₦ 0.00 </p>
                 </div>
 
@@ -43,7 +43,7 @@ const UserBoard = () => {
                     <nav className="redUDTargetReached"> </nav>
                   </div>
 
-                  <h2 className="uDashExpTrack"> Budget Planner </h2>
+                  <p className="uDashBudGTrack"> Budget Planner </p>
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@ const UserBoard = () => {
             <div className="uDTopThree">
               <div className="userDashboardTopThreeInner">
                 <div className="userDashboardTopThreeUp">
-                  <p className="userDashThreemount"> Total Debt Paid </p>
+                  <p className="userDashThreeAmount"> Total debt paid </p>
                   <p className="userThreePrice"> ₦ 0.00 </p>
                 </div>
 
@@ -61,7 +61,7 @@ const UserBoard = () => {
                     <nav className="redUDTargetThreeReached"> </nav>
                   </div>
 
-                  <h2 className="uDashThreeExpTrack"> Debt Manager </h2>
+                  <p className="uDashThreeDebtTrack"> Debt Manager </p>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@ const UserBoard = () => {
 
           <div className="uDBottom">
             <div className="uDBottomTop">
-              <h3 className="uDExpense"> Expense Analysis </h3>
+              <h3 className="uDExpense"> Recent transaction </h3>
               <div className="uDLoanBottom">
                 <div className="uDBottomPurpleRound"> </div>
                 <p className="uDBottomIncomeText"> Income </p>
@@ -95,18 +95,132 @@ const UserBoard = () => {
             </div>
 
             <div className="uDBottomCenterDown">
-              <div className="uDBottomCenterDownInner"></div>
+              <div className="uDBottomCenterDownInner">
+                <div className="uDashBottomcenterDownTop">
+                  <p className="uDBCDTFont"> Date </p>
+                  <p className="uDBCDTFont"> Amount </p>
+                  <p className="uDBCDTFont"> Description </p>
+                  <p className="uDBCDTFont"> Expense </p>
+                </div>
+
+                <div className="uDashBottomcenterDownList">
+                  <p className="uDBCDTFontList"> 1/17/24 </p>
+                  <p className="uDBCDTFontList"> ₦12,000 </p>
+                  <p className="uDBCDTFontList"> The Place </p>
+                  <p className="uDBCDTFontList"> food </p>
+                </div>
+
+                <div className="uDashBottomcenterDownTop">
+                  <p className="uDBCDTFontList"> Date </p>
+                  <p className="uDBCDTFontList"> ₦2,000 </p>
+                  <p className="uDBCDTFontList"> Airtel Data </p>
+                  <p className="uDBCDTFontList"> Internet Data </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="uDRight">
           <div className="uDTransaction">
-            <h6 className="uDTransactionHistory"> Transaction History </h6>
+            <h6 className="uDTransactionHistory"> Expense </h6>
             <div className="uDTransactionNoAct">
-              <p className="noActivity"> No activity </p>
+              <p className="totAmountSPent"> Total amount spent </p>
+              <h6 className="theAmount"> ₦ 40, 500 </h6>
+              <div className="uRighTopTwoThreeUDownUp">
+                <nav className="greenUDTargetThreeReached"> </nav>
+                <p className="uRightInc"> Income </p>
+                <nav className="redUDTargetThreeReached"> </nav>
+                <p className="uRightExP"> Expense </p>
+              </div>
+              <p className="amountAnalys">
+                {" "}
+                You have spent ₦ 15, 000
+                <br /> compared to last week
+              </p>
+              {/* <p className="noActivity"> No activity </p> */}
             </div>
           </div>
+
+          <div className="uDTransTwo">
+            <h6 className="uDTransTwoBudget"> Budget </h6>
+            <div className="uDTransactionNoActTwo">
+              <div className="uDTransProgressOne">
+                <div className="uDTransProgressOneTop">
+                <p className="leftItem"> iPhone 15 Promax </p>
+                <p className="rightItem"> ₦ 15,0000 </p>
+                </div>
+
+                <div className="uDTransProgressiveOne">
+                  
+                </div>
+              </div>
+
+              <div className="uDTransProgressTwo">
+                <div className="uDTransProgressTwoTop">
+                <p className="leftItem"> Modern duplex aparte </p>
+                <p className="rightItem"> ₦ 2,000,000,000 </p>
+                </div>
+
+                <div className="uDTransProgressiveTwo">
+                  
+                </div>
+              </div>
+
+              <div className="uDTransProgressThree">
+                <div className="uDTransProgressThreeTop">
+                <p className="leftItem"> GLE 450 White </p>
+                <p className="rightItem"> ₦ 130,000,000, 000 </p>
+                </div>
+
+                <div className="uDTransProgressiveThree">
+                  
+                </div>
+              </div>
+ 
+            </div>
+          </div>
+
+          <div className="uDTransThree">
+            <h6 className="uDTransThreeBudget"> Budget </h6>
+            <div className="uDTransactionNoActThree">
+              <div className="uDTransProgressThreeOne">
+                <div className="uDTransProgressThreeOneTop">
+                <p className="leftItem"> iPhone 16 Promax </p>
+                <p className="rightItem"> ₦ 3,00,000,000 </p>
+                </div>
+
+                <div className="uDTransProgressiveOne">
+                  
+                </div>
+              </div>
+
+              <div className="uDTransProgressThreeTwo">
+                <div className="uDTransProgressThreeTwoTop">
+                <p className="leftItem"> Friday Night </p>
+                <p className="rightItem"> ₦ 15,000,000 </p>
+                </div>
+
+                <div className="uDTransProgressiveTwo">
+                  
+                </div>
+              </div>
+
+              <div className="uDTransProgressThreeThree">
+                <div className="uDTransProgressThreeThreeTop">
+                <p className="leftItem"> Tesla baby </p>
+                <p className="rightItem"> ₦ 315,000,000,000,000,000 </p>
+                </div>
+
+                <div className="uDTransProgressiveThree">
+                  
+                </div>
+              </div>
+ 
+            </div>
+          </div>
+          {/* <div className="uDTransThree"></div> */}
+          
         </div>
       </div>
     </div>

@@ -22,120 +22,111 @@ const SideBar = () => {
 
       <div className="holdDashboardFonts">
         <div className="upFonts">
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "HeaderActive" : "HeaderNotActive"
+          <NavLink 
+            className={({isActive}) =>
+            isActive ? "HeaderActive" : "HeaderNotActive"
+          }
+          to={"/dashboard/home"}>
+            <div className="innerF">
+              {/* <li className="dashLI">  */}
+              <AiFillHome /> 
+                Dashboard 
+                {/* </li> */}
+            </div>
+          </NavLink>
+
+          <NavLink  
+            className={({isActive}) => 
+            isActive ? "HeaderActive" : "HeaderNotActive"
             }
-            to={"/dashboard/home"}
-          >
-            <div className="sideBarH5">
-              <div className="sideIcons">
-                <AiFillHome
-                  className="iconHomeDash"
-                  style={{ fontSize: "20px" }}
-                />
-              </div>
-              <div className="h5SideTxt">
-              <h5>Dashboard </h5>
-              </div>
+          to={"/dashboard/expense-track"}>
+            <div className="innerF">
+              <GiTakeMyMoney />
+              {/* <li className="dashLI"> */}
+                 Expense Tracker 
+                 {/* </li> */}
             </div>
           </NavLink>
 
           <NavLink
-            className={({ isActive }) =>
-              isActive ? "HeaderActive" : "HeaderNotActive"
-            }
-            to={"/dashboard/expense-track"}
-          >
-            <div className="sideBarH5">
-              <GiTakeMyMoney
-                className="iconExpense"
-                style={{ fontSize: "23px" }}
-              />
-              <h5>Expense Tracker </h5>
+           className={({isActive}) => 
+          isActive ? "HeaderActive" : "HeaderNotActive"
+          }
+          to={"/dashboard/budget-planner"}>
+            <div className="innerF">
+              <GiPiggyBank/>
+              {/* <li className="dashLI">  */}
+                Budget Planner
+                {/* </li> */}
             </div>
           </NavLink>
 
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "HeaderActive" : "HeaderNotActive"
+          <NavLink 
+            className={({isActive}) =>
+             isActive ? "HeaderActive" : "HeaderNotActive"
             }
-            to={"/dashboard/budget-planner"}
-          >
-            <div className="sideBarH5">
-              <GiPiggyBank
-                className="iconPiggyBudget"
-                style={{ fontSize: "23px" }}
-              />
-              <h5>Budget Planner </h5>
+          to={"/dashboard/debt-manager"}>
+            <div className="innerF">
+              <GiPiggyBank />
+              {/* <li className="dashLI">  */}
+                Debt Manager 
+                {/* </li> */}
             </div>
           </NavLink>
 
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "HeaderActive" : "HeaderNotActive"
-            }
-            to={"/dashboard/debt-manager"}
-          >
-            <div className="sideBarH5">
-              <GiReceiveMoney
-                className="iconDebt"
-                style={{ fontSize: "23px" }}
-              />
-              Debt Manager{" "}
+          <NavLink 
+           className={({isActive}) =>
+            isActive ? "HeaderActive" : "HeaderNotActive"
+          }
+          to={"/dashboard/report"}>
+            <div className="innerF">
+              <GiReceiveMoney />
+              {/* <li className="dashLI">  */}
+                Report Insights 
+                {/* </li> */}
             </div>
           </NavLink>
 
-          <NavLink
-            className={({ isActive }) =>
+          <NavLink 
+            className={({isActive}) => 
               isActive ? "HeaderActive" : "HeaderNotActive"
             }
-            to={"/dashboard/report"}
-          >
-            <div className="sideBarH5">
-              <FcBullish className="iconRepo" style={{ fontSize: "23px" }} />
-              <h5>Report Insights </h5>
-            </div>
-          </NavLink>
-
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "HeaderActive" : "HeaderNotActive"
-            }
-            to={"/dashboard/settings"}
-          >
-            <div className="sideBarH5">
-              <IoSettingsSharp
-                className="iconSettings"
-                style={{ fontSize: "23px" }}
-              />
-              <h5>Settings </h5>
+          to={"/dashboard/settings"}>
+            <div className="innerF">
+              <IoSettingsSharp />
+              {/* <li className="dashLI">  */}
+                Settings 
+                {/* </li> */}
             </div>
           </NavLink>
         </div>
 
         <div className="downFonts">
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "HeaderActive" : "HeaderNotActive"
+          <NavLink 
+            className={({isActive}) =>
+            isActive ? "HeaderActive" : "HeaderNotActive"
             }
             to={"/dashboard/help"}
           >
-            <div className="sideBarH5">
-              <TbHelpTriangle className="icon" style={{ fontSize: "23px" }} />
-              <h5>Help </h5>
+            <div className="innerF">
+              <TbHelpTriangle />
+              {/* <li className="dashLI">  */}
+                Help 
+                {/* </li> */}
             </div>
           </NavLink>
 
           <NavLink
-            className={({ isActive }) =>
-              isActive ? "HeaderActive" : "HeaderNotActive"
-            }
+            className={({isActive}) =>
+            isActive ? "HeaderActive" : "HeaderNotActive"
+            } 
             to={"/"}
           >
-            <div className="sideBarH5">
-              <AiOutlinePoweroff style={{ fontSize: "23px" }} />
-              <h5>Log Out</h5>
+            <div className="innerF">
+              <AiOutlinePoweroff />
+              {/* <li className="dashLI">  */}
+                Log Out
+                {/* </li> */}
             </div>
           </NavLink>
         </div>
@@ -143,6 +134,5 @@ const SideBar = () => {
     </div>
   );
 };
-
 
 export default SideBar;

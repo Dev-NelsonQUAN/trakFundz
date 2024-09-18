@@ -94,7 +94,7 @@
   
   .InsideFormHolder{
       width: 55%;
-      height: 88%;
+      height: 92%;
       /* background: rebeccapurple; */
       display: flex;
       justify-content: space-between;
@@ -103,17 +103,18 @@
   
   .onTopForm{
       width: 100%;
-      height: 17%;
+      height: 16%;
       /* background: rgb(28, 192, 13); */
       display: flex;
       flex-direction: column;
       align-items: center;
+      /* gap: 30px; */
       justify-content: space-between;
   }
   
   .alreadyHolder{
       width: 100%;
-      height: 30%;
+      height: 14%;
       /* background: pink; */
       display: flex;
       justify-content: flex-end;
@@ -139,13 +140,13 @@
   
   .personalInfoHolder{
       width: 90%;
-      height: 40%;
+      height: 50%;
       display: flex;
       justify-content: space-evenly;
       /* background: #000; */
       align-items: center;
       flex-direction: column;
-      gap: 9px;
+      gap: 5px;
       /* background: #000; */
   }
   
@@ -155,7 +156,7 @@
   }
   
   .infoP{
-      font-size: 15px;
+      font-size: 0.8rem;
       font-weight: 500;
       color: var(--microcopyTextColour);
   }
@@ -180,13 +181,13 @@
     /* justify-content: ; */
     gap: 6px;
     flex-direction: column;
-    padding: 10px;
     position: relative;
   }
   
   .firstAndLastNameInput{
       width: 80%;
-      height: 30%;
+      height: 9rem;
+      /* height: 30%; */
       /* background: turquoise; */
       display: flex;
       justify-content: space-between;
@@ -195,7 +196,7 @@
   
   .firstNameDiv{
       width: 48%;
-      height: 100%;
+      /* height: 100%; */
       /* background: rebeccapurple; */
       display: flex;
       /* justify-content: space-between; */
@@ -232,7 +233,8 @@
   
   .emailInputDiv{
       width: 80%;
-      height: 30%;
+      /* height: 30%; */
+      height: 9rem;
       /* background: #000; */
       display: flex;
       justify-content: space-between;
@@ -241,8 +243,14 @@
   }
   
   .email{
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 400;
+      /* color: red; */
+  }
+
+  .signEmail {
+    /* font-size: 1rem; */
+    font-size: 14px;
   }
   
   .regInput {
@@ -257,16 +265,22 @@
   
   .phoneNumDiv{
       width: 80%;
-      height: 30%;
+      /* height: 30%; */
+      height: 9rem;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
       /* background: #000; */
   }
+
+  .phone {
+    font-size: 14px;
+  }
   
   .enterPasswordDiv{
       width: 80%;
       height: 40%;
+      height: 9rem;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
@@ -276,14 +290,17 @@
   
   .enterPassword{
       width: 100%;
-      height: 25%;
+      height: 20%;
+      font-size: 14px;
       /* background: red; */
   }
   
   .TwoInputHolder {
     width: 100%;
-    height: 50%;
+    height: 2.5rem;
+    /* height: 60%; */
     background: var(--colours);
+    /* background: #000; */
     border: 1px solid var(--inactiveText);
     display: flex;
     justify-content: space-evenly;
@@ -293,7 +310,8 @@
   
   .inputOne {
     width: 90%;
-    height: 40%;
+    /* height: 2rem; */
+    height: 80%;
     /* background: #000; */
     border: none;
     outline: none;
@@ -307,7 +325,7 @@
   
   .BtnDiv{
       width: 80%;
-      height: 185px;
+      /* height: 185px; */
       margin-top: 30px;
       display: flex;
       justify-content: space-between;
@@ -319,7 +337,7 @@
   
   .Btn {
     width: 100%;
-    height: 3rem;
+    height: 2.5rem;
     background: var(--brandColour);
     border: none;
     color: var(--colours);
@@ -331,7 +349,8 @@
   
   .byCreate{
       width: 56%;
-      font-size: 14px;
+      font-size: 0.8rem;
+      /* font-size: 14px; */
       text-align: center;
       font-weight: 400;
       line-height: 15px;
