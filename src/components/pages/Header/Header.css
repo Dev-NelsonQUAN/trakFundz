@@ -98,7 +98,7 @@ li {
 
 .landingPLoginBtn {
   width: 45%;
-  height: 3.2rem;
+  height: 2.5rem;
   border: 1px solid white;
   color: white;
   border-radius: 5px;
@@ -114,7 +114,7 @@ li {
 
 .signupBtn {
   width: 45%;
-  height: 3.2rem;
+  height: 2.5rem;
   background: var(--brandColour);
   border: none;
   border-radius: 5px;

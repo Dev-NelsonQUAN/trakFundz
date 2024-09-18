@@ -76,10 +76,15 @@
 
 .aboutTrakFundz {
   color: white;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
-  width: 74%;
+  font-weight: 500;
+  width: 100%;
+  color: red;
+}
+
+.getTrial {
+  font-size: 1rem;
 }
 
 .tryNowBtn {
