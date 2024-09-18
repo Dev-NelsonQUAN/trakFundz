@@ -19,6 +19,8 @@ import DebtManager from "./components/pages/DebtManager/DebtManager";
 import ReportInsights from "./components/pages/ReportInsights/ReportInsights";
 import Settings from "./components/pages/Settings/Settings";
 import Help from "./components/pages/Help/Help"
+import PrevDashBoard from "./components/pages/PrevDashBoard/PrevDashBoard"
+import VerificationPage from "./components/pages/VerificationPage/VerificationPage";
 
 const router = createHashRouter([
   {
@@ -40,6 +42,10 @@ const router = createHashRouter([
   {
     path: "/verify",
     element: <VerifyEmail />,
+  },
+  {
+    path: "/verifySuccessful/:token",
+    element: <VerificationPage/>
   },
   {
     path: "/reset",
@@ -64,6 +70,7 @@ const router = createHashRouter([
     children: [
       {
         path: "home",
+        // element: <PrevDashBoard/>
         element: <UserBoard/>
       },
       {
