@@ -13,6 +13,12 @@ import { AiOutlinePoweroff } from "react-icons/ai";
 
 const SideBar = () => {
   const Nav = useNavigate();
+  
+  const handleLogout = () =>{
+    Nav("/login")
+    localStorage.removeItem("token")
+    localStorage.removeItem("userId")
+  }
 
   return (
     <div className="sideBarHolder">
@@ -117,10 +123,11 @@ const SideBar = () => {
           </NavLink>
 
           <NavLink
-            className={({isActive}) =>
-            isActive ? "HeaderActive" : "HeaderNotActive"
-            } 
-            to={"/"}
+          className="HeaderNotActive"
+            // className={({isActive}) =>
+            // isActive ? "HeaderActive" : "HeaderNotActive"
+            // } 
+            onClick={handleLogout}
           >
             <div className="innerF">
               <AiOutlinePoweroff />

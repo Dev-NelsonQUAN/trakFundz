@@ -21,6 +21,7 @@ import Settings from "./components/pages/Settings/Settings";
 import Help from "./components/pages/Help/Help"
 import PrevDashBoard from "./components/pages/PrevDashBoard/PrevDashBoard"
 import VerificationPage from "./components/pages/VerificationPage/VerificationPage";
+import { Toaster } from "react-hot-toast";
 
 const router = createHashRouter([
   {
@@ -109,6 +110,7 @@ const App = () => {
   return (
     <>
       <RouterProvider router={router} />
+      <Toaster/>
     </>
   );
 };

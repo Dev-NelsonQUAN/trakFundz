@@ -1,8 +1,59 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./DebtManager.css";
 import { FaCirclePlus } from "react-icons/fa6";
+import axios from "axios";
+
+const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const DebtManager = () => {
+  const [user, setUser] = useState()
+  const [debtOwed, setDebtOwed] = useState();
+  const [description, setDescription] = useState();
+  const [duration, setDuration] = useState();
+
+  const addDebt = async (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    try {
+      await axios.post(
+        `${url}/debt/create`,
+        {
+          debtOwed: parseFloat(debtOwed),
+          description,
+          duration,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setAddIncome(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const getUser = async () => {
+    try {
+      const userId = localStorage.getItem('userId');
+      
+      if (!userId) {
+        Nav("/login")
+        toast.error("Please Login again")
+        // throw new Error('User ID not found in localStorage.');
+      }
+      const response = await axios.get(`${url}/oneuser/${userId}`);
+      setUser(response?.data.data);
+      // setLoading(false);
+    } catch (err) {
+      // setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getUser();
+  }, []);
+
   return (
     <div className="debtManagerDashboard">
       <div className="debtManagerDashInner">
@@ -10,13 +61,13 @@ const DebtManager = () => {
           <div className="debtManagerLeftTop">
             <div className="debtManagerTopOne">
               <p className="totaldebt"> Total debt amount </p>
-              <p className="debtGoalPrice"> ₦ 0.00 </p>
+              <p className="debtGoalPrice"> ₦ {user?.totalDebtAmount} </p>
             </div>
 
             <div className="debtManTopTwo">
               <div className="debtManTopTwoUp">
                 <p className="totalAmountReached"> Total debt paid </p>
-                <p className="totalAmountPrice"> ₦ 0.00 </p>
+                <p className="totalAmountPrice"> ₦ {user?.totaldebtPaid} </p>
               </div>
 
               <div className="debtManTopTwoDown">
@@ -53,7 +104,7 @@ const DebtManager = () => {
                 </div>
 
                 <div className="debtPlanMidBottomDownTopRight">
-                  <h6 className="debtManAmount"> Target </h6>
+                  <h6 className="debtManAmount"> Amount </h6>
                   <h6 className="debtManDuration"> Duration </h6>
                 </div>
               </div>
@@ -61,12 +112,27 @@ const DebtManager = () => {
               <div className="debtManMidshowInputs">
                 <div className="debtManMidshowInputInner">
                   <div className="debtManMidShowInputLeft">
-                    <input className="debtLoanInput" type="text" />
+                    <input
+                      className="debtLoanInput"
+                      type="text"
+                      onChange={(e) => setDescription(e.target.value)}
+                      value={description}
+                    />
                   </div>
 
                   <div className="debtManMidShowInputRight">
-                    <input className="debtManAmountInput" type="text" />
-                    <input className="debtManDurationInput" type="text" />
+                    <input
+                      className="debtManAmountInput"
+                      type="text"
+                      onChange={(e) => setDebtOwed(e.target.value)}
+                      value={debtOwed}
+                    />
+                    <input
+                      className="debtManDurationInput"
+                      type="text"
+                      onChange={(e) => setDuration(e.target.value)}
+                      value={duration}
+                    />
                   </div>
                 </div>
               </div>
@@ -77,7 +143,9 @@ const DebtManager = () => {
                 </div>
 
                 <div className="debtManAssignBtn">
-                  <button className="assignLoanBtn"> Assign Loan </button>
+                  <button className="assignLoanBtn"
+                  onClick={addDebt}
+                  > Assign Loan </button>
                 </div>
               </div>
 

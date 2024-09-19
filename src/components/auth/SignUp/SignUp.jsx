@@ -7,6 +7,8 @@ import { FaEyeSlash, FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/trakFundzLogoReal.svg";
 
+export const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+
 const SignUp = () => {
   const [toogle, setToogle] = useState();
   const [firstName, setFirstName] = useState();
@@ -85,10 +87,10 @@ const SignUp = () => {
   const register = async (e) => {
     e.preventDefault();
 
-    // validate your beans here 
-    
+    // validate your beans here
+
     setLoading(true);
-  
+
     if (
       !firstName ||
       !lastName ||
@@ -108,8 +110,6 @@ const SignUp = () => {
         confirmPassword,
         phoneNumber,
       };
-
-      const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
       try {
         const res = await axios.post(`${url}/signup`, apiData);
@@ -142,12 +142,12 @@ const SignUp = () => {
 
   const viewPassword = () => {
     setPasswordInputs(true);
-    setShowEye(true)
+    setShowEye(true);
   };
 
   const hidePassword = () => {
     setPasswordInputs(false);
-    setShowEye(false)
+    setShowEye(false);
   };
 
   const viewSecPassword = () => {
@@ -205,10 +205,7 @@ const SignUp = () => {
             </div>
 
             <div className="formHolder">
-              <form
-                className="InputHolder"
-                onSubmit={register}
-              >
+              <form className="inputHolder" onSubmit={register}>
                 <div className="firstAndLastNameInput">
                   <div className="firstNameDiv">
                     <p className="firstName"> First Name </p>
@@ -262,12 +259,11 @@ const SignUp = () => {
                   <div className="TwoInputHolder">
                     <input
                       className="inputOne"
-                      type={passwordInputs ? 'text' : 'password' }
+                      type={passwordInputs ? "text" : "password"}
                       required
                       placeholder="Enter Your Password"
                       onChange={(e) => setPassword(e.target.value)}
                     />
-
 
                     {!passwordInputs ? (
                       <FaRegEyeSlash
@@ -292,14 +288,14 @@ const SignUp = () => {
                 <div className="enterPasswordDiv">
                   <p className="enterPassword"> Confirm Password </p>
                   <div className="TwoInputHolder">
-                  <input
+                    <input
                       className="inputOne"
-                      type={confirmPasswordInput ? 'text' : 'password' }
+                      type={confirmPasswordInput ? "text" : "password"}
                       required
                       placeholder="Enter Your Password"
                       onChange={(e) => setConfirmPassword(e.target.value)}
                     />
-                  
+
                     {!confirmPasswordInput ? (
                       <FaRegEyeSlash
                         onClick={viewSecPassword}
@@ -316,8 +312,7 @@ const SignUp = () => {
                 </div>
 
                 <div className="BtnDiv">
-                  <button className="Btn" 
-                  type="Submit">
+                  <button className="Btn" type="Submit">
                     {loading ? "Loading..." : "Create Account"}
                   </button>
 
