@@ -2,6 +2,16 @@ import React from "react";
 import "./Settings.css";
 
 const Settings = () => {
+
+  // const userToekn = localStorage.getItem('userToken')
+
+  // localStorage.setItem('userToken', res.data.userToken)
+
+//   headers: {
+//     "Content-Type": "multipart/form-data",
+//      "Authorization": Bearer ${userToekn}
+// }
+
   return (
     <div className="settingsHolder">
       <div className="settingsInner">

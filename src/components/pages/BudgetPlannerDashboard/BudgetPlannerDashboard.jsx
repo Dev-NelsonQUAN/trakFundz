@@ -1,9 +1,65 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./BudgetPlannerDashboard.css";
 import { FaPlus, FaPlusCircle } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
+import axios from "axios";
+
+const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const BudgetPlannerDashboard = () => {
+  const [user, setUser] = useState()
+  const [description, setDescription] = useState()
+  const [target,setTarget] = useState()
+  const [duration, setDuration] = useState()
+    // const [loading, setLoading] = useState()
+
+    const createBudget = async (e) => {
+      e.preventDefault();
+      const token = localStorage.getItem("token");
+      try {
+        await axios.post(
+          `${url}/budget/newBudget`,
+          {
+            description,
+            target: parseFloat(target),
+            duration,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        setAddIncome(false);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    const getUser = async () => {
+      try {
+        const userId = localStorage.getItem('userId');
+        
+        if (!userId) {
+          Nav("/login")
+          toast.error("Please Login again")
+          // throw new Error('User ID not found in localStorage.');
+        }
+        const response = await axios.get(`${url}/oneuser/${userId}`);
+        setUser(response?.data.data);
+        // setLoading(false);
+      } catch (err) {
+        // setLoading(false);
+      }
+    };
+    useEffect(() => {
+      getUser();
+    }, []);
+  
+
+
+  console.log(user)
+
   return (
     <div className="budgetPlannerDashboard">
       <div className="budgetPlannerDashInner">
@@ -12,13 +68,13 @@ const BudgetPlannerDashboard = () => {
         <div className="budgetPlannerLeftTop">
           <div className="bPlannerTopOne">
             <p className="totalGoal"> Total target goal </p>
-            <p className="totalGoalPrice"> ₦ 0.00 </p>
+            <p className="totalGoalPrice"> ₦ {user?.totalTargetGoal} </p>
           </div>
 
           <div className="bPlannerTopTwo">
             <div className="bPlannerTopTwoUp">
               <p className="totalAmountReached"> Total amount reached </p>
-              <p className="totalAmountPrice"> ₦ 0.00 </p>
+              <p className="totalAmountPrice"> ₦ {user?.totalAmountSaved} </p>
             </div>
 
             <div className="bPlannerTopTwoDown">
@@ -34,7 +90,7 @@ const BudgetPlannerDashboard = () => {
               </div>
 
               <div className="bPlanTopTwoDownBottom">
-                <p> No Record Yet </p>
+                <p className="noRecs"> No Record Yet </p>
               </div>
             </div>
           </div>
@@ -64,12 +120,21 @@ const BudgetPlannerDashboard = () => {
             <div className="bPlanMidshowInputs">
               <div className="bPlanMidshowInputInner">
                 <div className="bPlanMidShowInputLeft">
-                  <input className="budgetBudgetInput" type="text" />
+                  <input className="budgetBudgetInput" type="text" 
+                  onChange={(e) => setDescription(e.target.value)}
+                  value={description}
+                  />
                 </div>
 
                 <div className="bPlanMidShowInputRight">
-                  <input className="budgetTargetInput" type="text" />
-                  <input className="budgetDurationInput" type="text" />
+                  <input className="budgetTargetInput" type="text" 
+                  onChange={(e) => setTarget(e.target.value)}
+                  value={target}
+                  />
+                  <input className="budgetDurationInput" type="text" 
+                  onChange={(e) => setDuration(e.target.value)}
+                  value={duration}
+                  />
                 </div>
               </div>
             </div>
@@ -80,7 +145,9 @@ const BudgetPlannerDashboard = () => {
               </div>
 
               <div className="holdBudgetCreateBudgetBtn">
-                <button className="createBudgetBtn"> Create Budget </button>
+                <button className="createBudgetBtn"
+                onClick={createBudget}
+                > Create Budget </button>
               </div>
             </div>
 
@@ -142,7 +209,7 @@ const BudgetPlannerDashboard = () => {
           <div className="budgetPlannerBudget">
             <h6 className="budgetRigthName">Budget</h6>
             <div className="budgetPlanBudgetHold">
-              <p className="noActivity">No Activity </p>
+              <p className="noActivity"> {user?.totalBudget} </p>
             </div>
           </div>
 

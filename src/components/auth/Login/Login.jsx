@@ -4,7 +4,7 @@ import "./Login.css";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import Logo from "../../../assets/trakFundzLogo.svg";
 import { useNavigate } from "react-router-dom";
-// import { toast, Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 
 const Login = () => {
@@ -19,28 +19,31 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     console.log("first")
-    // if (!email || !password) {
-      // toast.error("Data is required");
+    if (!email || !password) {
+      toast.error("Email and Password is required");
       // toast.error(res?.message);
-      // setLoading(false);
-    // } else {
-      // const apiData = { email, password };
-      // const url = "https://trackfundz-wmhv.onrender.com/api/v1";
-      
-      // try {
-      //   setLoading(true);
-      //   const res = await axios.post(`${url}/login`, apiData);
-      //   if (res.data) {
-      //     localStorage.setItem("token", res.data.token);
-      //   }
+      setLoading(false);
+    } else {
+      const apiData = { email, password };
+      const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+      try {
+        setLoading(true);
+        const res = await axios.post(`${url}/login`, apiData);
+        if (res.data) {
+          console.log(res.data)
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("userId", res.data.data._id)
+        } 
 
-      //   toast.success("Welcome User");
-      //   Nav("/dashboard/home");
-      // } catch (error) {
-      //   toast.error(error, "This is an error");
-      //   setLoading(false);
-      // }
-    // }
+        toast.success("Welcome User");
+        Nav("/dashboard/home");
+      } catch (error) {
+        toast.error("This is an error");
+        setLoading(false);
+      } finally {
+        setLoading(false)
+      }
+    } 
   };
 
   const viewPassword = () => {
@@ -110,13 +113,13 @@ const Login = () => {
             </div>
 
             <div className="btnLow">
-              <button className="loginBtn" type="submit" onClick={() => Nav("/dashboard/home")}>
+              <button className="loginBtn" type="submit" >
                 {loading ? "Loading..." : "Log In"}
               </button>
               <p className="haveAccount">
                 {" "}
                 You don't have an account?{" "}
-                <span className="span" onClick={() => Nav("/")}>
+                <span className="span" onClick={() => Nav("/signup")}>
                   Sign Up
                 </span>{" "}
               </p>
