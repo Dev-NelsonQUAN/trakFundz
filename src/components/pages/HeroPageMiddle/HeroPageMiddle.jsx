@@ -54,7 +54,7 @@ const HeroPageMiddle = () => {
             <div className="yellow"></div>
           {/* </div> */}
           <div className="holdMidIOS">
-            {/* <img src={iPhone} alt="phone" /> */}
+            {/* <img src={iPhone} alt="phone" />` */}
           </div>
         </div>
       </div>
@@ -63,3 +63,6 @@ const HeroPageMiddle = () => {
 };
 
 export default HeroPageMiddle;
+
+{/* <img src={iOSAll} alt="iOS device" />
+import iOSAll from "../../../assets/iOSAll.svg"; */}

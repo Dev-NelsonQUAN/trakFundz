@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AddIncome.css";
+import axios from "axios";
+
+const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const AddIncome = ({ setAddIncome }) => {
-  // const noAdd = () => {
-  //     setAddIncome
-  // }
+  const [income, setIncome] = useState();
+  const [paymentName, setPaymentName] = useState();
+
+  const addIncome = async (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    try {
+      await axios.post(
+        `${url}/expenses/createIncome`,
+        {
+          income: parseFloat(income),
+          paymentName,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setAddIncome(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="addIcomeHolder">
       <span className="closeIt" onClick={() => setAddIncome(false)}>
@@ -21,7 +46,12 @@ const AddIncome = ({ setAddIncome }) => {
             <div className="incomeModalBottomInputs">
               <div className="incomeInputOne">
                 <p className="incomeModalP"> Input amount </p>
-                <input className="incomeInputs" type="text" />
+                <input
+                  className="incomeInputs"
+                  type="text"
+                  onChange={(e) => setIncome(e.target.value)}
+                  value={income}
+                />
               </div>
 
               <div className="incomeInputTwo">
@@ -29,11 +59,19 @@ const AddIncome = ({ setAddIncome }) => {
                   {" "}
                   (E.g, Salary, Allowance, Gift, etc.)
                 </p>
-                <input className="incomeInputs" type="text" />
+                <input
+                  className="incomeInputs"
+                  type="text"
+                  onChange={(e) => setPaymentName(e.target.value)}
+                  value={paymentName}
+                />
               </div>
             </div>
 
-            <button className="incomeModalEnter" onClick={() => setAddIncome(false)}> Enter </button>
+            <button className="incomeModalEnter" onClick={addIncome}>
+              {" "}
+              Enter{" "}
+            </button>
           </div>
         </div>
       </div>

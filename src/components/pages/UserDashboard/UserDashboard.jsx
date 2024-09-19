@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./UserDashboard.css";
 import UserDashboardMap from "../UserDashboardMap/UserDashboardMap";
 import { IoArrowDown } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import DashboardRightMap from "../DashboardRightMap/DashboardRightMap";
 import { FaCirclePlus } from "react-icons/fa6";
+import axios from "axios"
+import { useNavigate } from "react-router-dom";
+
+
+const url = "https://trackfundz-wmhv.onrender.com/api/v1"
 
 const UserBoard = () => {
+  const Nav = useNavigate();
+  const [user, setUser] = useState()
+  // const [loading, setLoading] = useState()
+
+const getUser = async () => {
+  try {
+    const userId = localStorage.getItem('userId');
+    
+    if (!userId) {
+      Nav("/login")
+      toast.error("Please Login again")
+      // throw new Error('User ID not found in localStorage.');
+    }
+    const response = await axios.get(`${url}/oneuser/${userId}`);
+    setUser(response?.data.data);
+    // setLoading(false);
+  } catch (err) {
+    // setLoading(false);
+  }
+};
+useEffect(() => {
+  getUser();
+}, []);
+
+  console.log(user)
+
   return (
     <div className="userdashboard">
       <div className="userDashboardInner">
@@ -16,7 +47,7 @@ const UserBoard = () => {
               <div className="userDashboardTopOneInner">
                 <div className="userDashboardTopOneUp">
                   <p className="userDashAmount"> Available balance </p>
-                  <p className="userPrice"> ₦ 0.00 </p>
+                  <p className="userPrice"> ₦ {user?.availableBalance} </p>
                 </div>
 
                 <div className="userDashboardTopOneDown">
@@ -34,7 +65,7 @@ const UserBoard = () => {
               <div className="userDashboardTopTwoInner">
                 <div className="userDashboardTopTwoUp">
                   <p className="userDashAmounTwo"> Total budget reached </p>
-                  <p className="userTwoPrice"> ₦ 0.00 </p>
+                  <p className="userTwoPrice"> ₦ {user?.totalTargetGoal} </p>
                 </div>
 
                 <div className="userDashboardTopTwoDown">
@@ -52,7 +83,7 @@ const UserBoard = () => {
               <div className="userDashboardTopThreeInner">
                 <div className="userDashboardTopThreeUp">
                   <p className="userDashThreeAmount"> Total debt paid </p>
-                  <p className="userThreePrice"> ₦ 0.00 </p>
+                  <p className="userThreePrice"> ₦ {user?.totalDebtAmount} </p>
                 </div>
 
                 <div className="userDashboardTopThreeDown">

@@ -1,23 +1,61 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ExpenseTrackerDashboard.css";
 import { FaCirclePlus } from "react-icons/fa6";
 import AddIncome from "../AddIncome/AddIncome";
+import axios from "axios";
 
-const initialState = [
-  {
-    expence: "",
-    desc: "",
-    amount: "",
-  },
-];
+const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const ExpenseTrackerDashboard = () => {
+  const [user, setUser] = useState();
   const [expenses, setExpenses] = useState([]);
   const [history, setHistory] = useState([]);
   const [addIncome, setAddIncome] = useState(false);
 
-  const allowIncome = () => {
-    setAddIncome(true);
+  const getUser = async () => {
+    try {
+      const userId = localStorage.getItem("userId");
+      if (!userId) {
+        // Handle login redirect
+      }
+      const response = await axios.get(`${url}/oneuser/${userId}`);
+      setUser(response?.data.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  const createExpense = async (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+  
+    // Ensure there is only one valid expense
+    const validExpense = expenses.find(exp => exp.amount > 0 && exp.expense && exp.description);
+  
+    if (!validExpense) {
+      console.error("No valid expense to submit.");
+      return;
+    }
+  
+    try {
+      await axios.post(
+        `${url}/expenses/create`,
+        validExpense, // Sending the single expense object
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setAddIncome(false);
+      setExpenses([]); // Reset the expenses array after submission
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const addFields = () => {
@@ -25,26 +63,22 @@ const ExpenseTrackerDashboard = () => {
     setExpenses((prev) => [
       ...prev,
       {
-        expence: "",
+        expense: "",
         amount: "",
-        desc: "",
+        description: "",
       },
     ]);
   };
 
   const handleChange = (index, e) => {
     const { name, value } = e.target;
-    const newInputs = [...expenses];
-    newInputs[index] = { ...newInputs[index], [name]: value };
-    setExpenses(newInputs);
+    const newExpenses = [...expenses];
+    newExpenses[index] = {
+      ...newExpenses[index],
+      [name]: name === "amount" ? Number(value) : value,
+    };
+    setExpenses(newExpenses);
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setHistory(expenses);
-  };
-
-  console.log("history", history);
 
   return (
     <div className="exTrackDashboard">
@@ -52,148 +86,89 @@ const ExpenseTrackerDashboard = () => {
         <div className="exTrackLeft">
           <div className="exTrackLeftTop">
             <div className="exTrackTopOne">
-              <p className="exTrackDebt"> Total debt amount </p>
-              <p className="exPrice"> ₦ 0.00 </p>
-            </div>
-
-            <div className="exTopTwo">
-              <div className="exTopTwoUp">
-                <p className="exAmountReached"> Total debt paid </p>
-                <p className="exAmountPrice"> ₦ 0.00 </p>
-              </div>
-
-              <div className="exTopTwoDown">
-                <div className="exTopTwoDownTop">
-                  <div className="exTopTwoDownLeft">
-                    <nav className="GreenEXTargetReached"> </nav>
-                    <p className="exPaid">Loan Paid </p>
-                  </div>
-                  <div className="exTopTwoDownRight">
-                    <nav className="redEXTargetReached"> </nav>
-                    <p className="exBalance">Loan balance</p>
-                  </div>
-                </div>
-
-                <div className="exTopTwoDownBottom">
-                  <p className="exNoRec"> No Record Yet </p>
-                </div>
-              </div>
+              <p className="exTrackDebt">Available Balance</p>
+              <p className="exPrice">₦ {user?.availableBalance}</p>
             </div>
 
             <div className="exTopThree">
               <div className="exTopThreeInner">
                 <FaCirclePlus
                   className="exIncomeCirclePlus"
-                  onClick={allowIncome}
+                  onClick={() => setAddIncome(true)}
                 />
                 <h5 className="exAddIncome">Add Income </h5>
-                {addIncome ? <AddIncome  setAddIncome={setAddIncome}/> : null}
+                {addIncome ? <AddIncome setAddIncome={setAddIncome} /> : null}
               </div>
             </div>
           </div>
 
           <div className="exTrackMiddle">
             <div className="exTrackMiddleTop">
-              <h3 className="exTrack"> Expense </h3>
+              <h3 className="exTrack">Expense</h3>
               <p className="exInput">(Input Your expenses here.)</p>
             </div>
 
-            <div className="exMiddleBottomCenter">
-              <div className="exMidBottomDownTop">
-                <div className="exsMidBottomDownTopLeft">
-                  <h6> Expense </h6>
-                </div>
-
-                <div className="exMidBottomDownTopRight">
-                  <h6 className="exTxtDesc"> Description </h6>
-                  <h6 className="exAmount"> Amount </h6>
-                </div>
-              </div>
-
-              <form onSubmit={handleSubmit}>
-                {expenses?.map((expense, index) => (
-                  <div className="exMidshowInputs" key={expense.amount}>
-                    <div className="exMidshowInputInner">
-                      <div className="exMidShowInputLeft">
-                        <input
-                          className="exExpenseInput"
-                          type="text"
-                          required
-                          name="expence"
-                          value={expense.expence}
-                          onChange={(e) => handleChange(index, e)}
-                        />
-                      </div>
-
-                      <div className="exMidShowInputRight">
-                        <input
-                          className="exDescInput"
-                          type="text"
-                          required
-                          name="desc"
-                          value={expense.desc}
-                          onChange={(e) => handleChange(index, e)}
-                        />
-                        <input
-                          className="exAmountnput"
-                          type="text"
-                          required
-                          name="amount"
-                          value={expense.amount}
-                          onChange={(e) => handleChange(index, e)}
-                        />
-                      </div>
+            <form onSubmit={createExpense}>
+              {expenses?.map((expense, index) => (
+                <div className="exMidshowInputs" key={index}>
+                  <div className="exMidshowInputInner">
+                    <div className="exMidShowInputLeft">
+                      <input
+                        className="exExpenseInput"
+                        type="text"
+                        name="expense"
+                        value={expense.expense}
+                        onChange={(e) => handleChange(index, e)}
+                        placeholder="Expense"
+                      />
+                    </div>
+                    <div className="exMidShowInputRight">
+                      <input
+                        className="exDescInput"
+                        type="text"
+                        name="description"
+                        value={expense.description}
+                        onChange={(e) => handleChange(index, e)}
+                        placeholder="Description"
+                      />
+                      <input
+                        className="exAmountInput"
+                        type="number"
+                        name="amount"
+                        value={expense.amount}
+                        onChange={(e) => handleChange(index, e)}
+                        placeholder="Amount"
+                        min="0.01" // Ensures the input is a positive number greater than zero
+                        step="0.01" // Allows decimal values
+                      />
                     </div>
                   </div>
-                ))}
+                </div>
+              ))}
 
-                <button
-                  type="button"
-                  onClick={addFields}
-                  className="exBudgetPlusBtnDiv"
-                >
-                  <FaCirclePlus className="exCirclePlus" />
-                </button>
+              <button
+                type="button"
+                onClick={addFields}
+                className="exBudgetPlusBtnDiv"
+              >
+                <FaCirclePlus className="exCirclePlus" />
+              </button>
 
-                <button type="submit">Submit</button>
-              </form>
-            </div>
-          </div>
-
-          <div className="exBottom">
-            <div className="exBottomTop">
-              <h3 className="exExpense"> Expense Analysis </h3>
-              <div className="assignExBottom">
-                <div className="exBottomPurpleRound"> </div>
-                <p className="exBottomIncomeText"> Income </p>
-                <div className="exBottomLightPurleRound"></div>
-                <p className="exBottomExpenseText"> Expense </p>
-              </div>
-            </div>
-
-            <div className="exBottomCenterDown">
-              <div className="exBottomCenterDownInner"></div>
-            </div>
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </div>
 
         <div className="exTrackRight">
           <div className="exTrackTransaction">
-            <h6 className="exTransactionHistory"> Transaction History </h6>
+            <h6 className="exTransactionHistory">Transaction History</h6>
             <ul className="exTransactionNoAct">
-              {/* {history.length ? (
-                
-                ))
-              ) : (
-                <li className="noActivity"> No activity </li>
-              )} */}
-
               {history.map((data, index) => (
                 <li key={index}>
                   <p>{new Date().toDateString()}</p>
                   <p>{data.amount}</p>
-                  <p>{data.desc}</p>
-                  <p>{data.expence}</p>
+                  <p>{data.description}</p>
+                  <p>{data.expense}</p>
                 </li>
               ))}
             </ul>

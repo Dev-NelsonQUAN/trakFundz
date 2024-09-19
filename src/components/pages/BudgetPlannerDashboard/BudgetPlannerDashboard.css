@@ -117,6 +117,7 @@
   /* background: orangered; */
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .greenTargetReached {
@@ -127,7 +128,7 @@
 }
 
 .targetReached {
-  font-size: 10px;
+  font-size: 0.49rem;
 }
 
 .bPlanTopTwoDownRight {
@@ -136,10 +137,11 @@
   /* background: tomato; */
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .targetBalance {
-  font-size: 10px;
+  font-size: 0.49rem;
 }
 
 .redTargetReached {
@@ -156,6 +158,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.noRecs{
+  font-size: 0.77rem;
 }
 
 .budgetPlannerMiddle {
