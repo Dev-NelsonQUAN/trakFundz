@@ -10,8 +10,9 @@ const VerifyEmail = () => {
   return (
     <div className="verifyPassword">
       <div className="holdImageVerify">
-        <img className="logo" src={Logo} alt="TrakFundz Logo" />
+        <img className="verifyLogo" src={Logo} alt="TrakFundz Logo" />
       </div>
+
       <form className="formHoldVerify">
         <div className="inFormVerify">
           <div className="informVerifyTop">
@@ -27,27 +28,20 @@ const VerifyEmail = () => {
 
               <div className="holdAllP">
                 <p className="verP">
-                  {" "}
-                  Hey Trak, you're almost ready to start enjoying Trakfundz.{" "}
+                    {" "}
+                    Hey TrakFundzer, you're almost ready to start enjoying
+                    <br /> Trakfundz. A verification link has been sent to your mail
+                    <br /> please check your mail to verify your email address.
                 </p>
-                <p className="verP">
-                  {" "}
-                  Simply click on the button bellow to verify your{" "}
-                </p>
-                <p className="verP"> email address. </p>
               </div>
             </div>
           </div>
 
           <div className="infromVerifyBottom">
-            <button className="verBtn" onClick={() => Nav("/featureOnboard")}>
+            <p className="verDidntReceive">
               {" "}
-              Verify email{" "}
-            </button>
-            <p className="didntReceive">
-              {" "}
-              Did not receive any mail? Check your spam inbox or{" "}
-              <span className="span"> Click here to resend. </span> 00:59{" "}
+              Did not receive any mail? 
+              <span className="verSpan"> Resend Mail </span> 00:59{" "}
             </p>
           </div>
         </div>

@@ -27,14 +27,36 @@
   justify-content: space-evenly;
 }
 
+.holdExpenses{
+  width: 90%;
+  height: 80%;
+  /* background: crimson; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 .heroH2 {
-  width: 40%;
-  font-size: 2.5rem;
-  /* font-size: 40px;                */
+  width: 50%;
+  font-size: 2.7rem;
+  /* font-size: 40px;*/
   font-weight: 700;
   color: white;
   line-height: 40px;
+  display: flex;
+  align-items: center;
 
+}
+
+.heroH2below {
+  width: 50%;
+  font-size: 2.7rem;
+  /* font-size: 40px;*/
+  font-weight: 700;
+  color: white;
+  line-height: 40px;
 }
 
 .expense {
@@ -43,7 +65,7 @@
 
 .managing {
   color: white;
-  font-size: 16px;
+  font-size: 1.4rem;
   font-weight: 500;
 }
 
@@ -222,4 +244,97 @@
     bottom: 20px;
     right: 0px; */
     /* background: #000; */
+}
+
+
+@media screen and (max-width: 1024px) {
+  .holdExpenses{
+    /* height: 30%; */
+    gap: 2px;
+  }
+
+  .heroH2 {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; */
+    display: flex;
+    /* flex-direction: column; */
+    /* width: 90%; */
+    font-size: 1.7rem;
+  }
+
+  .heroH2below {
+    font-size: 1.7rem;
+  }
+
+  .managing {
+    font-size: 1.2rem;
+  }
+
+  .trakFundzTracking {
+    font-size: 1rem;
+  }
+ 
+  .topBox {
+    height: 50%;
+  }
+
+  .analysisSvg {
+    height: 30%;
+    top: 40%;
+  }
+
+.holdCalcultorImg {
+  height: 40%;
+}
+
+  .txtAndBtn {
+    width: 100%;
+    height: 30%;
+    /* background: #000; */
+  }
+
+  .txtAndBtnInner {
+    width: 100%;
+  }
+
+  .signUpTrack {
+    width: 95%;
+    line-height: 20px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* .holdExpenses {
+    height: 10%;
+    background: green;
+    line-height: 3px;
+  } */
+
+  .HeroBottomTop {
+    height: 15%;
+  }
+
+  .heroH2, .heroH2below {
+    font-size: 1.4rem;
+  }
+
+  .managing {
+    font-size: 0.8rem;
+  }
+
+  .topBox {
+    height: 40%;
+  }
+
+.trakFundzTracking {
+  font-size: 0.8rem;
+}
+
+  .analysisSvg {
+    height: 30%;
+    top: 40%;
+  }
 }
