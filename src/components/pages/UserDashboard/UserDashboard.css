@@ -346,7 +346,7 @@
   width: 100%;
   height: auto;
   min-height: 20vh;
-  background-color: gray;
+  /* background-color: gray; */
 }
 
 .uDBottom {
@@ -563,7 +563,7 @@
 .uDTransactionNoActTwo {
   width: 100%;
   height: 80%;
-  background: teal;
+  /* background: teal; */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -572,7 +572,7 @@
 .uDTransProgressOne{
   width: 100%;
   height: 30%;
-  background: rgb(57, 9, 228);
+  /* background: rgb(57, 9, 228); */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -581,7 +581,7 @@
 .uDTransProgressOneTop {
   width: 100%;
   height: 40%;
-  background: red;
+  /* background: red; */
   display: flex;
   justify-content: space-between;
   align-items: center ;
@@ -596,20 +596,19 @@
 }
 
 
-
 .uDTransProgressTwo{
   width: 100%;
   height: 30%;
-  background: rgb(57, 9, 228);
+  /* background: rgb(57, 9, 228); */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-}
+} 
 
 .uDTransProgressTwoTop {
   width: 100%;
   height: 40%;
-  background: red;
+  /* background: red; */
   display: flex;
   justify-content: space-between;
   align-items: center ;
@@ -626,7 +625,7 @@
 .uDTransProgressThree{
   width: 100%;
   height: 30%;
-  background: rgb(57, 9, 228);
+  /* background: rgb(57, 9, 228); */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -635,7 +634,7 @@
 .uDTransProgressThreeTop {
   width: 100%;
   height: 40%;
-  background: red;
+  /* background: red; */
   display: flex;
   justify-content: space-between;
   align-items: center ;
@@ -678,7 +677,7 @@
 .uDTransProgressThreeOne{
   width: 100%;
   height: 30%;
-  background: rgb(57, 9, 228);
+  /* background: rgb(57, 9, 228); */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -704,11 +703,11 @@
 .uDTransProgressThreeTwo{
   width: 100%;
   height: 30%;
-  background: rgb(57, 9, 228);
+  /* background: rgb(57, 9, 228); */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-}
+} 
 
 .uDTransProgressThreeTwoTop {
   width: 100%;
@@ -730,7 +729,7 @@
 .uDTransProgressThreeThree{
   width: 100%;
   height: 30%;
-  background: rgb(57, 9, 228);
+  /* background: rgb(57, 9, 228); */
   display: flex;
   justify-content: space-between;
   flex-direction: column;

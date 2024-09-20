@@ -22,7 +22,7 @@ const SideBar = () => {
 
   return (
     <div className="sideBarHolder">
-      <div className="sideBarImg">
+      <div className="sideBarImg" onClick={() => Nav("/")}>
         <img className="sideLogo" src={logo} alt="" />
       </div>
 

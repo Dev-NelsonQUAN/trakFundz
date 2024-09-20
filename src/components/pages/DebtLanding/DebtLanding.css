@@ -33,7 +33,9 @@
 .debt {
   color: white;
   font-size: 2.6rem;
-  line-height: 50px;
+  line-height: 60px;
+  /* display: flex;
+  z-index: 4; */
 }
 
 .dept {
@@ -41,23 +43,24 @@
 }
 
 .stayOrganized {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: white;
 }
 
 .deptLandingTrack {
   width: 522px;
   height: 98px;
-  background: violet;
+  /* background: violet; */
   font-size: 24px;
   top: 415px;
   left: 698px;
   gap: 10px;
 }
+
 .deptLandingCreate {
   width: 300px;
   height: 98px;
-  background: turquoise;
+  /* background: turquoise; */
   font-size: 18px;
   font-weight: 400;
   font-family: Arial, Helvetica, sans-serif;
@@ -68,29 +71,83 @@
   height: 80%;
   /* background: rebeccapurple; */
   display: flex;
-
 }
 
 .debtLandingleft {
-    width: 50%;
-    height: 60%;
-    /* background: #0dd668; */
+  width: 50%;
+  height: 60%;
+  /* background: #0dd668; */
 }
 
 .debtManagerDiv {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .debtLandingRight {
-    width: 50%;
-    height: 100%;
-     /* background: orangered; */
-     display: flex;
-     flex-direction: column;
-     justify-content: flex-end;
+  width: 60%;
+  height: 100%;
+  /* background: orangered; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
+.debtLandingRightInner {
+  width: 100%;
+  height: 80%;
+  /* background: yellow; */
+  position: relative;
+}
+
+.trackYourLoan {
+  width: 80%;
+  height: 35%;
+  /* background: #000; */
+  color: white;
+  font-size: 1.75rem;
+  padding-left: 20px;
+}
+
+.deptLandingCreate {
+  width: 80%;
+  height: 25%;
+  /* background: teal; */
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.debtCreate {
+    font-size: 1.3rem;
+    color: white;
+}
+
+.debtCreateBtn {
+  width: 29%;
+  height: 2.69rem;
+  background: var(--brandColour);
+  cursor: pointer;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.debtCreateBtn:hover {
+  background: var(--landpageHover);
+}
+
+.debtPoly {
+    width: 45%;
+    height: 50%;
+    /* background: orange; */
+    position: absolute;
+    bottom: 4px;
+    right: 2px;
+}
 
 @media screen and (max-width: 756px) {
   .deptLandingTrack {

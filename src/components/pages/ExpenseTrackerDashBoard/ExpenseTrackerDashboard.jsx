@@ -90,6 +90,38 @@ const ExpenseTrackerDashboard = () => {
               <p className="exPrice">₦ {user?.availableBalance}</p>
             </div>
 
+            <div className="exTopTwo">
+            <div className="exTopTwoUp">
+              <p className="exAmountReached"> Total amount Spent </p>
+              <p className="exAmountPrice"> 
+                ₦ {user?.totalAmountSaved} 
+              </p>
+            </div>
+
+            <div className="exTopTwoDown">
+              <div className="exTopTwoDownTop">
+                <div className="exTopTwoDownLeft">
+                  <nav className="GreenEXTargetReached"> </nav>
+                  <p className="exPaid"> Income </p>
+                </div>
+                <div className="exTopTwoDownRight">
+                  <nav className="redEXTargetReached"> </nav>
+                  <p className="exBalance"> Expense </p>
+                </div>
+              </div>
+
+              <div className="exTopTwoDownBottom">
+                <p className="exNoRec"> No Record Yet </p>
+              </div>
+
+              {/* <div className="bPlanTopDownBelow"> */}
+                  <p className="bPlanTopDownBelow"> You have spent extra ₦ 15, 000 
+                    <br /> compared to last week
+                  </p>
+              {/* </div> */}
+            </div>
+          </div>
+
             <div className="exTopThree">
               <div className="exTopThreeInner">
                 <FaCirclePlus
@@ -163,6 +195,7 @@ const ExpenseTrackerDashboard = () => {
           <div className="exTrackTransaction">
             <h6 className="exTransactionHistory">Transaction History</h6>
             <ul className="exTransactionNoAct">
+              
               {history.map((data, index) => (
                 <li key={index}>
                   <p>{new Date().toDateString()}</p>
