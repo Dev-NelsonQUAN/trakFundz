@@ -164,6 +164,11 @@
   font-size: 10px;
 }
 
+.bPlanTopDownBelow {
+  width: 100%;
+  font-size: 0.55rem;
+}
+
 .exTopThree {
   width: 25%;
   height: 100%;

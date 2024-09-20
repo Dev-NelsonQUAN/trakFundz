@@ -11,13 +11,13 @@ const HeroPageBottom = () => {
     <div className="HeroBottomHolder">
       <div className="HeroBottonmInner">
         <div className="HeroBottomTop">
-          <h2 className="heroH2">
-            {" "}
-            Take Charge of your <span className="expense">
-              {" "}
-              expenses.{" "}
-            </span>{" "}
-          </h2>
+          <div className="holdExpenses">
+            <h2 className="heroH2"> Take Charge of</h2>
+
+            <h2 className="heroH2below">
+              your <span className="expense"> expenses. </span>{" "}
+            </h2>
+          </div>
           <p className="managing">
             {" "}
             Managing your finances doesn't have to be overwhelming.{" "}
@@ -33,6 +33,7 @@ const HeroPageBottom = () => {
               src={downSmallPolygon}
               alt="A small skewed Polygon"
             />
+
             <div className="holdBox">
               <div className="topBox">
                 <div className="topBoxInner">
@@ -51,12 +52,13 @@ const HeroPageBottom = () => {
                   </p>
                 </div>
               </div>
+
               <div className="txtAndBtn">
                 <div className="txtAndBtnInner">
                   <p className="signUpTrack">
                     {" "}
-                    Sign up to track your expenses and get a clear picture of
-                    where your money is going.{" "}
+                    Sign up to track your expenses and get a clear
+                    <br /> picture of where your money is going.{" "}
                   </p>
                   <button className="signUpNowBtn"> Sign Up Now </button>
                 </div>

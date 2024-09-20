@@ -115,7 +115,8 @@ const SignUp = () => {
         const res = await axios.post(`${url}/signup`, apiData);
         setLoading(false);
         toast.success(res?.message);
-        Nav(`/verify?email=${email}`);
+        // Nav(`/verify?email=${email}`);
+        Nav("/verify")
         console.log(url, apiData);
         console.log(res, "respond to this");
       } catch (error) {
@@ -168,7 +169,7 @@ const SignUp = () => {
             </div>
 
             <div className="holdFont">
-              <h2 className="signUpFont"> Sign up on Trackfundz </h2>
+              <h2 className="signUpFontz"> Sign up on Trackfundz </h2>
               <div className="createAccount">
                 <p className="create"> Create an account with ease and </p>
 
@@ -319,7 +320,7 @@ const SignUp = () => {
                   <p className="byCreate">
                     {" "}
                     By creating an account, you agree to our{" "}
-                    <span className="span"> Terms of service </span> and{" "}
+                   <br /> <span className="span"> Terms of service </span> and{" "}
                     <span className="span"> Privacy policy </span>{" "}
                   </p>
                 </div>

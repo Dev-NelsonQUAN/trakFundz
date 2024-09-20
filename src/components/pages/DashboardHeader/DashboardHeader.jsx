@@ -52,6 +52,7 @@ useEffect(() => {
         </div>
 
         <div className="dashboardHeaderRight">
+          {/* <div className="dashboardHeaderRightInner"> */}
           <div
             className={
               location.pathname === "/dashboard/home"
@@ -59,6 +60,8 @@ useEffect(() => {
                 : "dashHeaderRightLeft"
             }
           >
+{/* uDTransProgressiveOne */}
+
             <input
               className="searchInput"
               type="text"
@@ -80,7 +83,8 @@ useEffect(() => {
               <p className="headerEmail"> {user?.email} </p>
             </div>
           </div>
-        </div>
+          </div>
+        {/* </div> */}
       </div>
     </div>
   );
