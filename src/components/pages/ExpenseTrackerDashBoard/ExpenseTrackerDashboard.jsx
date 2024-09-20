@@ -186,7 +186,7 @@ const ExpenseTrackerDashboard = () => {
                 <FaCirclePlus className="exCirclePlus" />
               </button>
 
-              <button type="submit">Submit</button>
+              <button type="submit" className="clickSubmit">Submit</button>
             </form>
           </div>
         </div>
@@ -195,7 +195,7 @@ const ExpenseTrackerDashboard = () => {
           <div className="exTrackTransaction">
             <h6 className="exTransactionHistory">Transaction History</h6>
             <ul className="exTransactionNoAct">
-              
+
               {history.map((data, index) => (
                 <li key={index}>
                   <p>{new Date().toDateString()}</p>

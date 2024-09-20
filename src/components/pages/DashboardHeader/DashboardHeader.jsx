@@ -5,6 +5,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import imgProflie from "../../../assets/imgProfile.svg";
 import { useLocation, useNavigate } from "react-router-dom";
+import { CgProfile } from "react-icons/cg";
 import axios from "axios";
 import toast from "react-hot-toast";
 // import url from "../../auth/SignUp/SignUp"
@@ -72,11 +73,12 @@ useEffect(() => {
 
           <div className="dashHeaderRightRight">
             <div className="roundImgIcon">
-              <img
+              {/* <img
                 className="imgProfile"
                 src={imgProflie}
                 alt="An african melanin popping lady"
-              />
+              /> */}
+              <CgProfile className="imgProfile"/>
             </div>
             <div className="holdProfileInfo">
               <h4 className="headerName"> {user?.firstName} {user?.lastName} </h4>
