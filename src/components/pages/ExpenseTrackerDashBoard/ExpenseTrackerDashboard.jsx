@@ -6,6 +6,8 @@ import axios from "axios";
 
 const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
+const token = localStorage.getItem("token");
+
 const ExpenseTrackerDashboard = () => {
   const [user, setUser] = useState();
   const [expenses, setExpenses] = useState([]);
@@ -31,7 +33,6 @@ const ExpenseTrackerDashboard = () => {
 
   const createExpense = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem("token");
   
     // Ensure there is only one valid expense
     const validExpense = expenses.find(exp => exp.amount > 0 && exp.expense && exp.description);
