@@ -3,6 +3,7 @@ import "./DebtLanding.css";
 import debtMangeDiv from "../../../assets/debtManageDiv.svg";
 import { useNavigate } from "react-router-dom";
 import debtPoly from "../../../assets/debtPoly.svg"
+import loanBoard from "../../../assets/loanBoard.svg"
 
 const DebtLanding = () => {
   const Nav = useNavigate();
@@ -25,7 +26,7 @@ const DebtLanding = () => {
           <div className="debtLandingleft">
             <img
               className="debtManagerDiv"
-              src={debtMangeDiv}
+              src={loanBoard}
               alt="Debt Manager Div"
             />
           </div>

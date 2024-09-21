@@ -236,13 +236,15 @@
 
 .bPlanMidshowInputs {
   width: 100%;
-  min-height: 30vh;
+  min-height: 9vh;
   height: auto;
   background: rgb(183, 184, 184);
   /* padding: 10px; */
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
+  padding: 10px;
 }
 
 .bPlanMidshowInputInner {
@@ -263,6 +265,8 @@
   height: 100%;
   border: none;
   border-radius: 3px;
+  padding-left: 10px;
+  outline: none;
 }
 
 .bPlanMidShowInputRight {
@@ -277,6 +281,8 @@
   height: 100%;
   border-radius: 3px;
   border: none;
+  padding-left: 10px;
+  outline: none;
 }
 
 .budgetDurationInput {
@@ -284,6 +290,8 @@
   height: 100%;
   border-radius: 3px;
   border: none;
+  padding-left: 10px;
+  outline: none;
 }
 
 .budgetCreateBudgetPlusBtnDiv {
@@ -329,6 +337,26 @@
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
+}
+
+.divMap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.divMappest{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.react-hot-toast {
+  z-index: 11000;
 }
 
 .bPlannerMidBottomDownLeft {
@@ -403,6 +431,7 @@
   width: 100%;
   min-height: 30vh;
   height: auto;
+  /* padding: 10px; */
   /* background: crimson; */
 }
 
@@ -449,7 +478,9 @@
   /* padding: 10px; */
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   gap: 20px;
+  padding: 10px;
 }
 
 .bPlanMidBottomshowInputInner {
@@ -461,16 +492,20 @@
 }
 
 .bPlanMidBottomShowInputLeft {
-  width: 76%;
+  width: 50%;
   height: 100%;
   background: #000;
 }
+
+
 
 .budgetBudgetBottomInput {
   width: 100%;
   height: 100%;
   border: none;
   border-radius: 3px;
+  padding-left: 10px;
+  outline: none;
 }
 
 .bPlanMidShowBottomInputRight {
@@ -485,6 +520,8 @@
   height: 100%;
   border-radius: 3px;
   border: none;
+  padding-left: 10px;
+  outline: none;
 }
 
 .budgetDurationBottomInput {
@@ -576,6 +613,11 @@
   font-weight: 700;
 }
 
+.mapSpan {
+  display: flex;
+  justify-content: space-between;
+}
+
 .budgetPlanBudgetHold {
   width: 100%;
   height: 50vh;
@@ -592,19 +634,49 @@
   border-radius: 5px;
   background: #feffef;
   box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  padding: 10px;
 }
 
 .budgetTransactionHistory{
   width: 60%;
   height: 8vh;
   font-size: 20px;
-  /* background: red; */
+}
+
+.budgetsHistory {
+  width: 100%;
+  display: flex;
 }
 
 .bugetTransactionNoAct{
   width: 100%;
-  height: 50vh;
+  height: auto;
+  min-height: 90%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  padding: 10px;
+  overflow: auto;
+  
+}
+
+.budgetTransMapAct {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.budSpan {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.budP {
+  width: 15%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
 }

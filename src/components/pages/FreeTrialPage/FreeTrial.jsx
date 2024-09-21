@@ -85,7 +85,9 @@ const FreeTrial = () => {
           <p className="yourPath">
             Your path to better financial health starts here!
           </p>
-          <button className="masterFreeBtn"> Start Free Trial Now </button>
+          <button className="masterFreeBtn"
+            onClick={() => Nav ("/signup")}
+          > Start Free Trial Now </button>
         </div>
       </div>
     </div>
