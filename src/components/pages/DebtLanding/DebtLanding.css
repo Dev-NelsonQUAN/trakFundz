@@ -71,6 +71,7 @@
   height: 80%;
   /* background: rebeccapurple; */
   display: flex;
+  justify-content: space-between;
 }
 
 .debtLandingleft {
@@ -80,8 +81,9 @@
 }
 
 .debtManagerDiv {
-  width: 100%;
-  height: 100%;
+  width: 40rem;
+  height: 40rem;
+  /* background: #000; */
 }
 
 .debtLandingRight {
@@ -102,10 +104,10 @@
 
 .trackYourLoan {
   width: 80%;
-  height: 35%;
+  height: 32%;
   /* background: #000; */
   color: white;
-  font-size: 1.75rem;
+  font-size: 1.45rem;
   padding-left: 20px;
 }
 
@@ -119,7 +121,8 @@
 }
 
 .debtCreate {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    line-height: 1.56rem;
     color: white;
 }
 
@@ -129,7 +132,7 @@
   background: var(--brandColour);
   cursor: pointer;
   color: white;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
   border: none;
   outline: none;

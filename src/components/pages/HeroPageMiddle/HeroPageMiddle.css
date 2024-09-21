@@ -126,7 +126,7 @@
 }
 
 .heroMidRight {
-  width: 30%;
+  width: 35%;
   height: 100%;
   /* background: rgb(175, 175, 175); */
   display: flex;
@@ -158,7 +158,18 @@
 }
 
 .holdMidIOS {
-    width: 30%;
+    width: 100%;
+    height: 90%;
+    /* background: #000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iOSLatest {
+  width: 100%;
+  height: 100%;
+
 }
 
 @media screen and (max-width: 768px) {
