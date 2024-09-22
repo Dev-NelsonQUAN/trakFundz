@@ -11,7 +11,10 @@ const BudgetPlannerDashboard = () => {
   const [description, setDescription] = useState()
   const [target,setTarget] = useState()
   const [duration, setDuration] = useState()
+  
+
     // const [loading, setLoading] = useState()
+
 
     const createBudget = async (e) => {
       e.preventDefault();
@@ -59,6 +62,8 @@ const BudgetPlannerDashboard = () => {
 
 
   console.log(user)
+
+ 
 
   return (
     <div className="budgetPlannerDashboard">

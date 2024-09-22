@@ -1,42 +1,13 @@
-.HeroBottomHolder {
-  width: 100%;
-  height: 130vh;
-  display: flex;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  /* background: green; */
-}
 
-.HeroBottonmInner {
-  width: 100%;
-  height: 100%;
-  /* background: crimson; */
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-}
-
-.HeroBottomTop {
-  width: 50%;
-  height: 16%;
-  /* background: rgb(5, 119, 119); */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
 
 .heroH2 {
-  width: 40%;
-  font-size: 2.5rem;
-  /* font-size: 40px;                */
-  font-weight: 700;
-  color: white;
-  line-height: 40px;
-
+ color: white;
+ font-size: 2rem;
+ text-align: center;
 }
-
+.newSpan{
+  display: block;
+}
 .expense {
   color: var(--brandColour);
 }
@@ -45,22 +16,29 @@
   color: white;
   font-size: 16px;
   font-weight: 500;
+  text-align: center;
+  margin: 20px;
 }
 
-.heroBottomDown {
-  width: 100%;
-  height: 75%;
-  display: flex;
-  justify-content: space-between;
-  /* align-items: center; */
+.Sign{
+  color: white;
+  margin: 20px;
+  font-size: 1.5rem;
 }
-
-.heroBottomLeft {
-  width: 60%;
-  height: 85%;
-  position: relative;
+.pic{
+  display: block;
+  font-size: 1.4rem;
 }
-
+.signBtn{
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  width: 180px;
+  background: #6404E0;
+  margin: 40px;
+}
 .circleOne {
   width: 379px;
   height: 379px;
@@ -88,13 +66,11 @@
   height: 23%;
   position: absolute;
   right: 27%;
-  /* top: 2%; */
 }
 
 .holdBox {
   width: 63%;
   height: 70%;
-  /* background: crimson; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -122,13 +98,11 @@
 .topBoxInner {
   width: 87%;
   height: 90%;
-  /* background: moccasin; */
 }
 
 .holdCalcultorImg {
   width: 40%;
   height: 60%;
-  /* background: rebeccapurple; */
 }
 
 .moneyCaculator {
@@ -140,24 +114,18 @@
   width: 85%;
   font-size: 24px;
   color: var(--colours);
-  /* display: flex;
-    align-self: center; */
 }
 
 .txtAndBtn {
   width: 75%;
   height: 23%;
-  /* background: tomato; */
-  /* padding: 2%; */
   display: flex;
   justify-content: flex-end;
-  /* padding-left: 5%; */
 }
 
 .txtAndBtnInner{
     width: 93%;
     height: 100%;
-    /* background: #000; */
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -207,19 +175,25 @@
 .heroBottomRight {
   width: 30%;
   height: 100%;
-  /* background: rgb(70, 3, 87); */
  display: flex;
  align-items: center;
  justify-content: center;
-  /* align-items: flex-end;  */
   position: relative;
 }
 
 .bigPolygon{
     width: 100%;
     height: 50%;
-    /* position: absolute;
-    bottom: 20px;
-    right: 0px; */
-    /* background: #000; */
+} 
+@media only  screen and (max-width:768px) {
+  .cal{
+    width: 100%;
+  }
+  .Sign{
+    text-align: center;
+  }
+  .signBtn{
+    width: 90%;
+    margin-left: 20px;
+  }
 }

@@ -1,20 +1,54 @@
+// import React from 'react'
+// import "./Footer.css"
+// import Instagram from "../../../assets/Intagram.svg"
+// import Twitter from "../../../assets/Twitter.svg"
+// import Facebook from "../../../assets/Facebook.svg"
+// import Whatsapp from "../../../assets/Whatsapp.svg"
+
+
+// const Footer = () => {
+//   return (
+//     <div className='footerContainer'>
+//         <div className='footerMain'>
+//             <h4>Copyright © 2024 TrakFundz, LLC</h4>
+//             </div>
+//         <div className='footerLogo'>
+//             <div className='logoIcon'>
+//               <p>@trakfund@gmail.com</p>
+//               <img src={Instagram} alt="" />
+//               <img src={Twitter} alt="" />
+//               <img src={Facebook} alt="" />
+//               <img src={Whatsapp} alt="" />
+//             </div>
+//         </div>
+//     </div>
+//   )
+// }
+
+// export default Footer
+
+
 import React from 'react'
 import "./Footer.css"
-import masterCard from "../../../assets/masterCard.svg";
-import verveCard from "../../../assets/verveCard.svg";
-import visaCard from "../../../assets/visaCard.svg";
+import Instagram from "../../../assets/Instagram.svg"
+import Twitter from "../../../assets/Twitter.svg"
+import Facebook from "../../../assets/Facebook.svg"
+import Whatsapp from "../../../assets/Whatsapp.svg"
+import FooterBG from '../../assets/FooterBG.svg';
 
 const Footer = () => {
   return (
     <div className='footerContainer'>
         <div className='footerMain'>
             <h4>Copyright © 2024 TrakFundz, LLC</h4>
-            </div>
+        </div>
         <div className='footerLogo'>
             <div className='logoIcon'>
-                <img src={masterCard} alt="mastercardIcon" />
-                <img src={verveCard} alt="verveCardIcon" />
-                <img src={visaCard} alt="visaCardIcon" />
+              <p className='contactEmail'>@trakfund@gmail.com</p>
+              <img src={Instagram} alt="Instagram" className='socialIcon' />
+              <img src={Twitter} alt="Twitter" className='socialIcon' />
+              <img src={Facebook} alt="Facebook" className='socialIcon' />
+              <img src={Whatsapp} alt="Whatsapp" className='socialIcon' />
             </div>
         </div>
     </div>
