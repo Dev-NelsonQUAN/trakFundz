@@ -6,13 +6,14 @@ import homePageIncome from "../../../assets/homePageIncome.svg";
 import analysisSvg from "../../../assets/analysisSvg.svg";
 import bigPolygon from "../../../assets/bigPolygon.svg";
 import calculatorMoney from "../../../assets/realCalculator.svg";
-import speechBubble from "../../../assets/speechBubble.svg";
+import speechBubble from "../../../assets/speechBubble.svg"
 
 const HeroPageBottom = () => {
   return (
     <div className="HeroBottomHolder">
       <div className="HeroBottonmInner">
         <div className="HeroBottomTop">
+
           <div className="holdExpenses">
             <h2 className="heroH2"> Take Charge of</h2>
 
@@ -21,7 +22,6 @@ const HeroPageBottom = () => {
             </h2>
           </div>
           <p className="managing">
-            {" "}
             Managing your finances doesn't have to be overwhelming.{" "}
           </p>
         </div>
