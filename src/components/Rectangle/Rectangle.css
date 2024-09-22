@@ -1,0 +1,213 @@
+
+.RecHolder {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    background-image: url(../../assets/FrameIMG.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+
+.RecText {
+    width: 50%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 60px;
+    
+}
+
+.recTrak {
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+}
+.MissionHolder {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+.mission, .vision {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    /* background: yellow; */
+
+   
+}
+
+.missionText, .goalText {
+    flex: 2.5;
+}
+
+.missionText h1, .goalText h1 {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #6404E0;
+}
+
+.missionText p, .goalText p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.imageMission, .imageGoal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageMission img, .imageGoal img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.whyHolder {
+    width: 100%;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.whyHolder h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #6404E0;
+
+}
+
+.boxText {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 80%;
+}
+
+.box1, .box2, .box3 {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #DAC1F9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box1 h3, .box2 h3, .box3 h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.box1 p, .box2 p, .box3 p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 1rem;
+}
+
+.story {
+    width: 85%;
+    padding: 50px ;
+    text-align: center;
+}
+
+.ourStory h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #6404E0;
+}
+
+.ourStory p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .mission, .vision {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imageMission img, .imageGoal img {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .RecText {
+        width: 90%;
+    }
+
+    .missionText h1, .goalText h1 {
+        font-size: 24px;
+    }
+
+    .missionText p, .goalText p {
+        font-size: 16px;
+    }
+
+    .boxText {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box1, .box2, .box3 {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .RecText {
+        background-size: contain;
+        height: 40vh;
+        /* font-size: 16px; */
+    }
+
+    .missionText h1, .goalText h1 {
+        font-size: 20px;
+    }
+
+    .missionText p, .goalText p {
+        font-size: 14px;
+    }
+
+    .box1, .box2, .box3 {
+        max-width: 100%;
+    }
+
+    .whyHolder h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 390px) {
+    .RecText {
+        height: 35vh;
+    }
+
+    .missionText h1, .goalText h1 {
+        font-size: 18px;
+    }
+
+    .missionText p, .goalText p {
+        font-size: 12px;
+    }
+}

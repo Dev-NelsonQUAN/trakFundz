@@ -44,12 +44,13 @@ const Header = () => {
                 </li>
               </NavLink>
 
-              <NavLink
-                className={({ beActive }) =>
-                  beActive ? "HeaderIsActive" : "HeaderNotActive"
+              <NavLink to="/aboutUs"
+                className={({ isActive }) =>
+                  isActive ? "HeaderIsActive" : "HeaderNotActive"
                 }
               >
-                <li className="headerTop"> Why TrakFundz </li>
+                <li> Why TrakFundz  </li>
+
               </NavLink>
 
               <NavLink
