@@ -35,7 +35,6 @@ import Instagram from "../../../assets/Instagram.svg"
 import Twitter from "../../../assets/Twitter.svg"
 import Facebook from "../../../assets/Facebook.svg"
 import Whatsapp from "../../../assets/Whatsapp.svg"
-import FooterBG from '../../assets/FooterBG.svg';
 
 const Footer = () => {
 
