@@ -6,6 +6,7 @@
     justify-content: space-around;
     align-items: center;
     color: white;
+
     
     
 } */
@@ -111,3 +112,44 @@
         height: 24px;
     }
 }
+
+.footerContainerInner {
+    width: 85%;
+    height: 40%;
+    /* background: #000; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.footerTxt{
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.footerLogo {
+    width: 16%;
+    height: 30%;
+    /* background: teal; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.masterCard {
+    width: 30%;
+    height: 80%;
+    /* background: #000; */
+}
+
+.verveCard{
+    width: 30%;
+    height: 100%;
+}
+
+.visaCard {
+    width: 30%;
+    height: 45%;
+}
+

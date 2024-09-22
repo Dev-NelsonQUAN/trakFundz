@@ -63,8 +63,8 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.signUpFont {
-  font-size: 30px;
+.signUpFontz {
+  font-size: 20px;
 }
 
 .createAccount {
@@ -263,7 +263,6 @@
   border: 1px solid black;
   padding-right: 10px;
   border-radius: 5px;
-
 }
 
 .inputOne {
@@ -293,200 +292,222 @@
 }
 
 .Btn {
-    width: 100%;
-    height: 2.8rem;
-    background: var(--brandColour);
-    color: white;
-    border: none;
-    outline: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.byCreate {
-    width: 40%;
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--inactiveText);
-}
-
-.span {
- color: var(--brandColour);
-}
-
-/* .enterPasswordDiv {
-    width: 100%;
-    height: 12%;
-    background: hotpink;
-} */
-
-/* 
-.InputHolder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-direction: column;
-}
-
-.firstAndLastNameInput {
-  width: 80%;
-  height: 8rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.firstNameDiv {
-  width: 48%;
-  height: 100%;
-  display: flex;
-  gap: 6px;
-  flex-direction: column;
-}
-
-.firstName,
-.lastName {
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.secondNameDiv {
-  width: 48%;
-  height: 100%;
-  display: flex;
-  gap: 6px;
-  flex-direction: column;
-}
-
-.nameInput {
-  width: 100%;
-  height: 60%;
-  padding-left: 10px;
-  border-radius: 5px;
-  outline: none;
-  border: 1px solid var(--inactiveText);
-}
-
-.emailInputDiv {
-  width: 80%;
-  height: 7rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 4px;
-  flex-direction: column;
-}
-
-.email {
-  font-size: 0.7rem;
-  font-weight: 400;
-}
-
-.signEmail {
-  font-size: 14px;
-}
-
-.regInput {
-  width: 100%;
-  height: 63%;
-  border: 1px solid var(--inactiveText);
-  border-radius: 5px;
-  outline: none;
-  padding-left: 10px;
-}
-
-.phoneNumDiv {
-  width: 80%;
-  height: 8rem;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.phone {
-  font-size: 14px;
-}
-
-.enterPasswordDiv {
-  width: 80%;
-  height: 45%;
-  height: 9rem;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.enterPassword {
-  width: 100%;
-  height: 15%;
-  font-size: 0.7rem;
-}
-
-.TwoInputHolder {
-  width: 100%;
-  height: 3rem;
-  background: var(--colours);
-  border: 1px solid var(--inactiveText);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border-radius: 5px;
-}
-
-.inputOne {
-  width: 90%;
-  height: 80%;
-  border: none;
-  outline: none;
-}
-
-.errorP {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.7rem;
-  color: var(--inactiveText);
-}
-
-.BtnDiv {
-  width: 80%;
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-direction: column;
-  align-items: center;
-}
-
-.Btn {
   width: 100%;
   height: 2.8rem;
   background: var(--brandColour);
+  color: white;
   border: none;
-  color: var(--colours);
-  font-size: 16px;
-  font-weight: 700;
+  outline: none;
+  font-size: 1.2rem;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .byCreate {
-  width: 56%;
-  font-size: 0.7rem;
+  width: 40%;
   text-align: center;
-  font-weight: 400;
-  line-height: 15px;
+  font-size: 0.77rem;
+  color: var(--inactiveText);
 }
 
 .span {
   color: var(--brandColour);
-
 }
 
-.span:hover {
-  text-decoration: underline;
-  cursor: pointer;
+@media screen and (max-width: 1024px) {
+  .signUpFontz {
+    /* width: 70%; */
+    font-size: 1.4rem;
+    /* color: green; */
+  }
+
+  .create,
+  .enjoyTxt {
+    font-size: 0.94rem;
+  }
+
+  .infoP {
+    font-size: 0.8rem;
+  }
+
+  .errorP {
+    font-size: 0.65rem;
+  }
+
+  .Btn {
+    height: 2.5rem;
+  }
+
+  .byCreate {
+    width: 90%;
+    font-size: 0.7rem;
+  }
 }
 
-@media screen and (max-width: "") {
-} */
+@media screen and (max-width: 768px) {
+  .signUpFontz {
+    /* width: 70%; */
+    font-size: 1rem;
+    /* color: green; */
+  }
+
+  .create,
+  .enjoyTxt {
+    font-size: 0.7rem;
+  }
+
+  .InsideFormHolder {
+    width: 65%;
+    height: 85%;
+    /* background: orange; */
+  }
+
+  .firstAndLastNameInput {
+    height: 14%;
+  }
+
+  .personalH4 {
+    font-size: 1rem;
+  }
+
+  .infoP {
+    font-size: 0.6rem;
+  }
+
+  .errorP {
+    font-size: 0.5rem;
+  }
+
+  .Btn {
+    height: 2.2rem;
+  }
+
+  .byCreate {
+    width: 90%;
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .signUpHolder {
+    height: 110vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* margin-bottom: 3px; */
+  }
+
+  .sideImageHolder {
+    height: 15vh;
+    width: 100%;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    align-items: center;
+  }
+
+  .InsideFormHolder {
+    /* background: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .holdImageAndFont {
+    width: 70%;
+    height: 10vh;
+    display: flex;
+    gap: 7px;
+    /* justify-content: space-between; */
+    /* background: #db3838; */
+  }
+
+  .holdImg {
+    width: 90%;
+    height: 10rem;
+    min-height: 2rem;
+    display: flex;
+    justify-content: center;
+    /* background: #000; */
+    padding-top: 2px;
+  }
+
+  .holdBG {
+    width: 10%;
+    height: 90%;
+  }
+
+  .signUpFontz {
+    font-size: 1.1rem;
+  }
+
+  .create,
+  .enjoyTxt {
+    font-size: 0.5rem;
+  }
+
+  .holdFormAll {
+    width: 100%;
+  }
+
+  .InsideFormHolder {
+    height: 99%;
+    width: 90%;
+    /* background: #000; */
+  }
+
+  .already,
+  .loginSpan {
+    font-size: 0.7rem;
+  }
+
+  .onTopForm {
+    height: 12%;
+    /* background: green; */
+  }
+
+  .formHolder {
+    width: 75%;
+  }
+
+  .inputHolder {
+    width: 100%;
+    height: 95%;
+    /* background: #000; */
+  }
+
+  .firstName,
+  .lastName,
+  .signEmail,
+  .phone,
+  .enterPassword {
+    font-size: 0.7rem;
+  }
+
+  .BtnDiv {
+    gap: 10px;
+  }
+
+  .Btn {
+    height: 2.7rem;
+  }
+}
+
+@media screen and (max-width: 325px) {
+    .formHolder {
+        width:90%;
+    }
+
+  .inputHolder {
+    width: 100%;
+    /* background: #000; */
+  }
+
+.errorP {
+    font-size: 0.45rem;
+}
+
+  .Btn {
+    height: 2.5rem;
+  }
+}

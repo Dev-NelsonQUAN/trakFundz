@@ -53,7 +53,7 @@ const Login = () => {
     <>
       <div className="LoginHolder">
         <div className="HoldImage">
-          <img className="logo" src={Logo} alt="TrakFundz Logo" />
+          <img className="loginLogo" src={Logo} alt="TrakFundz Logo" />
         </div>
         <form className="formHold" onSubmit={handleLogin}>
           <div className="inForm">
@@ -91,12 +91,12 @@ const Login = () => {
                   />
 
                   {!showPassword ? (
-                    <FaRegEye
+                    <FaRegEyeSlash
                       onClick={viewPassword}
                       style={{ cursor: "pointer" }}
                     />
                   ) : (
-                    <FaRegEyeSlash
+                    <FaRegEye
                       onClick={() => setShowPassword(false)}
                       style={{ cursor: "pointer" }}
                     />

@@ -14,9 +14,9 @@ const LandingPage = () => {
       <HeroPage/>
       <HeroPageBottom />
       <HeroPageMiddle/>
-      {/* <DebtLanding/> */}
-      {/* <FreeTrial/>
-      <Footer/> */}
+      <DebtLanding/>
+      <FreeTrial/>
+      <Footer/>
     </div> 
   );
 };

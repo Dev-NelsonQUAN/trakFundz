@@ -72,7 +72,9 @@ const HeroPage = () => {
               <p className="getTrial">
                 Get 30 days free trial when you Sign up.
               </p>
-              <button className="tryNowBtn">Try Now</button>
+              <button className="tryNowBtn"
+              onClick={() => Nav("/signup")}
+              >Try Now</button>
             </div>
           </div>
         </div>

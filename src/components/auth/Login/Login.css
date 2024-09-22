@@ -1,13 +1,13 @@
 .LoginHolder {
   width: 100%;
   /* max-width: 100%; */
-  height: max-content;
+  /* height: max-content; */
   height: 100vh;
   background: teal;
   /* background: url("../../../assets/trakFundzBackground.svg"); */
   background: url("../../../assets/realTrakfundzBackground.svg");
-  /* background-repeat: no-repeat; */
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   /* background-position: center; */
   display: flex;
   /* justify-content: space-between; */
@@ -25,7 +25,7 @@
   /* margin-left: 20px; */
 }
 
-.logo {
+.loginLogo {
   width: 248px;
   height: 180px;
 }
@@ -101,7 +101,7 @@
   /* background: #000; */
   border: 1px solid black;
   outline: none;
-  padding-left: 10px;
+  padding-left: 20px;
   border-radius: 5px;
   /* border: 1px solid var(--microcopyTextColour); */
   /* border: 5px solid orchid; */
@@ -140,7 +140,7 @@
   border: none;
   outline: none;
   background: var(--colours);
-  /* padding-left: ; */
+  padding-left: 15px;
 }
 
 .holdForget {
@@ -181,4 +181,127 @@
 
 .haveAccount {
   font-size: 12px;
+}
+
+@media screen and (max-width: 1440px) {
+  .formHold{
+    width: 40%;
+  }
+
+  .emailOwnDiv, .passwordOwnDiv {
+    height: 4.9rem;
+    /* background: teal; */
+  }
+
+  .forgotPassW {
+    font-size: 1.3rem;
+  }
+
+  .loginBtn {
+    font-size: 1.8rem;
+  }
+
+  .haveAccount {
+    font-size: 1.2rem;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .LoginHolder {
+    /* width: 100%;
+    height: 100vh; */
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  
+  .HoldImage {
+    width: 90%;
+    height: 15vh; 
+    gap: 20px;
+    /* background: red; */
+    display: flex;
+    align-items: center;
+  }
+
+  .loginLogo {
+    width: 25%;
+    height: 40%;
+    /* background: hotpink; */
+  }
+
+  .formHold {
+    width: 48%;
+    height: 65%;
+    /* background: teal; */
+
+  }
+
+  .emailOwnDiv, .passwordOwnDiv {
+    height: 4.4rem;
+    /* background: teal; */
+  }
+
+  .forgotPassW {
+    font-size: 0.9rem;
+  }
+
+  .loginBtn {
+    font-size: 1.3rem;
+  }
+
+  .haveAccount {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+   .formHold {
+    width: 80%;
+    height: 60%;
+    /* background: crimson; */
+   }
+
+   .lowerForm {
+    gap: 5px;
+   }
+
+   .welcome {
+    font-size: 1.2rem;
+   }
+
+   .please {
+    font-size: 0.7rem;
+   }
+
+   .loginBtn {
+    height: 2.6rem;
+   }
+}
+
+@media screen and (max-width: 375px) {
+  .email {
+    font-size: 0.79rem;
+  }
+
+  .emailOwnDiv, .passwordOwnDiv {
+    height: 3.5rem;
+    /* background: teal; */
+  }
+
+  .password {
+    font-size: 0.7rem;
+  }
+
+  .forgotPassW {
+    font-size: 0.7rem;
+  }
+
+  .haveAccount {
+    font-size: 0.7rem;
+  }
+
 }

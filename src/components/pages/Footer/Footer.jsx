@@ -1,3 +1,4 @@
+
 // import React from 'react'
 // import "./Footer.css"
 // import Instagram from "../../../assets/Intagram.svg"
@@ -37,6 +38,12 @@ import Whatsapp from "../../../assets/Whatsapp.svg"
 import FooterBG from '../../assets/FooterBG.svg';
 
 const Footer = () => {
+
+    const now = new Date()
+    const year = now.getFullYear() 
+    console.log(year)
+
+
   return (
     <div className='footerContainer'>
         <div className='footerMain'>
@@ -51,8 +58,9 @@ const Footer = () => {
               <img src={Whatsapp} alt="Whatsapp" className='socialIcon' />
             </div>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Footer

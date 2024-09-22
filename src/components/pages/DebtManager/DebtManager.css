@@ -238,12 +238,13 @@
 
 .debtManMidshowInputs {
   width: 100%;
-  min-height: 30vh;
+  min-height: 7vh;
   height: auto;
   background: rgb(183, 184, 184);
   /* padding: 10px; */
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
 }
 
@@ -253,6 +254,7 @@
   /* background: green; */
   display: flex;
   justify-content: space-between;
+  padding: 5px;
 }
 
 .debtManMidShowInputLeft {
@@ -314,15 +316,15 @@
 
 .debtManAssignBtn {
   width: 100%;
-  height: 35%;
+  height: 50%;
   /* background: navy; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 .assignLoanBtn {
-  width: 13%;
-  height: 80%;
+  width: 15%;
+  height: 70%;
   border-radius: 5px;
   background: #e2bdff;
   border: none;
@@ -428,8 +430,8 @@
   align-items: center;
 }
 
-.debtManLoan{
-    font-size: 15px;
+.debtManLoan {
+  font-size: 15px;
 }
 
 .debtManMidBottomCenterTopRight {
@@ -455,10 +457,11 @@
   width: 100%;
   min-height: 30vh;
   height: auto;
-  background: rgb(178, 179, 179);
-  /* padding: 10px; */
+  /* background: rgb(74, 173, 173); */
+  padding: 10px;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -473,14 +476,16 @@
 .debtManMidBottomShowInputLeft {
   width: 76%;
   height: 100%;
-  background: #000;
+  /* background: #000; */
 }
 
 .debtManLoanBottomInput {
-  width: 100%;
+  width: 80%;
   height: 100%;
-  border: none;
   border-radius: 3px;
+  padding-left: 10px;
+  outline: none;
+  border: none;
 }
 
 .dMMidSBottomInputRight {
@@ -491,12 +496,13 @@
 }
 
 .dMMidBottomInput {
-  width: 100%;
+  width: 90%;
   height: 100%;
   border-radius: 3px;
   border: none;
+  padding-left: 10px;
+  outline: none;
 }
-
 
 .dMLoanBottomPlusDiv {
   width: 100%;
@@ -536,12 +542,94 @@
 .bPlannerMidBottomDownLeft {
   width: 100%;
   height: 20%;
-  /* background: #000; */
 }
 
 .debtManagerRight {
   width: 40%;
-  /* min-height: 148vh; */
+  height: auto;
+  border-radius: 5px;
+  /* background: #f4f4ff; */
+  /* box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25); */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 5px;
+  background: #f4f4ff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  padding: 10px;
+}
+
+.debtPlannerRightInner {
+  width: 100%;
+  height: 49%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background: #e7d0ff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+}
+
+.dMRightName {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.dMRightName {
+  width: 40%;
+  height: 8%;
+}
+
+.debtMangerBudget {
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  /* justify-content: flex-start; */
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.debtMap {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+
+.debtMapHold {
+  width: 100%;
+  height: 20%;
+  /* background: lawngreen; */
+}
+
+.debtMappest {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.debtManTransaction {
+  width: 100%;
+  height: 49%;
+  background: #f4f4ff;
+  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+}
+
+.bugetTransactionNoAct {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+/* 
+.debtManagerRight {
+  width: 40%;
   height: auto;
   border-radius: 5px;
   background: #f4f4ff;
@@ -552,39 +640,56 @@
   padding: 15px;
 }
 
-/* .budgetPlannerRightInner {
+.debtMap {
   width: 100%;
-  height: 90%;
-  background: orangered;
-} */
+  background: #000;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+}
+
+.debtManHold {
+  width: 100%;
+  height: 45vh;
+  gap: 5px;
+  background: #e63737;
+}
 
 .debtMangerBudget {
   width: 100%;
   min-height: 45%;
   height: auto;
-  /* background: red; */
   border-radius: 5px;
-  background: #E7D0FF;
   box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  padding: 10px;
+  flex-direction: column;
 }
 
 .dMRightName {
   width: 25%;
   height: 8vh;
-  /* background: hotpink; */
+  background: teal;
   display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 18px;
   font-weight: 700;
+  gap: 10px;
 }
 
-.debtManHold {
+.debtMap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.debtMapHold {
   width: 100%;
   height: 50vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
 }
 
 .debtManTransaction {
@@ -592,7 +697,7 @@
   min-height: 45%;
   height: auto;
   border-radius: 5px;
-  background: #E7D0FF;
+  background: #e7d0ff;
   box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
   padding: 20px;
 }
@@ -601,13 +706,5 @@
   width: 60%;
   height: 8vh;
   font-size: 20px;
-  /* background: red; */
 }
 
-.bugetTransactionNoAct {
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
