@@ -10,7 +10,6 @@ import Footer from "../Footer/Footer";
 const LandingPage = () => {
   return (
     <div className="landingPageHolder">
-      <Header />
       <HeroPage/>
       <HeroPageBottom />
       <HeroPageMiddle/>

@@ -1,7 +1,8 @@
-import "./Footer.css";
-import masterCard from "../../../assets/masterCard.svg";
-import verveCard from "../../../assets/verveCard.svg";
-import visaCard from "../../../assets/visaCard.svg";
+import "./Footer.css"
+import Instagram from "../../../assets/Instagram.svg"
+import Twitter from "../../../assets/Twitter.svg"
+import Facebook from "../../../assets/Facebook.svg"
+import Whatsapp from "../../../assets/Whatsapp.svg"
 
 const Footer = () => {
 
@@ -11,18 +12,21 @@ const Footer = () => {
 
 
   return (
-    <div className="footerContainer">
-      <div className="footerContainerInner">
-          <h4 className="footerTxt"> Copyright © {year} TrakFundz, LLC</h4>
-
-        <div className="footerLogo">
-            <img className="masterCard" src={masterCard} alt="mastercardIcon" />
-            <img  className="verveCard" src={verveCard} alt="verveCardIcon" />
-            <img className="visaCard" src={visaCard} alt="visaCardIcon" />
+    <div className='footerContainer'>
+        <div className='footerMain'>
+            <h4>Copyright © 2024 TrakFundz, LLC</h4>
+        </div>
+        <div className='footerLogo'>
+            <div className='logoIcon'>
+              <p className='contactEmail'>@trakfund@gmail.com</p>
+              <img src={Instagram} alt="Instagram" className='socialIcon' />
+              <img src={Twitter} alt="Twitter" className='socialIcon' />
+              <img src={Facebook} alt="Facebook" className='socialIcon' />
+              <img src={Whatsapp} alt="Whatsapp" className='socialIcon' />
+            </div>
         </div>
       </div>
-    </div>
   );
 };
 
-export default Footer;
+export default Footer

@@ -1,13 +1,116 @@
-.footerContainer{
+/* .footerContainer{
     width: 100%;
-    height: 35vh;
-    /* background: plum; */
+    height: 10vh;
+
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    /* padding: 30px; */
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+
     
+    
+} */
+
+
+/* Footer Container */
+.footerContainer {
+    width: 100%;
+    padding: 10px 0;
+    background-image: url(../../../assets/FooterBG.svg);
+    color: #fff;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+/* Footer Main Section */
+.footerMain h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Footer Logo Section */
+.footerLogo {
+    margin-top: 10px;
+}
+
+.logoIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Space between email and icons */
+    flex-wrap: wrap;
+}
+
+/* Email Style */
+.contactEmail {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Social Media Icon Style */
+.socialIcon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.socialIcon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Media Queries */
+
+/* For small devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .footerMain h4 {
+        font-size: 14px;
+    }
+
+    .contactEmail {
+        font-size: 12px;
+    }
+
+    .socialIcon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* For medium devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .footerMain h4 {
+        font-size: 15px;
+    }
+
+    .contactEmail {
+        font-size: 13px;
+    }
+
+    .socialIcon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* For larger screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .footerMain h4 {
+        font-size: 16px;
+    }
+
+    .contactEmail {
+        font-size: 14px;
+    }
+
+    .socialIcon {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 .footerContainerInner {
