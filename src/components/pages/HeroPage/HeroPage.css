@@ -260,7 +260,6 @@
   .heroPageContainer {
     width: 100%;
     height: 80vh;
-    margin-top: 30px;
   }
   .heroPageLeftHold {
     width: 100%;
@@ -268,7 +267,7 @@
   }
   .h1Holds {
     width: 100%;
-    height: 50%;
+    height: 40%;
   }
   .h1HoldsWrap{
     width: 100%; 
@@ -298,6 +297,8 @@
 
   .prioritize {
     font-size: 40px;
+    padding: 0px;
+    margin: 0px;
   }
 
   .financeTxt {

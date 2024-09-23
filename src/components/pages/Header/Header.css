@@ -11,8 +11,8 @@
   display: flex;
   justify-content: center;
   position: sticky;
-  top: 0px;
-  bottom: 0px;
+  top: 0;
+  bottom: 0;
   z-index: 99999999999;
 }
 
