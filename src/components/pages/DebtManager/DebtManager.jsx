@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./DebtManager.css";
-import { FaCirclePlus } from "react-icons/fa6";
 import axios from "axios";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const DebtManager = () => {
+  const Nav = useNavigate();
   const [user, setUser] = useState();
   const [debtOwed, setDebtOwed] = useState();
   const [description, setDescription] = useState();

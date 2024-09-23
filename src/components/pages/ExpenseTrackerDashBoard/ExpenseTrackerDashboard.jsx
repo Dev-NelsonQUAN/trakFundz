@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./ExpenseTrackerDashboard.css";
 import { FaCirclePlus } from "react-icons/fa6";
 import AddIncome from "../AddIncome/AddIncome";
 import axios from "axios";
+import { IoArrowDown } from "react-icons/io5";
 
 const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
-const token = localStorage.getItem("token");
 
 const ExpenseTrackerDashboard = () => {
+  
   const [user, setUser] = useState();
-  const [expenses, setExpenses] = useState([]);
   const [history, setHistory] = useState([]);
   const [addIncome, setAddIncome] = useState(false);
+  const [expense, setExpense] = useState('')
+  const [amount, setAmount] = useState('')
+  const [description, setDescription] = useState('')
+  const [reload, setReload] = useState(false);
 
+  const token = localStorage.getItem('token')
   const getUser = async () => {
     try {
       const userId = localStorage.getItem("userId");
@@ -33,54 +38,49 @@ const ExpenseTrackerDashboard = () => {
 
   const createExpense = async (e) => {
     e.preventDefault();
-  
-    // Ensure there is only one valid expense
-    const validExpense = expenses.find(exp => exp.amount > 0 && exp.expense && exp.description);
-  
-    if (!validExpense) {
-      console.error("No valid expense to submit.");
-      return;
-    }
-  
     try {
-      await axios.post(
-        `${url}/expenses/create`,
-        validExpense, // Sending the single expense object
+      await axios.post(`${url}/expenses/create`,
+        {
+          amount: parseInt(amount), expense, description
+        },
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            'Authorization': `Bearer ${token}`,
           },
         }
       );
       setAddIncome(false);
-      setExpenses([]); // Reset the expenses array after submission
+      setAmount('');
+      setExpense('');
+      setDescription(''); 
+      setReload((prev) => !prev);
     } catch (err) {
       console.log(err);
     }
   };
 
-  const addFields = () => {
-    if (expenses.length === 10) return;
-    setExpenses((prev) => [
-      ...prev,
-      {
-        expense: "",
-        amount: "",
-        description: "",
-      },
-    ]);
-  };
 
-  const handleChange = (index, e) => {
-    const { name, value } = e.target;
-    const newExpenses = [...expenses];
-    newExpenses[index] = {
-      ...newExpenses[index],
-      [name]: name === "amount" ? Number(value) : value,
-    };
-    setExpenses(newExpenses);
-  };
+  const getTransactionChart = async () => {
+    try {
+      const response = await axios.get(`${url}/expenses/expensehistory`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }
+      )
+      setHistory(response.data.data)
+      console.log(response);
+    } catch (err) {
+      console.log(err);
 
+    }
+  }
+  useEffect(() => {
+    getTransactionChart()
+    console.log(history);
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reload])
   return (
     <div className="exTrackDashboard">
       <div className="exTrackDashInner">
@@ -92,36 +92,13 @@ const ExpenseTrackerDashboard = () => {
             </div>
 
             <div className="exTopTwo">
-            <div className="exTopTwoUp">
-              <p className="exAmountReached"> Total amount Spent </p>
-              <p className="exAmountPrice"> 
-                ₦ {user?.totalAmountSaved} 
-              </p>
-            </div>
-
-            <div className="exTopTwoDown">
-              <div className="exTopTwoDownTop">
-                <div className="exTopTwoDownLeft">
-                  <nav className="GreenEXTargetReached"> </nav>
-                  <p className="exPaid"> Income </p>
-                </div>
-                <div className="exTopTwoDownRight">
-                  <nav className="redEXTargetReached"> </nav>
-                  <p className="exBalance"> Expense </p>
-                </div>
+              <div className="exTopTwoUp">
+                <p className="exAmountReached"> Total amount Spent </p>
+                <p className="exPrice">
+                  ₦ {user?.totalExpenses}
+                </p>
               </div>
-
-              <div className="exTopTwoDownBottom">
-                <p className="exNoRec"> No Record Yet </p>
-              </div>
-
-              {/* <div className="bPlanTopDownBelow"> */}
-                  <p className="bPlanTopDownBelow"> You have spent extra ₦ 15, 000 
-                    <br /> compared to last week
-                  </p>
-              {/* </div> */}
             </div>
-          </div>
 
             <div className="exTopThree">
               <div className="exTopThreeInner">
@@ -130,7 +107,7 @@ const ExpenseTrackerDashboard = () => {
                   onClick={() => setAddIncome(true)}
                 />
                 <h5 className="exAddIncome">Add Income </h5>
-                {addIncome ? <AddIncome setAddIncome={setAddIncome} /> : null}
+                {addIncome ? <div className="expAddIncomeModal"><AddIncome setAddIncome={setAddIncome} /></div> : null}
               </div>
             </div>
           </div>
@@ -142,16 +119,15 @@ const ExpenseTrackerDashboard = () => {
             </div>
 
             <form onSubmit={createExpense}>
-              {expenses?.map((expense, index) => (
-                <div className="exMidshowInputs" key={index}>
+                <div className="exMidshowInputs">
                   <div className="exMidshowInputInner">
                     <div className="exMidShowInputLeft">
                       <input
                         className="exExpenseInput"
                         type="text"
                         name="expense"
-                        value={expense.expense}
-                        onChange={(e) => handleChange(index, e)}
+                        value={expense}
+                        onChange={(e) => setExpense(e.target.value)}
                         placeholder="Expense"
                       />
                     </div>
@@ -160,32 +136,23 @@ const ExpenseTrackerDashboard = () => {
                         className="exDescInput"
                         type="text"
                         name="description"
-                        value={expense.description}
-                        onChange={(e) => handleChange(index, e)}
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
                         placeholder="Description"
                       />
                       <input
                         className="exAmountInput"
                         type="number"
                         name="amount"
-                        value={expense.amount}
-                        onChange={(e) => handleChange(index, e)}
+                        value={amount}
+                        onChange={(e) => setAmount(e.target.value)}
                         placeholder="Amount"
-                        min="0.01" // Ensures the input is a positive number greater than zero
-                        step="0.01" // Allows decimal values
+                        min="0.01"
+                        step="0.01" 
                       />
                     </div>
                   </div>
                 </div>
-              ))}
-
-              <button
-                type="button"
-                onClick={addFields}
-                className="exBudgetPlusBtnDiv"
-              >
-                <FaCirclePlus className="exCirclePlus" />
-              </button>
 
               <button type="submit" className="clickSubmit">Submit</button>
             </form>
@@ -195,17 +162,18 @@ const ExpenseTrackerDashboard = () => {
         <div className="exTrackRight">
           <div className="exTrackTransaction">
             <h6 className="exTransactionHistory">Transaction History</h6>
-            <ul className="exTransactionNoAct">
+            <div className="exTransactionNoAct">
 
-              {history.map((data, index) => (
-                <li key={index}>
-                  <p>{new Date().toDateString()}</p>
-                  <p>{data.amount}</p>
-                  <p>{data.description}</p>
-                  <p>{data.expense}</p>
-                </li>
+              {history?.map((data, index) => (
+                <ul key={index}>
+                  <IoArrowDown style={{color: 'green'}}/>
+                  <li className="expTracnationList">{new Date().toDateString()}</li>
+                  <li className="expTracnationListAmount">{data.amount}</li>
+                  <li className="expTracnationList">{data.description}</li>
+                  <li className="expTracnationList">{data.expense}</li>
+                </ul>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
