@@ -1,141 +1,138 @@
-import React from "react";
 import "./SideBar.css";
 import logo from "../../../assets/trakFundzLogoReal.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
-import { GiTakeMyMoney } from "react-icons/gi";
-import { GiPiggyBank } from "react-icons/gi";
-import { GiReceiveMoney } from "react-icons/gi";
-import { FcBullish } from "react-icons/fc";
+import { GiTakeMyMoney, GiPiggyBank, GiReceiveMoney } from "react-icons/gi";
 import { IoSettingsSharp } from "react-icons/io5";
 import { TbHelpTriangle } from "react-icons/tb";
 import { AiOutlinePoweroff } from "react-icons/ai";
 
-const SideBar = () => {
+const SideBar = ({ setShowSideBar }) => {
   const Nav = useNavigate();
-  
-  const handleLogout = () =>{
-    Nav("/login")
-    localStorage.removeItem("token")
-    localStorage.removeItem("userId")
-  }
+
+  const handleLogout = () => {
+    Nav("/login");
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+  };
+
+  const handleNavigation = (path) => {
+    Nav(path);
+    if (setShowSideBar) {
+      setShowSideBar(false);
+    }
+  };
 
   return (
     <div className="sideBarHolder">
-      <div className="sideBarImg" onClick={() => Nav("/")}>
+      <div className="sideBarImg" onClick={() => handleNavigation("/")}>
         <img className="sideLogo" src={logo} alt="" />
       </div>
 
       <div className="holdDashboardFonts">
         <div className="upFonts">
-          <NavLink 
-            className={({isActive}) =>
-            isActive ? "HeaderActive" : "HeaderNotActive"
-          }
-          to={"/dashboard/home"}>
-            <div className="innerF">
-              {/* <li className="dashLI">  */}
-              <AiFillHome /> 
-                Dashboard 
-                {/* </li> */}
-            </div>
-          </NavLink>
-
-          <NavLink  
-            className={({isActive}) => 
-            isActive ? "HeaderActive" : "HeaderNotActive"
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "HeaderActive" : "HeaderNotActive"
             }
-          to={"/dashboard/expense-track"}>
+            to="/dashboard/home"
+            onClick={() => handleNavigation("/dashboard/home")}
+          >
             <div className="innerF">
-              <GiTakeMyMoney />
-              {/* <li className="dashLI"> */}
-                 Expense Tracker 
-                 {/* </li> */}
+              <AiFillHome />
+              Dashboard
             </div>
           </NavLink>
 
           <NavLink
-           className={({isActive}) => 
-          isActive ? "HeaderActive" : "HeaderNotActive"
-          }
-          to={"/dashboard/budget-planner"}>
-            <div className="innerF">
-              <GiPiggyBank/>
-              {/* <li className="dashLI">  */}
-                Budget Planner
-                {/* </li> */}
-            </div>
-          </NavLink>
-
-          <NavLink 
-            className={({isActive}) =>
-             isActive ? "HeaderActive" : "HeaderNotActive"
-            }
-          to={"/dashboard/debt-manager"}>
-            <div className="innerF">
-              <GiPiggyBank />
-              {/* <li className="dashLI">  */}
-                Debt Manager 
-                {/* </li> */}
-            </div>
-          </NavLink>
-
-          <NavLink 
-           className={({isActive}) =>
-            isActive ? "HeaderActive" : "HeaderNotActive"
-          }
-          to={"/dashboard/report"}>
-            <div className="innerF">
-              <GiReceiveMoney />
-              {/* <li className="dashLI">  */}
-                Report Insights 
-                {/* </li> */}
-            </div>
-          </NavLink>
-
-          <NavLink 
-            className={({isActive}) => 
+            className={({ isActive }) =>
               isActive ? "HeaderActive" : "HeaderNotActive"
             }
-          to={"/dashboard/settings"}>
+            to="/dashboard/expense-track"
+            onClick={() => handleNavigation("/dashboard/expense-track")}
+          >
+            <div className="innerF">
+              <GiTakeMyMoney />
+              Expense Tracker
+            </div>
+          </NavLink>
+
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "HeaderActive" : "HeaderNotActive"
+            }
+            to="/dashboard/budget-planner"
+            onClick={() => handleNavigation("/dashboard/budget-planner")}
+          >
+            <div className="innerF">
+              <GiPiggyBank />
+              Budget Planner
+            </div>
+          </NavLink>
+
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "HeaderActive" : "HeaderNotActive"
+            }
+            to="/dashboard/debt-manager"
+            onClick={() => handleNavigation("/dashboard/debt-manager")}
+          >
+            <div className="innerF">
+              <GiPiggyBank />
+              Debt Manager
+            </div>
+          </NavLink>
+
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "HeaderActive" : "HeaderNotActive"
+            }
+            to="/dashboard/report"
+            onClick={() => handleNavigation("/dashboard/report")}
+          >
+            <div className="innerF">
+              <GiReceiveMoney />
+              Report Insights
+            </div>
+          </NavLink>
+
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "HeaderActive" : "HeaderNotActive"
+            }
+            to="/dashboard/settings"
+            onClick={() => handleNavigation("/dashboard/settings")}
+          >
             <div className="innerF">
               <IoSettingsSharp />
-              {/* <li className="dashLI">  */}
-                Settings 
-                {/* </li> */}
+              Settings
             </div>
           </NavLink>
         </div>
 
         <div className="downFonts">
-          <NavLink 
-            className={({isActive}) =>
-            isActive ? "HeaderActive" : "HeaderNotActive"
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "HeaderActive" : "HeaderNotActive"
             }
-            to={"/dashboard/help"}
+            to="/dashboard/help"
+            onClick={() => handleNavigation("/dashboard/help")}
           >
             <div className="innerF">
               <TbHelpTriangle />
-              {/* <li className="dashLI">  */}
-                Help 
-                {/* </li> */}
+              Help
             </div>
           </NavLink>
 
-          <NavLink
-          className="HeaderNotActive"
-            // className={({isActive}) =>
-            // isActive ? "HeaderActive" : "HeaderNotActive"
-            // } 
+          <div
+            className="HeaderNotActive"
             onClick={handleLogout}
           >
             <div className="innerF">
               <AiOutlinePoweroff />
-              {/* <li className="dashLI">  */}
-                Log Out
-                {/* </li> */}
+              Log Out
             </div>
-          </NavLink>
+          </div>
         </div>
       </div>
     </div>

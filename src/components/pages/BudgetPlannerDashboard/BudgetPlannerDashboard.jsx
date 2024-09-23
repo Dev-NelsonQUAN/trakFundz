@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./BudgetPlannerDashboard.css";
-import { FaPlus, FaPlusCircle } from "react-icons/fa";
-import { FaArrowDown, FaCirclePlus } from "react-icons/fa6";
+import { FaArrowDown } from "react-icons/fa6";
 import axios from "axios";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { toast, Toaster } from "react-hot-toast";
-
+import { useNavigate } from "react-router-dom";
 const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const BudgetPlannerDashboard = () => {
-
+  const Nav = useNavigate();
   const [user, setUser] = useState();
   const [description, setDescription] = useState();
   const [target, setTarget] = useState();
@@ -38,10 +37,9 @@ const BudgetPlannerDashboard = () => {
         }
       );
       toast.success("Budget Created Successfully");
-      setAddIncome(false);
-      setTimeout(() => {
-        setReload((prev) => !prev);
-      }, 1000);
+      // setTimeout(() => {
+      // }, 1000);
+      setReload((prev) => !prev);
     } catch (err) {
       console.log(err);
     }
@@ -60,6 +58,8 @@ const BudgetPlannerDashboard = () => {
       setUser(response?.data.data);
       // setLoading(false);
     } catch (err) {
+      console.log(err);
+      
       // setLoading(false);
     }
   };
@@ -155,23 +155,6 @@ const BudgetPlannerDashboard = () => {
                 <p className="totalAmountReached"> Total amount reached </p>
                 <p className="totalAmountPrice"> ₦ {user?.totalAmountSaved} </p>
               </div>
-
-              <div className="bPlannerTopTwoDown">
-                <div className="bPlanTopTwoDownTop">
-                  <div className="bPlanTopTwoDownLeft">
-                    <nav className="greenTargetReached"> </nav>
-                    <p className="targetReached">Target Reached</p>
-                  </div>
-                  <div className="bPlanTopTwoDownRight">
-                    <nav className="redTargetReached"> </nav>
-                    <p className="targetBalance">Target balance</p>
-                  </div>
-                </div>
-
-                <div className="bPlanTopTwoDownBottom">
-                  <p className="noRecs"> No Record Yet </p>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -225,10 +208,6 @@ const BudgetPlannerDashboard = () => {
               </div>
 
               <div className="budgetCreateBudgetPlusBtnDiv">
-                {/* <div className="holdBudgetAddPlus">
-                  <FaCirclePlus className="budgetCirclePlus" />
-                </div> */}
-
                 <div className="holdBudgetCreateBudgetBtn">
                   <button className="createBudgetBtn" onClick={createBudget}>
                     {" "}

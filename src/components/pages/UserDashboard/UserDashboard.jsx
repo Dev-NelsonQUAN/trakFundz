@@ -20,14 +20,14 @@ const UserBoard = () => {
   const Nav = useNavigate();
   const [user, setUser] = useState();
   const [data, setData] = useState([
-    { date: "2024-01-01", amount: 4000, value: 20000  },
-    { date: "2024-01-02", amount: 3000, value: 4000  },
-    { date: "2024-01-03", amount: 5000, value: 19000  },
-    { date: "2024-01-04", amount: 89000, value: 67000  },
-    { date: "2024-01-05", amount: 7000, value: 40000  },
-    { date: "2024-01-6", amount: 80000, value: 25000  },
+    { date: "2024-01-01", amount: 4000, value: 20000 },
+    { date: "2024-01-02", amount: 3000, value: 4000 },
+    { date: "2024-01-03", amount: 5000, value: 19000 },
+    { date: "2024-01-04", amount: 89000, value: 67000 },
+    { date: "2024-01-05", amount: 7000, value: 40000 },
+    { date: "2024-01-6", amount: 80000, value: 25000 },
   ]);
-
+  const userToken = localStorage.getItem('token')
   const getUser = async () => {
     try {
       const userId = localStorage.getItem("userId");
@@ -39,16 +39,16 @@ const UserBoard = () => {
       setUser(response?.data.data);
     } catch (err) {
       console.log(err);
-      
+
     }
   };
 
   useEffect(() => {
     getUser();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(user);
+  // console.log(user);
 
   // const ref = useRef(null);
 
@@ -57,10 +57,25 @@ const UserBoard = () => {
   //     ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   //   }
   // }, []);
+  const getTransactionChart = async () => {
+    try {
+      const response = await axios.get(`${url}/expenses/expensehistory`, {
+        headers: {
+          'Authorization': `Bearer ${userToken}`
+        }
+      }
+      )
+      console.log(response);
+    } catch (err) {
+      console.log(err);
 
-
+    }
+  }
+ useEffect(()=> {
+  getTransactionChart()
+ }, [])
   return (
-    <div className="userdashboard" 
+    <div className="userdashboard"
     // ref={ref}
     >
       <div className="userDashboardInner">
@@ -68,7 +83,7 @@ const UserBoard = () => {
           <div className="userDashboardLeftTop">
             <div className="userDashboardTopOne">
               <div className="userDashboardTopOneInner">
-                <div className="userDashboardTopOneUp">
+                <div className="userDashboardTopTwoUp">
                   <p className="userDashAmount">Available balance</p>
                   <p className="userPrice">₦ {user?.availableBalance}</p>
                 </div>
@@ -85,7 +100,7 @@ const UserBoard = () => {
             </div>
 
             <div className="userDashboardTopTwo">
-              <div className="userDashboardTopTwoInner">
+              <div className="userDashboardTopOneInner">
                 <div className="userDashboardTopTwoUp">
                   <p className="userDashAmounTwo">Total budget reached</p>
                   <p className="userTwoPrice">₦ {user?.totalTargetGoal}</p>
@@ -103,7 +118,7 @@ const UserBoard = () => {
             </div>
 
             <div className="uDTopThree">
-              <div className="userDashboardTopThreeInner">
+              <div className="userDashboardTopOneInner">
                 <div className="userDashboardTopThreeUp">
                   <p className="userDashThreeAmount">Total debt paid</p>
                   <p className="userThreePrice">₦ {user?.totalDebtAmount}</p>
@@ -136,13 +151,13 @@ const UserBoard = () => {
               <div className="uDCenterDownInner">
                 <ResponsiveContainer width="100%" height={250}>
                   <BarChart data={data}>
-                    <CartesianGrid strokeDasharray="2 1"/>
+                    <CartesianGrid strokeDasharray="2 1" />
                     <XAxis dataKey="date" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="amount" fill="#6404E0" barSize={20}/>
-                    <Bar dataKey="value" fill="#DAC1F9" barSize={20} 
+                    <Bar dataKey="amount" fill="#6404E0" barSize={20} />
+                    <Bar dataKey="value" fill="#DAC1F9" barSize={20}
                     // stroke="#F9FB7D"
                     />
                   </BarChart>
@@ -194,8 +209,8 @@ const UserBoard = () => {
             <h6 className="uDTransactionHistory">Expense</h6>
             <div className="uDTransactionNoAct">
               <p className="totAmountSPent">Total amount spent</p>
-              <h6 className="theAmount">₦ 0</h6>
-              <div className="uRighTopTwoThreeUDownUp">
+              <h6 className="theAmount">₦{user?.totalExpenses}</h6>
+              {/* <div className="uRighTopTwoThreeUDownUp">
                 <nav className="greenUDTargetThreeReached"></nav>
                 <p className="uRightInc">Income</p>
                 <nav className="redUDTargetThreeReached"></nav>
@@ -204,7 +219,7 @@ const UserBoard = () => {
               <p className="amountAnalys">
                 You have spent ₦ 15,000
                 <br /> compared to last week
-              </p>
+              </p> */}
             </div>
           </div>
 
@@ -256,7 +271,7 @@ const UserBoard = () => {
                 </div>
 
                 <div className="uDTransProgressiveOne">
-                <ProgressBar completed={20} bgColor="#B369FE"/>
+                  <ProgressBar completed={20} bgColor="#B369FE" />
 
                 </div>
               </div>
@@ -268,7 +283,7 @@ const UserBoard = () => {
                 </div>
 
                 <div className="uDTransProgressiveTwo">
-                <ProgressBar completed={30} bgColor="#B369FE"/>
+                  <ProgressBar completed={30} bgColor="#B369FE" />
                 </div>
               </div>
 
@@ -279,7 +294,7 @@ const UserBoard = () => {
                 </div>
 
                 <div className="uDTransProgressiveThree">
-                <ProgressBar completed={90} bgColor="#B369FE"/>
+                  <ProgressBar completed={90} bgColor="#B369FE" />
                 </div>
               </div>
             </div>
