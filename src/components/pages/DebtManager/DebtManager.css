@@ -181,7 +181,7 @@
   /* background: green; */
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .loanPayment {
@@ -191,7 +191,7 @@
 
 .assignLoan {
   font-size: 13px;
-  width: 37%;
+  width: 100%;
 }
 
 .debtManMiddleBottomCenter {
@@ -323,7 +323,7 @@
   align-items: center;
 }
 .assignLoanBtn {
-  width: 15%;
+  width: 50%;
   height: 70%;
   border-radius: 5px;
   background: #e2bdff;
@@ -625,86 +625,50 @@
   display: flex;
   justify-content: center;
   align-items: center;
-} 
-
-/* 
-.debtManagerRight {
-  width: 40%;
-  height: auto;
-  border-radius: 5px;
-  background: #f4f4ff;
-  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 15px;
 }
 
-.debtMap {
-  width: 100%;
-  background: #000;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
+@media screen and (max-width: 650px) {
+  .debtManagerDashboard {
+    width: 100%;
+    padding: 10px;
+  }
+  .debtManagerDashInner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .debtManagerDashLeft{
+    width: 100%;
+  }
+  .debtManagerLeftTop{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .debtManagerTopOne{
+    width: 100%;
+  }
+  .debtManTopTwo{
+    width: 100%;
+  }
+  .debtManagerMiddle{
+    width: 100%;
+  }
+  .debtManagerMiddleTop{
+    width: 100%;
+  }
+  .assignLoan{
+    width: 100%;
+  }
+  .debtManTransaction{
+    width: 100%;
+  }
+  .debtManagerRight{
+    width: 100%;
+  }
+  .debtPlannerRightInner{
+    padding: 10px;
+  }
 }
-
-.debtManHold {
-  width: 100%;
-  height: 45vh;
-  gap: 5px;
-  background: #e63737;
-}
-
-.debtMangerBudget {
-  width: 100%;
-  min-height: 45%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
-  padding: 10px;
-  flex-direction: column;
-}
-
-.dMRightName {
-  width: 25%;
-  height: 8vh;
-  background: teal;
-  display: flex;
-  font-size: 18px;
-  font-weight: 700;
-  gap: 10px;
-}
-
-.debtMap {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-}
-
-.debtMapHold {
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-}
-
-.debtManTransaction {
-  width: 100%;
-  min-height: 45%;
-  height: auto;
-  border-radius: 5px;
-  background: #e7d0ff;
-  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
-  padding: 20px;
-}
-
-.budgetTransactionHistory {
-  width: 60%;
-  height: 8vh;
-  font-size: 20px;
-}
-

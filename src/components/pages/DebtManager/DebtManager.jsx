@@ -58,6 +58,8 @@ const DebtManager = () => {
       setUser(response?.data?.data);
       // setLoading(false);
     } catch (err) {
+      console.log(err);
+      
       // setLoading(false);
     }
   };
@@ -88,7 +90,7 @@ const DebtManager = () => {
 
   useEffect(() => {
     getPaidHistory();
-  }, []);
+  }, [reload]);
 
   const payDebt = async (id) => {
     console.log("working");
@@ -151,24 +153,6 @@ const DebtManager = () => {
               <div className="debtManTopTwoUp">
                 <p className="totalAmountReached"> Total debt paid </p>
                 <p className="totalAmountPrice"> ₦ {user?.totaldebtPaid} </p>
-              </div>
-
-              <div className="debtManTopTwoDown">
-                <div className="debtManTopTwoDownTop">
-                  <div className="debtManTopTwoDownLeft">
-                    <nav className="greenDMTargetReached"> </nav>
-                    <p className="dMLoanPaid">Loan Paid </p>
-                  </div>
-
-                  <div className="debtManTopTwoDownRight">
-                    <nav className="redDMTargetReached"> </nav>
-                    <p className="dMLoanBalance">Loan balance</p>
-                  </div>
-                </div>
-
-                <div className="dManTopTwoDownBottom">
-                  <p className="debtManNoRec"> No Record Yet </p>
-                </div>
               </div>
             </div>
           </div>
