@@ -11,7 +11,7 @@
 
 .heroMPidInner {
   width: 100%;
-  height: 90%;
+  height: 100%;
   /* background: red; */
   display: flex;
   justify-content: space-between;
@@ -26,7 +26,6 @@
 .polygon11 {
   width: 20%;
   height: 100%;
-  /* background: teal; */
 }
 
 .heroPMidCenter {
@@ -126,7 +125,7 @@
 }
 
 .heroMidRight {
-  width: 30%;
+  width: 35%;
   height: 100%;
   /* background: rgb(175, 175, 175); */
   display: flex;
@@ -158,22 +157,86 @@
 }
 
 .holdMidIOS {
-    width: 30%;
+  width: 100%;
+  height: 90%;
+  /* background: #000; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media screen and (max-width: 768px) {
-    .effortTxt {
-        font-size: 1rem;
-    }
-    .heroMidRight {
-        width: 20%;
-        height: 20%;
-        display: none;
-    }
+.iOSLatest {
+  width: 100%;
+  height: 100%;
+}
 
-    .holdMidIOS {
-        width: 20px;
-        height: 20px;
-        /* display: none; */
-    }
+@media screen and (max-width: 650px) {
+  .effortTxt {
+    width: 100%;
+    font-size: 35px;
+  }
+  .createPTxt{
+    font-size: 14px;
+  }
+  .heroMPidInner {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .heroMidRight {
+    width: 100%;
+  }
+
+  .holdMidIOS {
+    width: 100%;
+    /* height: 100%; */
+  }
+  .heroPMid {
+    width: 100%;
+    height: auto;
+  }
+  .PolyR {
+    width: 10%;
+
+  }
+  .heroPMidCenter{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .heroPMidBottom{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .trakFundzBudgeting{
+    font-size: 14px;
+    text-align: center;
+    text-wrap: wrap;
+    width: 90%;
+  }
+  .signUpTxtDiv{
+    width: 100%;
+  }
+  .signUpTxtDivInner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .signUpEffortlessly{
+    text-align: center;
+    text-wrap: wrap;
+    font-size: 14px;
+  }
+  .getStartedCenterBtn{
+    width: 250px;
+  }
+  .smallPolyCentre{
+    width: 30%;
+  }
 }

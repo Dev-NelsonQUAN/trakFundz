@@ -1,16 +1,20 @@
-import React from "react";
 import "./HeroPageBottom.css";
 import downSmallPolygon from "../../../assets/downSmallPoly.svg";
-import moneyCalculator from "../../../assets/moneyCalculator.svg";
+// import moneyCalculator from "../../../assets/moneyCalculator.svg";
 import homePageIncome from "../../../assets/homePageIncome.svg";
 import analysisSvg from "../../../assets/analysisSvg.svg";
 import bigPolygon from "../../../assets/bigPolygon.svg";
-
+import calculatorMoney from "../../../assets/realCalculator.svg";
+import speechBubble from "../../../assets/speechBubble.svg";
+import { useNavigate } from "react-router-dom";
 const HeroPageBottom = () => {
+  const Nav = useNavigate();
+
   return (
     <div className="HeroBottomHolder">
       <div className="HeroBottonmInner">
         <div className="HeroBottomTop">
+
           <div className="holdExpenses">
             <h2 className="heroH2"> Take Charge of</h2>
 
@@ -19,7 +23,6 @@ const HeroPageBottom = () => {
             </h2>
           </div>
           <p className="managing">
-            {" "}
             Managing your finances doesn't have to be overwhelming.{" "}
           </p>
         </div>
@@ -40,16 +43,23 @@ const HeroPageBottom = () => {
                   <div className="holdCalcultorImg">
                     <img
                       className="moneyCaculator"
-                      src={moneyCalculator}
+                      src={calculatorMoney}
                       alt="Currency, cart and Calculator"
                     />
                   </div>
 
                   <p className="trakFundzTracking">
                     {" "}
-                    Trakfundz makes tracking your spending easy and efficient,
-                    helping you identify areas where you can save.{" "}
+                    Trakfundz makes tracking your spending
+                    <br /> easy and efficient,
+                    helping you identify
+                    <br />areas where you can save.{" "}
                   </p>
+                  <img
+                    className="speechBubble"
+                    src={speechBubble}
+                    alt="Speech Bubble"
+                  />
                 </div>
               </div>
 
@@ -58,9 +68,12 @@ const HeroPageBottom = () => {
                   <p className="signUpTrack">
                     {" "}
                     Sign up to track your expenses and get a clear
-                    <br /> picture of where your money is going.{" "}
+                    picture of where your money is going.{" "}
                   </p>
-                  <button className="signUpNowBtn"> Sign Up Now </button>
+                  <button className="signUpNowBtn" onClick={() => Nav("/signup")}>
+                    {" "}
+                    Sign Up Now{" "}
+                  </button>
                 </div>
               </div>
             </div>

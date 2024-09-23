@@ -2,18 +2,24 @@ import React, { useEffect, useState } from "react";
 import "./DebtManager.css";
 import { FaCirclePlus } from "react-icons/fa6";
 import axios from "axios";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const DebtManager = () => {
-  const [user, setUser] = useState()
+  const [user, setUser] = useState();
   const [debtOwed, setDebtOwed] = useState();
   const [description, setDescription] = useState();
   const [duration, setDuration] = useState();
+  const [reload, setReload] = useState(false);
+  const [amounts, setAmounts] = useState({});
+  const [debt, setDebt] = useState([]);
+  const [fullDebt, setFullDebt] = useState([]);
+
+  const token = localStorage.getItem("token");
 
   const addDebt = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem("token");
     try {
       await axios.post(
         `${url}/debt/create`,
@@ -28,7 +34,10 @@ const DebtManager = () => {
           },
         }
       );
-      setAddIncome(false);
+      // setAddIncome(false);
+      setTimeout(() => {
+        setReload((prev) => !prev);
+      }, 1000);
     } catch (err) {
       console.log(err);
     }
@@ -36,15 +45,15 @@ const DebtManager = () => {
 
   const getUser = async () => {
     try {
-      const userId = localStorage.getItem('userId');
-      
+      const userId = localStorage.getItem("userId");
+
       if (!userId) {
-        Nav("/login")
-        toast.error("Please Login again")
+        Nav("/login");
+        toast.error("Please Login again");
         // throw new Error('User ID not found in localStorage.');
       }
       const response = await axios.get(`${url}/oneuser/${userId}`);
-      setUser(response?.data.data);
+      setUser(response?.data?.data);
       // setLoading(false);
     } catch (err) {
       // setLoading(false);
@@ -52,7 +61,79 @@ const DebtManager = () => {
   };
   useEffect(() => {
     getUser();
+  }, [reload]);
+
+  const handleAmountChange = (id, value) => {
+    setAmounts((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const getPaidHistory = async () => {
+    try {
+      const response = await axios.get(`${url}/debt/history`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log(response?.data?.data);
+      setDebt(response?.data?.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getPaidHistory();
   }, []);
+
+  const payDebt = async (id) => {
+    console.log("working");
+    try {
+      const amount = amounts[id] || 0;
+      await axios.put(
+        `${url}/debt/pay/${id}`,
+        {
+          amount,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      toast.success("Debt successfully added");
+      toast.success(amount.data.message);
+      // setDebt(response?.data?.data)
+      // setTimeout(() => {
+      //   setReload((prev) => !prev);
+      // }, 1000);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    payDebt();
+  }, [reload]);
+
+  const getDebtSavingHistory = async () => {
+    try {
+      const response = await axios.get(`${url}/debt/debtpaymentHistory`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setFullDebt(response?.data?.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getDebtSavingHistory();
+  }, [reload]);
 
   return (
     <div className="debtManagerDashboard">
@@ -76,6 +157,7 @@ const DebtManager = () => {
                     <nav className="greenDMTargetReached"> </nav>
                     <p className="dMLoanPaid">Loan Paid </p>
                   </div>
+
                   <div className="debtManTopTwoDownRight">
                     <nav className="redDMTargetReached"> </nav>
                     <p className="dMLoanBalance">Loan balance</p>
@@ -138,14 +220,15 @@ const DebtManager = () => {
               </div>
 
               <div className="debtManAasignPlusBtnDiv">
-                <div className="debtManAddPlus">
+                {/* <div className="debtManAddPlus">
                   <FaCirclePlus className="debtManCirclePlus" />
-                </div>
+                </div> */}
 
                 <div className="debtManAssignBtn">
-                  <button className="assignLoanBtn"
-                  onClick={addDebt}
-                  > Assign Loan </button>
+                  <button className="assignLoanBtn" onClick={addDebt}>
+                    {" "}
+                    Assign Loan{" "}
+                  </button>
                 </div>
               </div>
 
@@ -162,9 +245,9 @@ const DebtManager = () => {
                 </p>
               </div>
 
-              <div className="debtManLoanBottomTopRight">
+              {/* <div className="debtManLoanBottomTopRight">
                 <button className="debtManStatusBottomBtn"> Status </button>
-              </div>
+              </div> */}
             </div>
 
             <div className="debtManBottomCenter">
@@ -176,24 +259,53 @@ const DebtManager = () => {
                 <div className="debtManMidBottomCenterTopRight">
                   <h6 className="debtPlanBottomAmount"> Amount </h6>
                 </div>
+
+                <div className="debtManMidBottomCenterTopRight">
+                  {/* <h6 className="debtPlanBottomAmount"> Amount </h6> */}
+                </div>
               </div>
 
               <div className="debtManBottomMidshowInputs">
-                <div className="debtManMidBottomshowInputInner">
-                  <div className="debtManMidBottomShowInputLeft">
-                    <input className="debtManLoanBottomInput" type="text" />
-                  </div>
+                {debt.map((e) => (
+                  <div className="debtManMidBottomshowInputInner" key={e?._id}>
+                    <div className="debtManMidBottomShowInputLeft">
+                      <input
+                        className="debtManLoanBottomInput"
+                        type="text"
+                        readOnly
+                        value={e?.description}
+                      />
+                    </div>
 
-                  <div className="dMMidSBottomInputRight">
-                    <input className="dMMidBottomInput" type="text" />
+                    <div className="dMMidSBottomInputRight">
+                      <input
+                        className="dMMidBottomInput"
+                        type="number"
+                        onChange={(ev) =>
+                          handleAmountChange(e?._id, ev.target.value)
+                        }
+                        value={amounts[e?._id] || ""}
+                      />
+                    </div>
+
+                    <div className="dMMidSBottomInputRight">
+                      <button
+                        className="dMMidBottomInput"
+                        // type="text"
+                        onClick={() => payDebt(e?._id)}
+                      >
+                        {" "}
+                        Submit{" "}
+                      </button>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
 
               <div className="dMLoanBottomPlusDiv">
-                <div className="dMLoanBottomAddPlus">
+                {/* <div className="dMLoanBottomAddPlus">
                   <FaCirclePlus className="dMloanBottomCirclePlus" />
-                </div>
+                </div> */}
               </div>
 
               {/* <div className="bPlannerMidBottomDownRight"></div> */}
@@ -202,18 +314,42 @@ const DebtManager = () => {
         </div>
 
         <div className="debtManagerRight">
-          {/* <div className="budgetPlannerRightInner"> */}
-          <div className="debtMangerBudget">
-            <h6 className="dMRightName">Budget</h6>
-            <div className="debtManHold">
-              <p className="noActivity">No Activity </p>
+          <div className="debtPlannerRightInner">
+            <h6 className="dMRightName"> Debt </h6>
+            <div className="debtMangerBudget">
+              {debt.map((e) => (
+                <div className="debtMap" key={e?._id}>
+                  <div className="debtMapHold">
+                    <span className="debtMappest">
+                      <p> {e?.description} </p>
+                      <p> {e?.debtOwed} </p>
+                    </span>
+                    <ProgressBar
+                      completed={parseInt(e?.percentage)}
+                      bgColor="#B369FE"
+                      baseBgColor="white"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="debtManTransaction">
             <h6 className="budgetTransactionHistory"> Transaction History </h6>
             <div className="bugetTransactionNoAct">
-              <p className="noActivity"> No activity </p>
+              <div>
+                {fullDebt.map((e) => (
+                  <div key={e?._id}>
+                    <span>
+                      <p> {e?.date} </p>
+                      <p> ₦{e?.amount} </p>
+                      <p> {e?.budget} </p>
+                    </span>
+                  </div>
+                ))}
+              </div>
+              {/* <p className="noActivity"> No activity </p> */}
             </div>
           </div>
         </div>

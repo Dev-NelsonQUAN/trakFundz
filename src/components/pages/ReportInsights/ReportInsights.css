@@ -263,8 +263,8 @@
 .repoCenterDownInner {
   width: 100%;
   height: auto;
-  min-height: 55vh;
-  background-color: gray;
+  min-height: 45vh;
+  /* background-color: gray; */
 }
 
 .repoBottom {
@@ -336,8 +336,8 @@
 .repoBottomCenterDownInner {
   width: 100%;
   height: auto;
-  min-height: 55vh;
-  background-color: gray;
+  min-height: 45vh;
+  /* background-color: gray; */
 }
 
 .repoRight {

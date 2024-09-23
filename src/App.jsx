@@ -1,7 +1,7 @@
-import React from "react";
 import "./App.css";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./components/pages/LandingPage/LandingPage";
+import AboutPage from "./components/AboutPage/AboutPage";
 import SignUp from "./components/auth/SignUp/SignUp";
 import Login from "./components/auth/Login/Login";
 import ForgotPassword from "./components/auth/ForgotPassword/ForgotPassword";
@@ -9,7 +9,6 @@ import VerifyEmail from "./components/auth/VerifyEmail/VerifyEmail";
 import ResetPassword from "./components/auth/ResetPassword/ResetPassword";
 import PasswordRecovery from "./components/auth/PasswordRecovery/PasswordRecovery";
 import PasswordSuccess from "./components/auth/PasswordSuccess/PasswordSuccess";
-import UserDashboard from "./components/pages/UserDashboard/UserDashboard";
 import FeatureOnboard from "./components/pages/FeatureOnboard/FeatureOnboard";
 import UserBoard from "./components/pages/UserDashboard/UserDashboard";
 import Layout from "./components/layout/Layout";
@@ -19,14 +18,23 @@ import DebtManager from "./components/pages/DebtManager/DebtManager";
 import ReportInsights from "./components/pages/ReportInsights/ReportInsights";
 import Settings from "./components/pages/Settings/Settings";
 import Help from "./components/pages/Help/Help"
-import PrevDashBoard from "./components/pages/PrevDashBoard/PrevDashBoard"
 import VerificationPage from "./components/pages/VerificationPage/VerificationPage";
 import { Toaster } from "react-hot-toast";
+import HeaderLayout from "./components/layout/HeaderLayout";
 
 const router = createHashRouter([
   {
-    path: "/",
-    element: <LandingPage />, 
+    element: <HeaderLayout />, 
+    children: [
+      {
+        path: "/",
+        element: <LandingPage/>
+      },
+      {
+        path: "aboutUs",
+        element: <AboutPage/>
+      }
+    ]
   },
   {
     path: "/signup",
