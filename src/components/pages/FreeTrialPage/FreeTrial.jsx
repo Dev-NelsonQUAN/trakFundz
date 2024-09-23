@@ -1,9 +1,11 @@
-import React from "react";
 import "./FreeTrial.css";
 import masterPoly from "../../../assets/masterTopPoly.svg";
 import masterBottomPoly from "../../../assets/masterPolyBottom.svg";
+import { useNavigate } from "react-router-dom";
 
 const FreeTrial = () => {
+  const Nav = useNavigate()
+
   return (
     <div className="freeTrialMain">
       <div className="freeTrialMainInner">
@@ -26,7 +28,7 @@ const FreeTrial = () => {
               {/* <div className="oneBottom"> */}
               <p className="oneBottomText">
                 {" "}
-                ₦ 900 / <span className="months"> Month </span>
+                ₦900/<span className="months"> Month </span>
               </p>
               {/* </div> */}
             </div>
@@ -42,7 +44,7 @@ const FreeTrial = () => {
               {/* <div className="oneBottom"> */}
               <p className="twelveBottomText">
                 {" "}
-                ₦ 7,200 / <span className="twelvemonths"> Month </span>
+                ₦7,200/<span className="twelvemonths"> Month </span>
               </p>
               {/* </div> */}
 
@@ -63,7 +65,7 @@ const FreeTrial = () => {
               {/* <div className="oneBottom"> */}
               <p className="sixBottomText">
                 {" "}
-                ₦ 5,400 / <span className="sixmonths"> Month </span>
+                ₦5,400/<span className="sixmonths">Month </span>
               </p>
               {/* </div> */}
             </div>
