@@ -1,4 +1,3 @@
-import React from "react";
 import "./HeroPageBottom.css";
 import downSmallPolygon from "../../../assets/downSmallPoly.svg";
 // import moneyCalculator from "../../../assets/moneyCalculator.svg";
@@ -7,8 +6,10 @@ import analysisSvg from "../../../assets/analysisSvg.svg";
 import bigPolygon from "../../../assets/bigPolygon.svg";
 import calculatorMoney from "../../../assets/realCalculator.svg";
 import speechBubble from "../../../assets/speechBubble.svg";
-
+import { useNavigate } from "react-router-dom";
 const HeroPageBottom = () => {
+  const Nav = useNavigate();
+
   return (
     <div className="HeroBottomHolder">
       <div className="HeroBottonmInner">
@@ -49,16 +50,16 @@ const HeroPageBottom = () => {
 
                   <p className="trakFundzTracking">
                     {" "}
-                    Trakfundz makes tracking your spending 
+                    Trakfundz makes tracking your spending
                     <br /> easy and efficient,
-                    helping you identify 
+                    helping you identify
                     <br />areas where you can save.{" "}
                   </p>
-              <img
-                className="speechBubble"
-                src={speechBubble}
-                alt="Speech Bubble"
-              />
+                  <img
+                    className="speechBubble"
+                    src={speechBubble}
+                    alt="Speech Bubble"
+                  />
                 </div>
               </div>
 
@@ -67,7 +68,7 @@ const HeroPageBottom = () => {
                   <p className="signUpTrack">
                     {" "}
                     Sign up to track your expenses and get a clear
-                    <br /> picture of where your money is going.{" "}
+                    picture of where your money is going.{" "}
                   </p>
                   <button className="signUpNowBtn" onClick={() => Nav("/signup")}>
                     {" "}

@@ -28,15 +28,13 @@
 .heroPageContainer {
   width: 100%;
   height: 88vh;
-  /* background: red; */
   display: flex;
   justify-content: center;
 }
 
 .heroPageInner {
-  width: 85%;
+  width: 90%;
   height: 100%;
-  /* background: khaki; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,11 +43,8 @@
 .heroPageLeft {
   width: 45%;
   height: 80%;
-  /* background: hotpink; */
   display: flex;
   align-items: center;
-  /* justify-content: ; */
-  /* padding-top: 30px; */
 }
 
 .heroPageLeftHold {
@@ -194,7 +189,7 @@
   z-index: 4;
 }
 
-.iPadInner{
+.iPadInner {
   width: 33%;
   height: 46%;
   position: absolute;
@@ -203,7 +198,7 @@
   z-index: 5;
 }
 
-.iPhoneHold{
+.iPhoneHold {
   width: 22%;
   height: 32%;
   position: absolute;
@@ -212,7 +207,7 @@
   z-index: 6;
 }
 
-.iPhoneInner{
+.iPhoneInner {
   width: 19%;
   height: 30.5%;
   position: absolute;
@@ -221,7 +216,7 @@
   z-index: 7;
 }
 
-.iOSShadow{
+.iOSShadow {
   width: 22%;
   height: 34%;
   position: absolute;
@@ -229,7 +224,7 @@
   right: 0.005%;
 }
 
-.androidHold{
+.androidHold {
   width: 21%;
   height: 28%;
   position: absolute;
@@ -260,228 +255,101 @@
   display: none;
 }
 
-@media screen and (max-width: 1024px) {
-  /* .heroPageContainer {
-    width: 100%;
-  } */
 
-  .prioritize {
-    font-size: 3rem;
-  }
-
-  .financeTxt {
-    font-size: 3rem;
-  }
-
-  .aboutTrakFundz {
-    font-size: 1rem;
-  }
-
-  .leftHoldBottom {
-    width: 100%;
-    height: 23%;
-    /* background: #000; */
-  }
-
-  .getTrial {
-    font-size: 1rem;
-  }
-
-  .tryNowBtn {
-    height: 2.8rem;
-  }
-}
-
-
-@media screen and (max-width: 768px) {
-  .heroPageContainer{
-    width: 100%;
-    height: 60vh;
-
-  }
-
-  .heroPageInner{
-    width: 92%;
-    /* height: 100%; */
-  }
-
-  .heroPageLeft{
-    width: 49%;
-    height: 50%;
-  }
-
-  .heroPageLeftHold{
-    height: 100%;
-    gap: 15px;
-  }
-
-  .prioritize {
-    font-size: 2rem;
-  }
-
-  .financeTxt{
-    font-size: 2rem;
-  }
-
-  .aboutTrakFundz {
-    font-size: 0.7rem;
-  }
-
-.leftHoldBottom {
-  gap: 10px;
-}
-
-  .getTrial {
-    font-size: 0.7rem;
-  }
-
-  .tryNowBtn {
-    height: 1.7rem;
-    width: 45%;
-    font-size: 0.7rem;
-  }
-
-  .heroPageRight {
-    height: 70%;
-    width: 45%;
-  }
-
-  .roundBlue{
-    width: 240px;
-    height: 240px;
-  }
-}
-
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 650px) {
   .heroPageContainer {
     width: 100%;
-    height: 68vh;
-    align-items: center;
-    /* background: red; */
+    height: 80vh;
+    margin-top: 30px;
   }
-
-  .heroPageInner {
-    height: 85%;
+  .heroPageLeftHold {
+    width: 100%;
+    height: 100%;
+  }
+  .h1Holds {
+    width: 100%;
+    height: 50%;
+  }
+  .h1HoldsWrap{
+    width: 100%; 
+    display: flex;
+    align-items: center;
     flex-direction: column;
-    /* background: #000; */
+  }
+  .heroPageInner {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .heroPageLeft {
-    width: 75%;
-    /* background: #000; */
+    width: 100%;
+    height: 50%;
     display: flex;
     justify-content: center;
-    /* gap: 10px; */
+    align-items: center;
   }
 
-.h1Holds {
-  display: flex;
-  align-items: center;
-  /* background: #ce0202; */
-}
+  .heroPageLeftHold {
+    height: auto;
+    gap: 0px;
+  }
 
   .prioritize {
-    font-size: 1.6rem;
+    font-size: 40px;
   }
 
   .financeTxt {
-    font-size: 1.6rem;
-  }
-
-  .aboutTrakFundz{
-    /* width: 100%; */
-    font-size: 0.64rem;
-    text-align: center;
-    /* justify-content: center; */
-  }
-
-  .leftHoldBottom {
-    width: 100%;
-    height: 30%;
-    /* background: teal; */
-    display: flex;
-    gap: 20px;
-    /* justify-content: center; */
-    align-items: center;
-  }
-
-.getTrial {
-  display: flex;
-  justify-content: center;
-}
-
-  .tryNowBtn {
-    width: 65%;
-  }
-
-  .heroPageRight {
-    width: 60%;
-  }
-
-  .roundBlue {
-    width: 210px;
-    height: 210px;
-  }
-
-}
-
-/* @media screen and (max-width: 768px) {
-  .heroPageLeft{
-    width: 49%;
-    height: 50%;
-  }
-
-  .h1Holds{
-
-  }
-
-  .prioritize {
-    font-size: 2rem;
-  }
-
-  .financeTxt{
-    font-size: 2rem;
+    font-size: 40px;
   }
 
   .aboutTrakFundz {
-    font-size: 1rem;
-  }
-} */
-
-@media screen and (max-width: 425px) {
-  .headerContainer {
-    height: 6vh;
+    text-align: center;
+    font-size: 0.7rem;
+    line-height: 20.90px;
   }
 
-  .headerLeftOne {
-    width: 50%;
-    /* background: red; */
-    /* height: 100%; */
-  }
-
-  .holdLogo {
+  .leftHoldBottom {
+    gap: 20px;
     width: 100%;
-    height: 100%;
-  }
-
-  .headerLeftTwo {
-    display: none;
-  }
-
-  .headerRight{
-    display: none;
-  }
-
-  .menu {
+    height: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    font-size: 1.5rem;
-    color: white;
+    justify-content: center;
+    text-align: center;
+
+  }
+
+  .getTrial {
+    font-size: 0.7rem;
+  }
+
+  .tryNowBtn {
+    height: 40px;
+    width: 250px;
+    font-size: 16px;
+  }
+
+  .heroPageRight {
+    height: 50%;
+    width: 100%;
+  }
+
+  .roundBlue {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #3e0ef9;
+    /* background-color: red; */
+    position: absolute;
+    top: 10%;
+    right: 25%;
+    filter: blur(75px);
+  }
+  .menu{
+    display: flex;
+    align-items: center;
   }
 }
-
-
-
-
-

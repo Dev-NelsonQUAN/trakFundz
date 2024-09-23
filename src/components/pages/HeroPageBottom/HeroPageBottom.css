@@ -27,7 +27,7 @@
   justify-content: space-evenly;
 }
 
-.holdExpenses{
+.holdExpenses {
   width: 90%;
   height: 80%;
   /* background: crimson; */
@@ -47,7 +47,6 @@
   line-height: 40px;
   display: flex;
   align-items: center;
-
 }
 
 .heroH2below {
@@ -151,7 +150,7 @@
 }
 
 .holdCalcultorImg {
-  width: 10%    ;
+  width: 10%;
   height: 9%;
   position: absolute;
   top: 1px;
@@ -166,7 +165,6 @@
   width: 0.3rem;
   height: 0.3rem;
   /* background: #000; */
-;
 }
 
 .trakFundzTracking {
@@ -178,10 +176,11 @@
     align-self: center; */
 }
 
-.speechBubble{
+.speechBubble {
   width: 12%;
   height: 12%;
   position: absolute;
+  
 }
 
 .txtAndBtn {
@@ -194,74 +193,74 @@
   /* padding-left: 5%; */
 }
 
-.txtAndBtnInner{
-    width: 93%;
-    height: 100%;
-    /* background: #000; */
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
+.txtAndBtnInner {
+  width: 93%;
+  height: 100%;
+  /* background: #000; */
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
 
-.signUpTrack{
-    width: 100%;
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--colours);
+.signUpTrack {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--colours);
 }
 
-.signUpNowBtn{
-    width: 35%;
-    height: 28%;
-    border-radius: 5px;
-    background: var(--brandColour);
-    border: none;
-    color: var(--colours);
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
+.signUpNowBtn {
+  width: 35%;
+  height: 28%;
+  border-radius: 5px;
+  background: var(--brandColour);
+  border: none;
+  color: var(--colours);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.signUpNowBtn:hover{
-    background: var(--landpageHover);
+.signUpNowBtn:hover {
+  background: var(--landpageHover);
 }
 
 .homePageIncome {
-    width: 27%;
-    height: 25%;
-    position: absolute;
-    top: 10%;
-    right: 12%;
-    z-index: 2;
+  width: 27%;
+  height: 25%;
+  position: absolute;
+  top: 10%;
+  right: 12%;
+  z-index: 2;
 }
 
 .analysisSvg {
-    width: 32%;
-    height: 20%;
-    position: absolute;
-    right: 5%;
-    bottom: 29%;
-    z-index: 3;
+  width: 32%;
+  height: 20%;
+  position: absolute;
+  right: 5%;
+  bottom: 29%;
+  z-index: 3;
 }
 
 .heroBottomRight {
   width: 30%;
   height: 100%;
   /* background: rgb(70, 3, 87); */
- display: flex;
- align-items: center;
- justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* align-items: flex-end;  */
   position: relative;
 }
 
-.bigPolygon{
-    width: 100%;
-    height: 50%;
-    /* position: absolute;
+.bigPolygon {
+  width: 100%;
+  height: 50%;
+  /* position: absolute;
     bottom: 20px;
     right: 0px; */
-    /* background: #000; */
+  /* background: #000; */
 }
 
 .speechBubble {
@@ -272,95 +271,113 @@
   right: 170px;
 }
 
-
-@media screen and (max-width: 1024px) {
-  .holdExpenses{
-    /* height: 30%; */
-    gap: 2px;
-  }
-
-  .heroH2 {
-    /* display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center; */
-    display: flex;
-    /* flex-direction: column; */
-    /* width: 90%; */
-    font-size: 1.7rem;
-  }
-
-  .heroH2below {
-    font-size: 1.7rem;
-  }
-
-  .managing {
-    font-size: 1.2rem;
-  }
-
-  .trakFundzTracking {
-    font-size: 1rem;
-  }
- 
-  .topBox {
-    height: 50%;
-  }
-
-  .analysisSvg {
-    height: 30%;
-    top: 40%;
-  }
-
-.holdCalcultorImg {
-  height: 40%;
-}
-
-  .txtAndBtn {
-    width: 100%;
-    height: 30%;
-    /* background: #000; */
-  }
-
-  .txtAndBtnInner {
-    width: 100%;
-  }
-
-  .signUpTrack {
-    width: 95%;
-    line-height: 20px;
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  /* .holdExpenses {
-    height: 10%;
-    background: green;
-    line-height: 3px;
-  } */
-
+@media screen and (max-width: 650px) {
   .HeroBottomTop {
+    width: 100%;
     height: 15%;
   }
-
-  .heroH2, .heroH2below {
-    font-size: 1.4rem;
+  .holdExpenses {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    display: flex;
   }
-
+  .heroH2,
+  .heroH2below {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+    text-align: center;
+    gap: 10px;
+    font-size: 30px;
+  }
+  .homePageIncome {
+    width: 27%;
+    height: 25%;
+    position: absolute;
+    top: 10%;
+    right: -20%;
+    z-index: 2;
+  }
+  .speechBubble {
+    width: 2rem;
+    height: 3rem;
+    position: absolute;
+    bottom: 260px;
+    right: 100px;
+  }
   .managing {
-    font-size: 0.8rem;
+    font-size: 16px;
+    text-align: center;
+    text-wrap: wrap;
   }
 
   .topBox {
+    width: 100%;
     height: 40%;
+    display: flex;
+  }
+  .topBoxInner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .trakFundzTracking {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
   }
 
-.trakFundzTracking {
-  font-size: 0.8rem;
-}
-
   .analysisSvg {
-    height: 30%;
-    top: 40%;
+    height: 15%;
+    top: 45%;
+    right: -20%;
+  }
+  .heroBottomDown {
+    width: 100%;
+    height: 130vh;
+  }
+  .holdBox{
+    width: 100%;
+    display: flex;
+  }
+  .moneyCaculator{
+    width: 100px;
+  }
+  .heroBottomLeft{
+    width: 100%;
+  }
+  .txtAndBtn {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .txtAndBtnInner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .signUpTrack{
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+  }
+  .signUpNowBtn{
+    width: 250px;
+  }
+  .circleOne {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .circleTwo {
+    width: 200px;
+    height: 200px;
   }
 }

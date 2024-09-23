@@ -50,3 +50,11 @@
     height: 45%;
 }
 
+@media screen and (max-width: 650px) {
+    .footerContainerInner{
+        width: 90%;
+    }
+    .footerTxt{
+        font-size: 12px;
+    }
+}

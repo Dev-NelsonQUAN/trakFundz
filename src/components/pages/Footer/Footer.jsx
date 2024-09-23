@@ -1,4 +1,3 @@
-import React from "react";
 import "./Footer.css";
 import masterCard from "../../../assets/masterCard.svg";
 import verveCard from "../../../assets/verveCard.svg";
