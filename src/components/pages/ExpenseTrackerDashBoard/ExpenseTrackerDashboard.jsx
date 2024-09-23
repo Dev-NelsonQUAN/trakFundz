@@ -4,12 +4,13 @@ import { FaCirclePlus } from "react-icons/fa6";
 import AddIncome from "../AddIncome/AddIncome";
 import axios from "axios";
 import { IoArrowDown } from "react-icons/io5";
-
+import { toast} from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 
 const ExpenseTrackerDashboard = () => {
-  
+  const Nav = useNavigate();
   const [user, setUser] = useState();
   const [history, setHistory] = useState([]);
   const [addIncome, setAddIncome] = useState(false);
@@ -53,9 +54,16 @@ const ExpenseTrackerDashboard = () => {
       setAmount('');
       setExpense('');
       setDescription(''); 
+      toast.success('Expense Added Successfully')
       setReload((prev) => !prev);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
+      toast.error(err.response.data.message)
+      if (err.response.data.message === "Oops! Access denied. Please sign in.") {
+        Nav('/login')
+        localStorage.removeItem("token");
+        localStorage.removeItem("userId");
+      }
     }
   };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import axios from "axios";
 import "./Login.css";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
@@ -37,8 +37,8 @@ const Login = () => {
 
         toast.success("Welcome User");
         Nav("/dashboard/home");
-      } catch (error) {
-        toast.error("This is an error");
+      } catch (err) {
+        toast.error(err.response.data.message)
         setLoading(false);
       } finally {
         setLoading(false)

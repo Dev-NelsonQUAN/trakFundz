@@ -8,7 +8,7 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
+  // Tooltip,
   Legend,
   ResponsiveContainer,
 } from "recharts";
@@ -19,15 +19,46 @@ const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 const UserBoard = () => {
   const Nav = useNavigate();
   const [user, setUser] = useState();
-  const [data, setData] = useState([
-    { date: "2024-01-01", amount: 4000, value: 20000 },
-    { date: "2024-01-02", amount: 3000, value: 4000 },
-    { date: "2024-01-03", amount: 5000, value: 19000 },
-    { date: "2024-01-04", amount: 89000, value: 67000 },
-    { date: "2024-01-05", amount: 7000, value: 40000 },
-    { date: "2024-01-6", amount: 80000, value: 25000 },
-  ]);
+  const [data, setData] = useState([]);
+  const [history, setHistory] = useState([]);
+  const [debt, setDebt] = useState([]);
   const userToken = localStorage.getItem('token')
+
+  const getPaidHistory = async () => {
+    try {
+      const response = await axios.get(`${url}/debt/history`, {
+        headers: {
+          'Authorization': `Bearer ${userToken}`,
+        },
+      });
+      console.log(response?.data?.data);
+      setDebt(response?.data?.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  // console.log(debt);
+  useEffect(() => {
+    getPaidHistory();
+  }, []);
+  const getBudgetHistory = async () => {
+    try {
+      const response = await axios.get(`${url}/budget/history`, {
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+        },
+      });
+      console.log(response?.data?.data);
+      setHistory(response?.data?.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getBudgetHistory();
+  }, []);
+
   const getUser = async () => {
     try {
       const userId = localStorage.getItem("userId");
@@ -47,16 +78,6 @@ const UserBoard = () => {
     getUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // console.log(user);
-
-  // const ref = useRef(null);
-
-  // useEffect(() => {
-  //   if (ref.current) {
-  //     ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  //   }
-  // }, []);
   const getTransactionChart = async () => {
     try {
       const response = await axios.get(`${url}/expenses/expensehistory`, {
@@ -65,15 +86,21 @@ const UserBoard = () => {
         }
       }
       )
-      console.log(response);
+      console.log(response.data.data);
+      setData(response.data.data)
     } catch (err) {
-      console.log(err);
+      // console.log(err);
+      if (err.response.data.message === "Oops! Access denied. Please sign in.") {
+        Nav('/login')
+        localStorage.removeItem("token");
+        localStorage.removeItem("userId");
+      }
 
     }
   }
- useEffect(()=> {
-  getTransactionChart()
- }, [])
+  useEffect(() => {
+    getTransactionChart()
+  }, [])
   return (
     <div className="userdashboard"
     // ref={ref}
@@ -140,8 +167,6 @@ const UserBoard = () => {
             <div className="uDMiddleTop">
               <h3 className="uDMoneyFlow">Money Flow</h3>
               <div className="uDassignLoan">
-                <div className="uDPurpleRound"></div>
-                <p className="uDIncomeText">Income</p>
                 <div className="uDLightPurleRound"></div>
                 <p className="uDExpenseText">Expense</p>
               </div>
@@ -152,14 +177,10 @@ const UserBoard = () => {
                 <ResponsiveContainer width="100%" height={250}>
                   <BarChart data={data}>
                     <CartesianGrid strokeDasharray="2 1" />
-                    <XAxis dataKey="date" />
+                    <XAxis dataKey="datePaid" />
                     <YAxis />
-                    <Tooltip />
                     <Legend />
                     <Bar dataKey="amount" fill="#6404E0" barSize={20} />
-                    <Bar dataKey="value" fill="#DAC1F9" barSize={20}
-                    // stroke="#F9FB7D"
-                    />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -186,19 +207,23 @@ const UserBoard = () => {
                   <p className="uDBCDTFont">Expense</p>
                 </div>
 
-                <div className="uDashBottomcenterDownList">
-                  <p className="uDBCDTFontList">1/17/24</p>
-                  <p className="uDBCDTFontList">₦12,000</p>
-                  <p className="uDBCDTFontList">The Place</p>
-                  <p className="uDBCDTFontList">food</p>
-                </div>
-
-                <div className="uDashBottomcenterDownTop">
-                  <p className="uDBCDTFontList">Date</p>
-                  <p className="uDBCDTFontList">₦2,000</p>
-                  <p className="uDBCDTFontList">Airtel Data</p>
-                  <p className="uDBCDTFontList">Internet Data</p>
-                </div>
+                {
+                  data.map((i) => (
+                    <div className="uDashBottomcenterDownList" key={i._id}>
+                      <p className="uDBCDTFontList">
+                        {new Date(i.createdAt).toLocaleDateString('en-GB', {
+                          day: 'numeric',
+                          month: 'short',
+                          year: 'numeric',
+                        })}
+                      </p>
+                      <p className="uDBCDTFontList">{i.amount}</p>
+                      <p className="uDBCDTFontList">{i.description}</p>
+                      <p className="uDBCDTFontList">{i.expense
+                      }</p>
+                    </div>
+                  ))
+                }
               </div>
             </div>
           </div>
@@ -210,93 +235,48 @@ const UserBoard = () => {
             <div className="uDTransactionNoAct">
               <p className="totAmountSPent">Total amount spent</p>
               <h6 className="theAmount">₦{user?.totalExpenses}</h6>
-              {/* <div className="uRighTopTwoThreeUDownUp">
-                <nav className="greenUDTargetThreeReached"></nav>
-                <p className="uRightInc">Income</p>
-                <nav className="redUDTargetThreeReached"></nav>
-                <p className="uRightExP">Expense</p>
-              </div>
-              <p className="amountAnalys">
-                You have spent ₦ 15,000
-                <br /> compared to last week
-              </p> */}
             </div>
           </div>
 
-          <div className="uDTransTwo">
-            <h6 className="uDTransTwoBudget">Budget</h6>
-            <div className="uDTransactionNoActTwo">
-              <div className="uDTransProgressOne">
-                <div className="uDTransProgressOneTop">
-                  <p className="leftItem">iPhone 15 Promax</p>
-                  <p className="rightItem">₦ 150,000</p>
-                </div>
-
-                <div className="uDTransProgressiveOne">
-                  <ProgressBar completed={80} bgColor="#F9FB7D" />
-                </div>
-              </div>
-
-              <div className="uDTransProgressTwo">
-                <div className="uDTransProgressTwoTop">
-                  <p className="leftItem">Modern duplex apartment</p>
-                  <p className="rightItem">₦ 2,000,000,000</p>
-                </div>
-
-                <div className="uDTransProgressiveTwo">
-                  <ProgressBar completed={10} bgColor="#F9FB7D" />
+          <div className="budgetPlannerBudget">
+            <h6 className="budgetRigthName">Budget</h6>
+            {history.map((e) => (
+              <div className="divMap" key={e?._id}>
+                <div className="divMappest">
+                  <span className="mapSpan">
+                    <p> {e?.description}</p>
+                    <p> {e?.target} </p>
+                  </span>
+                  <ProgressBar
+                    completed={parseInt(e?.percentage)}
+                    bgColor="yellow"
+                  />
                 </div>
               </div>
-
-              <div className="uDTransProgressThree">
-                <div className="uDTransProgressThreeTop">
-                  <p className="leftItem">GLE 450 White</p>
-                  <p className="rightItem">₦ 130,000,000,000</p>
-                </div>
-
-                <div className="uDTransProgressiveThree">
-                  <ProgressBar completed={40} bgColor="#F9FB7D" />
-                </div>
-              </div>
+            ))}
+            <div className="budgetPlanBudgetHold">
+              <p className="noActivity"> {user?.totalBudget} </p>
             </div>
           </div>
 
-          <div className="uDTransThree">
-            <h6 className="uDTransThreeBudget">Budget</h6>
-            <div className="uDTransactionNoActThree">
-              <div className="uDTransProgressThreeOne">
-                <div className="uDTransProgressThreeOneTop">
-                  <p className="leftItem">iPhone 16 Promax</p>
-                  <p className="rightItem">₦ 3,000,000</p>
+          <div className="debtPlannerRightInner">
+            <h6 className="dMRightName"> Debt </h6>
+            <div className="debtMangerBudget">
+              {debt.map((e) => (
+                <div className="debtMap" key={e?._id}>
+                  <div className="debtMapHold">
+                    <span className="debtMappest">
+                      <p> {e?.description} </p>
+                      <p> {e?.debtOwed} </p>
+                    </span>
+                    <ProgressBar
+                      completed={parseInt(e?.percentage)}
+                      bgColor="#B369FE"
+                      baseBgColor="white"
+                    />
+                  </div>
                 </div>
-
-                <div className="uDTransProgressiveOne">
-                  <ProgressBar completed={20} bgColor="#B369FE" />
-
-                </div>
-              </div>
-
-              <div className="uDTransProgressThreeTwo">
-                <div className="uDTransProgressThreeTwoTop">
-                  <p className="leftItem">Friday Night</p>
-                  <p className="rightItem">₦ 15,000,000</p>
-                </div>
-
-                <div className="uDTransProgressiveTwo">
-                  <ProgressBar completed={30} bgColor="#B369FE" />
-                </div>
-              </div>
-
-              <div className="uDTransProgressThreeThree">
-                <div className="uDTransProgressThreeThreeTop">
-                  <p className="leftItem">Tesla baby</p>
-                  <p className="rightItem">₦ 315,000,000,000,000,000</p>
-                </div>
-
-                <div className="uDTransProgressiveThree">
-                  <ProgressBar completed={90} bgColor="#B369FE" />
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
