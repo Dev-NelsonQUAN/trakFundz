@@ -1,10 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./UserDashboard.css";
-import UserDashboardMap from "../UserDashboardMap/UserDashboardMap";
-import { IoArrowDown } from "react-icons/io5";
-import { IoIosArrowDown } from "react-icons/io";
-import DashboardRightMap from "../DashboardRightMap/DashboardRightMap";
-import { FaCirclePlus } from "react-icons/fa6";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import {
@@ -43,11 +38,14 @@ const UserBoard = () => {
       const response = await axios.get(`${url}/oneuser/${userId}`);
       setUser(response?.data.data);
     } catch (err) {
+      console.log(err);
+      
     }
   };
 
   useEffect(() => {
     getUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log(user);
