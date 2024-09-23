@@ -14,6 +14,7 @@ const HeroPageBottom = () => {
     <div className="HeroBottomHolder">
       <div className="HeroBottonmInner">
         <div className="HeroBottomTop">
+
           <div className="holdExpenses">
             <h2 className="heroH2"> Take Charge of</h2>
 
@@ -22,7 +23,6 @@ const HeroPageBottom = () => {
             </h2>
           </div>
           <p className="managing">
-            {" "}
             Managing your finances doesn't have to be overwhelming.{" "}
           </p>
         </div>
