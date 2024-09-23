@@ -129,3 +129,52 @@
     font-size: 11px;
     color: var(--colours);
 }
+.MenuHolder{
+    display: none;
+}
+@media screen and (max-width: 650px) {
+    .dashboardHeaderLeft{
+        display: none;
+    }
+    .dashboardHeaderRight{
+        width: 90%;
+    }
+    .dashHeaderRightRight{
+        width: 80%;
+        height: 70%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .imgProfile{
+        width: 30px;
+        height: 30px;
+    }
+    .MenuHolder{
+        display: flex;
+        width: 10%;
+    }
+    .roundImgIcon{
+        width: 30%;
+        height: 90%;
+    }
+    .holdProfileInfo{
+        width: 100%;
+        height: 100%; 
+        display: flex;
+        align-items: center;
+    }
+    .DashbaordMenuIcon{
+        color: var(--brandColour);
+        font-size: 30px;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .MobileSidebar{
+        width: 80%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+}

@@ -429,7 +429,7 @@
   width: 100%;
   height: 1.5rem;
   border-radius: 5.001px;
-  background: #E7D8FA;
+  background: #e7d8fa;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -437,7 +437,7 @@
 }
 
 .uDBCDTFont {
-  font-size: 0.60rem;
+  font-size: 0.6rem;
   width: 25%;
   display: flex;
   justify-content: center;
@@ -449,7 +449,7 @@
   width: 100%;
   height: 1.5rem;
   border-radius: 5.001px;
-  background: #E7D8FA;
+  background: #e7d8fa;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -525,18 +525,18 @@
 }
 
 .uRightInc {
-  font-size: 0.65rem; 
+  font-size: 0.65rem;
   font-weight: 600;
 }
 
 .uRightExP {
-  font-size: 0.65rem; 
+  font-size: 0.65rem;
   font-weight: 600;
 }
 
 .totAmountSPent {
   font-size: 0.69rem;
-/* font-size: 10px; */
+  /* font-size: 10px; */
 }
 
 .amountAnalys {
@@ -569,7 +569,7 @@
   flex-direction: column;
 }
 
-.uDTransProgressOne{
+.uDTransProgressOne {
   width: 100%;
   height: 30%;
   /* background: rgb(57, 9, 228); */
@@ -584,7 +584,7 @@
   /* background: red; */
   display: flex;
   justify-content: space-between;
-  align-items: center ;
+  align-items: center;
 }
 
 .leftItem {
@@ -595,15 +595,14 @@
   font-size: 0.6rem;
 }
 
-
-.uDTransProgressTwo{
+.uDTransProgressTwo {
   width: 100%;
   height: 30%;
   /* background: rgb(57, 9, 228); */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-} 
+}
 
 .uDTransProgressTwoTop {
   width: 100%;
@@ -611,7 +610,7 @@
   /* background: red; */
   display: flex;
   justify-content: space-between;
-  align-items: center ;
+  align-items: center;
 }
 
 .leftItem {
@@ -622,7 +621,7 @@
   font-size: 0.6rem;
 }
 
-.uDTransProgressThree{
+.uDTransProgressThree {
   width: 100%;
   height: 30%;
   /* background: rgb(57, 9, 228); */
@@ -637,7 +636,7 @@
   /* background: red; */
   display: flex;
   justify-content: space-between;
-  align-items: center ;
+  align-items: center;
 }
 
 .leftItem {
@@ -674,7 +673,7 @@
   flex-direction: column;
 }
 
-.uDTransProgressThreeOne{
+.uDTransProgressThreeOne {
   width: 100%;
   height: 30%;
   /* background: rgb(57, 9, 228); */
@@ -700,14 +699,14 @@
   font-size: 0.6rem;
 }
 
-.uDTransProgressThreeTwo{
+.uDTransProgressThreeTwo {
   width: 100%;
   height: 30%;
   /* background: rgb(57, 9, 228); */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-} 
+}
 
 .uDTransProgressThreeTwoTop {
   width: 100%;
@@ -715,7 +714,7 @@
   /* background: rgb(167, 50, 50); */
   display: flex;
   justify-content: space-between;
-  align-items: center ;
+  align-items: center;
 }
 
 .leftItem {
@@ -726,7 +725,7 @@
   font-size: 0.6rem;
 }
 
-.uDTransProgressThreeThree{
+.uDTransProgressThreeThree {
   width: 100%;
   height: 30%;
   /* background: rgb(57, 9, 228); */
@@ -741,7 +740,7 @@
   /* background: rgb(236, 115, 115); */
   display: flex;
   justify-content: space-between;
-  align-items: center ;
+  align-items: center;
 }
 
 .leftItem {
@@ -750,4 +749,58 @@
 
 .rightItem {
   font-size: 0.6rem;
+}
+@media screen and (max-width: 650px) {
+  .userdashboard {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .userDashboardInner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .userDashboardLeft {
+    width: 100%;
+  }
+  .userDashboardTopOne {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+  }
+  .userDashboardTopOneInner {
+    width: 100%;
+  }
+  .userDashboardTopTwo {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+  }
+  .userDashboardLeftTop {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+  .uDTopThree {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+  }
+  .uDBottom{
+    width: 100%;
+  }
+  .uDBottomCenterDown{
+    width: 100%;
+  }
+  .uDRight{
+    width: 100%;
+  }
+  .uDTransThree{
+    width: 100%;
+  }
 }

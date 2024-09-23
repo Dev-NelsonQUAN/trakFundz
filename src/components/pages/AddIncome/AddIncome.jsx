@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./AddIncome.css";
 import axios from "axios";
 
