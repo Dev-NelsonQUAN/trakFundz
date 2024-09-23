@@ -1,6 +1,6 @@
 // a~import React from "react";
 import "./HeroPageMiddle.css";
-import iPhone from "../../../assets/iPhone .svg";
+// import iPhone from "../../../assets/iPhone .svg";
 import PolygonRight from "../../../assets/PolygonRight.svg";
 import heroSmallPolygon from "../../../assets/heroMiddleSmallpolygon.svg";
 import iOSLatest from "../../../assets/iOSLatest.svg";
@@ -32,8 +32,8 @@ const HeroPageMiddle = () => {
           <div className="heroPMidBottom">
             <p className="trakFundzBudgeting">
               TrakFundz budgeting tools provides insights
-              <br /> and recommendations to help you stay on
-              <br /> track and achieve your financial objectives
+              and recommendations to help you stay on
+              track and achieve your financial objectives
             </p>
             <div className="signUpTxtDiv">
               <div className="signUpTxtDivInner">
@@ -58,7 +58,7 @@ const HeroPageMiddle = () => {
 
         <div className="heroMidRight">
           <div className="holdMidIOS">
-            <img className="iOSLatest" src={iOSLatest} alt="phone" />`
+            <img className="iOSLatest" src={iOSLatest} alt="phone" />
           </div>
         </div>
       </div>
