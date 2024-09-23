@@ -5,6 +5,9 @@ import axios from "axios";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { toast, Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+
+
+
 const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const BudgetPlannerDashboard = () => {
@@ -37,8 +40,9 @@ const BudgetPlannerDashboard = () => {
         }
       );
       toast.success("Budget Created Successfully");
-      // setTimeout(() => {
-      // }, 1000);
+      setTarget('');
+      setDuration('');
+      setDescription(''); 
       setReload((prev) => !prev);
     } catch (err) {
       console.log(err);
@@ -108,12 +112,12 @@ const BudgetPlannerDashboard = () => {
         }
       );
       toast.success("Budget Saved Successfully");
-
-      setTimeout(() => {
-        setReload((prev) => !prev);
-      }, 1000);
+      setAmounts('');
+      setReload((prev) => !prev);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
+      setAmounts('');
+      toast.error(err.response.data.message)
     }
   };
 
@@ -129,7 +133,12 @@ const BudgetPlannerDashboard = () => {
       );
       setSavingHistory(response?.data?.data);
     } catch (err) {
-      console.log(err);
+      toast.error(err.response.data.message)
+      if (err.response.data.message === "Oops! Access denied. Please sign in.") {
+        Nav('/login')
+        localStorage.removeItem("token");
+        localStorage.removeItem("userId");
+      }
     }
   };
   // console.log(user);

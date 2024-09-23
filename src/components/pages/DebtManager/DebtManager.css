@@ -191,7 +191,7 @@
 
 .assignLoan {
   font-size: 13px;
-  width: 100%;
+  width: 100% !important;
 }
 
 .debtManMiddleBottomCenter {
@@ -638,37 +638,86 @@
     flex-direction: column;
     gap: 10px;
   }
-  .debtManagerDashLeft{
+  .debtManagerDashLeft {
     width: 100%;
   }
-  .debtManagerLeftTop{
+  .debtManagerLeftTop {
     width: 100%;
     display: flex;
     flex-direction: column;
     height: auto;
   }
-  .debtManagerTopOne{
+  .debtManagerTopOne {
     width: 100%;
   }
-  .debtManTopTwo{
+  .debtManTopTwo {
     width: 100%;
   }
-  .debtManagerMiddle{
+  .debtManagerMiddle {
     width: 100%;
   }
-  .debtManagerMiddleTop{
+  .debtManagerMiddleTop {
     width: 100%;
   }
-  .assignLoan{
+  .assignLoan {
     width: 100%;
   }
-  .debtManTransaction{
+  .debtManTransaction {
     width: 100%;
   }
-  .debtManagerRight{
+  .debtManagerRight {
     width: 100%;
   }
-  .debtPlannerRightInner{
+  .debtPlannerRightInner {
     padding: 10px;
+  }
+  .debtLoanInput {
+    padding: 10px;
+    outline: none;
+  }
+  .debtManAmountInput {
+    padding: 10px;
+    outline: none;
+  }
+  .debtManDurationInput {
+    padding: 10px;
+    outline: none;
+  }
+  .debtMap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+  .debtManBottomMidshowInputs {
+    width: 100%;
+    height: auto;
+    /* background: rgb(74, 173, 173); */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: initial;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .bugetTransactionNoAct{
+    width: 100%;
+    height: auto;
+  }
+  .budgetTrasactionHistory{
+    display: flex;
+    gap: 10px;
+  }
+  .debtMapHold {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .debtManBottom{
+    width: 100%;
+    height: auto !important;
   }
 }
