@@ -14,14 +14,15 @@ const DebtManager = () => {
   const [description, setDescription] = useState();
   const [duration, setDuration] = useState();
   const [reload, setReload] = useState(false);
-  const [amounts, setAmounts] = useState({});
+  const [amount, setAmounts] = useState('');
   const [debt, setDebt] = useState([]);
   const [fullDebt, setFullDebt] = useState([]);
 
-  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem("token");
 
   const addDebt = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("token");
     try {
       await axios.post(
         `${url}/debt/create`,
@@ -32,16 +33,20 @@ const DebtManager = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            'Authorization': `Bearer ${token}`,
           },
         }
       );
       // setAddIncome(false);
-      setTimeout(() => {
-        setReload((prev) => !prev);
-      }, 1000);
+      toast.success('Debt Added Successfully')
+      setReload((prev) => !prev);
     } catch (err) {
-      console.log(err);
+      toast.error(err.response.data.message)
+      if (err.response.data.message === "Oops! Access denied. Please sign in.") {
+        Nav('/login')
+        localStorage.removeItem("token");
+        localStorage.removeItem("userId");
+      }
     }
   };
 
@@ -56,8 +61,9 @@ const DebtManager = () => {
       }
       const response = await axios.get(`${url}/oneuser/${userId}`);
       setUser(response?.data?.data);
-      // setLoading(false);
     } catch (err) {
+      console.log(err);
+
       // setLoading(false);
     }
   };
@@ -65,18 +71,12 @@ const DebtManager = () => {
     getUser();
   }, [reload]);
 
-  const handleAmountChange = (id, value) => {
-    setAmounts((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
-  };
-
   const getPaidHistory = async () => {
+    const token = localStorage.getItem("token");
     try {
       const response = await axios.get(`${url}/debt/history`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          'Authorization': `Bearer ${token}`,
         },
       });
       console.log(response?.data?.data);
@@ -85,49 +85,53 @@ const DebtManager = () => {
       console.log(err);
     }
   };
-
+  // console.log(debt);
   useEffect(() => {
     getPaidHistory();
-  }, []);
+  }, [reload]);
 
   const payDebt = async (id) => {
     console.log("working");
+    const token = localStorage.getItem("token");
+    // const userId = localStorage.getItem("userId");
+
     try {
-      const amount = amounts[id] || 0;
+      ;
       await axios.put(
         `${url}/debt/pay/${id}`,
         {
-          amount,
+          amount: parseFloat(amount),
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            'Authorization': `Bearer ${token}`,
           },
         }
       );
-      toast.success("Debt successfully added");
+      toast.success("Debt Payment Successful");
       toast.success(amount.data.message);
-      // setDebt(response?.data?.data)
-      // setTimeout(() => {
-      //   setReload((prev) => !prev);
-      // }, 1000);
+      setAmounts('')
+      setReload((prev) => !prev);
     } catch (err) {
-      console.log(err);
+      toast.error(err.response.data.message)
+      setAmounts('')
     }
   };
 
-  useEffect(() => {
-    payDebt();
-  }, [reload]);
+  // useEffect(() => {
+  //   payDebt();
+  // }, [reload]);
 
   const getDebtSavingHistory = async () => {
+    const token = localStorage.getItem("token");
     try {
       const response = await axios.get(`${url}/debt/debtpaymentHistory`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          'Authorization': `Bearer ${token}`,
         },
       });
       setFullDebt(response?.data?.data);
+      // setReload((prev) => !prev);
     } catch (err) {
       console.log(err);
     }
@@ -151,24 +155,6 @@ const DebtManager = () => {
               <div className="debtManTopTwoUp">
                 <p className="totalAmountReached"> Total debt paid </p>
                 <p className="totalAmountPrice"> ₦ {user?.totaldebtPaid} </p>
-              </div>
-
-              <div className="debtManTopTwoDown">
-                <div className="debtManTopTwoDownTop">
-                  <div className="debtManTopTwoDownLeft">
-                    <nav className="greenDMTargetReached"> </nav>
-                    <p className="dMLoanPaid">Loan Paid </p>
-                  </div>
-
-                  <div className="debtManTopTwoDownRight">
-                    <nav className="redDMTargetReached"> </nav>
-                    <p className="dMLoanBalance">Loan balance</p>
-                  </div>
-                </div>
-
-                <div className="dManTopTwoDownBottom">
-                  <p className="debtManNoRec"> No Record Yet </p>
-                </div>
               </div>
             </div>
           </div>
@@ -222,10 +208,6 @@ const DebtManager = () => {
               </div>
 
               <div className="debtManAasignPlusBtnDiv">
-                {/* <div className="debtManAddPlus">
-                  <FaCirclePlus className="debtManCirclePlus" />
-                </div> */}
-
                 <div className="debtManAssignBtn">
                   <button className="assignLoanBtn" onClick={addDebt}>
                     {" "}
@@ -233,8 +215,6 @@ const DebtManager = () => {
                   </button>
                 </div>
               </div>
-
-              {/* <div className="bPlannerMidBottomDownRight"></div> */}
             </div>
           </div>
 
@@ -246,10 +226,6 @@ const DebtManager = () => {
                   (Input amount assigned for each budget.)
                 </p>
               </div>
-
-              {/* <div className="debtManLoanBottomTopRight">
-                <button className="debtManStatusBottomBtn"> Status </button>
-              </div> */}
             </div>
 
             <div className="debtManBottomCenter">
@@ -268,40 +244,40 @@ const DebtManager = () => {
               </div>
 
               <div className="debtManBottomMidshowInputs">
-                {debt.map((e) => (
-                  <div className="debtManMidBottomshowInputInner" key={e?._id}>
-                    <div className="debtManMidBottomShowInputLeft">
-                      <input
-                        className="debtManLoanBottomInput"
-                        type="text"
-                        readOnly
-                        value={e?.description}
-                      />
-                    </div>
+                {
+                  debt.map((i) => (
+                    <div className="debtManMidBottomshowInputInner" key={i._id}>
+                      <div className="debtManMidBottomShowInputLeft">
+                        <input
+                          className="debtManLoanBottomInput"
+                          type="text"
+                          readOnly
+                          value={i?.description}
+                        />
+                      </div>
 
-                    <div className="dMMidSBottomInputRight">
-                      <input
-                        className="dMMidBottomInput"
-                        type="number"
-                        onChange={(ev) =>
-                          handleAmountChange(e?._id, ev.target.value)
-                        }
-                        value={amounts[e?._id] || ""}
-                      />
-                    </div>
+                      <div className="dMMidSBottomInputRight">
+                        <input
+                          className="dMMidBottomInput"
+                          type="number"
+                          onChange={(e) => setAmounts(e.target.value)}
+                          value={amount}
+                        />
+                      </div>
 
-                    <div className="dMMidSBottomInputRight">
-                      <button
-                        className="dMMidBottomInput"
-                        // type="text"
-                        onClick={() => payDebt(e?._id)}
-                      >
-                        {" "}
-                        Submit{" "}
-                      </button>
+                      <div className="dMMidSBottomInputRight">
+                        <button
+                          className="dMMidBottomInput"
+                          // type="text"
+                          onClick={() => payDebt(i._id)}
+                        >
+                          {" "}
+                          Submit{" "}
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))
+                }
               </div>
 
               <div className="dMLoanBottomPlusDiv">
@@ -340,14 +316,12 @@ const DebtManager = () => {
           <div className="debtManTransaction">
             <h6 className="budgetTransactionHistory"> Transaction History </h6>
             <div className="bugetTransactionNoAct">
-              <div>
+              <div className="exTransactionNoAct">
                 {fullDebt.map((e) => (
-                  <div key={e?._id}>
-                    <span>
+                  <div key={e?._id} className="budgetTrasactionHistory">
                       <p> {e?.date} </p>
                       <p> ₦{e?.amount} </p>
-                      <p> {e?.budget} </p>
-                    </span>
+                      <p> {e?.debt} </p>
                   </div>
                 ))}
               </div>
