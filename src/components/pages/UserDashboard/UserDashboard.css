@@ -481,7 +481,6 @@
 
 .uDTransaction {
   width: 100%;
-  min-height: 23vh;
   height: auto;
   border-radius: 5px;
   background: #e7d0ff;
@@ -803,4 +802,7 @@
   .uDTransThree{
     width: 100%;
   }
+.uDTransaction {
+ height: auto;
+}
 }

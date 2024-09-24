@@ -591,9 +591,7 @@
 
 .budgetPlannerBudget {
   width: 100%;
-  min-height: 45%;
-  height: auto;
-  /* background: red; */
+  height: 45%;
   border-radius: 5px;
   background: #feffef;
   box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
@@ -748,5 +746,8 @@
   }
   .budgetPlannerRight{
     width: 100%;
+  }
+  .budgetPlannerBudget {
+    height: auto;
   }
 }

@@ -250,6 +250,7 @@ const UserBoard = () => {
                   <ProgressBar
                     completed={parseInt(e?.percentage)}
                     bgColor="yellow"
+                    labelColor="black"
                   />
                 </div>
               </div>
