@@ -102,11 +102,11 @@
 }
 
 .totalAmountReached {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .totalAmountPrice {
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 700;
 }
 
@@ -166,20 +166,20 @@
 .budgetPlannerMiddle {
   width: 100%;
   height: auto;
-  min-height: 50vh;
+  /* min-height: 50vh; */
   border-radius: 5px;
   background: rgba(245, 245, 245, 0.85);
   box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   gap: 20px;
-  padding: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .budgetPlannerMiddleTop {
   width: 100%;
-  height: 15%;
+  /* height: 15%; */
   /* background: green; */
   display: flex;
   flex-direction: column;
@@ -235,7 +235,7 @@
 
 .bPlanMidshowInputs {
   width: 100%;
-  min-height: 9vh;
+  /* min-height: 9vh; */
   height: auto;
   background: rgb(183, 184, 184);
   /* padding: 10px; */
@@ -295,7 +295,7 @@
 
 .budgetCreateBudgetPlusBtnDiv {
   width: 100%;
-  height: 16vh;
+  /* height: 16vh; */
   /* background: green; */
   display: flex;
   /* justify-content: space-between; */
@@ -320,15 +320,13 @@
 
 .holdBudgetCreateBudgetBtn {
   width: 100%;
-  height: 35%;
-  /* background: navy; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 .createBudgetBtn {
-  width: 13%;
-  height: 80%;
+  width: 100px;
+  height: 40px;
   border-radius: 5px;
   border: 1px solid var(--Text-color);
   background: #fbfdc7;
@@ -336,6 +334,7 @@
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .divMap {
@@ -640,16 +639,17 @@
 .budgetsHistory {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .bugetTransactionNoAct {
   width: 100%;
   height: auto;
-  min-height: 90%;
+  /* min-height: 90%; */
   display: flex;
   align-items: center;
   padding: 10px;
-  overflow: auto;
 }
 
 .budgetTransMapAct {
@@ -657,20 +657,21 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .budSpan {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
-
+.budPD{
+  width: 40%;
+}
 .budP {
-  width: 15%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  width: 25%;
+  display: flex;
 }
 
 @media screen and (max-width: 650px) {
@@ -749,5 +750,22 @@
   }
   .budgetPlannerBudget {
     height: auto;
+  }
+  .totalGoalPrice {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .totalAmountPrice {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .budPD{
+    width: 40%;
+    font-size: 14px;
+  }
+  .budP {
+    width: 25%;
+    display: flex;
+    font-size: 14px;
   }
 }

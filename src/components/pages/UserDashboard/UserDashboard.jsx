@@ -13,6 +13,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { toast } from "react-hot-toast";
+
 
 const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
@@ -22,6 +24,8 @@ const UserBoard = () => {
   const [data, setData] = useState([]);
   const [history, setHistory] = useState([]);
   const [debt, setDebt] = useState([]);
+  const [timePeriod, setTimePeriod] = useState("today");
+
   const userToken = localStorage.getItem('token')
 
   const getPaidHistory = async () => {
@@ -69,7 +73,12 @@ const UserBoard = () => {
       const response = await axios.get(`${url}/oneuser/${userId}`);
       setUser(response?.data.data);
     } catch (err) {
-      console.log(err);
+      toast.error(err.response.data.message)
+      if (err.response.data.message === "Oops! Access denied. Please sign in.") {
+        Nav('/login')
+        localStorage.removeItem("token");
+        localStorage.removeItem("userId");
+      }
 
     }
   };
@@ -80,7 +89,7 @@ const UserBoard = () => {
   }, []);
   const getTransactionChart = async () => {
     try {
-      const response = await axios.get(`${url}/expenses/expensehistory`, {
+      const response = await axios.get(`${url}/expenses/dashBoardhistory`, {
         headers: {
           'Authorization': `Bearer ${userToken}`
         }
@@ -101,6 +110,49 @@ const UserBoard = () => {
   useEffect(() => {
     getTransactionChart()
   }, [])
+
+  const mapTransactionData = (data) => {
+    return data.map((item) => ({
+      createdAt: item.createdAt,
+      expenseAmount: item.Type === 'expense' ? item.amount : null,
+      budgetAmount: item.Type === 'budget' ? item.amount : null,
+      debtAmount: item.Type === 'debt' ? item.amount : null,
+    }));
+  };
+
+  const filterDataByPeriod = () => {
+    const now = new Date();
+    let filteredData = [];
+
+    if (timePeriod === "today") {
+      filteredData = data.filter((item) => {
+        const date = new Date(item.createdAt);
+        return date.toDateString() === now.toDateString();
+      });
+    } else if (timePeriod === "week") {
+      filteredData = data.filter((item) => {
+        const date = new Date(item.createdAt);
+        const diffInDays = (now - date) / (1000 * 3600 * 24);
+        return diffInDays <= 7 && diffInDays >= 0;
+      });
+    } else if (timePeriod === "month") {
+      filteredData = data.filter((item) => {
+        const date = new Date(item.createdAt);
+        return date.getMonth() === now.getMonth() && date.getFullYear() === now.getFullYear();
+      });
+    } else if (timePeriod === "year") {
+      filteredData = data.filter((item) => {
+        const date = new Date(item.createdAt);
+        return date.getFullYear() === now.getFullYear();
+      });
+    }
+
+    // Map and transform the data
+    return mapTransactionData(filteredData);
+  };
+
+
+
   return (
     <div className="userdashboard"
     // ref={ref}
@@ -166,23 +218,33 @@ const UserBoard = () => {
           <div className="uDMiddle">
             <div className="uDMiddleTop">
               <h3 className="uDMoneyFlow">Money Flow</h3>
-              <div className="uDassignLoan">
-                <div className="uDLightPurleRound"></div>
-                <p className="uDExpenseText">Expense</p>
+              <div className="userDashboardFilterButtonWrap">
+                <button onClick={() => setTimePeriod("today")}>Today</button>
+                <button onClick={() => setTimePeriod("week")}>Week</button>
+                <button onClick={() => setTimePeriod("month")}>Month</button>
+                <button onClick={() => setTimePeriod("year")}>Year</button>
               </div>
             </div>
 
             <div className="uDCenterDown">
               <div className="uDCenterDownInner">
-                <ResponsiveContainer width="100%" height={250}>
-                  <BarChart data={data}>
-                    <CartesianGrid strokeDasharray="2 1" />
-                    <XAxis dataKey="datePaid" />
-                    <YAxis />
-                    <Legend />
-                    <Bar dataKey="amount" fill="#6404E0" barSize={20} />
-                  </BarChart>
-                </ResponsiveContainer>
+              <ResponsiveContainer width="100%" height={250}>
+                <BarChart data={filterDataByPeriod()}>
+                  <CartesianGrid strokeDasharray="2 1" />
+                  <XAxis
+                    dataKey="createdAt"
+                    tickFormatter={(tick) => {
+                      const date = new Date(tick);
+                      return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+                    }}
+                  />
+                  <YAxis />
+                  <Legend />
+                  <Bar dataKey="expenseAmount" name="Expense" fill="#FF6347" barSize={15} />
+                  <Bar dataKey="budgetAmount" name="Budget" fill="#87CEFA" barSize={15} />
+                  <Bar dataKey="debtAmount" name="Debt" fill="#6A5ACD" barSize={15} />
+                </BarChart>
+              </ResponsiveContainer>
               </div>
             </div>
           </div>
@@ -204,23 +266,23 @@ const UserBoard = () => {
                   <p className="uDBCDTFont">Date</p>
                   <p className="uDBCDTFont">Amount</p>
                   <p className="uDBCDTFont">Description</p>
-                  <p className="uDBCDTFont">Expense</p>
+                  <p className="uDBCDTFont">Type</p>
                 </div>
 
                 {
                   data.map((i) => (
                     <div className="uDashBottomcenterDownList" key={i._id}>
                       <p className="uDBCDTFontList">
-                        {new Date(i.createdAt).toLocaleDateString('en-GB', {
+                        {i.createdAt ? new Date(i.createdAt).toLocaleDateString('en-GB', {
                           day: 'numeric',
                           month: 'short',
                           year: 'numeric',
-                        })}
+                        }) : i.date
+                        }
                       </p>
-                      <p className="uDBCDTFontList">{i.amount}</p>
-                      <p className="uDBCDTFontList">{i.description}</p>
-                      <p className="uDBCDTFontList">{i.expense
-                      }</p>
+                      <p className="uDBCDTFontList">{i.expenseAmount || i.amount}</p>
+                      <p className="uDBCDTFontList">{i.description || 'Nil'}</p>
+                      <p className="uDBCDTFontList">{i.Type || 'Nil'}</p>
                     </div>
                   ))
                 }

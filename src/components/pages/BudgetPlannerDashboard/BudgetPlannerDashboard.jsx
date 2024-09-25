@@ -42,7 +42,7 @@ const BudgetPlannerDashboard = () => {
       toast.success("Budget Created Successfully");
       setTarget('');
       setDuration('');
-      setDescription(''); 
+      setDescription('');
       setReload((prev) => !prev);
     } catch (err) {
       console.log(err);
@@ -63,7 +63,7 @@ const BudgetPlannerDashboard = () => {
       // setLoading(false);
     } catch (err) {
       console.log(err);
-      
+
       // setLoading(false);
     }
   };
@@ -147,7 +147,7 @@ const BudgetPlannerDashboard = () => {
     getSavingsHistory();
   }, [reload]);
 
- 
+
 
   return (
     <div className="budgetPlannerDashboard">
@@ -160,10 +160,10 @@ const BudgetPlannerDashboard = () => {
             </div>
 
             <div className="bPlannerTopTwo">
-              <div className="bPlannerTopTwoUp">
-                <p className="totalAmountReached"> Total amount reached </p>
-                <p className="totalAmountPrice"> ₦ {user?.totalAmountSaved} </p>
-              </div>
+              {/* <div className="bPlannerTopTwoUp"> */}
+              <p className="totalAmountReached"> Total amount reached </p>
+              <p className="totalAmountPrice"> ₦ {user?.totalAmountSaved} </p>
+              {/* </div> */}
             </div>
           </div>
 
@@ -237,10 +237,6 @@ const BudgetPlannerDashboard = () => {
                   (Input amount assigned for each budget.)
                 </p>
               </div>
-
-              {/* <div className="holdBudgetCreateBottomTopRight">
-                <button className="budgetStatusBottomBtn"> Status </button>
-              </div> */}
             </div>
 
             <div className="bPlannerBottomCenter">
@@ -257,40 +253,44 @@ const BudgetPlannerDashboard = () => {
               </div>
 
               <div className="bPlanBottomMidshowInputs">
-                {history.map((e) => (
-                  <div className="bPlanMidBottomshowInputInner" key={e?._id}>
-                    <div className="bPlanMidBottomShowInputLeft">
-                      <input
-                        className="budgetBudgetBottomInput"
-                        type="text"
-                        readOnly
-                        value={e?.description}
-                      />
-                    </div>
+                {history.length === 0 ? (
+                  <p>No data available</p>
+                ) : (
+                  history.map((e) => (
+                    <div className="bPlanMidBottomshowInputInner" key={e?._id}>
+                      <div className="bPlanMidBottomShowInputLeft">
+                        <input
+                          className="budgetBudgetBottomInput"
+                          type="text"
+                          readOnly
+                          value={e?.description}
+                        />
+                      </div>
 
-                    <div className="bPlanMidShowBottomInputRight">
-                      <input
-                        className="budgetAmountBottomInput"
-                        type="number"
-                        onChange={(ev) =>
-                          handleAmountChange(e?._id, ev.target.value)
-                        }
-                        value={amounts[e?._id] || ""}
-                      />
-                    </div>
+                      <div className="bPlanMidShowBottomInputRight">
+                        <input
+                          className="budgetAmountBottomInput"
+                          type="number"
+                          onChange={(ev) =>
+                            handleAmountChange(e?._id, ev.target.value)
+                          }
+                          value={amounts[e?._id] || ""}
+                        />
+                      </div>
 
-                    <div className="bPlanMidShowBottomInputRight">
-                      <button
-                        className="budgetAmountBottomInput"
-                        onClick={() => saveForBudget(e?._id)}
-                      >
-                        {" "}
-                        Submit{" "}
-                      </button>
-                      {/* <input className="budgetDurationBottomInput" type="text" /> */}
+                      <div className="bPlanMidShowBottomInputRight">
+                        <button
+                          className="budgetAmountBottomInput"
+                          onClick={() => saveForBudget(e?._id)}
+                        >
+                          {" "}
+                          Submit{" "}
+                        </button>
+                        {/* <input className="budgetDurationBottomInput" type="text" /> */}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))
+                )}
               </div>
 
               <div className="budgetCreateBudgetBottomPlusDiv">
@@ -308,20 +308,25 @@ const BudgetPlannerDashboard = () => {
           {/* <div className="budgetPlannerRightInner"> */}
           <div className="budgetPlannerBudget">
             <h6 className="budgetRigthName">Budget</h6>
-            {history.map((e) => (
-              <div className="divMap" key={e?._id}>
-                <div className="divMappest">
-                  <span className="mapSpan">
-                    <p> {e?.description}</p>
-                    <p> {e?.target} </p>
-                  </span>
-                  <ProgressBar
-                    completed={parseInt(e?.percentage)}
-                    bgColor="yellow"
-                  />
+            {history.length === 0 ? (
+              <p>No budget data available</p>
+            ) : (
+              history.map((e) => (
+                <div className="divMap" key={e?._id}>
+                  <div className="divMappest">
+                    <span className="mapSpan">
+                      <p> {e?.description}</p>
+                      <p> {e?.target} </p>
+                    </span>
+                    <ProgressBar
+                      completed={parseInt(e?.percentage)}
+                      bgColor="yellow"
+                      color="black"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
             <div className="budgetPlanBudgetHold">
               <p className="noActivity"> {user?.totalBudget} </p>
             </div>
@@ -331,16 +336,20 @@ const BudgetPlannerDashboard = () => {
             <h6 className="budgetTransactionHistory"> Transaction History </h6>
             <div className="bugetTransactionNoAct">
               <div className="budgetTransMapAct">
-                {savingHistory.map((e) => (
-                  <div className="budgetsHistory" key={e?._id}>
-                    <span className="budSpan">
-                      <FaArrowDown />
-                      <p className="budP">{e?.date}</p>
-                      <p className="budP"> ₦{e?.amount} </p>
-                      <p className="budP"> {e?.budget} </p>
-                    </span>
-                  </div>
-                ))}
+                {savingHistory.length === 0 ? (
+                  <p>No transaction history available</p>
+                ) : (
+                  savingHistory.map((e) => (
+                    <div className="budgetsHistory" key={e?._id}>
+                      <span className="budSpan">
+                        <FaArrowDown color="green" />
+                        <p className="budPD">{e?.date}</p>
+                        <p className="budP"> ₦{e?.amount} </p>
+                        <p className="budP"> {e?.description} </p>
+                      </span>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </div>
