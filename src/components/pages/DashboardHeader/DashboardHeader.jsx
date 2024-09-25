@@ -68,7 +68,7 @@ const DashboardHeader = () => {
               {user?.profilePicture ? (
                 <img className="dashboardHeaderImage" src={user?.profilePicture} alt="Profile" />
               ) : (
-                <FaUserCircle size={100} className="dummyUserIcon" />
+                <FaUserCircle size={30} className="dummyUserIcon" />
               )}
             </div>
             <div className="holdProfileInfo">
