@@ -21,10 +21,14 @@ const BudgetPlannerDashboard = () => {
   const [amounts, setAmounts] = useState({});
   const [savingHistory, setSavingHistory] = useState([]);
   const [loading, setLoading] = useState({});
+
+  const [loader, setLoader] = useState(false);
+
   const token = localStorage.getItem("token");
 
   const createBudget = async (e) => {
     e.preventDefault();
+    setLoader(true)
     try {
       await axios.post(
         `${url}/budget/newBudget`,
@@ -45,8 +49,9 @@ const BudgetPlannerDashboard = () => {
       setDescription('');
       setReload((prev) => !prev);
     } catch (err) {
-      console.log(err);
       toast.error(err.response.data.message || err.response.data.errorMessage)
+    }finally{
+      setLoader(false)
     }
   };
 
@@ -65,7 +70,6 @@ const BudgetPlannerDashboard = () => {
     } catch (err) {
       console.log(err);
 
-      // setLoading(false);
     }
   };
 
@@ -233,8 +237,7 @@ const BudgetPlannerDashboard = () => {
               <div className="budgetCreateBudgetPlusBtnDiv">
                 <div className="holdBudgetCreateBudgetBtn">
                   <button className="createBudgetBtn" onClick={createBudget}>
-                    {" "}
-                    Create Budget{" "}
+                   {loader ? "Loading" : ' Create Budget'}
                   </button>
                 </div>
               </div>
