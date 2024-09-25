@@ -22,23 +22,68 @@ const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 const ReportInsights = () => {
   const Nav = useNavigate();
   const [user, setUser] = useState();
+  const [timePeriod, setTimePeriod] = useState("week");
   const [data, setData] = useState([
-    { date: "2024-01-01", amount: 4000, value: 20000  },
-    { date: "2024-01-02", amount: 3000, value: 4000  },
-    { date: "2024-01-03", amount: 5000, value: 19000  },
-    { date: "2024-01-04", amount: 89000, value: 67000  },
-    { date: "2024-01-05", amount: 7000, value: 40000  },
-    { date: "2024-01-6", amount: 80000, value: 25000  },
+    { date: "2024-01-01", amount: 4000, value: 20000 },
+    { date: "2024-01-08", amount: 3000, value: 4000 },
+    { date: "2024-02-01", amount: 5000, value: 19000 },
+    { date: "2024-03-01", amount: 89000, value: 67000 },
+    { date: "2024-04-01", amount: 7000, value: 40000 },
+    { date: "2024-05-01", amount: 80000, value: 25000 },
+    { date: "2024-09-25", amount: 80000, value: 25000 },
+    { date: "2024-09-24", amount: 80000, value: 25000 },
+    { date: "2024-09-23", amount: 80000, value: 25000 },
+    { date: "2024-09-22", amount: 80000, value: 25000 },
+    { date: "2024-09-21", amount: 80000, value: 25000 },
   ]);
 
-  const [data2, setData2] = useState([
-    {  expense : "Transportation", amount: 2000, value: 3200 },
-    {  expense : "Food", amount: 500, value: 4000 },
-    {  expense : "Data", amount: 600, value: 1200 },
-    {  expense : "Hospitality", amount: 2000, value: 3200 },
-    {  expense : "Music Subscription", amount: 2000, value: 3200 },
-    {  expense : "Entertainment", amount: 2000, value: 3200 },
-  ])
+  const filterDataByPeriod = () => {
+    const now = new Date();
+    let filteredData = [];
+
+    if (timePeriod === "today") {
+      // Filter for today's data only
+      filteredData = data.filter((item) => {
+        const date = new Date(item.date);
+        return date.toDateString() === now.toDateString();
+      });
+    } else if (timePeriod === "week") {
+      // Filter by last 7 days
+      filteredData = data.filter((item) => {
+        const date = new Date(item.date);
+        const diffInDays = (now - date) / (1000 * 3600 * 24); // Difference in days
+        return diffInDays <= 7 && diffInDays >= 0; // Last 7 days
+      });
+    } else if (timePeriod === "month") {
+      // Filter by the current month
+      filteredData = data.filter((item) => {
+        const date = new Date(item.date);
+        return date.getMonth() === now.getMonth() && date.getFullYear() === now.getFullYear();
+      });
+    } else if (timePeriod === "year") {
+      // Filter by the current year
+      filteredData = data.filter((item) => {
+        const date = new Date(item.date);
+        return date.getFullYear() === now.getFullYear();
+      });
+    }
+
+    // Add today's data if not already in the filtered data
+    const todayExists = filteredData.some(item => {
+      const date = new Date(item.date);
+      return date.toDateString() === now.toDateString();
+    });
+
+    if (!todayExists && timePeriod === "today") {
+      filteredData.push({
+        date: now.toISOString().split("T")[0], // Add today in "YYYY-MM-DD" format
+        amount: 0,
+        value: 0,
+      });
+    }
+
+    return filteredData;
+  };
   return (
     <div className="reportInsights">
       <div className="reportInsightsInner">
@@ -84,30 +129,34 @@ const ReportInsights = () => {
           <div className="repoMiddle">
             <div className="repoMiddleTop">
               <h3 className="repoMoneyFlow"> Money Flow </h3>
-              <div className="assignLoan">
+              {/* <div className="assignLoan">
                 <div className="repoPurpleRound"> </div>
                 <p className="repoIncomeText"> Income </p>
                 <div className="repoLightPurleRound"></div>
                 <p className="repoExpenseText"> Expense </p>
+              </div> */}
+              <div>
+                <button onClick={() => setTimePeriod("today")}>Today</button>
+                <button onClick={() => setTimePeriod("week")}>Week</button>
+                <button onClick={() => setTimePeriod("month")}>Month</button>
+                <button onClick={() => setTimePeriod("year")}>Year</button>
               </div>
             </div>
 
             <div className="repoCenterDown">
-                <div className="repoCenterDownInner">
+              <div className="repoCenterDownInner">
                 <ResponsiveContainer width="100%" height={340}>
-                  <BarChart data={data}>
-                    <CartesianGrid strokeDasharray="2 1"/>
+                  <BarChart data={filterDataByPeriod()}>
+                    <CartesianGrid strokeDasharray="2 1" />
                     <XAxis dataKey="date" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="amount" fill="#6404E0" barSize={20}/>
-                    <Bar dataKey="value" fill="#DAC1F9" barSize={20} 
-                    // stroke="#F9FB7D"
-                    />
+                    <Bar dataKey="amount" fill="#6404E0" barSize={20} />
+                    <Bar dataKey="value" fill="#DAC1F9" barSize={20} />
                   </BarChart>
                 </ResponsiveContainer>
-                </div>
+              </div>
             </div>
           </div>
 
@@ -123,21 +172,21 @@ const ReportInsights = () => {
             </div>
 
             <div className="repoBottomCenterDown">
-                <div className="repoBottomCenterDownInner">
+              <div className="repoBottomCenterDownInner">
                 <ResponsiveContainer width="100%" height={340}>
-                  <BarChart data2={data2}>
-                    <CartesianGrid strokeDasharray="2 1"/>
+                  <BarChart data2={data}>
+                    <CartesianGrid strokeDasharray="2 1" />
                     <XAxis dataKey="date" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="amount" fill="#6404E0" barSize={20}/>
-                    <Bar dataKey="value" fill="#DAC1F9" barSize={20} 
+                    <Bar dataKey="amount" fill="#6404E0" barSize={20} />
+                    <Bar dataKey="value" fill="#DAC1F9" barSize={20}
                     // stroke="#F9FB7D"
                     />
                   </BarChart>
                 </ResponsiveContainer>
-                </div>
+              </div>
             </div>
           </div>
 

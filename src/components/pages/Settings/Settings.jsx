@@ -1,16 +1,61 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import "./Settings.css";
+import toast from "react-hot-toast";
+import { FaRegImage } from "react-icons/fa";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
+
+const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const Settings = () => {
+  const [changeSettings, setChangeSettings] = useState(null);
+  const [reload, setReload] = useState(false);
+  const [profilePicture, setProfilePicture] = useState(null);
+  const [files, setFiles] = useState(null);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate(); 
 
-  // const userToekn = localStorage.getItem('userToken')
+  const getImage = async () => {
+    try {
+      const userId = localStorage.getItem("userId");
+      const token = localStorage.getItem("token"); 
 
-  // localStorage.setItem('userToken', res.data.userToken)
+      if (!userId) {
+        navigate("/login");
+        toast.error("Please login again");
+        return; 
+      }
 
-//   headers: {
-//     "Content-Type": "multipart/form-data",
-//      "Authorization": Bearer ${userToekn}
-// }
+      // GET user data
+      const get = await axios.get(`${url}/oneuser/${userId}`);
+      setUser(get.data.data);
+
+      // POST request to update user data
+      if (files) {
+        const res = await axios.post(`${url}/update/${userId}`, files, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setChangeSettings(res.data.data.message);
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("Error fetching data");
+    }
+  };
+
+  useEffect(() => {
+    getImage();
+  }, [reload]);
+
+  const imgShow = (e) => {
+    const file = e.target.files[0]; 
+    setFiles(file);
+    const img = URL.createObjectURL(file);
+    setProfilePicture(img);
+  };
 
   return (
     <div className="settingsHolder">
@@ -18,12 +63,16 @@ const Settings = () => {
         <div className="settingsInnerIn">
           <div className="settingsInnerTop">
             <div className="holdSettingsImg">
-              <img className="settingsImg" src="" alt="" />
+              <img className="settingsImg" src={profilePicture} alt="Profile" /> 
+              <input type="file" id="1" hidden onChange={imgShow} />
+              <label htmlFor="1">
+                <FaRegImage />
+              </label>
             </div>
 
             <div className="holdSettingsEmail">
-              <h4 className="settingsName"> Adeyinka Owoduna </h4>
-              <p className="settingsEmailName"> yinkaowodun123@gmail.com </p>
+              <h4 className="settingsName">{user?.firstName}</h4> 
+              <p className="settingsEmailName">yinkaowodun123@gmail.com</p> 
             </div>
           </div>
 
@@ -34,15 +83,15 @@ const Settings = () => {
             </div>
             <div className="settingsInputHolderBottom">
               <input className="settingsEmail" placeholder="Email" type="text" />
-              <input className="settingsPhoneNum"  placeholder="Phone Number" type="text" />
+              <input className="settingsPhoneNum" placeholder="Phone Number" type="text" />
               <input className="settingsPassword" placeholder="Password" type="password" />
             </div>
           </div>
 
           <div className="settingsInnerBottom">
             <div className="settingsInnerBotRight">
-              <button className="settingsCancelBtn"> Cancel </button>
-              <button className="settingsSaveBtn"> Save Changes </button>
+              <button className="settingsCancelBtn">Cancel</button>
+              <button className="settingsSaveBtn" onClick={() => setReload(prev => !prev)}>Save Changes</button> 
             </div>
           </div>
         </div>
