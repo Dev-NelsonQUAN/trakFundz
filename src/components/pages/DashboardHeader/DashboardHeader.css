@@ -182,4 +182,10 @@
         left: 0;
         bottom: 0;
     }
+    .dashboardHeaderImage{
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        object-fit: cover;
+    }
 }
