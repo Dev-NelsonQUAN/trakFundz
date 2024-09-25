@@ -91,7 +91,7 @@ const ExpenseTrackerDashboard = () => {
       }
       )
       setHistory(response.data.data)
-      console.log(response);
+      setReload((prev) => !prev);
     } catch (err) {
       console.log(err);
 
@@ -112,8 +112,8 @@ const ExpenseTrackerDashboard = () => {
         }
       }
       )
-      console.log(response.data.data);
       setData(response.data.data)
+      setReload((prev) => !prev);
     } catch (err) {
       // console.log(err);
       if (err.response.data.message === "Oops! Access denied. Please sign in.") {
