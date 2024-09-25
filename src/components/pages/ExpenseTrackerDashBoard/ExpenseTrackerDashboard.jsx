@@ -32,7 +32,7 @@ const ExpenseTrackerDashboard = () => {
   const [reload, setReload] = useState(false);
   const [timePeriod, setTimePeriod] = useState("today");
   const [data, setData] = useState([]);
-
+  const [loading, setLoading] = useState(false);
   const token = localStorage.getItem('token')
   const getUser = async () => {
     try {
@@ -53,6 +53,7 @@ const ExpenseTrackerDashboard = () => {
 
   const createExpense = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       await axios.post(`${url}/expenses/create`,
         {
@@ -78,6 +79,8 @@ const ExpenseTrackerDashboard = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("userId");
       }
+    } finally{
+      setLoading(false)
     }
   };
 
@@ -250,7 +253,7 @@ const ExpenseTrackerDashboard = () => {
                 </div>
               </div>
 
-              <button type="submit" className="clickSubmit">Submit</button>
+              <button type="submit" className="clickSubmit" disabled={loading}>{loading ? "Saving..." : "Submit"}</button>
             </form>
           </div>
           <div className="uDMiddle">
