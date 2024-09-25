@@ -57,7 +57,7 @@ const router = createHashRouter([
     element: <VerificationPage/>
   },
   {
-    path: "/reset",
+    path: "/reset/:token",
     element: <ResetPassword />,
   },
   {
