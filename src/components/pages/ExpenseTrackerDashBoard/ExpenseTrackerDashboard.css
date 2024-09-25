@@ -303,12 +303,12 @@
 }
 .exMidShowInputLeft {
   width: 90%;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .exExpenseInput {
   width: 100%;
-  height: 100%;
+  height: 50px;
   border: none;
   border-radius: 3px;
   padding: 10px;
@@ -324,7 +324,7 @@
 
 .exDescInput {
   width: 90%;
-  height: 100%;
+  height: 50px;
   border-radius: 3px;
   border: none;
   padding: 10px;
@@ -333,7 +333,7 @@
 
 .exAmountInput {
   width: 90%;
-  height: 100%;
+  height: 50px;
   border-radius: 3px;
   border: none;
   padding: 10px !important;

@@ -188,7 +188,7 @@ const BudgetPlannerDashboard = () => {
             </div>
 
             <div className="bPlannerMiddleBottomCenter">
-              <div className="bPlanMidBottomDownTop">
+              {/* <div className="bPlanMidBottomDownTop">
                 <div className="bPlanMidBottomDownTopLeft">
                   <h6> Budget </h6>
                 </div>
@@ -197,7 +197,7 @@ const BudgetPlannerDashboard = () => {
                   <h6 className="bugetPlannerTxt"> Target </h6>
                   <h6 className="budgetPlannerDuration"> Duration </h6>
                 </div>
-              </div>
+              </div> */}
 
               <div className="bPlanMidshowInputs">
                 <div className="bPlanMidshowInputInner">
@@ -207,6 +207,7 @@ const BudgetPlannerDashboard = () => {
                       type="text"
                       onChange={(e) => setDescription(e.target.value)}
                       value={description}
+                      placeholder="Budget eg(Food, cloth, Data, Rent etc)"
                     />
                   </div>
 
@@ -216,12 +217,14 @@ const BudgetPlannerDashboard = () => {
                       type="text"
                       onChange={(e) => setTarget(e.target.value)}
                       value={target}
+                      placeholder="Amount you want to budget"
                     />
                     <input
                       className="budgetDurationInput"
                       type="text"
                       onChange={(e) => setDuration(e.target.value)}
                       value={duration}
+                      placeholder="Duration of the budget"
                     />
                   </div>
                 </div>
