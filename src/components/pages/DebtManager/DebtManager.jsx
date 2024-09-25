@@ -14,10 +14,10 @@ const DebtManager = () => {
   const [description, setDescription] = useState();
   const [duration, setDuration] = useState();
   const [reload, setReload] = useState(false);
-  const [amount, setAmounts] = useState('');
+  const [amounts, setAmounts] = useState({});
   const [debt, setDebt] = useState([]);
   const [fullDebt, setFullDebt] = useState([]);
-
+  const [loading, setLoading] = useState({});
   // const token = localStorage.getItem("token");
 
   const addDebt = async (e) => {
@@ -89,34 +89,51 @@ const DebtManager = () => {
   useEffect(() => {
     getPaidHistory();
   }, [reload]);
+  const handleAmountChange = (id, value) => {
+    setAmounts((prevAmounts) => ({
+      ...prevAmounts,
+      [id]: value,  // Store amount specific to the debt ID
+    }));
+  };
 
   const payDebt = async (id) => {
-    console.log("working");
     const token = localStorage.getItem("token");
-    // const userId = localStorage.getItem("userId");
+
+    // Set loading state for the specific debt item
+    setLoading((prev) => ({
+      ...prev,
+      [id]: true,
+    }));
 
     try {
-      ;
       await axios.put(
         `${url}/debt/pay/${id}`,
         {
-          amount: parseFloat(amount),
+          amount: parseFloat(amounts[id]),
         },
         {
           headers: {
             'Authorization': `Bearer ${token}`,
-          },
+          }
         }
       );
       toast.success("Debt Payment Successful");
-      toast.success(amount.data.message);
-      setAmounts('')
+      setAmounts((prev) => ({
+        ...prev,
+        [id]: ''  // Reset amount for the specific debt
+      }));
       setReload((prev) => !prev);
     } catch (err) {
-      toast.error(err.response.data.message)
-      setAmounts('')
+      toast.error(err.response.data.message);
+    } finally {
+      // Reset loading state after the API call
+      setLoading((prev) => ({
+        ...prev,
+        [id]: false,
+      }));
     }
   };
+
 
   // useEffect(() => {
   //   payDebt();
@@ -245,38 +262,41 @@ const DebtManager = () => {
 
               <div className="debtManBottomMidshowInputs">
                 {
-                  debt.map((i) => (
-                    <div className="debtManMidBottomshowInputInner" key={i._id}>
-                      <div className="debtManMidBottomShowInputLeft">
-                        <input
-                          className="debtManLoanBottomInput"
-                          type="text"
-                          readOnly
-                          value={i?.description}
-                        />
-                      </div>
+                  debt.length > 0 ? (
+                    debt.map((i) => (
+                      <div className="debtManMidBottomshowInputInner" key={i._id}>
+                        <div className="debtManMidBottomShowInputLeft">
+                          <input
+                            className="debtManLoanBottomInput"
+                            type="text"
+                            readOnly
+                            value={i?.description}
+                          />
+                        </div>
 
-                      <div className="dMMidSBottomInputRight">
-                        <input
-                          className="dMMidBottomInput"
-                          type="number"
-                          onChange={(e) => setAmounts(e.target.value)}
-                          value={amount}
-                        />
-                      </div>
+                        <div className="dMMidSBottomInputRight">
+                          <input
+                            className="dMMidBottomInput"
+                            type="number"
+                            onChange={(e) => handleAmountChange(i._id, e.target.value)}
+                            value={amounts[i._id] || ''}  // Set the value specific to each debt
+                          />
+                        </div>
 
-                      <div className="dMMidSBottomInputRight">
-                        <button
-                          className="dMMidBottomInput"
-                          // type="text"
-                          onClick={() => payDebt(i._id)}
-                        >
-                          {" "}
-                          Submit{" "}
-                        </button>
+                        <div className="dMMidSBottomInputRight">
+                          <button
+                            className="dMMidBottomInput"
+                            onClick={() => payDebt(i._id)}
+                            disabled={loading[i._id]}
+                          >
+                            {loading[i._id] ? "Paying..." : "Submit"}
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  ))
+                    ))
+                  ) : (
+                    <p>No debt records found.</p>
+                  )
                 }
               </div>
 
@@ -317,15 +337,20 @@ const DebtManager = () => {
             <h6 className="budgetTransactionHistory"> Transaction History </h6>
             <div className="bugetTransactionNoAct">
               <div className="exTransactionNoAct">
-                {fullDebt.map((e) => (
-                  <div key={e?._id} className="budgetTrasactionHistory">
-                      <p> {e?.date} </p>
-                      <p> ₦{e?.amount} </p>
-                      <p> {e?.debt} </p>
-                  </div>
-                ))}
+                {fullDebt.length > 0 ? (
+                  fullDebt.map((e) => (
+                    <div key={e?._id} className="budgetsHistory">
+                      <span className="budSpan">
+                        <p className="debtP">{e?.date}</p>
+                        <p className="debtP">₦{e?.amount}</p>
+                        <p className="debtP">{e?.description}</p>
+                      </span>
+                    </div>
+                  ))
+                ) : (
+                  <p>No transaction history available.</p>
+                )}
               </div>
-              {/* <p className="noActivity"> No activity </p> */}
             </div>
           </div>
         </div>
