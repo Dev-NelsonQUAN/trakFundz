@@ -1,43 +1,34 @@
-import React from "react";
+import  { useState } from "react";
+import axios from "axios";
 import "./ForgotPassword.css";
 import Logo from "./../../../assets/trakFundzLogo.svg";
-
-const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+import { toast } from "react-hot-toast";
+const url = "https://trackfundz-wmhv.onrender.com/api/v1"; // Ensure this is your correct API base URL
 
 const ForgotPassword = () => {
-  const handleForgot = async (e) => {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false); // For handling loading state
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // validate your beans here
-
     setLoading(true);
 
-    if (!email) {
-      toast.error("All fields are required.");
-      setLoading(false);
-    } else {
-      const apiData = {
-        firstName,
-        lastName,
-        email,
-        password,
-        confirmPassword,
-        phoneNumber,
-      };
+    try {
+      const response = await axios.post(`${url}/forgetpassword`, { email });
 
-      try {
-        const res = await axios.post(`${url}/signup`, apiData);
-        setLoading(false);
-        toast.success(res?.message);
-        Nav("/recovery");
-        console.log(url, apiData);
-        console.log(res, "respond to this");
-      } catch (error) {
-        // toast.error(error?.message)
-        toast.error(error?.response?.data?.message);
-        console.log(error, "This is an error");
-        setLoading(false);
+      if (response.status === 200) {
+        toast.success("A reset link has been sent to your email.", { autoClose: 3000 });
+      } else {
+        toast.error(response.data.message || "Failed to send reset email.", { autoClose: 3000 });
       }
+    } catch (err) {
+      toast.error(err.response?.data?.message || "An error occurred. Please try again.", { autoClose: 3000 });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -46,24 +37,33 @@ const ForgotPassword = () => {
       <div className="forgotHoldImage">
         <img className="logo" src={Logo} alt="TrakFundz Logo" />
       </div>
-      <form className="forgotFormHold">
+
+      <form className="forgotFormHold" onSubmit={handleSubmit}>
         <div className="forgotInForm">
           <div className="forgotTextHold">
             <label className="forgot"> Forgot Password? </label>
             <p className="pleaseEnter">
-              {" "}
               Please enter the email you used to register. We'll send an email
-              with instructions to reset your password.{" "}
+              with instructions to reset your password.
             </p>
           </div>
 
           <div className="forgotLowerForm">
             <div className="forgotEmailOwnDiv">
               <p className="forgotEmail"> Email Address </p>
-              <input type="email" className="emailInput" placeholder="Email" />
+              <input
+                type="email"
+                className="emailInput"
+                placeholder="Email"
+                value={email}
+                onChange={handleEmailChange}
+                required
+              />
             </div>
 
-            <button className="forgotReset" type="submit"> Reset Password </button>
+            <button className="forgotReset" type="submit" disabled={loading}>
+              {loading ? "Sending..." : "Reset Password"}
+            </button>
           </div>
         </div>
       </form>
