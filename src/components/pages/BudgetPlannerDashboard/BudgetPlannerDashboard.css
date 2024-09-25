@@ -248,49 +248,52 @@
 
 .bPlanMidshowInputInner {
   width: 100%;
-  height: 6vh;
+  flex-direction: column;
   /* background: green; */
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
 }
 
 .bPlanMidShowInputLeft {
-  width: 62%;
-  height: 100%;
+  width: 100%;
 }
 
 .budgetBudgetInput {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 50px;
   border: none;
   border-radius: 3px;
   padding-left: 10px;
   outline: none;
+  padding: 10px;
 }
 
 .bPlanMidShowInputRight {
-  width: 35%;
+  width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+  flex-direction: column;
 }
 
 .budgetTargetInput {
-  width: 47%;
-  height: 100%;
+  width: 90%;
+  height: 50px;
   border-radius: 3px;
   border: none;
   padding-left: 10px;
   outline: none;
+  padding: 10px;
 }
 
 .budgetDurationInput {
-  width: 47%;
-  height: 100%;
+  width: 90%;
+  height: 50px;
   border-radius: 3px;
   border: none;
   padding-left: 10px;
   outline: none;
+  padding: 10px;
 }
 
 .budgetCreateBudgetPlusBtnDiv {
@@ -321,11 +324,11 @@
 .holdBudgetCreateBudgetBtn {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  padding: 10px;
 }
 .createBudgetBtn {
-  width: 100px;
+  width: 90%;
   height: 40px;
   border-radius: 5px;
   border: 1px solid var(--Text-color);
@@ -334,7 +337,6 @@
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  margin-top: 20px;
 }
 
 .divMap {
@@ -665,7 +667,7 @@
   align-items: center;
   gap: 10px;
 }
-.budPD{
+.budPD {
   width: 40%;
 }
 .budP {
@@ -683,16 +685,16 @@
     display: flex;
     flex-direction: column;
   }
-  .budgetPlannerLeftTop{
+  .budgetPlannerLeftTop {
     width: 100%;
     display: flex;
     flex-direction: column;
     height: auto;
   }
-  .bPlannerTopOne{
+  .bPlannerTopOne {
     width: 100%;
   }
-  .bPlannerTopTwo{
+  .bPlannerTopTwo {
     width: 100%;
   }
   .budgetPlannerLeft {
@@ -721,7 +723,7 @@
   .budgetPlannerMiddle {
     width: 100%;
   }
-  .budgetDurationInput{
+  .budgetDurationInput {
     width: 50%;
   }
   .gadget {
@@ -735,7 +737,7 @@
     margin-top: 20px;
     height: 40px;
   }
-  .bPlanBottomMidshowInputs{
+  .bPlanBottomMidshowInputs {
     width: 100%;
     height: auto;
     display: flex;
@@ -744,7 +746,7 @@
     justify-content: center;
     align-items: center;
   }
-  .budgetPlannerRight{
+  .budgetPlannerRight {
     width: 100%;
   }
   .budgetPlannerBudget {
@@ -758,7 +760,7 @@
     font-size: 16px;
     font-weight: 700;
   }
-  .budPD{
+  .budPD {
     width: 40%;
     font-size: 14px;
   }

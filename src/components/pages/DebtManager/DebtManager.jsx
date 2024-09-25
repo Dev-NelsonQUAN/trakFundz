@@ -186,7 +186,7 @@ const DebtManager = () => {
             </div>
 
             <div className="debtManMiddleBottomCenter">
-              <div className="debtManMidBottomDownTop">
+              {/* <div className="debtManMidBottomDownTop">
                 <div className="debtPlanMidBottomDownTopLeft">
                   <h6 className="loan"> Loan </h6>
                 </div>
@@ -195,7 +195,7 @@ const DebtManager = () => {
                   <h6 className="debtManAmount"> Amount </h6>
                   <h6 className="debtManDuration"> Duration </h6>
                 </div>
-              </div>
+              </div> */}
 
               <div className="debtManMidshowInputs">
                 <div className="debtManMidshowInputInner">
@@ -205,6 +205,7 @@ const DebtManager = () => {
                       type="text"
                       onChange={(e) => setDescription(e.target.value)}
                       value={description}
+                      placeholder="Loan eg(School Loan, Phone Loan etc)"
                     />
                   </div>
 
@@ -214,12 +215,14 @@ const DebtManager = () => {
                       type="text"
                       onChange={(e) => setDebtOwed(e.target.value)}
                       value={debtOwed}
+                      placeholder="Amount"
                     />
                     <input
                       className="debtManDurationInput"
                       type="text"
                       onChange={(e) => setDuration(e.target.value)}
                       value={duration}
+                      placeholder="Duration eg(1 months, 12 months, 20 days etc)"
                     />
                   </div>
                 </div>
