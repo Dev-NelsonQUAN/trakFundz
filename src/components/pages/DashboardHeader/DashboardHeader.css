@@ -132,6 +132,12 @@
 .MenuHolder{
     display: none;
 }
+.dashboardHeaderImage{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    object-fit: cover;
+}
 @media screen and (max-width: 650px) {
     .dashboardHeaderLeft{
         display: none;

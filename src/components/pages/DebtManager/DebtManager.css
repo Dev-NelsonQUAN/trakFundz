@@ -238,10 +238,9 @@
 
 .debtManMidshowInputs {
   width: 100%;
-  min-height: 7vh;
   height: auto;
   background: rgb(183, 184, 184);
-  /* padding: 10px; */
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -250,44 +249,49 @@
 
 .debtManMidshowInputInner {
   width: 100%;
-  height: 6vh;
-  /* background: green; */
+  gap: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 5px;
 }
 
 .debtManMidShowInputLeft {
-  width: 62%;
+  width: 90%;
   height: 100%;
 }
 
 .debtLoanInput {
   width: 100%;
-  height: 100%;
+  height: 50px;
   border: none;
   border-radius: 3px;
+  padding: 10px;
 }
 
 .debtManMidShowInputRight {
-  width: 35%;
-  height: 100%;
+  width:90%;
+  /* height: 100%; */
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: space-between;
 }
 
 .debtManAmountInput {
-  width: 47%;
-  height: 100%;
+  width: 100%;
+  height: 50px;
   border-radius: 3px;
   border: none;
+  padding: 10px;
 }
 
 .debtManDurationInput {
-  width: 47%;
-  height: 100%;
+  width: 100%;
+  height: 50px;
   border-radius: 3px;
   border: none;
+  padding: 10px;
 }
 
 .debtManAasignPlusBtnDiv {
@@ -296,7 +300,6 @@
   /* background: green; */
   display: flex;
   /* justify-content: space-between; */
-  align-items: flex-end;
   flex-direction: column;
 }
 
@@ -318,13 +321,13 @@
   width: 100%;
   height: 50%;
   /* background: navy; */
+  padding: 10px;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
 }
 .assignLoanBtn {
-  width: 50%;
-  height: 70%;
+  width: 90%;
+  height: 50px;
   border-radius: 5px;
   background: #e2bdff;
   border: none;
