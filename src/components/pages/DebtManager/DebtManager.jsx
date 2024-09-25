@@ -4,6 +4,7 @@ import axios from "axios";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { FaArrowDown } from "react-icons/fa6";
 
 const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
@@ -41,7 +42,7 @@ const DebtManager = () => {
       toast.success('Debt Added Successfully')
       setReload((prev) => !prev);
     } catch (err) {
-      toast.error(err.response.data.message)
+      toast.error(err.response.data.message || err.response.data.errorMessage)
       if (err.response.data.message === "Oops! Access denied. Please sign in.") {
         Nav('/login')
         localStorage.removeItem("token");
@@ -341,6 +342,7 @@ const DebtManager = () => {
                   fullDebt.map((e) => (
                     <div key={e?._id} className="budgetsHistory">
                       <span className="budSpan">
+                        <FaArrowDown color="red"/>
                         <p className="debtP">{e?.date}</p>
                         <p className="debtP">₦{e?.amount}</p>
                         <p className="debtP">{e?.description}</p>

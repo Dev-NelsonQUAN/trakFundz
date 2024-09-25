@@ -15,11 +15,11 @@
   height: 100vh;
   border-radius: 5px;
   background: rgba(245, 245, 245, 0.85);
-  box-shadow: 4px 4px 4px 0px rgba(153, 153, 153, 0.25);
+  box-shadow: 2px 4px 4px 4px rgba(153, 153, 153, 0.25);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .settingsInnerIn {
@@ -88,8 +88,6 @@
 
 .settingsInputHolderBottom {
   width: 100%;
-  height: 85%;
-  /* background: orangered; */
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -99,7 +97,7 @@
 .settingsPhoneNum,
 .settingsPassword {
     width: 100%;
-    height: 18%;
+    height: 50px;
     border: 1px solid #726e6e;
     border-radius: 5px;
     padding-left: 10px;
@@ -115,8 +113,8 @@
 }
 
 .settingsInnerBotRight{
-    width: 40%;
-    height: 50%;
+    width: 100%;
+    height: 60px;
     /* background: teal; */
     display: flex;
     gap: 10px;
@@ -143,4 +141,33 @@
     border-radius: 5px;
     cursor: pointer;
     font-weight: 700;
+}
+.settingsImg{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 650px) {
+  .settingsInner{
+    width: 100%;
+    box-shadow: none;
+  }
+  .settingsHolder{
+    padding: 10px;
+  }
+  .settingsImg{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+  }
+  .settingsInnerIn {
+    width: 100%;
+    height: 87%;
+    /* background: purple; */
+    display: flex;
+    justify-content: space-between;
+    /* gap: 30px; */
+    flex-direction: column;
+  }
 }
