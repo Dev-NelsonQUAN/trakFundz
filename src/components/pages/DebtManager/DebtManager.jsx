@@ -20,10 +20,11 @@ const DebtManager = () => {
   const [fullDebt, setFullDebt] = useState([]);
   const [loading, setLoading] = useState({});
   // const token = localStorage.getItem("token");
-
+  const [loader, setLoader] = useState(false);
   const addDebt = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
+    setLoader(true)
     try {
       await axios.post(
         `${url}/debt/create`,
@@ -48,6 +49,8 @@ const DebtManager = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("userId");
       }
+    }finally{
+      setLoader(false)
     }
   };
 
@@ -231,8 +234,7 @@ const DebtManager = () => {
               <div className="debtManAasignPlusBtnDiv">
                 <div className="debtManAssignBtn">
                   <button className="assignLoanBtn" onClick={addDebt}>
-                    {" "}
-                    Assign Loan{" "}
+                    {loader ? "Loading": "Assign Loan"}
                   </button>
                 </div>
               </div>

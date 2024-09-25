@@ -32,7 +32,7 @@ const ExpenseTrackerDashboard = () => {
   const [reload, setReload] = useState(false);
   const [timePeriod, setTimePeriod] = useState("today");
   const [data, setData] = useState([]);
-
+  const [loading, setLoading] = useState(false);
   const token = localStorage.getItem('token')
   const getUser = async () => {
     try {
@@ -53,6 +53,7 @@ const ExpenseTrackerDashboard = () => {
 
   const createExpense = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       await axios.post(`${url}/expenses/create`,
         {
@@ -78,6 +79,8 @@ const ExpenseTrackerDashboard = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("userId");
       }
+    } finally{
+      setLoading(false)
     }
   };
 
@@ -91,7 +94,7 @@ const ExpenseTrackerDashboard = () => {
       }
       )
       setHistory(response.data.data)
-      console.log(response);
+      setReload((prev) => !prev);
     } catch (err) {
       console.log(err);
 
@@ -112,8 +115,8 @@ const ExpenseTrackerDashboard = () => {
         }
       }
       )
-      console.log(response.data.data);
       setData(response.data.data)
+      setReload((prev) => !prev);
     } catch (err) {
       // console.log(err);
       if (err.response.data.message === "Oops! Access denied. Please sign in.") {
@@ -250,7 +253,7 @@ const ExpenseTrackerDashboard = () => {
                 </div>
               </div>
 
-              <button type="submit" className="clickSubmit">Submit</button>
+              <button type="submit" className="clickSubmit" disabled={loading}>{loading ? "Saving..." : "Submit"}</button>
             </form>
           </div>
           <div className="uDMiddle">
