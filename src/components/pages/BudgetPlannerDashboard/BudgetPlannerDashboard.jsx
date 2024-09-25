@@ -20,7 +20,7 @@ const BudgetPlannerDashboard = () => {
   const [history, setHistory] = useState([]);
   const [amounts, setAmounts] = useState({});
   const [savingHistory, setSavingHistory] = useState([]);
-
+  const [loading, setLoading] = useState({});
   const token = localStorage.getItem("token");
 
   const createBudget = async (e) => {
@@ -46,6 +46,7 @@ const BudgetPlannerDashboard = () => {
       setReload((prev) => !prev);
     } catch (err) {
       console.log(err);
+      toast.error(err.response.data.message || err.response.data.errorMessage)
     }
   };
 
@@ -98,6 +99,10 @@ const BudgetPlannerDashboard = () => {
   };
 
   const saveForBudget = async (id) => {
+    setLoading((prev) => ({
+      ...prev,
+      [id]: true,
+    }));
     try {
       const amount = amounts[id] || 0;
       await axios.put(
@@ -118,6 +123,12 @@ const BudgetPlannerDashboard = () => {
       // console.log(err);
       setAmounts('');
       toast.error(err.response.data.message)
+    }finally {
+      // Reset loading state after the API call
+      setLoading((prev) => ({
+        ...prev,
+        [id]: false,
+      }));
     }
   };
 
@@ -282,9 +293,9 @@ const BudgetPlannerDashboard = () => {
                         <button
                           className="budgetAmountBottomInput"
                           onClick={() => saveForBudget(e?._id)}
+                          disabled={loading[e._id]}
                         >
-                          {" "}
-                          Submit{" "}
+                         {loading[e._id] ? "Saving..." : "Submit"}
                         </button>
                         {/* <input className="budgetDurationBottomInput" type="text" /> */}
                       </div>

@@ -5,6 +5,7 @@ import HeroPage from "../HeroPage/HeroPage";
 import DebtLanding from "../DebtLanding/DebtLanding";
 import FreeTrial from "../FreeTrialPage/FreeTrial";
 import Footer from "../Footer/Footer";
+// import { Link } from "react-scroll";
 
 const LandingPage = () => {
   return (
@@ -13,7 +14,7 @@ const LandingPage = () => {
       <HeroPageBottom />
       <HeroPageMiddle/>
       <DebtLanding/>
-      <FreeTrial/>
+      <FreeTrial />
       <Footer/>
     </div> 
   );

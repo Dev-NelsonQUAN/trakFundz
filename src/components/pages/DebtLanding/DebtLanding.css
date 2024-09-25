@@ -1,9 +1,10 @@
 .DebtLandingContainer {
   width: 100%;
-  height: 80vh;
+  height: 120vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .debtLandingInner {
   width: 90%;
@@ -22,7 +23,7 @@
 
 .debt {
   text-align: center;
-  font-size: 40px;
+  font-size: 45px;
   color: white;
 }
 .dept {
@@ -30,7 +31,8 @@
 }
 .stayOrganized {
   text-align: center;
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 1.5rem;
   color: white;
 }
 .debtLandingBottom {
@@ -40,20 +42,28 @@
 .debtLandingleft {
   width: 50%;
   height: 60vh;
+  display: flex;
+  justify-content: flex-start;
+  /* justify-content: center; */
+  align-items: center;
 }
 .debtManagerDiv {
-  width: 600px;
-  height: 700px;
+  width: 700px;
+  height: 900px;
+  position: absolute;
+  left: 1px;
+  /* background: #000; */
 }
 .debtLandingRight {
   width: 50%;
-  height: 40vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: space-between;
   gap: 20px;
   /* background-color: red; */
   margin-top: 150px;
+  position: relative;
 }
 .deptLandingTrack {
   width: 70%;
@@ -76,12 +86,26 @@
   line-height: 30px;
 }
 .debtCreateBtn {
-  width: 250px;
-  height: 40px;
+  width: 190px;
+  height: 45px;
   color: white;
-  background-color: #9747ff;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: var(--brandColour);
   border-radius: 5px;
   border: none;
+  cursor: pointer;
+}
+
+.debtPoly {
+  width: 140px;
+  height: 160px;
+  /* display: flex;
+  justify-content: flex-end; */
+  position: absolute; 
+  right: 10px;
+  bottom: 2px; 
+  /* background: orange; */
 }
 
 @media screen and (max-width: 650px) {

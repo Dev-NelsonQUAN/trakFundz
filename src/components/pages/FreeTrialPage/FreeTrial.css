@@ -34,6 +34,7 @@
 .ready {
   font-size: 2.85rem;
   text-align: center;
+  color: white;
 }
 
 .masterPoly {
@@ -117,6 +118,7 @@
 
 .One {
   font-size: 2rem;
+  color: white;
 }
 
 .oneMonth {
@@ -179,6 +181,7 @@
   
   .twelve {
     font-size: 2.2rem;
+    color: white;
   }
   
   .twelveMonth {
@@ -252,6 +255,7 @@
   
   .six {
     font-size: 2rem;
+    color: white;
   }
   
   .sixMonth {

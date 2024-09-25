@@ -2,9 +2,8 @@ import "./SideBar.css";
 import logo from "../../../assets/trakFundzLogoReal.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
-import { GiTakeMyMoney, GiPiggyBank, GiReceiveMoney } from "react-icons/gi";
+import { GiTakeMyMoney, GiPiggyBank } from "react-icons/gi";
 import { IoSettingsSharp } from "react-icons/io5";
-import { TbHelpTriangle } from "react-icons/tb";
 import { AiOutlinePoweroff } from "react-icons/ai";
 
 const SideBar = ({ setShowSideBar }) => {
@@ -83,7 +82,7 @@ const SideBar = ({ setShowSideBar }) => {
             </div>
           </NavLink>
 
-          <NavLink
+          {/* <NavLink
             className={({ isActive }) =>
               isActive ? "HeaderActive" : "HeaderNotActive"
             }
@@ -94,7 +93,7 @@ const SideBar = ({ setShowSideBar }) => {
               <GiReceiveMoney />
               Report Insights
             </div>
-          </NavLink>
+          </NavLink> */}
 
           <NavLink
             className={({ isActive }) =>
@@ -111,7 +110,7 @@ const SideBar = ({ setShowSideBar }) => {
         </div>
 
         <div className="downFonts">
-          <NavLink
+          {/* <NavLink
             className={({ isActive }) =>
               isActive ? "HeaderActive" : "HeaderNotActive"
             }
@@ -122,7 +121,7 @@ const SideBar = ({ setShowSideBar }) => {
               <TbHelpTriangle />
               Help
             </div>
-          </NavLink>
+          </NavLink> */}
 
           <div
             className="HeaderNotActive"

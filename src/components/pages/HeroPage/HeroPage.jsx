@@ -1,16 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./HeroPage.css";
-import macHold from "../../../assets/macHold.svg"
-import polygonTopest from "../../../assets/topestPolygon.svg"
-import innerMac from "../../../assets/insideMac.svg"
-import iPadHold from "../../../assets/iPadHold.svg"
-import iPadInner from "../../../assets/iPadInner.svg"
-import iPhoneHold from "../../../assets/iPhoneHold.svg"
-import iPhoneInner from "../../../assets/iPhoneInner.svg"
-import androidHold from "../../../assets/androidHold.svg"
-import androidInner from "../../../assets/androidInner.svg"
-import polySmall from "../../../assets/polySmall.svg"
+// import macHold from "../../../assets/macHold.svg"
+// import polygonTopest from "../../../assets/topestPolygon.svg"
+// import innerMac from "../../../assets/insideMac.svg"
+// import iPadHold from "../../../assets/iPadHold.svg"
+// import iPadInner from "../../../assets/iPadInner.svg"
+// import iPhoneHold from "../../../assets/iPhoneHold.svg"
+// import iPhoneInner from "../../../assets/iPhoneInner.svg"
+// import androidHold from "../../../assets/androidHold.svg"
+// import androidInner from "../../../assets/androidInner.svg"
+// import polySmall from "../../../assets/polySmall.svg"
+
+import heroAllDevices from "../../../assets/heroAllDevices.svg"
 import { useNavigate } from "react-router-dom";
 
 const textVariants = {
@@ -36,7 +38,7 @@ const HeroPage = () => {
   }, []);
 
   return (
-    <div className="heroPageContainer">
+    <div className="heroPageContainer" id="home">
       <div className="heroPageInner">
         <div className="heroPageLeft">
           <div className="heroPageLeftHold">
@@ -76,7 +78,8 @@ const HeroPage = () => {
         </div>
 
         <div className="heroPageRight">
-          <img className="macHold" src={macHold} alt="MacBook mockup" />
+          <img className="macHold" src={heroAllDevices} alt="" />
+          {/* <img className="macHold" src={macHold} alt="MacBook mockup" />
           <img className="polygonTop" src={polygonTopest} alt="Polygon" />
           <div className="roundBlue"></div>
           <img className="innerMac" src={innerMac} alt="Inside Mac" />
@@ -86,9 +89,7 @@ const HeroPage = () => {
           <img className="iPhoneInner" src={iPhoneInner} alt="iPhone Inner Mockup" />
           <img className="androidHold" src={androidHold} alt="Android Mockup" />
           <img className="androidInner" src={androidInner} alt="Android Inner" />
-          {/* <img className="iOSShadow" src={iOSShadow} alt="iOS Mockup Shadow" /> */}
-          <img className="polygonSmall" src={polySmall} alt="polygon" />
-          {/* <img className="dashboard" src={dashboard} alt="trakFundzDashboard" /> */}
+          <img className="polygonSmall" src={polySmall} alt="polygon" /> */}
         </div>
       </div>
     </div>
