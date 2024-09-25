@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Header.css";
 import Logo from "../../../assets/trakFundzLogo.svg";
 import { RiMenuFold3Fill } from "react-icons/ri";
 import { RiMenuFold4Fill } from "react-icons/ri";
 import { NavLink, useNavigate } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
+import { IoClose, IoMenu } from "react-icons/io5";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Header = () => {
   const Nav = useNavigate();
@@ -21,17 +25,23 @@ const Header = () => {
     setShowIcons(false);
   };
 
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <div className="headerContainer">
       <div className="headerContainerInner">
         <div className="headerLeft">
+          {/* <Link> */}
           <div className="headerLeftOne" onClick={() => Nav("/")}>
             <img className="holdLogo" src={Logo} alt="TrakFundz Logo" />
           </div>
+          {/* </Link> */}
 
           <div className="headerLeftTwo">
             <ul>
-              <NavLink
+              {/* <NavLink
                 className={({ beActive }) =>
                   beActive ? "HeaderIsActive" : "HeaderNotActive"
                 }
@@ -40,24 +50,28 @@ const Header = () => {
                   {" "}
                   Features <IoIosArrowDown />
                 </li>
-              </NavLink>
+              </NavLink> */}
 
-              <NavLink to="/aboutUs"
+              <NavLink
+                to="/aboutUs"
                 className={({ isActive }) =>
                   isActive ? "HeaderIsActive" : "HeaderNotActive"
                 }
               >
-                <li> Why TrakFundz  </li>
-
+                <li> Why TrakFundz </li>
               </NavLink>
 
-              <NavLink
+              <Link
+                to="pricing"
+                offset={3}
+                smooth={true}
+                duration={500}
                 className={({ beActive }) =>
                   beActive ? "HeaderIsActive" : "HeaderNotActive"
                 }
               >
-                <li className="headerTop">  Pricing </li>
-              </NavLink>
+                <li className="headerTop"> Pricing </li>
+              </Link>
             </ul>
           </div>
         </div>
@@ -74,36 +88,61 @@ const Header = () => {
         </div>
         <div className="menu">
           {showIcons ? (
-            <RiMenuFold3Fill size={30} onClick={showSecond} />
+            <IoClose
+              style={{ color: "white" }}
+              size={30}
+              onClick={showSecond}
+            />
           ) : (
-            <RiMenuFold4Fill size={30} onClick={showFirst} />
+            <IoMenu style={{ color: "white" }} size={30} onClick={showFirst} />
           )}
         </div>
       </div>
 
       {showMenuItems ? (
-        <div className="holdBurger"
+        <div
+          className="holdBurger"
           data-aos="fade-left"
-          style={{ position: "absolute", top: "100%", height: "40vh" }}
+          style={{ position: "absolute", top: "100%", height: "30vh", fontFamily:"Helvetica" }}
         >
+
+          {/* <NavLink onClick={() => Nav("/")}>
           <Link
             className="Link"
-            // to="hero"
-            offset={-500} smooth={true} duration={500}>
+            to="home"
+            offset={-500}
+            smooth={true}
+            duration={500}
+          >
             <li className="burgerTxt"> Home</li>
           </Link>
+          </NavLink> */}
+
+          <NavLink
+          to="/aboutus"
+          style={{textDecoration: "none"}}
+            // to="about"
+            // offset={470}
+            // smooth={true}
+            // duration={500}
+          >
+            <li className="burgerTxt" sty>Why TrakFundz?</li>
+          </NavLink>
           <Link
-            // to="about" 
-            offset={470} smooth={true} duration={500}>
-            <li className="burgerTxt">Why TrakFundz?</li>
-          </Link>
-          <Link
-            // to="service" 
-            offset={-100} smooth={true} duration={500}>
+            to="pricing"
+            offset={4}
+            smooth={true}
+            duration={500}
+          >
             <li className="burgerTxt">Pricing</li>
           </Link>
-          <li className="burgerTxt" onClick={() => Nav("/signup")}> Sign Up </li>
-          <li className="burgerTxt" onClick={() => Nav("/login")}>Login</li>
+          <li className="burgerTxt" onClick={() => Nav("/signup")}>
+            {" "}
+            Sign Up{" "}
+          </li>
+          <li className="burgerTxt" onClick={() => Nav("/login")}>
+            Login
+          </li>
         </div>
       ) : null}
     </div>

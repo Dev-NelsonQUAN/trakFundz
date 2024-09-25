@@ -1,25 +1,31 @@
 .footerContainer {
     width: 100%;
-    padding: 10px 0;
-    background-image: url(../../../assets/FooterBG.svg);
+    height: 10vh;
     color: #fff;
     display: flex;
-    /* flex-direction: column; */
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footerContainerInner {
+    width: 90%;
+    height: 100%;
+    /* background: crimson; */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
-    text-align: center;
+    font-weight: 600;
 }
 
-/* Footer Main Section */
 .footerMain h4 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
-/* Footer Logo Section */
 .footerLogo {
     margin-top: 10px;
+    display: flex;
+    gap: 20px;
 }
 
 .logoIcon {
@@ -32,8 +38,17 @@
 
 /* Email Style */
 .contactEmail {
-    margin: 0;
+    /* margin: 0; */
     font-size: 14px;
+    transition: all 350ms ease-in-out;
+
+}
+
+.contactEmail:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    transform: scale(1.05);
+    transition: all 350ms ease-in-out;
 }
 
 /* Social Media Icon Style */
@@ -52,16 +67,46 @@
     .footerContainer{
         width: 100%;
         display: flex;
-        flex-direction: column-reverse;
+        /* flex-direction: column-reverse; */
         gap: 20px;
     }
     .footerContainerInner{
         width: 90%;
     }
+
+    .footerMain h4 {
+        font-size: 0.3rem;
+    }
+
+    .footerLogo {
+        width: 60%;
+        height: 25%;
+        background: rebeccapurple;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contactEmail {
+        font-size: 0.4rem;
+    }
+
     .footerTxt{
         font-size: 12px;
     }
     .logoIcon{
+        width: 70%;
         margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        /* background: orangered; */
+        /* display: flex; */
+    }
+
+    .socialIcon {
+        width: 5px;
+        height: 5px;
+        display: flex;
+        gap: 5px;
     }
 }

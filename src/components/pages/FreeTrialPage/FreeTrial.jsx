@@ -7,11 +7,11 @@ const FreeTrial = () => {
   const Nav = useNavigate()
 
   return (
-    <div className="freeTrialMain">
+    <div className="freeTrialMain" id="pricing">
       <div className="freeTrialMainInner">
         <div className="freeTrialInnerTop">
-          <h1 className="ready">
             <img className="masterPoly" src={masterPoly} alt="" />
+          <h1 className="ready">
             Ready to <span className="master"> Master</span>
             <br /> Your Money?
           </h1>

@@ -1,7 +1,8 @@
 import "./DebtLanding.css";
 import { useNavigate } from "react-router-dom";
-// import debtPoly from "../../../assets/debtPoly.svg"
+import debtPoly from "../../../assets/debtPoly.svg"
 import loanBoard from "../../../assets/loanBoard.svg"
+import imageBlur from "../../../assets/image blur.svg"
 
 const DebtLanding = () => {
   const Nav = useNavigate();
@@ -24,7 +25,8 @@ const DebtLanding = () => {
           <div className="debtLandingleft">
             <img
               className="debtManagerDiv"
-              src={loanBoard}
+              // src={loanBoard}
+                  src={imageBlur}
               alt="Debt Manager Div"
             />
           </div>
@@ -49,9 +51,9 @@ const DebtLanding = () => {
               >
                 Create Account
               </button>
+            <img className="debtPoly" src={debtPoly} alt="Skewed Polygon" />
             </div>
 
-            {/* <img className="debtPoly" src={debtPoly} alt="Skewed Polygon" /> */}
           </div>
         </div>
       </div>

@@ -1,12 +1,15 @@
 import "./HeroPageBottom.css";
-import downSmallPolygon from "../../../assets/downSmallPoly.svg";
+// import downSmallPolygon from "../../../assets/downSmallPoly.svg";
 // import moneyCalculator from "../../../assets/moneyCalculator.svg";
-import homePageIncome from "../../../assets/homePageIncome.svg";
-import analysisSvg from "../../../assets/analysisSvg.svg";
+// import homePageIncome from "../../../assets/homePageIncome.svg";
+// import analysisSvg from "../../../assets/analysisSvg.svg";
 import bigPolygon from "../../../assets/bigPolygon.svg";
-import calculatorMoney from "../../../assets/realCalculator.svg";
-import speechBubble from "../../../assets/speechBubble.svg";
+// import calculatorMoney from "../../../assets/realCalculator.svg";
+// import speechBubble from "../../../assets/speechBubble.svg";
 import { useNavigate } from "react-router-dom";
+import expenseTrak from "../../../assets/expenseTrak.svg"
+
+
 const HeroPageBottom = () => {
   const Nav = useNavigate();
 
@@ -29,39 +32,40 @@ const HeroPageBottom = () => {
 
         <div className="heroBottomDown">
           <div className="heroBottomLeft">
-            <div className="circleOne"></div>
-            <div className="circleTwo"></div>
-            <img
+            <img className="heroBottomImg" src={expenseTrak} alt="" />
+            {/* <div className="circleOne"></div>
+            <div className="circleTwo"></div> */}
+            {/* <img
               className="downSmallPolygon"
               src={downSmallPolygon}
               alt="A small skewed Polygon"
-            />
+            /> */}
 
-            <div className="holdBox">
-              <div className="topBox">
-                <div className="topBoxInner">
-                  <div className="holdCalcultorImg">
+            {/* <div className="holdBox"> */}
+              {/* <div className="topBox"> */}
+                {/* <div className="topBoxInner"> */}
+                  {/* <div className="holdCalcultorImg">
                     <img
                       className="moneyCaculator"
                       src={calculatorMoney}
                       alt="Currency, cart and Calculator"
                     />
-                  </div>
+                  </div> */}
 
-                  <p className="trakFundzTracking">
+                  {/* <p className="trakFundzTracking">
                     {" "}
                     Trakfundz makes tracking your spending
                     <br /> easy and efficient,
                     helping you identify
                     <br />areas where you can save.{" "}
-                  </p>
-                  <img
+                  </p> */}
+                  {/* <img
                     className="speechBubble"
                     src={speechBubble}
                     alt="Speech Bubble"
-                  />
-                </div>
-              </div>
+                  /> */}
+                {/* </div> */}
+              {/* </div> */}
 
               <div className="txtAndBtn">
                 <div className="txtAndBtnInner">
@@ -77,7 +81,7 @@ const HeroPageBottom = () => {
                 </div>
               </div>
             </div>
-
+{/* 
             <img
               className="homePageIncome"
               src={homePageIncome}
@@ -88,16 +92,16 @@ const HeroPageBottom = () => {
               src={analysisSvg}
               alt="An analysis chart image"
             />
-          </div>
-
-          <div className="heroBottomRight">
+          </div> */}
+{/* 
+          {/* <div className="heroBottomRight"> */}
             <img
               className="bigPolygon"
               src={bigPolygon}
               alt="A big Polygon with 1px white border radius"
             />
-          </div>
-        </div>
+          </div> 
+        {/* </div> */}
       </div>
     </div>
   );

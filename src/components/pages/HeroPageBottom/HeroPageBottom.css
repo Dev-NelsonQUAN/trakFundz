@@ -35,7 +35,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 13px;
 }
 
 .heroH2 {
@@ -77,9 +77,20 @@
 }
 
 .heroBottomLeft {
-  width: 60%;
+  width: 70%;
   height: 85%;
   position: relative;
+  /* background: cadetblue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heroBottomImg {
+  width: 100%;
+  height: 60%;
+  /* background: #000; */
 }
 
 .circleOne {
@@ -140,13 +151,12 @@
   align-items: center;
 }
 
-.topBoxInner {
+/* .topBoxInner {
   width: 87%;
   height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: moccasin; */
 }
 
 .holdCalcultorImg {
@@ -164,7 +174,6 @@
 .calculatorMoney {
   width: 0.3rem;
   height: 0.3rem;
-  /* background: #000; */
 }
 
 .trakFundzTracking {
@@ -172,31 +181,25 @@
   font-size: 1.4rem;
   color: var(--colours);
   line-height: 26px;
-  /* display: flex;
-    align-self: center; */
-}
+} */
 
-.speechBubble {
+/* .speechBubble {
   width: 12%;
   height: 12%;
   position: absolute;
   
-}
+} */
 
 .txtAndBtn {
   width: 75%;
   height: 35%;
-  /* background: tomato; */
-  /* padding: 2%; */
   display: flex;
   justify-content: flex-end;
-  /* padding-left: 5%; */
 }
 
 .txtAndBtnInner {
   width: 93%;
   height: 100%;
-  /* background: #000; */
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
@@ -246,21 +249,15 @@
 .heroBottomRight {
   width: 30%;
   height: 100%;
-  /* background: rgb(70, 3, 87); */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* align-items: flex-end;  */
   position: relative;
 }
 
 .bigPolygon {
   width: 100%;
   height: 50%;
-  /* position: absolute;
-    bottom: 20px;
-    right: 0px; */
-  /* background: #000; */
 }
 
 .speechBubble {
