@@ -151,7 +151,18 @@
     text-decoration: underline;
 
 }
-
+.VerifyButton{
+    width: 50%;
+    height: 40px;
+    background: var(--brandColour);
+    color: var(--colours);
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 1024px) {
     .holdImageVerify {
@@ -180,7 +191,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 650px) {
     .holdImageVerify{
         width: 90%;
         height: 20%;
@@ -189,7 +200,20 @@
         align-items: flex-start;
         /* justify-content: center; */
     }
-
+    .formHoldVerify{
+        width: 100%;
+        height: 60%;
+        background: var(--colours);
+        /* background: #000; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+        border-radius: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
     .verifyLogo {
         width: 30%;
         height: 50%;
@@ -211,7 +235,7 @@
 
 @media screen and (max-width: 425px) {
     .formHoldVerify {
-        width: 70%;
+        width: 100%;
         height: 55%;
     }
 
@@ -222,11 +246,12 @@
     .verDidntReceive {
         font-size: 0.57rem;
     }
+
 }
 
 @media screen and (max-width: 425px) {
     .formHoldVerify {
-        width: 70%;
+        width: 90%;
         height: 52%;
     }
     .verP {
@@ -240,7 +265,7 @@
 
 @media screen and (max-width: 320px) {
     .holdImageVerify{
-        width: 90%;
+        width: 100%;
         height: 20%;
         /* background: chocolate; */
         display: flex;

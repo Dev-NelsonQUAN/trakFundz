@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import "./UserDashboard.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -14,17 +14,17 @@ import {
 } from "recharts";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { toast } from "react-hot-toast";
-
+import UserContext from "../../../context/UserContext";
 
 const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const UserBoard = () => {
   const Nav = useNavigate();
-  const [user, setUser] = useState();
   const [data, setData] = useState([]);
   const [history, setHistory] = useState([]);
   const [debt, setDebt] = useState([]);
   const [timePeriod, setTimePeriod] = useState("today");
+  const { user, getUserData } = useContext(UserContext);
 
   const userToken = localStorage.getItem('token')
 
@@ -37,6 +37,7 @@ const UserBoard = () => {
       });
       console.log(response?.data?.data);
       setDebt(response?.data?.data);
+      await getUserData()
     } catch (err) {
       console.log(err);
     }
@@ -54,6 +55,7 @@ const UserBoard = () => {
       });
       console.log(response?.data?.data);
       setHistory(response?.data?.data);
+      await getUserData()
     } catch (err) {
       console.log(err);
     }
@@ -63,30 +65,6 @@ const UserBoard = () => {
     getBudgetHistory();
   }, []);
 
-  const getUser = async () => {
-    try {
-      const userId = localStorage.getItem("userId");
-
-      if (!userId) {
-        Nav("/login");
-      }
-      const response = await axios.get(`${url}/oneuser/${userId}`);
-      setUser(response?.data.data);
-    } catch (err) {
-      toast.error(err.response.data.message)
-      if (err.response.data.message === "Oops! Access denied. Please sign in.") {
-        Nav('/login')
-        localStorage.removeItem("token");
-        localStorage.removeItem("userId");
-      }
-
-    }
-  };
-
-  useEffect(() => {
-    getUser();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   const getTransactionChart = async () => {
     try {
       const response = await axios.get(`${url}/expenses/dashBoardhistory`, {
@@ -97,10 +75,12 @@ const UserBoard = () => {
       )
       console.log(response.data.data);
       setData(response.data.data)
+      await getUserData()
     } catch (err) {
       // console.log(err);
       if (err.response.data.message === "Oops! Access denied. Please sign in.") {
         Nav('/login')
+        toast.error('Session Expired Please login again ')
         localStorage.removeItem("token");
         localStorage.removeItem("userId");
       }
@@ -228,23 +208,23 @@ const UserBoard = () => {
 
             <div className="uDCenterDown">
               <div className="uDCenterDownInner">
-              <ResponsiveContainer width="100%" height={250}>
-                <BarChart data={filterDataByPeriod()}>
-                  <CartesianGrid strokeDasharray="2 1" />
-                  <XAxis
-                    dataKey="createdAt"
-                    tickFormatter={(tick) => {
-                      const date = new Date(tick);
-                      return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-                    }}
-                  />
-                  <YAxis />
-                  <Legend />
-                  <Bar dataKey="expenseAmount" name="Expense" fill="#FF6347" barSize={15} />
-                  <Bar dataKey="budgetAmount" name="Budget" fill="#87CEFA" barSize={15} />
-                  <Bar dataKey="debtAmount" name="Debt" fill="#6A5ACD" barSize={15} />
-                </BarChart>
-              </ResponsiveContainer>
+                <ResponsiveContainer width="100%" height={250}>
+                  <BarChart data={filterDataByPeriod()}>
+                    <CartesianGrid strokeDasharray="2 1" />
+                    <XAxis
+                      dataKey="createdAt"
+                      tickFormatter={(tick) => {
+                        const date = new Date(tick);
+                        return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+                      }}
+                    />
+                    <YAxis />
+                    <Legend />
+                    <Bar dataKey="expenseAmount" name="Expense" fill="#FF6347" barSize={15} />
+                    <Bar dataKey="budgetAmount" name="Budget" fill="#87CEFA" barSize={15} />
+                    <Bar dataKey="debtAmount" name="Debt" fill="#6A5ACD" barSize={15} />
+                  </BarChart>
+                </ResponsiveContainer>
               </div>
             </div>
           </div>
