@@ -53,7 +53,9 @@ const Login = () => {
     <>
       <div className="LoginHolder">
         <div className="HoldImage">
-          <img className="loginLogo" src={Logo} alt="TrakFundz Logo" />
+          <img className="loginLogo" src={Logo} alt="TrakFundz Logo" 
+            onClick={() => Nav("/signup")}
+          />
         </div>
         <form className="formHold" onSubmit={handleLogin}>
           <div className="inForm">

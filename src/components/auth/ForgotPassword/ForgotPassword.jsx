@@ -3,9 +3,12 @@ import axios from "axios";
 import "./ForgotPassword.css";
 import Logo from "./../../../assets/trakFundzLogo.svg";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 const url = "https://trackfundz-wmhv.onrender.com/api/v1"; // Ensure this is your correct API base URL
 
 const ForgotPassword = () => {
+  const Nav = useNavigate()
+
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false); // For handling loading state
 
@@ -35,7 +38,7 @@ const ForgotPassword = () => {
   return (
     <div className="forgotPassHolder">
       <div className="forgotHoldImage">
-        <img className="logo" src={Logo} alt="TrakFundz Logo" />
+        <img className="logo" src={Logo} alt="TrakFundz Logo" onClick={() => Nav("/login")} />
       </div>
 
       <form className="forgotFormHold" onSubmit={handleSubmit}>

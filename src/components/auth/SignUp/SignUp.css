@@ -314,6 +314,11 @@
   color: var(--brandColour);
 }
 
+.span:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1024px) {
   .signUpFontz {
     /* width: 70%; */
