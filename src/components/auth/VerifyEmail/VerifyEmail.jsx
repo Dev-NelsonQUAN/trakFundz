@@ -1,29 +1,11 @@
-import React, { useEffect, useState } from "react";
 import "./VerifyEmail.css";
 import Logo from "../../../assets/trakFundzLogo.svg";
 import emailVerify from "../../../assets/emailVerifySvg.svg";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
-const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const VerifyEmail = () => {
   const Nav = useNavigate();
-  const [email, setEmail] = useState()
-
-  const verify = async () => {
-    const userId = localStorage.getItem("userId");
-    try {
-      const response = await axios.post(`${url}/reverify`, {email});
-      setEmail(response?.data?.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  // useEffect(() =>{
-  //   getUser()
-  // }, []);
 
   return (
     <div className="verifyPassword">

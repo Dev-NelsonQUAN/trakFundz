@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import "./ExpenseTrackerDashboard.css";
 import { FaCirclePlus } from "react-icons/fa6";
 import AddIncome from "../AddIncome/AddIncome";
@@ -6,7 +6,7 @@ import axios from "axios";
 import { IoArrowDown } from "react-icons/io5";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-
+import UserContext from "../../../context/UserContext";
 import {
   BarChart,
   Bar,
@@ -23,7 +23,7 @@ const url = "https://trackfundz-wmhv.onrender.com/api/v1";
 
 const ExpenseTrackerDashboard = () => {
   const Nav = useNavigate();
-  const [user, setUser] = useState();
+  const { user } = useContext(UserContext);
   const [history, setHistory] = useState([]);
   const [addIncome, setAddIncome] = useState(false);
   const [expense, setExpense] = useState('')
@@ -34,22 +34,10 @@ const ExpenseTrackerDashboard = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const token = localStorage.getItem('token')
-  const getUser = async () => {
-    try {
-      const userId = localStorage.getItem("userId");
-      if (!userId) {
-        // Handle login redirect
-      }
-      const response = await axios.get(`${url}/oneuser/${userId}`);
-      setUser(response?.data.data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
-  useEffect(() => {
-    getUser();
-  }, []);
+  // useEffect(() => {
+  //   getUserData();
+  // }, []);
 
   const createExpense = async (e) => {
     e.preventDefault();
@@ -94,7 +82,7 @@ const ExpenseTrackerDashboard = () => {
       }
       )
       setHistory(response.data.data)
-      setReload((prev) => !prev);
+      // setReload((prev) => !prev);
     } catch (err) {
       console.log(err);
 
@@ -102,8 +90,7 @@ const ExpenseTrackerDashboard = () => {
   }
   useEffect(() => {
     getTransactionChart()
-    console.log(history);
-
+    // console.log(history);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reload])
 
@@ -116,7 +103,7 @@ const ExpenseTrackerDashboard = () => {
       }
       )
       setData(response.data.data)
-      setReload((prev) => !prev);
+      // setReload((prev) => !prev);
     } catch (err) {
       // console.log(err);
       if (err.response.data.message === "Oops! Access denied. Please sign in.") {
@@ -129,7 +116,7 @@ const ExpenseTrackerDashboard = () => {
   }
   useEffect(() => {
     getExpensePrday()
-  }, [])
+  }, [reload])
 
   const groupExpensesByType = (data) => {
     const groupedData = {};

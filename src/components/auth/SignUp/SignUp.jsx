@@ -114,7 +114,7 @@ const SignUp = () => {
       try {
         const res = await axios.post(`${url}/signup`, apiData);
         setLoading(false);
-        toast.success(res?.message);
+        toast.success(res?.message || "Signup successful please verify your account");
         // Nav(`/verify?email=${email}`);
         Nav("/verify");
         console.log(url, apiData);
