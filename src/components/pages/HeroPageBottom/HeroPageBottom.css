@@ -77,67 +77,51 @@
 }
 
 .heroBottomLeft {
-  width: 70%;
+  width: 65%;
   height: 85%;
   position: relative;
   /* background: cadetblue; */
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
 }
 
+
 .heroBottomImg {
-  width: 100%;
-  height: 60%;
+  width: 700px;
+  height: 500px;
   /* background: #000; */
 }
 
-.circleOne {
-  width: 379px;
-  height: 379px;
-  border-radius: 50%;
-  background: rgba(226, 189, 255, 0.5);
-  filter: blur(75px);
-  position: absolute;
-  top: 7%;
-  left: 7%;
+.heroBottomRight {
+  width: 23%;
+  height: 23%;
+  /* background: rebeccapurple; */
+  display: flex;
+  align-items: flex-end ;
 }
 
-.circleTwo {
-  width: 456px;
-  height: 456px;
-  border-radius: 50%;
-  background: #300cb9;
-  filter: blur(75px);
-  position: absolute;
-  right: 14%;
-  top: 10%;
-}
 
-.downSmallPolygon {
+/* .downSmallPolygon {
+  width: 10%;
+  height: 10%;
+  position: absolute;
+  right: 27%;
+
+} */
+
+.bigPolygon {
   width: 23%;
   height: 23%;
   position: absolute;
-  right: 27%;
-  /* top: 2%; */
+  right: 1%;
 }
 
-.holdBox {
-  width: 63%;
-  height: 78%;
-  /* background: crimson; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: absolute;
-  top: 20%;
-  left: 13%;
-  z-index: 1;
-}
 
-.topBox {
-  width: 100%;
+
+/* .topBox { */
+  /* width: 100%;
   height: 55%;
   border-radius: 10px;
   background: linear-gradient(
@@ -149,7 +133,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 /* .topBoxInner {
   width: 87%;
@@ -192,9 +176,10 @@
 
 .txtAndBtn {
   width: 75%;
-  height: 35%;
+  height: 22%;
   display: flex;
   justify-content: flex-end;
+  margin-left: 70px;
 }
 
 .txtAndBtnInner {
@@ -206,14 +191,14 @@
 }
 
 .signUpTrack {
-  width: 100%;
+  width: 70%;
   font-size: 18px;
   font-weight: 400;
   color: var(--colours);
 }
 
 .signUpNowBtn {
-  width: 35%;
+  width: 20%;
   height: 28%;
   border-radius: 5px;
   background: var(--brandColour);
@@ -228,23 +213,23 @@
   background: var(--landpageHover);
 }
 
-.homePageIncome {
+/* .homePageIncome {
   width: 27%;
   height: 25%;
   position: absolute;
   top: 10%;
   right: 12%;
   z-index: 2;
-}
+} */
 
-.analysisSvg {
+/* .analysisSvg {
   width: 32%;
   height: 20%;
   position: absolute;
   right: 5%;
   bottom: 29%;
   z-index: 3;
-}
+} */
 
 .heroBottomRight {
   width: 30%;
@@ -298,13 +283,13 @@
     right: -20%;
     z-index: 2;
   }
-  .speechBubble {
+  /* .speechBubble {
     width: 2rem;
     height: 3rem;
     position: absolute;
     bottom: 300px;
     right: 100px;
-  }
+  } */
   .managing {
     font-size: 16px;
     text-align: center;
@@ -327,32 +312,42 @@
     text-align: center;
   }
 
-  .analysisSvg {
+  /* .analysisSvg {
     height: 15%;
     top: 45%;
     right: -20%;
-  }
+  } */
   .heroBottomDown {
     width: 100%;
     height: 130vh;
   }
-  .holdBox{
+  /* .holdBox{
     width: 100%;
     display: flex;
   }
   .moneyCaculator{
     width: 100px;
-  }
+  } */
   .heroBottomLeft{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  .heroBottomImg {
+    width: 400px;
+    height: 400px;
+  }
+
   .txtAndBtn {
     width: 100%;
-    height: 35%;
+    height: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .txtAndBtnInner{
     width: 100%;
     display: flex;
@@ -360,21 +355,117 @@
     justify-content: center;
     gap: 20px;
   }
+
   .signUpTrack{
-    width: 100%;
+    width: 70%;
     text-align: center;
     line-height: 30px;
+    font-size: 0.9rem;
+
   }
+
   .signUpNowBtn{
-    width: 250px;
-  }
-  .circleOne {
     width: 200px;
-    height: 200px;
+    height: 35px;
   }
-  
-  .circleTwo {
-    width: 200px;
-    height: 200px;
+
+  .heroBottomRight {
+    width: 80px;
+    height: 50%;
+    display: flex;
+    justify-content: flex-end;
+    /* background: #000; */
+
+  }
+
+  .bigPolygon {
+    width: 70px;
+    height: 70px;
   }
 }
+
+@media screen and (max-width: 452px) {
+  .heroBottomImg {
+    width: 300px;
+    height: 300px;
+  }
+
+  .heroH2, .heroH2below {
+    font-size: 1.5rem; 
+  }
+
+
+  .managing {
+    font-size: 0.6rem;
+  }
+
+  .txtAndBtnInner {
+    /* background: #000; */
+  }
+
+  .signUpTrack {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .holdExpenses {
+    /* display: flex;
+    justify-content: center;
+    line-height: 1px; */
+    /* gap: 1px; */
+  }
+
+  .HeroBottomHolder {
+    height: 100vh;
+  }
+
+
+  .heroH2, .heroH2below {
+    font-size: 1.2rem;
+  }
+
+  .managing {
+    font-size: 0.65rem;
+  } 
+
+  .heroBottomLeft {
+    height: 70%;
+  }
+
+  .heroBottomImg {
+    width: 240px;
+    height: 240px;
+  }
+
+  .txtAndBtn {
+    height: 40%;
+  }
+
+    .txtAndBtnInner {
+      height: 50%;
+      /* background: #000; */
+    }
+
+    .signUpTrack {
+      width: 90%;
+      line-height: 15px;
+      font-size: 0.7rem;
+    }
+
+    .signUpNowBtn {
+      height: 2.2rem;
+      /* width: 2.5rem; */
+    }
+
+    .heroBottomRight {
+      height: 75%;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .bigPolygon {
+      width: 100px;
+      height: 100px;
+    }
+  }

@@ -63,7 +63,9 @@ const ResetPassword = () => {
   return (
     <div className="resetPassHolder">
       <div className="resetHoldImage">
-        <img className="logo" src={Logo} alt="TrakFundz Logo" />
+        <img className="logo" src={Logo} alt="TrakFundz Logo" 
+          onClick={() => Nav("/login")}
+        />
       </div>
 
       <form className="resetformHold" onSubmit={handleSubmit}>

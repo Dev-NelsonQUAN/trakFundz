@@ -1,9 +1,10 @@
 import "./Footer.css";
 import Instagram from "../../../assets/Instagram.svg";
-import Twitter from "../../../assets/Twitter.svg";
+// import Twitter from "../../../assets/Twitter.svg";
 import Facebook from "../../../assets/Facebook.svg";
 import Whatsapp from "../../../assets/Whatsapp.svg";
-// import XIcon from "../../../assets/XIcon.svg"
+// import XIcon from "../../../assets/Vector.svg"
+import twitter from "../../../assets/Twitter.svg"
 
 const Footer = () => {
   const now = new Date();
@@ -14,13 +15,13 @@ const Footer = () => {
     <div className="footerContainer">
       <div className="footerContainerInner">
         <div className="footerMain">
-          <h4>Copyright © {year} TrakFundz, LLC</h4>
+          <h4 className="copyR">Copyright © {year} TrakFundz, LLC</h4>
         </div>
         <div className="footerLogo">
           <p className="contactEmail">@trakfundz@gmail.com</p>
-          <div className="logoIcon">
+          <div className="footerIcon">
             <img src={Instagram} alt="Instagram" className="socialIcon" />
-            <img src={Twitter} alt="Twitter" className="socialIcon" />
+            <img src={twitter} alt="Twitter" className="socialIcon"/>
             <img src={Facebook} alt="Facebook" className="socialIcon" />
             <img src={Whatsapp} alt="Whatsapp" className="socialIcon" />
           </div>
