@@ -47,6 +47,7 @@
   height: 100px;
   border-radius: 50%;
   background: rgb(134, 121, 121);
+  position: relative;
 }
 
 .holdSettingsEmail {
@@ -147,6 +148,11 @@
   height: 100px;
   border-radius: 100%;
   object-fit: cover;
+}
+.upploadImageButtonEdit{
+  position: absolute;
+  top: 65px;
+  right: -5px;
 }
 @media screen and (max-width: 650px) {
   .settingsInner{

@@ -28,22 +28,15 @@ const VerifyEmail = () => {
 
               <div className="holdAllP">
                 <p className="verP">
-                    {" "}
-                    Hey TrakFundzer, you're almost ready to start enjoying
-                    <br /> Trakfundz. A verification link has been sent to your mail
-                    <br /> please check your mail to verify your email address.
+                  {" "}
+                  Hey TrakFundzer, you're almost ready to start enjoying
+                  <br /> Trakfundz. A verification link has been sent to your mail
+                  <br /> please check your mail to verify your email address.
                 </p>
               </div>
             </div>
           </div>
-
-          <div className="infromVerifyBottom">
-            <p className="verDidntReceive">
-              {" "}
-              Did not receive any mail? 
-              <span className="verSpan"> Resend Mail </span> 00:59{" "}
-            </p>
-          </div>
+          <button className="VerifyButton" onClick={()=> Nav('/login')}>Login</button>
         </div>
       </form>
     </div>
