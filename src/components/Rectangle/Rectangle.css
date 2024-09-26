@@ -6,7 +6,6 @@
     background-image: url(../../assets/FrameIMG.svg);
     background-repeat: no-repeat;
     background-size: 100%;
-
 }
 
 
@@ -25,6 +24,7 @@
     font-size: 20px;
     line-height: 1.6;
 }
+
 .MissionHolder {
     width: 100%;
     display: flex;
@@ -41,10 +41,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    /* background: yellow; */
-
-   
+    gap: 20px;   
 }
 
 .missionText, .goalText {
@@ -178,7 +175,6 @@
     .RecText {
         background-size: contain;
         height: 40vh;
-        /* font-size: 16px; */
     }
 
     .missionText h1, .goalText h1 {

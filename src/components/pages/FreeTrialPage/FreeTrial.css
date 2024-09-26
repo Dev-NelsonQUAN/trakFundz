@@ -348,6 +348,15 @@
   .freeTrialMainInner{
     width: 100%;
   }
+
+  .ready {
+    font-size: 1.4rem;
+  }
+
+  /* .startThirtyDays {
+    font-size: 0.7rem;
+  } */
+
   .freeTrialInnerMiddle{
     width: 100%;
   }
@@ -367,11 +376,11 @@
     top: 6%;
   }
   .startThirtyDays{
-    font-size: 16px;
+    font-size: 0.65rem;
     line-height: 30px;
   }
   .yourPath{
-    font-size: 16px;
+    font-size: 0.6rem;
     text-align: center;
   }
   .masterFreeBtn{

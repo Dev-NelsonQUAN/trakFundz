@@ -116,6 +116,15 @@
   .debtLandingInner {
     width: 90%;
   }
+
+  .debt {
+    font-size: 1.4rem;
+  }
+
+  .stayOrganized {
+    font-size: 1rem;
+  }
+
   .debtLandingBottom {
     width: 100%;
     display: flex;
@@ -157,9 +166,20 @@
     text-align: center;
     font-size: 14px;
   }
-  .debtCreate {
+  .debtCreate { 
     text-align: center;
     font-size: 14px;
 
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .trackYourLoan {
+    line-height:20px;
+  }
+
+  .debtPoly{
+    
   }
 }
