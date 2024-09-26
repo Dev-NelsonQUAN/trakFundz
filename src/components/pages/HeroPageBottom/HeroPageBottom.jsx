@@ -7,8 +7,7 @@ import bigPolygon from "../../../assets/bigPolygon.svg";
 // import calculatorMoney from "../../../assets/realCalculator.svg";
 // import speechBubble from "../../../assets/speechBubble.svg";
 import { useNavigate } from "react-router-dom";
-import expenseTrak from "../../../assets/expenseTrak.svg"
-
+import expenseTrak from "../../../assets/expenseTrak.svg";
 
 const HeroPageBottom = () => {
   const Nav = useNavigate();
@@ -17,7 +16,6 @@ const HeroPageBottom = () => {
     <div className="HeroBottomHolder">
       <div className="HeroBottonmInner">
         <div className="HeroBottomTop">
-
           <div className="holdExpenses">
             <h2 className="heroH2"> Take Charge of</h2>
 
@@ -25,6 +23,7 @@ const HeroPageBottom = () => {
               your <span className="expense"> expenses. </span>{" "}
             </h2>
           </div>
+
           <p className="managing">
             Managing your finances doesn't have to be overwhelming.{" "}
           </p>
@@ -42,9 +41,9 @@ const HeroPageBottom = () => {
             /> */}
 
             {/* <div className="holdBox"> */}
-              {/* <div className="topBox"> */}
-                {/* <div className="topBoxInner"> */}
-                  {/* <div className="holdCalcultorImg">
+            {/* <div className="topBox"> */}
+            {/* <div className="topBoxInner"> */}
+            {/* <div className="holdCalcultorImg">
                     <img
                       className="moneyCaculator"
                       src={calculatorMoney}
@@ -52,36 +51,36 @@ const HeroPageBottom = () => {
                     />
                   </div> */}
 
-                  {/* <p className="trakFundzTracking">
+            {/* <p className="trakFundzTracking">
                     {" "}
                     Trakfundz makes tracking your spending
                     <br /> easy and efficient,
                     helping you identify
                     <br />areas where you can save.{" "}
                   </p> */}
-                  {/* <img
+            {/* <img
                     className="speechBubble"
                     src={speechBubble}
                     alt="Speech Bubble"
                   /> */}
-                {/* </div> */}
-              {/* </div> */}
+            {/* </div> */}
+            {/* </div> */}
 
-              <div className="txtAndBtn">
-                <div className="txtAndBtnInner">
-                  <p className="signUpTrack">
-                    {" "}
-                    Sign up to track your expenses and get a clear
-                    picture of where your money is going.{" "}
-                  </p>
-                  <button className="signUpNowBtn" onClick={() => Nav("/signup")}>
-                    {" "}
-                    Sign Up Now{" "}
-                  </button>
-                </div>
+            <div className="txtAndBtn">
+              <div className="txtAndBtnInner">
+                <p className="signUpTrack">
+                  {" "}
+                  Sign up to track your expenses and get a clear picture of
+                  where your money is going.{" "}
+                </p>
+                <button className="signUpNowBtn" onClick={() => Nav("/signup")}>
+                  {" "}
+                  Sign Up Now{" "}
+                </button>
               </div>
             </div>
-{/* 
+          </div>
+          {/* 
             <img
               className="homePageIncome"
               src={homePageIncome}
@@ -93,15 +92,15 @@ const HeroPageBottom = () => {
               alt="An analysis chart image"
             />
           </div> */}
-{/* 
-          {/* <div className="heroBottomRight"> */}
+
+          <div className="heroBottomRight">
             <img
               className="bigPolygon"
               src={bigPolygon}
               alt="A big Polygon with 1px white border radius"
             />
-          </div> 
-        {/* </div> */}
+          </div>
+        </div>
       </div>
     </div>
   );
