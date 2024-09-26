@@ -116,13 +116,15 @@ const SignUp = () => {
         setLoading(false);
         toast.success(res?.message);
         // Nav(`/verify?email=${email}`);
-        Nav("/verify")
+        Nav("/verify");
         console.log(url, apiData);
         console.log(res, "respond to this");
       } catch (error) {
         // toast.error(error?.message)
-        toast.error(error?.response?.data?.message);
-        console.log(error, "This is an error");
+        toast.error(
+          error?.response?.data?.message || error.response?.data?.errorMessage
+        );
+        // console.log(error, "This is an error");
         setLoading(false);
       }
     }
@@ -165,7 +167,12 @@ const SignUp = () => {
         <div className="sideImageHolder">
           <div className="holdImageAndFont">
             <div className="holdImg">
-              <img src={logo} className="holdBG" alt="" />
+              <img
+                src={logo}
+                className="holdBG"
+                alt="TrakFundz Logo"
+                onClick={() => Nav("/")}
+              />
             </div>
 
             <div className="holdFont">
@@ -319,8 +326,8 @@ const SignUp = () => {
 
                   <p className="byCreate">
                     {" "}
-                    By creating an account, you agree to our{" "}
-                   <br /> <span className="span"> Terms of service </span> and{" "}
+                    By creating an account, you agree to our <br />{" "}
+                    <span className="span"> Terms of service </span> and{" "}
                     <span className="span"> Privacy policy </span>{" "}
                   </p>
                 </div>

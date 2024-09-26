@@ -132,15 +132,17 @@
   border-radius: 5px;
   border: 1px solid var(--microcopyTextColour);
   outline: none;
+  padding: 10px;
 }
 
 .passwordInput {
-  width: 90%;
+  width: 95%;
   height: 100%;
   border: none;
   outline: none;
   background: var(--colours);
-  padding-left: 15px;
+  /* padding: 10px; */
+  /* padding-left: 15px; */
 }
 
 .holdForget {
