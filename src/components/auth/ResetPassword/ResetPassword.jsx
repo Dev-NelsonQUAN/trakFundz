@@ -43,7 +43,7 @@ const ResetPassword = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post(`https://trackfundz-wmhv.onrender.com/api/v1/verifyPassword/${token}`, {
+      const response = await axios.post(`https://trackfundz-6o8d.onrender.com/api/v1/verifyPassword/${token}`, {
         password
       });
 

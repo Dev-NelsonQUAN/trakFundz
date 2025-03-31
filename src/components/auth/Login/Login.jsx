@@ -25,7 +25,7 @@ const Login = () => {
       setLoading(false);
     } else {
       const apiData = { email, password };
-      const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+      const url = "https://trackfundz-6o8d.onrender.com/api/v1";
       try {
         setLoading(true);
         const res = await axios.post(`${url}/login`, apiData);

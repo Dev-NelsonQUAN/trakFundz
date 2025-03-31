@@ -18,7 +18,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+const url = "https://trackfundz-6o8d.onrender.com/api/v1";
 
 
 const ExpenseTrackerDashboard = () => {

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { FaArrowDown } from "react-icons/fa6";
 
-const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+const url = "https://trackfundz-6o8d.onrender.com/api/v1";
 
 const DebtManager = () => {
   const Nav = useNavigate();

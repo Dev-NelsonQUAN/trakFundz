@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+const url = "https://trackfundz-6o8d.onrender.com/api/v1";
 
 const BudgetPlannerDashboard = () => {
   const Nav = useNavigate();

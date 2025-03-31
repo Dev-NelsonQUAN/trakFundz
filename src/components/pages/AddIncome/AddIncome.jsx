@@ -2,7 +2,7 @@ import  { useState } from "react";
 import "./AddIncome.css";
 import axios from "axios";
 
-const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+const url = "https://trackfundz-6o8d.onrender.com/api/v1";
 
 const AddIncome = ({ setAddIncome }) => {
   const [income, setIncome] = useState();

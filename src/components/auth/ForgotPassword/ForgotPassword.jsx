@@ -4,7 +4,8 @@ import "./ForgotPassword.css";
 import Logo from "./../../../assets/trakFundzLogo.svg";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-const url = "https://trackfundz-wmhv.onrender.com/api/v1"; // Ensure this is your correct API base URL
+
+const url = "https://trackfundz-6o8d.onrender.com/api/v1";
 
 const ForgotPassword = () => {
   const Nav = useNavigate()

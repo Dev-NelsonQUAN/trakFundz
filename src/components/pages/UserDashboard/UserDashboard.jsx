@@ -16,7 +16,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import { toast } from "react-hot-toast";
 import UserContext from "../../../context/UserContext";
 
-const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+const url = "https://trackfundz-6o8d.onrender.comm/api/v1";
 
 const UserBoard = () => {
   const Nav = useNavigate();

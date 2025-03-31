@@ -7,7 +7,7 @@ import { FaEyeSlash, FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/trakFundzLogoReal.svg";
 
-export const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+export const url = "https://trackfundz-6o8d.onrender.com/api/v1";
 
 const SignUp = () => {
   const [toogle, setToogle] = useState();

@@ -6,7 +6,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaPen } from "react-icons/fa6";
 import UserContext from "../../../context/UserContext";
-const url = "https://trackfundz-wmhv.onrender.com/api/v1";
+
+const url = "https://trackfundz-6o8d.onrender.com/api/v1";
 
 const Settings = () => {
   const { user, setUser, getUserData } = useContext(UserContext);
